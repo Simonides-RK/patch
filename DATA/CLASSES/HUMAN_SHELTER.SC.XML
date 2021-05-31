@@ -1,0 +1,43 @@
+<class id="Human_Shelter" cpp_class="CVXScriptObj" parent="BaseGameObject" entity="assets/Entities/Units/Human_WizardOfTheBow/Shelter/Human_WizardOfTheBow_Shelter.ent.xml">
+        <static_int sight="111"/>
+        <static_int radius="110" selection_radius="140" shelter_radius="75"/> <!-- ATTN: inner_radius is where the units inside the shelter are -->
+        <static_int maxhealth="1800"/>
+        <static_str defence_type="building"/>
+        <static_str interface="unitselection"         />
+
+        <static_str     skyimage="assets/interface/sky_human.bmp"
+                                portrait="assets/interface/icons/shelter.rle"/>
+
+
+        <static_int build_time="1000"/>
+        <static_str building_spot="Assets/Entities/visuals/Building Spots/spot1.rle"/>
+        <static_str dying_object_class="Human_Shelter_Die"/>
+        <static_int can_be_selected="1"/>
+        <static_int can_be_destroyed="1"/>
+        <static_int heal_per_second="5"/>
+        
+        <static_int max_energy="90"/> <!-- Ivko: This is the Shelter lifetime in seconds -->
+        <static_int initial_energy="90"/>       
+
+        <static_str display_name="[[6589454]]Shelter[[]]" display_name_plural="[[6599411]]Shelters[[]]"/>
+
+        <static_str areacheck_type="friendly" areacheck_class="Unit"/>
+        <static_int areacheck_time="1000"/>
+        <method sig="onexitarea" vs="data/subai/human_shelter_onexitarea.vs"/>
+
+        <method sig="being_built" vs="data/subai/human_shelter_being_built.vs" />
+-        <method sig="ondie" vs="data/subai/human_shelter_ondie.vs" /> 
+        <method sig="ondamage" vs="data/subai/human_shelter_ondamage.vs" />
+        <method sig="idle" vs="data/subai/human_shelter_idle.vs" />
+        <method sig="everyone_out" vs="data/subai/human_shelter_everyone_out.vs" verify="data/subai/human_shelter_everyone_out_verify.vs" />
+        <method sig="attack" vs="data/subai/human_shelter_attack.vs" verify="data/subai/human_shelter_attack_verify.vs" />
+
+        <defaultcmd target="Obj">
+                <cmd name="shelter_attack"/>
+        </defaultcmd>
+
+        <member_obj shelter_target=""/>
+        
+        <behavior script="data/subai/human_shelter_behavior.vs"/>
+
+</class>

@@ -1,0 +1,174 @@
+<commands>
+
+<!-- Ivko: Texts edited, 22.02.2005. Please don't remove this comment! -->
+
+<cmd id="Deep_Gold_Mine"
+  name="[[17514315]]Troll Pot of Gold[[]]"
+	position="8"
+	button="trolls_gold.bmp"
+	largebutton="trolls_gold_large.bmp"
+	enabled="0"
+	rollover_param="[[17526049]]Increases the gold in your treasury by #GetClassInt('Trolls_Settlement', 'gold_mine_percent')#% every 5 minutes, ignoring the gold limit.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="disabled"
+>
+	<src obj="Trolls_Settlement"/>
+</cmd>
+
+
+<cmd id="Develop_Deep_Gold_Mine"
+	template_cmd="template_develop_independent"
+	name="[[17534178]]Troll @Pot of Gold[[]]"
+	button="trolls_gold.bmp"
+	icon="Assets/Interface/trolls_gold_icon.bmp"
+	position="19"
+	rollover_param="[[17526049]]Increases the gold in your treasury by #GetClassInt('Trolls_Settlement', 'gold_mine_percent')#% every 5 minutes, ignoring the gold limit.[[]]"
+	param="Skill Deep_Gold_Mine, ManaCost 300, MaxMana 300, SettlementPoint Special3, VisualObject Trolls_Upgrade_Mine"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Trolls_Settlement"/>
+</cmd>
+
+<cmd id="Boulder_Thrower"
+  name="[[17549212]]Recruit @Earthshaker[[]]"
+	button="trolls_boulder.bmp"
+	largebutton="trolls_boulder_large.bmp"
+	position="9"
+	enabled="0"
+	rollover_param=""
+	dispatch_type="enqueue method"
+	dispatch_param="train_boulder_thrower"
+	param="Trolls_BoulderThrower"
+	cost_script="data/cmds/cost_default.vs"
+	rollover_script="data/cmds/rollover_train_build_default.vs"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+	onaddremove_script="data/cmds/train_legendary_addremove.vs"
+>
+	<src obj="Trolls_Settlement"/>
+</cmd>
+
+<cmd id="Develop_Boulder_Thrower"
+	template_cmd="template_develop_independent"
+	name="[[17551773]]@Earthshaker[[]]"
+	button="trolls_boulder.bmp"
+	icon="assets/interface/trolls_boulder_icon.bmp"
+	position="20"
+	rollover_param="[[17568594]]Allows the recruitment of the Earthshaker - ultimate ranged unit, capable of hurling rocks that damage and stun multiple enemies.[[]]"
+	param="Skill Boulder_Thrower, ManaCost 150, MaxMana 150, SettlementPoint Special3, VisualObject Trolls_Upgrade_Statue"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Trolls_Settlement"/>
+</cmd>
+
+<cmd id="Troll_Catapult"
+	name="[[17574172]]Troll @Cannon[[]]"
+	button="trolls_cannon.bmp"
+	largebutton="trolls_cannon_large.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[17581938]]Uses a cannon to fire #GetClassInt('Trolls_Settlement', 'cannon_trolls_to_launch')# Trolls, each dealing #GetClassInt('Trolls_SmallTrollFlying','damage_building')# damage to buildings and #GetClassInt('Trolls_SmallTrollFlying','damage_unit')# to the units it hits. If a Troll misses, you can use it as a military unit for the next #GetClassInt('Trolls_SmallTroll', 'crazed_effect_timeout')/1000# seconds.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="cannon_launch"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+	selecttarget_text="[[11801192]]Select target location[[]]"
+	point_command="1"
+>
+	<src obj="Trolls_Settlement"/>
+</cmd>
+
+<cmd id="Develop_Troll_Catapult"
+	template_cmd="template_develop_independent"
+	name="[[17574172]]Troll @Cannon[[]]"
+	button="trolls_cannon.bmp"
+	icon="assets/interface/trolls_cannon_icon.bmp"
+	position="10"
+	rollover_param="[[17581938]]Uses a cannon to fire #GetClassInt('Trolls_Settlement', 'cannon_trolls_to_launch')# Trolls, each dealing #GetClassInt('Trolls_SmallTrollFlying','damage_building')# damage to buildings and #GetClassInt('Trolls_SmallTrollFlying','damage_unit')# to the units it hits. If a Troll misses, you can use it as a military unit for the next #GetClassInt('Trolls_SmallTroll', 'crazed_effect_timeout')/1000# seconds.[[]]"
+	param="Skill Troll_Catapult, ManaCost 300, MaxMana 600, SettlementPoint Special3, VisualObject Trolls_Cannon"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Trolls_Settlement"/>
+</cmd>
+
+<cmd id="train_SmallTroll"
+	template_cmd="template_independent_hire1"
+	name="[[17591307]]Train @Troll[[]]"
+	button="trolls_smalltroll.bmp"
+	icon="Assets/Interface/Icons/trolls_smalltroll.bmp"
+	param="Trolls_SmallTroll"
+	execdelay="28000"
+	disableifdisabled="upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"		
+>
+	<src obj="Trolls_Settlement"/>
+</cmd>
+
+<cmd id="train_MountainTroll"
+	template_cmd="template_independent_hire2"
+	name="[[17608013]]Train @Mountain Troll[[]]"
+	button="trolls_mountaintroll.bmp"
+	icon="Assets/Interface/Icons/trolls_mountaintroll.bmp"
+	param="Trolls_MountainTroll"
+	execdelay="55000"
+	disableifdisabled="upgrade_HumanLevel3,upgrade_ForesterLevel3,upgrade_DarklingLevel3"
+>
+	<src obj="Trolls_Settlement"/>
+</cmd>
+
+<cmd id="upgrade_Smash_Roll"
+    template_cmd="template_upgrade"
+	verifier_script="data/cmds/colony_upgrade1_verify.vs"
+    name="[[upgsmash1]]@Smash Roll[[]]"
+	rollover_param="[[upgsmash2]]Enables the Small Troll to roll into enemies inflicting #GetClassInt('Trolls_SmallTroll', 'smash_roll_damage')# damage and stunning units in a small area.[[]]"
+	button="trolls_smashroll.BMP"
+	icon="Assets/Interface/Icons/trolls_smashroll_icon.BMP"
+	position="11"
+
+	execdelay="22500"
+	cost_script="return '225/5/0';"
+	param="data/cmds/trolls_upgrade_smash_roll.vs"
+	requirements=""
+	disableifdisabled="train_SmallTroll,upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"
+>
+        <src obj="Trolls_Settlement"/>
+</cmd>
+
+<cmd id="upgrade_Raze"
+    template_cmd="template_upgrade"
+	verifier_script="data/cmds/colony_upgrade2_verify.vs"
+    name="[[upgraze1]]Raze to the Ground[[]]"
+	rollover_param="[[upgraze2]]Gives the Mountain Troll bonus damage of #GetClassInt('Trolls_MountainTroll', 'extra_raze_damage')# against Buildings. In addition grants +#GetClassInt('Trolls_MountainTroll', 'raze_armor')# armor.[[]]"
+	button="trolls_raze.BMP"
+	icon="Assets/Interface/Icons/trolls_raze_icon.BMP"
+	position="12"
+
+	execdelay="44000"
+	cost_script="return '440/10/0';"
+	param="data/cmds/trolls_upgrade_raze.vs"
+	requirements=""
+	disableifdisabled="train_MountainTroll,upgrade_HumanLevel3,upgrade_ForesterLevel3,upgrade_DarklingLevel3"
+>
+        <src obj="Trolls_Settlement"/>
+</cmd>
+
+<cmd id="SmashRoll"
+        name="[[upgsmash1]]@Smash Roll[[]]"
+        button="trolls_smashroll.BMP"
+        position="6"
+        rollover_param="[[upgsmash4]]Rolls into the target area, stunning all enemies and inflicting #GetClassInt('Trolls_SmallTroll', 'smash_roll_damage')# damage to units.[[]]"
+        selecttarget_text="[[upgsmash5]]Select a target area[[]]"
+        dispatch_type="execute method"
+        dispatch_param="smashroll"
+        selecttarget_verifyscript="data/cmds/selectverify_smashroll.vs"
+        selecttarget_cursor_invalid="cantselect"
+        verifier_script="data/cmds/trolls_smalltroll_smashroll_verify.vs"
+        param="RadiusStaticInt smash_roll_radius, Class Unit"
+		select_building_place_drag_object="Area_Empath_Resurrect"
+		select_building_place_drag_script="data/cmds/dragscript_unithighlight.vs"
+		point_command="1"
+        enabled="1"
+        requirements="upgrade_Smash_Roll"
+>
+
+        <src obj="Trolls_SmallTroll"/>
+</cmd>
+
+</commands>

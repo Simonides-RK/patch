@@ -1,0 +1,79 @@
+<class id="Independent_Settlement" cpp_class="CVXBuilding" parent="Building" entity="">
+
+        <static_int maxhealth="6000"/>
+        <static_int sight="800"/>
+
+        <method sig="hire" vs="data/subai/independentsettlement_hire.vs"/>
+        <method sig="init" vs="data/subai/independentsettlement_init.vs"/>
+        <method sig="ondie" vs="data/subai/independentsettlement_ondie.vs"/>
+        <method sig="onsetplayer" vs="data/subai/independentsettlement_onsetplayer.vs"/>
+        <method sig="develop_special" vs="data/subai/develop_independent_special.vs" onfinish="data/subai/develop_independent_special_onfinish.vs"/>
+        <method sig="fake_queuer" vs="data/cmds/independent_execute_for_fake_queuer.vs"/>
+
+        <value id="PathToGloryIndep" script="return GetPathToGlory(this);"/>
+
+        <static_str independent_unit_1="" independent_unit_2=""/>
+        <static_int can_be_destroyed="0"/>
+
+        <static_str interface="building_special, queue, townhall"/>
+        <static_int independent_revenue="12"/>
+        <static_int independent_unit_sqr_value="8"/>
+        <static_int independent_unit_add_value="10"/>
+
+        <static_int regenerate_amount="2"/>
+        <static_int regenerate_time="150"/>
+        <static_int stop_regeneration_after_attack_time="7000"/>
+                
+        <member_int max_army_value=""/>
+        <static_int starting_army_max_perc="100"/>
+        <static_int surrender_army_value="1"/>
+
+        <static_int unitlist_shrink="20"/> <!-- percentage -->
+
+        <static_int heal_amount="25"/>
+        <static_int cast_time="30000"/>
+        
+        <static_int guard_range1="350"/>
+        <static_int guard_range2="450"/>
+		
+		<static_int health_bonus_upg1="350"/>
+		<static_int health_bonus_upg2="600"/>
+        
+        <static_int global_increase_count="3"/>
+        <static_int global_increase_distance="2300"/>
+        <static_int global_army_value_increase_perc="25"/>
+        <static_int glory_capture="2"/>
+        <static_int glory_already_captured="1"/>
+        <static_int glory_already_captured_div="2"/>    <!-- actual glory captured = .glory_already_captured / .glory_already_capture_div -->
+        <static_int init_search_for_guardians_rad="500"/>
+        <static_int house_search_radius="500"/>
+		<static_int health_bonus_upg1="350"/>
+		<static_int health_bonus_upg2="600"/>
+ 
+        <member_int army_value_to_spawn=""/>
+        <member_obj legendary_unit=""/>
+        <member_obj being_restored_worker=""/>
+        <member_int is_legendary_training=""/>
+        <member_obj special_visual_obj=""/>
+        <member_obj special_visual_obj2=""/>
+        <member_obj ind_fake_queuer=""/>
+        <member_int independent_unit_1_glory=""/>
+        <member_int independent_unit_2_glory=""/>
+        <member_int time_to_notify=""/>
+        <member_int army_increase_percent=""/> <!-- Intended for adventure scripts, don't delete! -->
+
+        <behavior script="data/subai/independentsettlement_guard_behavior.vs"/>
+        <behavior script="data/subai/independentsettlement_cast_behavior.vs"/>
+        <behavior script="data/subai/independentsettlement_spawn_behavior.vs"/>
+        <behavior script="data/subai/independentsettlement_gold_behavior.vs"/>
+        <behavior script="data/subai/independentsettlement_regenerate_behavior.vs"/>
+
+        <static_str independent_specials="special1, special2, special3"/>
+        <static_str rally_object_class="Forester_RallyPoint"/>
+        <defaultcmd target="">
+                <cmd name="set_rally"/>
+        </defaultcmd>
+        <value id="ChooseSpecial" script="return Translate('[[6926511]]Choose special[[]]');"/>
+
+        <behavior script="data/ai/aidebug_behaviour.vs"/>
+</class>                

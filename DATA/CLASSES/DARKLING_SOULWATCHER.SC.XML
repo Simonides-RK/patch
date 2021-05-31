@@ -1,0 +1,49 @@
+<class id="Darkling_SoulWatcher" cpp_class="CVXUnit" parent="Peaceful" entity="assets/entities/units/darkling_soulwatcher/darkling_soulwatcher.ent.xml">
+
+	<method sig="init" vs="data/subai/darkling_soulwatcher_init.vs"/>
+	<method sig="ondie" vs="data/subai/darkling_soulwatcher_ondie.vs"/>
+<!-- Ivko: This should probably be fixed to just not retreat so agressively...
+	<method sig="ondamage" vs="data/subai/darkling_soulwatcher_ondamage.vs"/>
+-->
+
+	<static_int flying="1"/>
+	<static_int support_points="9"/>
+
+	<static_int range="400" min_range="2"/>
+	<static_int radius="40" selection_radius="40"/>
+	<static_int formation_radius="42" formation_priority="1500"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4484318]]Soulwatcher[[]]"/>
+
+	<static_str display_name="[[4484318]]Soulwatcher[[]]" display_name_plural="[[4491707]]Soulwatchers[[]]"/>
+
+	<static_int maxhealth="200"/>
+	<static_int sight="600"/>
+	<static_int speed="120"/>
+
+	<static_int initial_armor="0"/>
+	<static_str defence_type = "medium"/>
+
+	<static_int selection_height="130"/>
+	<static_int healthbaroffset="-160"/>
+	<static_int time_to_retreat="600"/>
+
+	<static_str icon="Assets/Interface/Icons/soulwacher.BMP"/>
+	<static_str	portrait="Assets/Interface/Icons/soul watcher.rle"/>
+	<static_str	skyimage="assets/interface/sky_dragon.bmp"/>
+	
+	<static_str race_str="Race_Darklings"/>
+	<static_int regenerate_promille="9"/>
+		
+	<static_int rotation_time="500"/>
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"  ai_hyper_protect_bellow_health="150"/>
+	<!-- AI -->
+		
+	<!-- must be different of walk anim to be able to detect it when the unit dies so it can play the die anim
+	in same direction and with the same veolicity as the movement anim. usually this anim is the same as the 
+	walk one -->
+	<static_int constantly_idle_played="13"/>
+	<sounds
+		command="Darkling_SoulWatcher_Command"
+		AnimDie="assets/sounds/Death/SoulWatcher/Darkling_SoulWatcher_death.wav"/>
+</class>

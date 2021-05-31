@@ -1,0 +1,172 @@
+<commands>
+
+<!-- Ivko: Texts edited, 22.02.2005. Please don't remove this comment! -->
+
+<cmd id="Ancient_Executioner"
+  name="[[17390732]]Recruit @Ancient Executioner[[]]"
+	button="ancient executioner.bmp"
+	largebutton="ancient executioner large.BMP"
+	icon="Assets/Interface/Icons/ancient executioner.bmp"
+	position="8"
+	enabled="0"
+	dispatch_type="execute method"
+	dispatch_param="train_legend"
+	param="Shades_AExecutioner"
+	cost_script="data/cmds/cost_default.vs"
+	rollover_script="data/cmds/rollover_train_build_default.vs"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+	onaddremove_script="data/cmds/train_legendary_addremove.vs"
+>
+	<src obj="Shades_Settlement"/>
+</cmd>
+
+
+<cmd id="Develop_Ancient_Executioner"
+	template_cmd="template_develop_independent"
+	name="[[17408180]]@Ancient Executioner[[]]"
+	button="ancient executioner.bmp"
+	position="18"
+	rollover_param="[[17412670]]Allows the recruitment of the Ancient Executioner - invisible unit with a very strong attack, capable of killing smaller units in no time.[[]]"
+	param="Skill Ancient_Executioner, ManaCost 150, MaxMana 150, SettlementPoint Special1, VisualObject Shades_Throne"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Shades_Settlement"/>
+</cmd>
+
+<cmd id="Immortality"
+  name="[[17427182]]Cast @Immortality[[]]"
+	position="8"
+	button="immortality.bmp"
+	largebutton="immortality large.BMP"
+	enabled="0"
+	rollover_param="[[17431570]]The Immortality spell is cast on a friendly Champion and enables her to avoid death once. If the enchanted Champion would die, she is immediately fully healed and the spell is removed.[[]]"
+	rollover_script="data/cmds/rollover_default.vs"
+	dispatch_type="execute method"
+	dispatch_param="shades_immortality"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+	selecttarget_text="[[17449719]]Select a friendly Champion to enchant[[]]"
+	selecttarget_verifyscript="data/cmds/selectverify_immortality.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<src obj="Shades_Settlement"/>
+</cmd>
+
+<cmd id="Develop_Immortality"
+	template_cmd="template_develop_independent"
+	name="[[17456661]]@Immortality[[]]"
+	button="immortality.bmp"
+	position="19"
+	rollover_param="[[17431570]]The Immortality spell is cast on a friendly Champion and enables her to avoid death once. If the enchanted Champion would die, she is immediately fully healed and the spell is removed.[[]]"
+	param="Skill Immortality, ManaCost 150, MaxMana 150, SettlementPoint Special2, VisualObject Shades_Tower"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Shades_Settlement"/>
+</cmd>
+
+<cmd id="Develop_Soul_Collector"
+	template_cmd="template_develop_independent"
+	name="[[17463878]]Soul @Collector[[]]"
+	button="soul collector.bmp"
+	position="20"
+	rollover_param="[[17476719]]Allows the recruitment of the Soul Collector - a necromancer capable of gathering unit souls and bringing them back to life for a price.[[]]"
+	param="Skill Soul_Collector, ManaCost 60, MaxMana 60, DevScript data/subai/shades_townhall_init_well.vs"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Shades_Settlement"/>
+</cmd>
+
+<cmd id="Soul_Collector"
+  name="[[17483015]]Recruit @Soul Collector[[]]"
+	button="soul collector.bmp"
+	largebutton="soul collector large.BMP"
+	icon="Assets/Interface/Icons/soul collector.bmp"
+	position="8"
+	enabled="0"
+	dispatch_type="enqueue method"
+	dispatch_param="train_legend"
+	param="Shades_SCollector"
+	cost_script="data/cmds/cost_default.vs"
+	rollover_script="data/cmds/rollover_train_build_default.vs"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+	onaddremove_script="data/cmds/train_legendary_addremove.vs"
+>
+	<src obj="Shades_Settlement"/>
+</cmd>
+
+<cmd id="callbacksoul"
+	name=""
+	dispatch_type="execute method"
+	dispatch_param="callbacksoul"
+>
+	<src obj="Soul_Collector"/>
+</cmd>
+
+<cmd id="removesoul"
+	name=""
+	dispatch_type="execute method"
+	dispatch_param="removesoul"
+>
+	<src obj="Soul_Collector"/>
+</cmd>
+
+<cmd id="train_Shades_Bowman"
+	template_cmd="template_independent_hire1"
+	name="[[17494829]]Train Shade @Archer[[]]"
+	button="shades archer.BMP"
+	icon="Assets/Interface/Icons/shade archer.BMP"
+	param="Shades_Bowman"
+	execdelay="15000"
+	disableifdisabled="upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"	
+>
+	<src obj="Shades_Settlement"/>
+</cmd>
+
+<cmd id="train_Shades_Warrior"
+	template_cmd="template_independent_hire2"
+	name="[[17508856]]Train Shade @Warrior[[]]"
+	button="shades warrior.BMP"
+	icon="Assets/Interface/Icons/shades warrior.BMP"
+	param="Shades_Warrior"
+	execdelay="25000"
+	disableifdisabled="upgrade_HumanLevel3,upgrade_ForesterLevel3,upgrade_DarklingLevel3"
+>
+	<src obj="Shades_Settlement"/>
+</cmd>
+
+<cmd id="upgrade_Shades_champpoison"
+    template_cmd="template_upgrade"
+	verifier_script="data/cmds/colony_upgrade1_verify.vs"
+    name="[[upgchamppoison1]]Champion's Poison[[]]"
+	rollover_param="[[upgchamppoison2]]Enable the Shade Archer to inflict #GetClassInt('Shades_Bowman', 'champpoison_damage')# poison damage for #GetClassInt('Shades_Bowman', 'champpoison_duration')/1000# seconds to Heroes only and slows down their healing by 50%.[[]]"
+	button="shades_champpoison.BMP"
+	icon="Assets/Interface/Icons/shades_champpoison_icon.BMP"
+	position="11"
+
+	execdelay="22500"
+	cost_script="return '225/5/0';"
+	param="data/cmds/shades_upgrade_champpoison.vs"
+	requirements=""
+	disableifdisabled="train_Shades_Bowman,upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"
+>
+        <src obj="Shades_Settlement"/>
+</cmd>
+
+<cmd id="upgrade_bottle_o_fog"
+    template_cmd="template_upgrade"
+	verifier_script="data/cmds/colony_upgrade2_verify.vs"
+    name="[[upgShadTac1]]Bottle o' Fog[[]]"
+	rollover_param="[[upgShadTac2]]Gives the Shade Warrior, in addition to his damage reduction while moving, also #GetClassInt('Shades_Warrior', 'bottle_o_fog_reduction')# damage reduction while he is standing/fighting.[[]]"
+	button="shades_bottle_o_fog.BMP"
+	icon="Assets/Interface/Icons/shades_bottle_o_fog_icon.BMP"
+	position="12"
+
+	execdelay="44000"
+	cost_script="return '440/10/0';"
+	param="data/cmds/shades_upgrade_bottle_o_fog.vs"
+	requirements=""
+	disableifdisabled="train_Shades_Warrior,upgrade_HumanLevel3,upgrade_ForesterLevel3,upgrade_DarklingLevel3"
+>
+        <src obj="Shades_Settlement"/>
+</cmd>
+
+</commands>

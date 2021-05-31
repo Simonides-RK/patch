@@ -1,0 +1,19 @@
+<class id="Rat" cpp_class="CVXUnit" parent="Peaceful" entity="assets/entities/units/Rat/Rat.ent.xml">
+
+	<method sig="init" vs="data/subai/rat_init.vs"/>
+	<method sig="ondie" vs="data/subai/rat_ondie.vs"/>
+
+        <static_str display_name="[[7230892]]Rat[[]]" display_name_plural="[[7241568]]Rats[[]]"/>
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[7230892]]Rat[[]]"/>
+        <static_str portrait="assets/interface/icons/rat.rle"/>
+        <static_int radius="10" selection_radius="10"/>
+        
+        <static_int maxhealth="50"/>
+        <static_int sight="370"/>
+        <static_int speed="70"/>
+		<static_str cost="0/0/0" />
+
+        <static_int initial_armor="0"/>
+        <static_str defence_type = "small"/>
+        <static_int ai_cant_be_in_army="1"/>
+</class>

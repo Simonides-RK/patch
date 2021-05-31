@@ -1,0 +1,88 @@
+<class id="Human_Monk" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Human_Monk/Human_Monk.ent.xml">
+
+	<method sig="init" vs="data/subai/human_monk_init.vs"/>
+	<method sig="idle" vs="data/subai/human_monk_idle.vs"/>
+	<method sig="attack" vs="data/subai/human_monk_attack.vs" verify="data/subai/human_monk_attack_verify.vs" onfinish="data/subai/human_monk_attack_onfinish.vs"/>
+	<method sig="engage" vs="data/subai/human_monk_engage.vs"/>
+	<method sig="attack_unit_type" vs="data/subai/unit_attack_unit_type.vs" verify="data/subai/human_monk_attack_verify.vs" onfinish="data/subai/human_monk_attack_onfinish.vs"/>
+	<method sig="engage_unit_type" vs="data/subai/human_monk_engage_unit_type.vs" verify="data/subai/human_monk_attack_verify.vs"/>
+	<method sig="promote" vs="data/subai/human_monk_promote.vs"/>	
+	<method sig="promote_changeclass" vs="data/subai/human_monk_promote_changeclass.vs"/>	
+	<method sig="advance" vs="data/subai/human_monk_advance.vs" verify="data/subai/human_monk_advance_verify.vs"/>
+	<method sig="attack" vs="data/subai/human_monk_advance.vs" verify="data/subai/human_monk_attack_verify.vs"/>
+	<method sig="stand_position" vs="data/subai/human_monk_stand_position.vs" onfinish="data/subai/unit_stand_position_onfinish.vs"/>
+	<method sig="follow" vs="data/subai/unit_follow.vs" verify="data/subai/human_monk_follow_verify.vs"/>
+
+	<value id="DamageType" script="str s; s = .damage_type; if ( .modal_button == .mb_heal ) s = 'none'; return 'assets/interface/weapons/'+ s +'.bmp';" />
+	<value id="DamageName" script="if ( .modal_button == .mb_heal ) return Translate('[[6374100]]Heal spell[[]]'); return Translate('[[6382710]]Life Steal spell[[]]');"/>
+	<value id="DamageTextValue" script="int b; str s, bd; b = 0; if ( .modal_button != .mb_heal ) b = .damage; if ( b == 0 ) bd = Translate('[[4150622]]N/A[[]]'); else bd = b; s = '&lt;color 255 255 64&gt;' + Translate('[[4165677]]Damage:[[]]')     + ' &lt;color 255 255 255&gt;' + bd; return s;" />
+
+	<static_int range="300" min_range="2"/>			
+	<static_int radius="20" selection_radius="20"/>	
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6393386]]Monk[[]]"/>
+	
+	<static_str race_str="Race_Humans"/>										
+
+	<static_str display_name="[[6393386]]Monk[[]]" display_name_plural="[[6405309]]Monks[[]]"/>
+
+	<static_int sight="450"/>
+	<static_int speed="90"/>
+
+	<static_int maxhealth="190" initial_damage="7" initial_armor="2"/>
+	<static_str cost="50/0/1"/>
+
+	<static_str damage_type="magic"/>					
+	<static_str defence_type = "medium"/>
+	
+	<static_int max_energy="160"/>
+	<static_int initial_energy="160"/>
+
+	<static_int heal_amount="9"/>
+	<static_int heal_range="300"/>
+	<static_int return_distance="200"/>
+	<static_int lifesteal_factor="2"/>
+	<static_int energy_heal="2"/>
+	<static_int energy_lifesteal="3"/>
+	<static_int time_to_heal="2000"/>
+
+	<static_str projectile_class="Human_MonkProjectile"/>
+	<static_str	projectile_class_building="Human_MonkProjectile"/>
+	<static_int	projectile_angle="-15"/>
+	<static_int	projectile_dist="20"/>
+	
+	<static_str rollover_description="[[6412853]]Monks are adept healers that can also learn the Life Steal spell, enabling them to heal units in battle while also damaging enemies. Can be promoted to Oracles.[[]]"/>
+	<static_str icon="Assets/Interface/Icons/priest.BMP"
+				portrait="assets/interface/icons/priest.rle"
+				skyimage="assets/interface/sky_human.bmp"/>
+
+	<static_int promotion_time="10000"/>	
+	<static_int promotion_replace_time="1000"/>
+	
+	<static_int mb_heal="4"/>
+	<static_int mb_lifesteal="5"/>
+	
+	<member_int promotion_canceled=""/>
+	<member_pt  heal_return_pos=""/>
+	<member_int heal_return_to_pos=""/>
+<!--	reserved_int0 = -1	means attack method was called by the user and he can't change his target 
+							after time_to_heal time
+		reserved_int0 = 1	means attack was called by other methods and the monk can change his target
+							after time_to_heal time -->
+	<defaultcmd target="Unit">
+		<cmd name="attack"/>
+		<cmd name="advance"/>
+		<cmd name="follow"/>
+	</defaultcmd>
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="100"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<static_int ai_prefer_as_concentrate_target = "2" ai_monk="1"/>	
+	
+	<!-- AI -->	
+	<static_str life_steal_sound="Monk_Life_Steal_"/>
+
+	<sounds
+		command="Monk0"/>
+		
+	<!-- reserved_obj5 stores enemy to follow object -->
+</class>

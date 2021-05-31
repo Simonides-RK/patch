@@ -1,0 +1,43 @@
+<class id="Forester_Hut" cpp_class="CVXBuilding" parent="Forester_BaseTownBuilding" entity="assets/entities/Buildings/Forester_Hut/Forester_Hut.ent.xml">
+
+<!-- General -->
+	<static_str edittree_pos="[[755381]]Structures[[]]/[[5014486]]Foresters[[]]/[[5220907]]Hut[[]]" 
+				icon="assets/interface/icons/forester_hut.bmp"
+				portrait="assets/interface/icons/forester_hut.rle"
+				skyimage="assets/interface/sky_forester.bmp"/>
+	<static_str display_name="[[5220907]]Hut[[]]" display_name_plural="[[5235238]]Huts[[]]"/>
+	<static_int radius="110" selection_radius="110"/>
+
+	<static_int maxhealth="1400"/>
+
+<!-- Building and build animation -->
+	<static_int leaves_height_cap="90" />
+	<static_int leaves_l3_height="-52" />
+	<static_int leaves_l2_height="-51" />
+	<static_int leaves_l1_height="-50" />
+	<static_int build_time="60000" />
+	<static_int foundation_layer="5"/>
+  <static_str dying_object_class="Forester_Hut_Die"/>
+
+<!-- Upgrading -->
+	<static_str building_upgrade_class="Forester_Hut_Upgrade"/>
+	<static_str building_upgrade_prs_class="Forester_Hut_Upgrade_Progress"/>
+
+<!-- Build command properties -->
+	<static_str cost="210/2/0"/>
+	<static_str rollover_description="[[5243945]]Trains Clodhoppers - sturdy units that can be upgraded to stun enemies. Can be upgraded to Hunter's Lodge.[[]]"/>
+
+<!-- Race specific -->
+	<static_int regenerate_add="1"/>
+	<static_int regenerate_promille="2"/>
+	<static_str race_str="Race_Foresters"/>
+  <static_str rally_object_class="Forester_RallyPoint" /> 
+
+	<defaultcmd target="">
+		<cmd name="set_rally"/>
+	</defaultcmd>
+
+<!-- Interface -->
+	<value id="DisplayName" script="if(GetObjsInCircle(.pos, 50, .building_upgrade_class).count == 0) return Translate(.display_name); return Translate(GetClassStr(.building_upgrade_class, 'display_name'));"/>
+
+</class>

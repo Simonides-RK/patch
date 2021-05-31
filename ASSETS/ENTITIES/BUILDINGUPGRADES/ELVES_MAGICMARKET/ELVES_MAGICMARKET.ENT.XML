@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="_Elves_MagicMar" type="et" pass_file="Elves_MagicMarket.pass">
+<animlayer layer="0" duration="0" sync="1"/>
+<images>
+<image idx="1" file="layer2.rle" drawmode="player_color" remaping="none" rows="1" columns="1"/>
+<image idx="2" file="shadow.rle" drawmode="shadow" remaping="none" rows="1" columns="1"/>
+<image idx="3" file="collapse.rle" drawmode="player_color" remaping="none" rows="21" columns="1"/>
+<image idx="4" file="collapse shadow.rle" drawmode="shadow" remaping="none" rows="21" columns="1"/>
+<image idx="5" file="sml_death_spot.rle" drawmode="index" remaping="none" rows="1" columns="1"/></images>
+<points>
+<point idx="1" type="2" x="97" y="28"/>
+<point idx="2" type="2" x="-26" y="80"/>
+<point idx="3" type="2" x="-121" y="5"/>
+<point idx="4" type="2" x="121" y="-26"/>
+<point idx="5" type="2" x="-113" y="-54"/>
+<point idx="6" type="2" x="-91" y="56"/>
+<point idx="7" type="2" x="94" y="-82"/>
+<point idx="8" type="2" x="43" y="70"/>
+<point idx="9" type="2" x="-69" y="-114"/>
+<point idx="10" type="2" x="54" y="-130"/>
+<point idx="11" type="2" x="61" y="57"/>
+<point idx="12" type="2" x="78" y="42"/>
+<point idx="13" type="2" x="109" y="9"/>
+<point idx="14" type="2" x="116" y="-10"/>
+<point idx="15" type="2" x="118" y="-49"/>
+<point idx="16" type="2" x="108" y="-70"/>
+<point idx="17" type="2" x="84" y="-100"/>
+<point idx="18" type="2" x="69" y="-117"/>
+<point idx="19" type="2" x="22" y="76"/>
+<point idx="20" type="2" x="-2" y="83"/>
+<point idx="21" type="2" x="-49" y="77"/>
+<point idx="22" type="2" x="-72" y="71"/>
+<point idx="23" type="2" x="-105" y="40"/>
+<point idx="24" type="2" x="-118" y="24"/>
+<point idx="25" type="2" x="-128" y="-19"/>
+<point idx="26" type="2" x="-125" y="-40"/>
+<point idx="27" type="2" x="-116" y="-81"/>
+<point idx="28" type="2" x="-109" y="-103"/>
+<point idx="29" type="2" x="-94" y="-119"/>
+</points>
+<layers>
+<layer idx="1" name="main" image="1" z="1000" offsetx="-213" offsety="-260" sortoffsetx="-4" sortoffsety="1"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-213" offsety="-260" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" anim_idx="29" anim_frame="1"/>
+<state idx="2" name="sparuj" anim_idx="29" anim_frame="1"/>
+</states>
+<anims>
+<anim idx="17" name="sparuj" startstate="1" endstate="2" frames="3" duration="1" default_duration="100" action_time="0" step="0">
+<replace layer="1" image="1" offsetx="-213" offsety="-260" stillframe="0" />
+<replace layer="2" image="2" offsetx="-213" offsety="-260" stillframe="1" />
+<frame idx="2" duration="0"/>
+<frame idx="3" duration="1"/>
+</anim>
+<anim idx="29" name="dummy" startstate="1" endstate="1" frames="3" duration="1" default_duration="1" action_time="0" step="0">
+<replace layer="1" image="1" offsetx="-213" offsety="-260" stillframe="0" />
+<replace layer="2" image="2" offsetx="-213" offsety="-260" stillframe="1" />
+</anim>
+<anim idx="9" name="die" startstate="1" endstate="2" frames="23" duration="2100" default_duration="100" action_time="21" step="0">
+<replace layer="1" image="3" offsetx="-213" offsety="-260" stillframe="0" />
+<replace layer="2" image="4" offsetx="-213" offsety="-260" stillframe="0" />
+</anim>
+</anims>
+</entity>

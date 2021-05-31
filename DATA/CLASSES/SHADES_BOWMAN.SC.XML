@@ -1,0 +1,52 @@
+<class id="Shades_Bowman" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Shades_Bowman/Shades_Bowman.ent.xml">
+
+	<method sig="init" vs="data/subai/invisible_init.vs"/>
+	<method sig="spawn" vs="data/subai/shades_unit_spawn.vs"/>
+	<method sig="born" vs="data/subai/shades_unit_born.vs"/>
+	
+	<static_int range="450" min_range="2"/>
+	<static_int radius="20" selection_radius="25"/>
+	<static_int formation_radius="42" formation_priority="600"/>
+
+		
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[7289404]]Shades[[]]/[[7320405]]Shade Archer[[]]"/>
+
+	<static_str display_name="[[7320405]]Shade Archer[[]]" display_name_plural="[[7332189]]Shade Archers[[]]"/>
+
+	<static_int sight="500"/>
+	<static_int speed="130"/>
+
+	<static_int maxhealth="320" initial_damage="21" initial_armor="1"/>
+	<static_str cost="110/0/2"/>
+	<static_int independent_value="170"/>
+
+	<static_str damage_type="arrow"/>
+	<static_str defence_type = "medium"/>
+
+	<static_str rollover_description="[[7342896]]Shade Archers are invisible ranged units, perfect for disposing unsuspecting units, workers and even champions.[[]]"/>
+
+	<static_str projectile_class = "Shade_Bowman_Projectile"
+				projectile_class_building = "Shade_Bowman_Projectile"/>
+
+	<static_int	projectile_angle="0" 
+				projectile_dist = "0"/>
+				
+	<static_int champpoison_damage="20"/>
+	<static_int champpoison_duration="5000"/>
+
+
+	<static_str icon="Assets/Interface/Icons/shade archer.BMP"
+				portrait="assets/interface/icons/shade archer.rle"/>
+				
+	<static_str race_str="Race_Shades"/>
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="50" ai_hyper_protect_bellow_health="250"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+	<!-- AI -->
+	
+	<static_int constantly_idle_played="13"/>
+	<sounds
+		AnimAttack="Arrow_attack_"
+		command="Shade0"/>
+</class>

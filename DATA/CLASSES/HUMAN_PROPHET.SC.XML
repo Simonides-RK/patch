@@ -1,0 +1,71 @@
+﻿<class id="Human_Prophet" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Human_Shadowcaster/Human_Shadowcaster.ent.xml">
+
+	<method sig="init" vs="data/subai/human_prophet_init.vs"/>
+	<method sig="idle" vs="data/subai/human_prophet_idle.vs"/>
+	<method sig="attack" vs="data/subai/human_prophet_attack.vs"/>
+	<method sig="attack" vs="data/subai/human_prophet_advance.vs"/>
+	<method sig="advance" vs="data/subai/human_prophet_advance.vs"/>
+	<method sig="engage" vs="data/subai/human_prophet_engage.vs"/>
+	<method sig="move" vs="data/subai/peaceful_move.vs"/>
+	<method sig="stand_position" vs="data/subai/human_prophet_stand_position.vs" onfinish="data/subai/unit_stand_position_onfinish.vs"/>
+
+	<static_int range="400" min_range="2"/>			
+	<static_int radius="15" selection_radius="20"/>	
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6534873]]Shadow Mistress[[]]"/>											
+
+	<static_str display_name="[[6534873]]Shadow Mistress[[]]" display_name_plural="[[6549876]]Shadow Mistresses[[]]"/>
+
+	<value id="DamageType" script="str s; s = .damage_type; if ( .modal_button == .mb_invisibility ) s = 'none'; return 'assets/interface/weapons/'+ s +'.bmp';" />
+	<value id="DamageName" script="if ( .modal_button == .mb_invisibility ) return Translate('[[6553651]]Invisibility spell[[]]'); return Translate('[[6569500]]Spititual Fire spell[[]]');"/>
+	<value id="DamageTextValue" script="int b; str s, bd; b = 0; if ( .modal_button != .mb_invisibility ) b = .spiritual_fire_damage1; if ( b == 0 ) bd = Translate('[[4150622]]N/A[[]]'); else bd = b; s = '&lt;color 255 255 64&gt;' + Translate('[[4165677]]Damage:[[]]')     + ' &lt;color 255 255 255&gt;' + bd; return s;" />
+
+	<static_int sight="800"/>
+	<static_int speed="100"/>
+	<static_int maxhealth="410" initial_damage="0" initial_armor="2"/>
+
+	<static_str damage_type="magic"/>					
+	<static_str defence_type = "medium"/>
+
+	<static_str cost="160/4/2"/>
+	<static_int max_energy="400" initial_energy="60"/>
+	<static_str rollover_description="[[6573234]]Shadow Mistresses are wielders of dark magic, capable of casting invisibility in battle and using the spiritual energy of units bodies to damage enemies.[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/shadow mistres.BMP"
+				portrait="Assets/Interface/Icons/shadow mistress.rle"/>
+	<static_str	skyimage="assets/interface/sky_forester.bmp"/>
+	
+	<static_str race_str="Race_Humans"/>
+
+	<static_int energy_to_cast_needed="15"/>
+	<static_int energy_to_cast_needed_invoke="20"/>
+	<static_int time_between_casts="3000"/>
+	<static_int invisible_time_effect="20000"/>
+	
+	<static_int spiritual_fire_damage1="200"/>
+	<static_int spiritual_fire_radius1="150"/>
+	<static_int spiritual_fire_damage2="90"/>
+	<static_int spiritual_fire_radius2="90"/>
+	<static_int spiritual_fire_pause="2000"/>
+	<static_int spiritual_fire_effect="1000"/>
+	
+	<static_int weaken_health_bonus="110"/>
+	<static_int weaken_armor_bonus="1"/>
+	
+	<static_int check_for_target_time="400"/>
+	
+	<static_int mb_invisibility="4"/>
+	<static_int mb_spiritual_fire="5"/>
+	
+	<static_str spiritual_fire_sound="Prophet_Spiritual_Fire_"/>
+	<static_str invisibility_sound="Prophet_Invisibility_"/>
+	
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="50"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<!-- AI -->
+	<sounds
+		AnimDie="Shadow_mistress_death"
+		command="Mistress0"/>
+		
+	<!-- reserved_obj5 stores enemy to follow object -->
+</class>

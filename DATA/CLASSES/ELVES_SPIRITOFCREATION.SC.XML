@@ -1,0 +1,44 @@
+<class id="Elves_SpiritOfCreation" cpp_class="CVXUnit" parent="Peaceful" entity="Assets/Entities/Units/Elves_SpiritOfCreation/Elves_SpiritOfCreation.ent.xml">
+
+	<method sig="oninsidearea" vs="data/subai/elves_spirit_oninside.vs"/>
+
+	<static_int range="0" min_range="10"/>
+	<static_int radius="30" selection_radius="30"/>
+	<static_int formation_radius="42" formation_priority="500"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[4837050]]Elves[[]]/[[4964650]]Spirit of Creation[[]]"/>
+	<static_int constantly_idle_played="1"/>
+
+	<static_str display_name="[[4964650]]Spirit of Creation[[]]" display_name_plural="[[4978226]]Spirits of Creation[[]]"/>
+
+	<static_int maxhealth="2000"/>
+	<static_int sight="300"/>
+	<static_int speed="100"/>
+	<static_int legendary="1"/>
+
+	<static_int initial_damage="0"/>
+	<static_int initial_armor="0"/>
+	<static_int no_heal_health="0"/>
+	<static_int health_lost_factor="3"/>
+	<static_int spirit_heal_rate="30"/>
+	<static_int regenerate_promille="2"/>
+	
+	<static_str defence_type = "heavy"/>
+
+	<static_str cost="200/0/4"/>
+	<static_str rollover_description="[[4982855]]The Spirit of Creation regenerates the health of all friendly units around him, sacrificing his own health. One health point of his life restores #GetClassInt('Elves_SpiritOfCreation', 'health_lost_factor')# health of a friendly unit.[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/spirit of creation.bmp"
+				portrait="assets/interface/icons/spirit of creation.rle"/>
+
+	<static_str areacheck_type="all" areacheck_class="Unit"/>
+	<static_int areacheck_time="1000"/>
+	<static_str race_str="Race_Elves"/>
+
+	<static_int ai_prefer_as_concentrate_target = "2"/>	
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+	<static_int override_ai_value="6"/>	
+	<static_int ai_spirit_healer="1"/>	
+
+	<sounds
+		command="Spirit0"/>
+</class>

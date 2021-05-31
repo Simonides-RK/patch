@@ -1,0 +1,71 @@
+<class id="Darkling_Tower" cpp_class="CVXBuilding" parent="Tower" entity="assets/entities/Buildings/Darkling_Tower/Darkling_Tower.ent.xml">
+
+<!--
+	(copied from Darkling_BaseTownBuilding)
+	The 'being_built' method is for the building support.
+-->
+	<method sig="ondie" vs="data/subai/darkling_basetownbuilding_ondie.vs"/>
+	<method sig="oncancelbuild" vs="data/subai/darkling_building_oncancelbuild.vs" />
+	<method sig="being_built" vs="data/subai/darkling_basetownbuilding_being_built.vs"/>
+	<method sig="being_built_far" vs="data/subai/darkling_basetownbuilding_being_built_far.vs"/>
+	<method sig="setattacktarget" vs="data/subai/darkling_tower_setattacktarget.vs" verify="data/subai/darkling_tower_setattacktarget_verify.vs"/>
+	<method sig="init" vs="data/subai/darkling_tower_init.vs"/>
+
+	<behavior script="data/subai/darkling_tower_behavior.vs"/>
+	<behavior script="data/subai/darkling_magmatower_behavior.vs"/>
+
+	<static_str build_animation_obj="Darkling_Build_Tower_Anim"/>
+	<static_str build_flow_obj="Darkling_BuildingFlow"/>
+	<static_int flow_creation_delay="100"/>
+	<static_int range="420" min_range="0"/>
+
+	<static_str edittree_pos="[[755381]]Structures[[]]/[[3902715]]Darklings[[]]/[[4585347]]Spire[[]]"
+				skyimage="assets/interface/sky_dragon.bmp"
+				icon="assets/interface/icons/spire.BMP"
+				portrait="assets/interface/icons/spire.rle"/>
+
+	<static_str display_name="[[4585347]]Spire[[]]" display_name_plural="[[4599602]]Spires[[]]"/>
+	<static_int radius="64" selection_radius="80"/>
+
+	<static_int maxhealth="1000"/>
+	<static_int sight="450"/>
+
+	<static_str projectile_class="Darkling_Tower_Projectile"
+	            projectile_class_building="Darkling_Tower_Projectile"/>
+	<static_int	projectile_angle="0" projectile_dist="0"/>
+
+	<static_str damage_type="magic"/>
+	<static_int initial_damage="18"/> <!-- magma tower damage -->
+	<static_int flame_damage="30"/>
+	<static_int attack_duration="750"/>
+
+	<static_int leaves_height_cap="20" />
+	<static_int leaves_l3_height="0" />
+	<static_int leaves_l2_height="0" />
+	<static_int leaves_l1_height="-40" />
+	<static_int build_time="80000" />
+	<static_int foundation_layer="-1"/>
+
+	<static_str cost="200/0/0"/>
+	<static_str rollover_description="[[4602110]]Provides defence against enemies by casting flame waves. Can be upgraded to Crystal Spire for collecting gems and to Magma Spire or Ember Spire for additional firepower.[[]]"/>
+
+	<static_str dying_object_class="Darkling_Tower_Die"/>
+	<static_str building_spot="Assets/Entities/visuals/Building Spots/spot2.rle"/>
+
+	<static_str race_str="Race_Darklings"/>
+
+	<static_int crystalspire_collectrange="600"/>
+	<static_int crystalspire_showarearange="1200"/>
+
+	<member_obj user_target1=""/> <!-- used by first behavior script (guard tower) -->
+	<member_obj user_target2=""/> <!-- used by first behavior script (magma tower) -->
+	<member_int magma_upgrade=""/>
+
+	<defaultcmd target="Unit">
+		<cmd name="DarklingTower_SetAttackTarget"/>
+	</defaultcmd>
+
+<!-- Interface -->
+	<value id="DisplayName" script="if(GetObjsInCircle(.pos, 50, 'Darkling_TowerUpgrade_Crystal').count > 0) return Translate(GetClassStr('Darkling_TowerUpgrade_Crystal', 'display_name')); if(GetObjsInCircle(.pos, 50, 'Darkling_TowerUpgrade_Magma').count > 0) return Translate(GetClassStr('Darkling_TowerUpgrade_Magma', 'display_name')); if(GetObjsInCircle(.pos, 50, 'Darkling_TowerUpgrade_Ember').count > 0) return Translate(GetClassStr('Darkling_TowerUpgrade_Ember', 'display_name')); return Translate(.display_name);"/>
+
+</class>

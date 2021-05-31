@@ -1,0 +1,108 @@
+<class id="Forester_Fairy" cpp_class="CSSHero" parent="Hero" entity="Assets/Entities/Units/Forester_Fairy/Forester_Fairy.ent.xml">
+
+<method sig="init" vs="data/subai/forester_fairy_init.vs"/>
+<method sig="ghost_appear" vs="data/subai/forester_fairy_ghost_appear.vs"/>
+<method sig="onresurrect" vs="data/subai/forester_fairy_onresurrect.vs"/>
+<method sig="onexitarea" vs="data/subai/forester_fairy_onexit.vs"/>
+<method sig="onenterarea" vs="data/subai/forester_fairy_onenter.vs"/>
+<method sig="oninsidearea" vs="data/subai/forester_fairy_oninside.vs"/>
+<method sig="rage_impulse" vs="data/subai/forester_fairy_rage_impulse.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="mind_control" vs="data/subai/forester_fairy_mind_control.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<!--
+<method sig="mind_blend" vs="data/subai/forester_fairy_mind_blend.vs" onfinish="data/subai/hero_special_onfinish.vs"/> -->
+<method sig="pain_channeling" vs="data/subai/forester_fairy_pain_channeling.vs"/> <!-- called only when developed -->
+<method sig="illusion" vs="data/subai/forester_fairy_illusion.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+
+<static_str areacheck_type="all" areacheck_class="Unit"/>
+<static_int areacheck_time="500"/>
+
+<static_int range="400" min_range="2"/>			
+<static_int radius="20" selection_radius="25"/>	
+<static_int healthbaroffset="-80"/>
+<static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5082420]]Fairy[[]]"/>
+<static_str display_name="[[5082420]]Fairy[[]]" display_name_plural="[[5095906]]Fairies[[]]"/>
+<static_int maxhealth="350"/>
+<static_int speed="100"/>
+
+<static_str damage_type="magic"/>
+<static_int initial_damage="64"/>
+<static_int initial_armor="0"/>
+
+<static_int potion_health="35"/>	
+<static_int potion_damage="9"/>	
+<static_int potion_recharge="20"/>	
+<static_int potion_armor="1"/>	
+
+<static_int formation_priority="400"/>			
+<static_str icon="Assets/Interface/Icons/forester_fairy.bmp"/>
+<static_str largeicon="Assets/Interface/Icons/forester_fairy_large.bmp"/>
+<static_str	portrait="Assets/Interface/Icons/forester_fairy.rle"/>
+<static_str	skyimage="assets/interface/sky_forester.bmp"/>
+
+<static_str rollover_description="[[5103102]]The Fairy is a magical being unsurpassed in the art of illusion and telepathy through which she influences enemy minds and senses. A good addition for any army, she could make Sprite units far more effective.[[]]"/>
+
+<static_str projectile_class = "Forester_Fairy_Projectile"/>
+<static_str projectile_class_building = "Forester_Fairy_Projectile"/>
+<static_int	projectile_angle= "15"/>
+<static_int	projectile_dist = "35"/>
+
+<static_int spiritualize_units_quota="400"/>
+<static_int spiritualize_units_quota_uncontrollable="2400"/>
+<static_int spiritualize_unit_value="100"/>
+<static_int rage_impulse_radius="450"/>
+<static_int rage_time_effect="3000"/>
+<static_int mind_control_time="25000"
+			mindblend_at_health_perc="50"/>
+<static_int forced_empathy_damage="120"/>
+<static_int forced_empathy_duration="1000"/>
+<static_int pain_channeling_percent="75"/>
+<static_int pain_channeling_radius="650"/>
+<static_str pain_channeling_projectile="Forester_FairyPainChannelingProjectile"/>
+<static_int pain_channeling_time="1000"/>
+<static_int pain_channel_fdbk_pause="500"/>
+<static_int illusion_units="1"/>
+
+<static_str race_str="Race_Foresters"/>
+
+<member_int valid_for_spiritualization=""/>
+<member_int valid_for_spiritualization_uncontrollable=""/>
+<member_int pain_channel_damage=""/>
+<member_int last_pain_channel_feedback=""/>
+<member_int has_mind_blend=""/>
+<member_int mind_blend_just_developed=""/>
+
+	<sounds
+		AnimAttack1="Fairy_attack"
+		command="Fairy0"/>
+	<static_int constantly_idle_played="13"/>
+
+<static_str slot1_type="ring"/>
+<static_str slot2_type="ring"/>
+<static_str slot3_type="powerstone"/>
+<static_str slot4_type="wand"/>
+
+<static_str hero_ai_special_script="hero.fairy.vs"/>
+<!-- Before 1.41 -->
+<!--
+<static_str level1_skill1="Spiritualize"/>
+<static_str level1_skill2="Illusion"/>
+<static_str level1_skill3="Pain_Channeling"/>
+static_str level1_skill4="Rage_Impulse"/ 		- ??? can't use
+<static_str level2_skill1="Mind_Control"/>
+<static_str level2_skill2="Mind_Blend"/>
+<static_str level3_skill1="Forced_Empathy"/>
+-->
+
+<!-- New for 1.41 -->
+<static_str level1_skill1="Spiritualize"/>
+<static_str level1_skill2="Pain_Channeling"/>
+<static_str level2_skill1="Mind_Blend"/>
+<static_str level3_skill1="Forced_Empathy"/>
+	
+<!-- AI -->
+<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+<static_int ai_draw_back_if_disabled="1"/>
+<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+<!-- AI -->
+
+</class>

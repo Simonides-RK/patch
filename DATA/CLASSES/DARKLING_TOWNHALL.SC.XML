@@ -1,0 +1,66 @@
+<class id="Darkling_Townhall" cpp_class="CVXBuilding" parent="BaseTownhall" entity="assets/Entities/Buildings/Darkling_Townhall/Darkling_TownHall.ent.xml">
+        <method sig="init" vs="data/subai/darkling_townhall_init.vs" />
+        <method sig="idle" vs="data/subai/darkling_townhall_idle.vs" />
+        <method sig="train_hero" vs="data/subai/building_train_hero.vs" />
+        <method sig="upgrade_soulbond" vs="data/subai/upgrade.vs" onfinish="data/cmds/darkling_soulbond.vs" />
+        <method sig="ondie" vs="data/subai/darkling_townhall_ondie.vs" />
+        <behavior script="data/subai/darkling_townhall_spawn_behavior.vs" />
+        <behavior script="data/subai/darkling_townhall_repair_behavior.vs" />
+        <static_int support_points="6" />
+        <static_int sight="800" />
+        <!-- General -->
+        <static_str edittree_pos="[[755381]]Structures[[]]/[[3902715]]Darklings[[]]/[[4678596]]Town Hall[[]]"
+                                portrait="assets/interface/icons/darkling townhall.rle"
+                                skyimage="assets/interface/sky_dragon.bmp"/>
+        <static_str display_name="[[4683841]]Darkling Town Hall[[]]" display_name_plural="[[4697343]]Darkling Town Halls[[]]"/>
+        <static_int radius="150" selection_radius="150" />
+        
+        <static_int maxhealth="8000"/>
+        <static_int maxhealthafterlevel1="9000"/>
+        <static_int maxhealthafterlevel2="15000"/>
+        <static_int maxhealthafterlevel3="20000"/>
+		
+		<static_int hellraisedweapons_bonus_damage="15"/> <!-- percentage -->
+  		<static_int hellraisedweapons_bonus_attackspeed="10"/> <!-- percentage -->
+		
+        <static_str cost="500/0/0" />
+        <!-- needed for the repair -->
+        <!-- Building and build animation -->
+        <static_str dying_object_class="Darkling_Townhall_Die" />
+        <!-- Race specific -->
+        <static_str race_str="Race_Darklings" />
+        <static_str rally_object_class="Darkling_RallyPoint" />
+        <!-- Others -->
+        <static_str firesmoke0="Data/Particles/smoke01.part.xml" />
+        <static_str interface="queue, building_special, townhall" />
+        <static_int divineenlightment_rebate="40" />
+        <!-- percentage -->
+        <value id="SupportPoints" script="int i; i = .support_points; return '&lt;color 255 255 64&gt;' + Translate('[[4705975]]Population provided:[[]]') + ' &lt;color 255 255 255&gt;' + i;" />
+        <value id="GloryForNext" script="str s; int n; n = 1 + EnvReadInt(.player, 'Max_Soulwatchers'); if (n>7) n=7; if (EnvReadInt(.player, 'Max_Soulwatchers')>9) n=10; s = '&lt;color 255 255 64&gt;' + Translate('[[4710670]]Soulwatcher glory cost:[[]]') + '&lt;color 255 255 255&gt;'; if ( n &lt; 8 ) s = s + n; else s = s + Translate('[[4150622]]N/A[[]]'); return s;" />
+        <value id="PathToGlory" script="return GetPathToGlory(.player);" />
+        <value id="SoulwatcherSpawnTime" script="int t; t = .time_left; if ( t &lt;= 0 ) return ''; return '&lt;center&gt;&lt;color 255 255 64&gt;' + Translate('[[4720829]]Soulwatcher spawn after [[]]') + t + Translate('[[4734882]] sec[[]]');"/>
+        <static_int repair_check_time="2000" />
+        <static_int gold_repair_percent="30" />
+        <static_int min_gold_per_repair="1" />
+        <static_int health_repair="10" />
+        <static_int health_fract_repair="5" />
+        <static_int repair_range="1700" />
+        <static_int repair_sleep="1500" />
+        <!-- Darkling population system -->
+        <member_int soulwatchers="0" />
+        <member_int time_left="0" />
+        <member_int soulbond_upgraded="0" />
+        <member_obj repair_flow="" />
+        <member_obj repair_target="" />
+        <static_int spawn_interval="20000" />
+        <defaultcmd target="Building">
+                <cmd name="darkling_repair" />
+                <cmd name="set_rally" />
+        </defaultcmd>
+        <defaultcmd target="BaseGemsDeposit">
+                <cmd name="set_rally" />
+        </defaultcmd>
+        <defaultcmd target="">
+                <cmd name="set_rally" />
+        </defaultcmd>
+</class>

@@ -1,0 +1,111 @@
+<class id="Darkling_DarkMage" cpp_class="CVXUnit" parent="BaseDarklingUnit" entity="assets/entities/units/Darkling_DarkMage/Darkling_DarkMage.ent.xml">
+
+	<method sig="init"						vs="data/subai/darkling_darkmage_init.vs"/>
+	<method sig="idle"						vs="data/subai/darkling_darkmage_idle.vs"/>
+	<method sig="ondie"						vs="data/subai/darkling_darkmage_ondie.vs"/>
+	<method sig="doattack"					vs="data/subai/darkling_darkmage_doattack.vs"/>
+	<method sig="attack"					vs="data/subai/darkling_darkmage_attack.vs" verify="data/subai/unit_attack_verify.vs"/>
+	<method sig="engage"					vs="data/subai/darkling_darkmage_engage.vs"/>
+	<method sig="engage_unit_type"			vs="data/subai/darkling_darkmage_engage_unit_type.vs"/>
+	<method sig="stand_position"			vs="data/subai/darkling_darkmage_stand_position.vs" onfinish="data/subai/unit_stand_position_onfinish.vs"/>
+	<method sig="advance"					vs="data/subai/darkling_darkmage_advance.vs"/>
+	<method sig="attack"					vs="data/subai/darkling_darkmage_advance.vs"/>
+	<method sig="behavior"					vs="data/subai/darkling_darkmage_behavior.vs"/>
+	<method sig="gold_essence"				vs="data/subai/darkling_darkmage_gold_essence.vs" onfinish="data/subai/darkling_darkmage_gold_essence_onfinish.vs"/>  
+	<method sig="build_far_from_townhall"	vs="data/subai/darkling_dark_mage_build_far_from_townhall.vs"/>
+	<method sig="repair"            vs="data/subai/darkling_darkmage_repair.vs"
+	                                verify="data/subai/darkling_darkmage_repair_verify.vs"/>
+	<method sig="continue_building" vs="data/subai/darkling_dark_mage_continue_building.vs" 
+	                                verify="data/subai/darkling_dark_mage_continue_building_verify.vs"
+	                                onfinish="data/subai/darkling_dark_mage_continue_building_onfinish.vs"/>
+        <method sig="unitrestoration" vs="data/subai/HUMAN_WORKER_RESTORATION.VS" />
+        <behavior script="data/subai/darkling_darkmage_behavior.vs"/>
+	<value id="DamageType" script="str s; s = .damage_type; if ( .modal_button == .mb_raise_spirits ) s = 'none'; return 'assets/interface/weapons/'+ s +'.bmp';" />
+	<value id="DamageName" script="str s; s = '[[4137465]]Mind Twist spell[[]]'; if ( .modal_button == .mb_raise_spirits ) s = '[[4147989]]Raise Spirits spell[[]]';  return Translate(s);" />
+	<value id="DamageTextValue" script="int b; str bd, s; b = 0; if ( .modal_button != .mb_raise_spirits ) b = .mind_twist_damage; if ( b == 0 ) bd = Translate('[[4150622]]N/A[[]]'); else bd = b; s = '&lt;color 255 255 64&gt;' + Translate('[[4165677]]Damage:[[]]')     + ' &lt;color 255 255 255&gt;' + bd; return s;" />
+
+	<static_int radius="20" selection_radius="20"/>
+	<static_int formation_radius="35" formation_priority="400"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4171670]]Dark Mage[[]]"/>
+
+	<static_str display_name="[[4171670]]Dark Mage[[]]" display_name_plural="[[4182735]]Dark Mages[[]]"/>
+
+	<static_int sight="650"/>
+	<static_int speed="90"/>
+	<static_int range="400" min_range="2"/>
+
+	<static_int maxhealth="420" initial_damage="0" initial_armor="0"/>
+	
+	<static_int max_energy="300"/>
+	<static_int initial_energy="200"/>
+	<static_str cost="150/0/2"/>
+
+	<static_str damage_type="magic"/>
+	<static_str defence_type = "heavy"/> 
+
+	<static_str rollover_description="[[4192349]]Dark Mages can use their magic to forge and repair Darkling buildings and have a spell that deals damage to mounted units. Can be upgraded to summon Gold Spirits from a gold deposit and to raise Spirits from the bodies of dead units.[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/dark mage.BMP"
+				portrait="Assets/Interface/Icons/dark mage.rle"
+				skyimage="assets/interface/sky_dragon.bmp"/>
+
+	<static_str race_str="Race_Darklings"/>
+	
+	<static_int mb_mind_twist="5"/>
+	<static_int mb_raise_spirits="6"/>
+	<static_int mb_unholy_eye="7"/>
+	
+	<static_int mind_twist_damage="25"/>
+	<static_int mind_twist_multiplyer="2"/>
+	
+	<static_int mind_twist_timeout="9000"/>
+	<static_int mind_twist_energy="20"/>
+	
+	<static_int raise_spirits_pause="1000"/>
+	<static_int raise_spirits_effect="1000"/>
+	<static_int raise_spirits_energy="7"/>
+	
+	<static_int gold_essence_action_time="21000"/>
+	
+	<static_int build_repair_distance="150"/>
+	
+	<!-- ypsilon: upg bonuses  -->
+	<static_int unholy_armor_bonus="4"/>	
+	
+	<!-- Repair is per animation. Animation time is 1500ms. -->
+	<static_int gold_repair_percent="30"/>
+	<static_int min_gold_per_repair="1"/>
+	<static_int health_repair="15"/>
+	<static_int health_fract_repair="10"/>
+	
+	<static_int check_for_target_time="400"/>
+	
+	<member_obj gold_deposit=""/>
+	
+	<defaultcmd target="BaseTownBuilding">
+		<cmd name="repair"/>
+		<cmd name="darkmage_continue_building"/>
+	</defaultcmd>
+	
+	<defaultcmd target="Darkling_Townhall">		
+		<cmd name="repair"/>
+	</defaultcmd>
+
+	<defaultcmd target="Unit">
+		<cmd name="attack"/>
+		<cmd name="follow"/>
+	</defaultcmd>
+	
+	<static_str raise_spirits_sound="Dark_Mage_Raise_Spirits_"/>
+	<static_str mind_twist_sound="Dark_Mage_Mind_Twist_"/>
+	<static_str repair_building_sound="Dark_Mage_Repair_Building_"/>
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<!-- AI -->	
+	<sounds
+		AnimDie="Darkling_Unit_death"
+		command="Darkmage0"/>
+		
+	<!-- reserved_obj5 stores enemy to follow object -->
+</class>

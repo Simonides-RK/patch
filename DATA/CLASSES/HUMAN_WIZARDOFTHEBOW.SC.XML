@@ -1,0 +1,149 @@
+﻿<class id="Human_WizardOfTheBow" cpp_class="CSSHero" parent="Hero" entity="assets/entities/units/Human_WizardOfTheBow/Human_WizardOfTheBow.ent.xml">
+
+	<method sig="reequip" vs="data/subai/human_wizardofthebow_reequip.vs" onfinish="data/subai/human_wizardofthebow_special_onfinish.vs"/>
+	<method sig="cocoon" vs="data/subai/human_wizardofthebow_cocoon.vs" onfinish="data/subai/human_wizardofthebow_special_onfinish.vs"/>
+	<method sig="flare" vs="data/subai/human_wizardofthebow_flare.vs" onfinish="data/subai/human_wizardofthebow_special_onfinish.vs"/>
+	<method sig="starstorm" vs="data/subai/human_wizardofthebow_starstorm.vs" onfinish="data/subai/human_wizardofthebow_starstorm_onfinish.vs"/>
+	<method sig="build_far_from_townhall" vs="data/subai/human_wizardofthebow_build_shelter.vs" onfinish="data/subai/human_wizardofthebow_build_shelter_onfinish.vs"/>
+	<method sig="build_crystal_tower" vs="data/subai/human_wizardofthebow_build_crystal_tower.vs" onfinish="data/subai/human_wizardofthebow_build_crystal_tower_onfinish.vs"/>
+	<method sig="leave_crystal_tower" vs="data/subai/human_wizardofthebow_leave_crystal_tower.vs" onfinish="data/subai/human_wizardofthebow_special_onfinish.vs"/>
+	<method sig="idle" vs="data/subai/human_wizardofthebow_idle.vs"/>
+	<method sig="set_the_target" vs="data/subai/human_wizardofthebow_set_the_target.vs" verify="data/subai/human_wizardofthebow_set_the_target_verify.vs"/>
+	<method sig="post_teleport" vs="data/subai/human_wizardofthebow_post_teleport.vs"/>
+	<method sig="ghost_appear" vs="data/subai/human_wizardofthebow_ghost_appear.vs"/>
+	<method sig="onresurrect" vs="data/subai/human_wizardofthebow_onresurrect.vs"/>
+	
+	<static_str damage_type="arrow"/>	
+	<static_int maxhealth="450"/>
+	<static_int initial_damage="36"/>
+	<static_int initial_armor="1"/>
+	<static_int speed="120"/>
+
+	<static_int potion_health="40"/>	
+	<static_int potion_damage="6"/>	
+	<static_int potion_recharge="15"/>	
+	<static_int potion_armor="1"/>		
+
+	<static_int range="400" min_range="2"/>
+
+	<static_int radius="20" selection_radius="25"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6858561]]Wizard Of The Bow[[]]"/>
+	<static_str display_name="[[6858561]]Wizard Of The Bow[[]]" display_name_plural="[[6858561]]Wizard Of The Bow[[]]"/>
+	
+	<static_str projectile_class="Human_WizardOfTheBow_Projectile"/>
+	<static_str	projectile_class_building="Human_WizardOfTheBow_Projectile"/>
+	<static_int	projectile_angle="15"/>
+	<static_int	projectile_dist="40"/>
+	<static_str icon="Assets/Interface/Icons/wizard of the bow.BMP"/>
+	<static_str largeicon="Assets/Interface/Icons/wizard of the bow large.BMP"/>
+	<static_str	portrait="Assets/Interface/Icons/wizard of the bow.rle"/>
+
+	<static_str race_str="Race_Humans"/>
+
+	<static_str rollover_description="[[6865744]]A very versatile champion, the Wizard of the Bow has a plethora of aggressive, defensive and scouting skills. With his protective ethereal buildings and ways to slow the enemy the Wizard is ideal for supporting your Longbowmen.[[]]"/>
+
+	<static_int reequip_count="4"/>
+	<static_str reequip_class1="Human_Pikeman"/>
+	<static_str reequip_class2="Human_Longbowman"/>
+	<static_int reequip_min_dist_to_cast="700"/>
+	<static_int reequip_range="300"/>
+	<static_int reequip_feedback_time="1000"/>
+	<static_int reequip_wait_time_a_bit="700"/>
+
+	<static_int electrostatic_damage="100"/>
+	<static_int electrostatic_delay="3000"/>
+	<static_int electrostatic_range="350"/>
+	<static_int electrostatic_duration="60000"/>
+	<static_str electro_projectile="Human_WizardOfTheBow_ElectroProjectile"/>
+
+	<static_int flare_range="2400"/>
+	<static_int flare_dmg_inc_percent="40"/>
+	<static_int flare_lifetime="45000"/>
+
+	<static_int starstorm_range="200"/> <!-- ATTN: Changing this won't affect the value! It's in the 'sight' of the Human_WizardOfTheBow_StarStorm class! -->
+	<static_int starstorm_cast_range="500"/>
+	<static_int starstorm_dmg_per_sec="40"/>
+	<static_int starstorm_lifetime="15000"/>
+	<static_int starstorm_slowdown_percent="10"/>
+	<static_int moving_reduction="20"/>  <!--This is his amount of damage reduction/hit from "Evasion" while using hailstorm. not percentage! -->
+
+	<member_obj starstorm=""/>
+
+	<static_int frostarrows_additionaltgts="4"/>
+	<static_int frostarrows_additionaltgts_seekradius="250"/>
+	<static_int frostarrows_slowdown_percent="33"/>
+	<static_int frostarrows_damage_per_sec="6"/>
+	<static_int frostarrows_freeze_duration="3500"/>
+	<static_str frostarrows_projectileclass="Human_Wizard_FrostArrow"/>
+	<static_str frostarrows_minor_projectileclass="Human_Wizard_FrostArrow_Minor"/>
+	
+	<static_int crystal_tower_range_inc="300"/>
+	<static_int crystal_tower_dmg_inc="15"/>
+	<static_int crystal_tower_min_range="100"/>
+	
+	<static_int shelter_range="1500"/>
+	<static_int shelter_radius="300"/>
+
+	<static_str slot1_type="bow"/>
+	<static_str slot2_type="helm"/>
+	<static_str slot3_type="powerstone"/>
+	<static_str slot4_type="cloak"/>
+	
+	<static_int shadow_layer="1"/>
+	
+	<defaultcmd target="">
+		<cmd name="move"/>
+	</defaultcmd>
+
+	<defaultcmd target="Unit">
+		<cmd name="set_the_target"/>
+		<cmd name="attack"/>
+		<cmd name="follow"/>
+	</defaultcmd>
+
+	<defaultcmd target="Hero">
+		<cmd name="attack"/>
+	</defaultcmd>
+
+	<defaultcmd target="ItemHolder">
+		<cmd name="getitems"/>
+	</defaultcmd>
+	
+	<defaultcmd target="Building">
+		<cmd name="set_the_target"/>
+		<cmd name="attack"/>
+	</defaultcmd>
+
+	
+
+	<member_int on_crystal_tower=""/>
+	<member_obj next_target=""/>
+	<member_obj crystal_tower=""/>
+	<member_int teleported_on_tower=""/>
+	<member_int restore_sight_on_ressurect=""/>
+
+	<static_str hero_ai_special_script="hero.wizardofbow.vs"/>
+
+	<!-- Before 1.41 -->
+	<!--
+	<static_str level1_skill1="Crystal_Tower"/>
+	<static_str level1_skill2="Frost_Arrows"/>
+	<static_str level1_skill3="Flare"/>
+	<static_str level2_skill1="StarStorm"/>
+	<static_str level3_skill1="ElectrostaticCocoon"/>	
+	-->
+
+	<!-- New for 1.41 -->
+	<static_str level1_skill1="Crystal_Tower"/>
+	<static_str level1_skill2="Flare"/>
+	<static_str level2_skill1="StarStorm"/>
+	<static_str level3_skill1="ElectrostaticCocoon"/>
+	
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+	<!-- AI -->
+	<sounds
+		command="Bow0"/>
+</class>

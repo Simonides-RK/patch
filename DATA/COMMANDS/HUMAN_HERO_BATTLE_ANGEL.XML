@@ -1,0 +1,201 @@
+<commands>
+
+<!-- Ivko: Texts edited, 23.02.2005. Please don't remove this comment! -->
+
+<cmd id="Develop_Salvation"
+	template_cmd="template_develop_hero_level_2"
+	name="[[15411395]]Learn Altar of @Salvation[[]]"
+	button="human_salvation.bmp"
+	position="17"
+	toggle_tab="1"
+	rollover_param="[[15421856]]Creates the Altar of Salvation. Friendly units around Battle Angel that are killed outside of the Altar's area are reborn near the Altar at #GetClassInt('Human_BattleAngel', 'salvation_heal_percent')#% of their health points.[[]]"
+	param="Skill Salvation, ManaCost 120, MaxMana 180"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="Salvation"
+  name="[[15430205]]Altar of @Salvation[[]]"
+	button="human_salvation.bmp"
+	position="13"
+	enabled="0"
+	rollover_param="[[15421856]]Creates the Altar of Salvation. Friendly units around Battle Angel that are killed outside of the Altar's area are reborn near the Altar at #GetClassInt('Human_BattleAngel', 'salvation_heal_percent')#% of their health points.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="salvation"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	
+	select_building_place_drag_object="Area_BattleAngel_AltarOfSalvation"
+	select_building_place_drag_script="data/cmds/dragscript_altarofsalvation.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_battleangel_altar_salvation.vs"
+	selecttarget_cursor_invalid="cantselect"
+	selecttarget_text="[[11801192]]Select target location[[]]"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="Develop_AltarOfHealing"
+	template_cmd="template_develop_hero_level_1"
+	name="[[15446552]]Learn Al@tar Of Healing[[]]"
+	button="altar of healing.bmp"
+	position="13"
+	toggle_tab="1"
+	rollover_param="[[15452843]]Creates an Altar of Healing that restores the health of all friendly units around it by #GetClassInt('Human_AltarOfHealing','area_heal_rate')# per second.[[]]"
+	param="Skill AltarOfHealing, ManaCost 90, MaxMana 135"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="AltarOfHealing"
+  name="[[15468882]]Al@tar Of Healing[[]]"
+	button="altar of healing.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[15452843]]Creates an Altar of Healing that restores the health of all friendly units around it by #GetClassInt('Human_AltarOfHealing','area_heal_rate')# per second.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="altarofhealing"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+
+	select_building_place_drag_object="Area_BattleAngel_AltarOfHealing"
+	select_building_place_drag_script="return '';"
+	selecttarget_verifyscript="data/cmds/selectverify_battleangel_altar_passable.vs"
+	selecttarget_cursor_invalid="cantselect"
+	selecttarget_text="[[15475346]]Select a place for the Altar[[]]"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="Develop_GuardianSpirit"
+	template_cmd="template_develop_hero_level_1"
+	name="[[15488091]]Learn G@uardian Spirit[[]]"
+	button="human_guardian_spirit.bmp"
+	position="15"
+	toggle_tab="1"
+	rollover_param="[[15499989]]Protects a friendly unit from damage. Absorbs #GetClassInt('Human_BattleAngel', 'guardian_absorb')# points of damage. However, the protected unit still suffers at least 1 damage per attack.[[]]"
+	param="Skill GuardianSpirit, ManaCost 90, MaxMana 225"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="GuardianSpirit"
+  name="[[15508717]]G@uardian Spirit[[]]"
+	button="human_guardian_spirit.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[15499989]]Protects a friendly unit from damage. Absorbs #GetClassInt('Human_BattleAngel', 'guardian_absorb')# points of damage. However, the protected unit still suffers at least 1 damage per attack.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="guardianspirit"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	selecttarget_verifyscript="data/cmds/selectverify_friendly_unit.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="Develop_LightningShield"
+	template_cmd="template_develop_hero_level_1"
+	name="[[15512016]]Learn @Lightning Shield[[]]"
+	button="human_lighting_shield.bmp"
+	position="14"
+	toggle_tab="1"
+	rollover_param="[[15524087]]Creates a lightning shield around the chosen unit. Nearby enemies that attack the unit are dealt #GetClassInt('Human_BattleAngel', 'lightningshield_damage')# damage per attack by the shield.[[]]"
+	param="Skill LightningShield, ManaCost 90, MaxMana 225"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="LightningShield"
+  name="[[15533693]]@Lightning Shield[[]]"
+	button="human_lighting_shield.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[15524087]]Creates a lightning shield around the chosen unit. Nearby enemies that attack the unit are dealt #GetClassInt('Human_BattleAngel', 'lightningshield_damage')# damage per attack by the shield.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="lightningshield"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	selecttarget_verifyscript="data/cmds/selectverify_friendly_unit.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="Develop_MagicExposure"
+	template_cmd="template_develop_hero_level_1"
+	name="[[15540052]]Learn Magic E@xposure[[]]"
+	button="human_magic_exposure.bmp"
+	position="16"
+	toggle_tab="1"
+	rollover_param="[[15558371]]Causes all enemy units around the Battle Angel to receive 50% more damage from magical attacks.[[]]"
+	param="Skill MagicExposure, ManaCost 0, MaxMana 0, DevScript data/subai/human_battleangel_magicexposure.vs, UndevScript data/subai/human_battleangel_magicexposure_undev.vs"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="MagicExposure"
+  name="[[15560373]]Magic E@xposure[[]]"
+	button="human_magic_exposure.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[15558371]]Causes all enemy units around the Battle Angel to receive 50% more damage from magical attacks.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="Develop_MagicSwords"
+	template_cmd="template_develop_hero_level_2"
+	name="[[15579141]]Learn Magic S@words[[]]"
+	button="magic swords.BMP"
+	position="18"
+	toggle_tab="1"
+	rollover_param="[[15582798]]Allows Swordsmen and Paladins around the Champion to temporarily use a magical ranged attack dealing the same amount of damage as normal.[[]]"
+	param="Skill MagicSwords, ManaCost 90, MaxMana 135"
+>
+	<src obj="Human_BattleAngel"/>
+
+</cmd>
+
+<cmd id="MagicSwords"
+  name="[[15599294]]Magic S@words[[]]"
+	button="magic swords.BMP"
+	position="13"
+	enabled="0"
+	rollover_param="[[15582798]]Allows Swordsmen and Paladins around the Champion to temporarily use a magical ranged attack dealing the same amount of damage as normal.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="magicswords"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="Develop_LightningStorm"
+	template_cmd="template_develop_hero_level_3"
+	name="[[15605644]]Learn L@ightning Storm[[]]"
+	button="lightning storm.bmp"
+	position="19"
+	toggle_tab="1"
+	rollover_param="[[15617729]]Makes a rain of lightning bolts fall from the heavens, striking each of your units near the Battle Angel. Each lightning bolt deals #GetClassInt('Human_BattleAngel', 'lightningstorm_damage_initial')# damage to your unit and #GetClassInt('Human_BattleAngel', 'lightningstorm_damage')# damage to each enemy unit and building around it.[[]]"
+	param="Skill LightningStorm, ManaCost 240, MaxMana 240"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+<cmd id="LightningStorm"
+  name="[[15622799]]L@ightning Storm[[]]"
+	button="lightning storm.bmp"
+	position="13"
+	enabled="0"
+	rollover_param="[[15617729]]Makes a rain of lightning bolts fall from the heavens, striking each of your units near the Battle Angel. Each lightning bolt deals #GetClassInt('Human_BattleAngel', 'lightningstorm_damage_initial')# damage to your unit and #GetClassInt('Human_BattleAngel', 'lightningstorm_damage')# damage to each enemy unit and building around it.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="lightningstorm"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Human_BattleAngel"/>
+</cmd>
+
+</commands>

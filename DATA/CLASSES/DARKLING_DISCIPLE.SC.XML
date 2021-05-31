@@ -1,0 +1,47 @@
+<class id="Darkling_Disciple" cpp_class="CVXUnit" parent="BaseDarklingUnit" entity="assets/entities/units/Darkling_Disciple/Darkling_Disciple.ent.xml">
+	
+	<method sig="init" vs="data/subai/darkling_disciple_init.vs"/>
+	<method sig="ondie" vs="data/subai/darkling_disciple_ondie.vs"/>
+
+	<static_int range="200" min_range="2" />
+	<static_int radius="20" selection_radius="25" />
+	<static_int formation_radius="35" formation_priority="400"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4261487]]Disciple[[]]" />
+	<static_str display_name="[[4261487]]Disciple[[]]" display_name_plural="[[4278812]]Disciples[[]]" />
+
+	<static_int sight="600" />
+	<static_int speed="90" />
+	<static_int air_range_add="200"/>
+
+	<static_int maxhealth="350" initial_damage="23" initial_armor="1"/>
+
+	<static_str damage_type="axe" />
+	<static_str defence_type="medium" />
+
+	<static_str cost="75/0/2" />
+
+	<static_str projectile_class="Darkling_DiscipleAxe" />
+	<static_str projectile_class_building="Darkling_DiscipleAxe" />
+	<static_int projectile_angle="-15" />
+	<static_int projectile_dist="20" />
+	<static_str rollover_description="[[4286287]]Disciples are standard Darkling units, using throwing axes as their weapon. Can be upgraded to increase their health and to have thunderbolts fall upon their enemies.[[]]" />
+	<static_str icon="Assets/Interface/Icons/disciple.BMP" portrait="assets/interface/icons/disciple.rle"
+		skyimage="assets/interface/sky_dragon.bmp" />
+
+	<static_str race_str="Race_Darklings" />
+	
+	<static_int strengthoffaith_bonus="180" />
+	<static_int thundercall_damage="5" /> <!-- percentage -->
+	<static_int thundercall_chance="18" /> <!-- percentage -->
+	
+	<static_str thundercall_sound="Disciple_Thundercall_"/>
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+	<!-- AI -->	
+	<sounds
+		AnimAttack="Darkling_Disciple_attack"
+		AnimDie="Darkling_Unit_death"
+		command="Disciple0"/>
+</class>

@@ -1,0 +1,212 @@
+<commands>
+
+<!-- Ivko: Texts edited, 10.03.2005. Please don't remove this comment! -->
+
+<cmd id="train_BattleAngel"
+	template_cmd="template_train_hero"
+	name="[[16381694]]Call Battle @Angel[[]]"
+	button="battle angel.bmp"
+	icon="Assets/Interface/Icons/battle angel.bmp"
+	position="21"
+	toggle_tab="2"
+	param="Human_BattleAngel"
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="train_WitchQueen"
+	template_cmd="template_train_hero"
+	name="[[16390221]]Call Witch @Queen[[]]"
+	button="witch queen.BMP"
+	icon="Assets/Interface/Icons/witch queen.BMP"
+	position="22"
+	toggle_tab="2"
+	param="Human_WitchQueen"
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="train_WizardOfTheBow"
+	template_cmd="template_train_hero"
+	name="[[16406619]]Call @Wizard of the Bow[[]]"
+	button="human_wizard_of_the_bow.bmp"
+	icon="Assets/Interface/Icons/wizard of the bow.BMP"
+	position="23"
+	toggle_tab="2"
+	param="Human_WizardOfTheBow"
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="train_WindRider"
+	template_cmd="template_train_hero"
+	name="[[16418565]]Call Win@d Rider[[]]"
+	button="wind raider.BMP"
+	icon="Assets/Interface/Icons/whind raider.BMP"
+	position="24"
+	toggle_tab="2"
+	param="Human_WindRider"
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="train_HumanWorker"
+	template_cmd="template_train"
+	dispatch_param="train"
+	name="[[16429173]]Train @Peasant[[]]"
+	button="human worker.BMP"
+	icon="Assets/Interface/Icons/human worker.BMP"
+	position="2"
+	rollover_param=""
+	param="Human_Worker"
+	execdelay="20000"
+>
+	<src obj="Human_Townhall"/>
+	<src obj="Human_TradePost"/>
+</cmd>
+
+<cmd id="train_Monk"
+	template_cmd="template_train"
+	dispatch_param="train"
+	name="[[16434603]]Train @Monk[[]]"
+	button="priest.bmp"
+	icon="Assets/Interface/Icons/priest.bmp"
+	position="5"
+	rollover_param=""
+	param="Human_Monk"
+	execdelay="10000"
+>
+	<src obj="Human_Cathedral"/>
+</cmd>
+
+<cmd id="train_Oracle"
+	template_cmd="template_train"
+	dispatch_param="train"
+	name="[[16447847]]Train @Oracle[[]]"
+	button="oracle.BMP"
+	icon="Assets/Interface/Icons/oracle.BMP"
+	position="6"
+	rollover_param=""
+	param="Human_Oracle"
+	execdelay="15000"
+>
+	<src obj="Human_Cathedral"/>
+</cmd>
+
+<cmd id="train_Paladin"
+	template_cmd="template_train"
+	dispatch_param="train"
+	name="[[16457577]]Train Pala@din[[]]"
+	button="paladin.bmp"
+	icon="Assets/Interface/Icons/paladin.bmp"
+	position="8"
+	rollover_param=""
+	param="Human_Paladin"
+	execdelay="30000"
+	requirements="Human_CathedralUpgrade : 1"
+>
+	<src obj="Human_Barracks"/>
+</cmd>
+
+<cmd id="train_Pikeman"
+	template_cmd="template_train"
+	dispatch_param="train"
+	name="[[16462891]]Train @Pikeman[[]]"
+	button="pikeman.BMP"
+	icon="Assets/Interface/Icons/pikeman.BMP"
+	position="5"
+	rollover_param=""
+	param="Human_Pikeman"
+	execdelay="10000"
+>
+	<src obj="Human_Barracks"/>
+</cmd>
+
+<cmd id="train_Swordsman"
+	template_cmd="template_train"
+	dispatch_param="train"
+	name="[[16471686]]Train @Swordsman[[]]"
+	button="swordsman.BMP"
+	icon="Assets/Interface/Icons/swordsman.BMP"
+	position="6"
+	rollover_param=""
+	param="Human_Swordsman"
+	execdelay="12000"
+	requirements="upgrade_HumanLevel1"
+>
+	<src obj="Human_Barracks"/>
+</cmd>
+
+<cmd id="train_Longbowman"
+	template_cmd="template_train"
+	dispatch_param="train"
+	name="[[16486247]]Train @Longbowman[[]]"
+	button="longbowman.BMP"
+	icon="Assets/Interface/Icons/longbowman.BMP"
+	position="7"
+	rollover_param=""
+	param="Human_Longbowman"
+	requirements="Human_BarracksUpgrade : local"
+	execdelay="15000"
+>
+	<src obj="Human_Barracks"/>
+</cmd>
+
+<cmd id="train_Cavalry"
+	template_cmd="template_train"
+	dispatch_param="train_cavalry"
+	name="[[16497777]]Train S@quire[[]]"
+	button="light raider.bmp"
+	icon="Assets/Interface/icons/light raider.bmp"
+	position="5"
+	rollover_param=""
+	param="Human_Cavalry"
+	execdelay="20000"
+>
+	<src obj="Human_Stable"/>
+</cmd>
+
+<cmd id="train_HeavyCavalry"
+	template_cmd="template_train"
+	dispatch_param="train"
+	name="[[16509660]]Train @Knight[[]]"
+	button="heavy knight.bmp"
+	icon="Assets/Interface/icons/heavy knight.bmp"
+	position="6"
+	rollover_param=""
+	param="Human_HeavyCavalry"
+	execdelay="40000"
+	requirements="upgrade_HeavyCavalry_AdvArmor"
+>
+	<src obj="Human_Stable"/>
+</cmd>
+
+<cmd id="train_Witch"
+	template_cmd="template_train"
+	dispatch_param="train"
+	name="[[16510351]]Train @Witch[[]]"
+	button="witch.BMP"
+	icon="Assets/Interface/icons/witch.BMP"
+	position="5"
+	rollover_param=""
+	param="Human_Witch"
+	execdelay="35000"
+>
+	<src obj="Human_WitchHut"/>
+</cmd>
+
+<cmd id="train_Prophet"
+	template_cmd="template_train"
+	dispatch_param="train"
+	name="[[16527317]]Train Shadow @Mistress[[]]"
+	button="shadow mistres.BMP"
+	icon="Assets/Interface/Icons/shadow mistres.BMP"
+	position="6"
+	rollover_param=""
+	param="Human_Prophet"
+	execdelay="35000"
+>
+	<src obj="Human_WitchHut"/>
+</cmd>
+
+</commands>

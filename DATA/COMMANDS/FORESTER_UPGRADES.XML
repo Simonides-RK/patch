@@ -1,0 +1,437 @@
+<commands>
+
+<!-- Ivko: Texts edited, 21.02.2005. Please don't remove this comment! -->
+
+<cmd id="upgrade_ForesterLevel1"
+        template_cmd="template_upgrade"
+        verifier_script="data/cmds/upgrade_verify_townhallupgrade1.vs"
+        param="data/cmds/townhall_upgrade.vs"
+
+        name="[[14862905]]Seed D@istribution[[]]"
+        rollover_param="[[14877670]]First Forester upgrade. \n\n Allows Workers to plant buildings for resource collection and defence away from the Forester Town Hall and allows the training of first level units in your colonies.[[]]"
+        button="forester_seed_distribution.bmp"
+        icon="Assets/Interface/Icons/forester_seed_distribution.bmp"
+        position="4"
+        execdelay="30000"
+        cost_script="return '200/10/0/0';"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_ForesterLevel2"
+        template_cmd="template_upgrade"
+        verifier_script="data/cmds/upgrade_verify_townhallupgrade2.vs"
+        param="data/cmds/townhall_upgrade.vs"
+
+        name="[[14889906]]S@piritual Growth[[]]"
+        rollover_param="[[14895515]]Second Forester upgrade. \n\n Enables the development of additional Forester units, buildings and upgrades.[[]]"
+        button="forester_spiritual_growth.bmp"
+        icon="Assets/Interface/Icons/forester_spiritual_growth.bmp"
+        position="4"
+        execdelay="120000"
+        cost_script="return '600/20/0/0';"
+        requirements="upgrade_ForesterLevel1"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_ForesterLevel3"
+        template_cmd="template_upgrade"
+        verifier_script="data/cmds/upgrade_verify_townhallupgrade3.vs"
+        param="data/cmds/townhall_upgrade.vs"
+
+        name="[[14903886]]Wa@y of the Moon[[]]"
+        rollover_param="[[14912742]]Third Forester upgrade. \n\n Allows the training of second level units in your colonies and enables the development of additional Forester units, buildings and upgrades.[[]]"
+        button="forester_way_of_the_moon.bmp"
+        icon="Assets/Interface/Icons/forester_way_of_the_moon.bmp"
+        position="4"
+        execdelay="180000"
+        cost_script="return '900/30/0/0';"
+        requirements="upgrade_ForesterLevel2"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_Forester_ShamansHut"
+        template_cmd="template_building_upgrade"
+
+        name="[[14922642]]@Upgrade to Tree of Sprites[[]]"
+        rollover_param="[[14939648]]Allows the training of Sprites. Sprites can infest an enemy unit and slowly drain its life until the unit dies.[[]]"
+        button="forester_tree_of_spirits.bmp"
+        icon="Assets/Interface/Icons/forester_tree_of_spirits.bmp"
+        position="2"
+        execdelay="60000"
+        cost_script="return '30/25/0/0';"
+        requirements="upgrade_ForesterLevel2"
+>
+        <src obj="Forester_ShamansHut"/>
+</cmd>
+
+<cmd id="upgrade_Fatigue"
+        template_cmd="template_upgrade"
+
+        name="[[14942713]]@Fatigue[[]]"
+        rollover_param="[[14952888]]Enables Shamans to cast Fatigue on enemy units that use energy, decreasing their energy by #GetClassInt('Forester_Shaman', 'fatigue_damage')# and dealing an equal amount of damage to them.[[]]"
+        button="forester_fatigue.bmp"
+        icon="Assets/Interface/Icons/forester_fatigue.bmp"
+        position="9"
+        execdelay="60000"
+        cost_script="return '195/7/0/0';"
+        requirements="upgrade_ForesterLevel2"
+        disableifdisabled="train_Shaman"
+>
+        <src obj="Forester_ShamansHut"/>
+</cmd>
+
+<cmd id="upgrade_Vitalize"
+        template_cmd="template_upgrade"
+
+        name="[[14969491]]@Vitalize[[]]"
+        rollover_param="[[14975071]]Allows Shamans to fully restore the energy of a friendly unit.[[]]"
+        button="forester_vitalize.bmp"
+        icon="Assets/Interface/Icons/forester_vitalize.bmp"
+        position="10"
+        execdelay="60000"
+        cost_script="return '250/9/0/0';"
+        requirements="upgrade_ForesterLevel3"
+        disableifdisabled="train_Shaman"
+>
+        <src obj="Forester_ShamansHut"/>
+</cmd>
+
+<cmd id="upgrade_MentalShock"
+        template_cmd="template_upgrade"
+
+        name="[[14981390]]@Mental Shock[[]]"
+        rollover_param="[[14999633]]Enables Sprites to deal damage equal to their energy when they infest their target.[[]]"
+        button="forester_mental_shock.bmp"
+        icon="Assets/Interface/Icons/forester_mental_shock.bmp"
+        position="11"
+        execdelay="30000"
+        cost_script="return '0/8/0/0';"
+        requirements="Forester_ShamansHut_Upgrade : local,upgrade_ForesterLevel3"
+        disableifdisabled="train_Spirit"
+>
+        <src obj="Forester_ShamansHut"/>
+</cmd>
+
+<cmd id="upgrade_SpiritInvisibility"
+        template_cmd="template_upgrade"
+        name="[[15003746]]@Invisibility[[]]"
+        rollover_param="[[15015680]]Enables Sprites to move unseen among enemy ranks.[[]]"
+        button="forester_invisibility.bmp"
+        icon="Assets/Interface/Icons/forester_invisibility.bmp"
+        position="12"
+        execdelay="60000"
+        cost_script="return '30/20/0/0';"
+        param="data/cmds/forester_spirit_invisibility.vs"
+        requirements="upgrade_ForesterLevel3, Forester_ShamansHut_Upgrade : local,Forester_MoonObelisk"
+        disableifdisabled="train_Spirit"
+>
+        <src obj="Forester_ShamansHut"/>
+</cmd>
+
+<cmd id="upgrade_Advanced_Bowmaking"
+        template_cmd="template_upgrade"
+
+        name="[[15028295]]Ranger's G@uild[[]]"
+        rollover_param="[[15033223]]Significantly decreases the training time of Rangers.[[]]"
+        button="forester_advanced_bowmaking.bmp"
+        icon="Assets/Interface/Icons/forester_advanced_bowmaking.bmp"
+        position="9"
+        execdelay="20000"
+        cost_script="return '175/0/0/0';"
+        disableifdisabled="train_Ranger"
+>
+        <src obj="Forester_Tower"/>
+</cmd>
+
+<cmd id="upgrade_Ranger_Strength_Training"
+        template_cmd="template_upgrade"
+        param="data/cmds/forester_ranger_strength_training.vs"
+
+        name="[[15047950]]Ranger @Strength Training[[]]"
+        rollover_param="[[15058259]]Increases the Rangers' health points by #GetClassInt('Forester_Ranger', 'strength_upgrade_hp_bonus')#.[[]]"
+        button="forester_strength_training.bmp"
+        icon="Assets/Interface/Icons/forester_strenght_training.bmp"
+        position="11"
+        execdelay="60000"
+        cost_script="return '350/0/0/0';"
+        requirements="upgrade_ForesterLevel2"
+        disableifdisabled="train_Ranger"
+>
+        <src obj="Forester_Tower"/>
+</cmd>
+
+<cmd id="upgrade_WeakPoints"
+        template_cmd="template_upgrade"
+
+        name="[[15068666]]@Weak Points[[]]"
+        rollover_param="[[15075791]]Provides Rangers with the ability to hit their targets in critical areas, causing them to get healed 50% slower and suffer #GetClassInt('Forester_Ranger', 'open_wound_damage')# per hit.[[]]"
+        button="forester_weak_points.bmp"
+        icon="Assets/Interface/Icons/forester_weak_points.bmp"
+        position="10"
+        execdelay="60000"
+        cost_script="return '90/0/0/0';"
+        requirements="upgrade_ForesterLevel1"
+        disableifdisabled="train_Ranger"
+>
+        <src obj="Forester_Tower"/>
+</cmd>
+
+<cmd id="upgrade_EntanglingTower"
+        template_cmd="template_upgrade_local"
+        name="[[15087262]]@Entangling Tower[[]]"
+        rollover_param="[[15094323]]Upgrades the Tower to Entangling Tower, capable of launching vines at nearby enemies, rendering them incapable of moving for #GetClassInt('Forester_Tower', 'entangle_time') / 1000# seconds.[[]]"
+        button="entangling tower.bmp"
+        icon="Assets/Interface/Icons/entangling tower.bmp"
+        position="3"
+        execdelay="60000"
+        param="data/cmds/forester_entanglingtower.vs"
+        cost_script="return '60/0/0/0';"
+        requirements="upgrade_ForesterLevel2"
+        disableifdisabled="construct_forester_tower"
+>
+        <src obj="Forester_Tower"/>
+</cmd>
+
+<cmd id="upgrade_Forester_Hut"
+        template_cmd="template_building_upgrade"
+
+        name="[[15100860]]@Upgrade to Hunter's Lodge[[]]"
+        rollover_param="[[15118917]]Allows the training of Hunters. Hunters are powerful ranged units that inflict damage to multiple enemies.[[]]"
+        button="forester_hunters_lodge.bmp"
+        icon="Assets/Interface/Icons/forester_hunters_lodge.bmp"
+        position="2"
+        execdelay="60000"
+        requirements="upgrade_ForesterLevel3"
+        cost_script="return '480/14/0/0';"
+        disableifdisabled="train_Hunter"
+        
+>
+        <src obj="Forester_Hut"/>
+</cmd>
+
+<cmd id="upgrade_Clodhopper_Armor"
+        template_cmd="template_upgrade"
+        name="[[15120881]]Stones@kin[[]]"
+        rollover_param="[[15139543]]Increases the Clodhoppers' armour by #GetClassInt('Forester_Clodhopper', 'armor_upgrade_bonus')#.[[]]"
+        button="forester_clodhopper_armor.bmp"
+        icon="Assets/Interface/Icons/forester_clodhopper_armor.bmp"
+        position="10"
+        execdelay="60000"
+        param="data/cmds/forester_clodhopper_armor.vs"
+        cost_script="return '250/3/0/0';"
+        requirements="upgrade_ForesterLevel2"
+        disableifdisabled="train_Clodhopper"
+>
+        <src obj="Forester_Hut"/>
+</cmd>
+
+<cmd id="upgrade_Clodhopper_Strength_Training"
+        template_cmd="template_upgrade"
+        name="[[15143278]]Clodhopper @Strength Training[[]]"
+        rollover_param="[[15156765]]Allows Clodhoppers to stun multiple units with Light armour with their attacks.[[]]"
+        button="forester_stun.bmp"
+        icon="Assets/Interface/Icons/forester_stun.bmp"
+        position="9"
+        execdelay="60000"
+        cost_script="return '235/4/0/0';"
+        requirements="upgrade_ForesterLevel2"
+        disableifdisabled="train_Clodhopper"
+>
+        <src obj="Forester_Hut"/>
+</cmd>
+
+<cmd id="upgrade_Moon_Blade"
+        template_cmd="template_upgrade"
+        name="[[15161365]]Moon @Blade[[]]"
+        rollover_param="[[15171774]]Enables the Hunters' weapons to inflict #GetClassInt('Forester_Hunter', 'moonblade_damage')# additional damage to the first unit they hit.[[]]"
+        button="forester_moon_blade.bmp"
+        icon="Assets/Interface/Icons/forester_moon_blade.bmp"
+        position="11"
+        execdelay="60000"
+        cost_script="return '400/4/0/0';"
+        requirements="upgrade_ForesterLevel3,Forester_Hut_Upgrade : local,Forester_MoonObelisk"
+        disableifdisabled="train_Hunter"
+>
+        <src obj="Forester_Hut"/>
+</cmd>
+
+<cmd id="upgrade_KnifeThrowing"
+        template_cmd="template_upgrade"
+        name="[[15187587]]@Knife Throwing[[]]"
+        rollover_param="[[15192176]]Enables Wolf Masters to throw their knives from a distance.[[]]"
+        button="forester_knife_trowing.bmp"
+        icon="Assets/Interface/Icons/forester_knife_trowing.bmp"
+        position="10"
+        execdelay="45000"
+        cost_script="return '90/0/0/0';"
+        param = "data/subai/forester_den_upgrade_knife_throwing.vs"
+        requirements="upgrade_ForesterLevel1"
+        disableifdisabled="train_WolfMaster"
+>
+        <src obj="Forester_Den"/>
+</cmd>
+
+<cmd id="upgrade_CallOfTheWild"
+        template_cmd="template_upgrade"
+        name="[[15206186]]@Call of the Wild[[]]"
+        rollover_param="[[15212658]]Increases the maximum number of wolves a Wolf Master can have to four and enables Wolf Masters to summon additional wolves much faster.[[]]"
+        button="forester_call_of_the_wild.bmp"
+        icon="Assets/Interface/Icons/forester_call_of_the_wild.bmp"
+        position="12"
+        execdelay="60000"
+        cost_script="return '300/0/0/0';"
+        requirements="upgrade_ForesterLevel3"
+        disableifdisabled="train_WolfMaster"
+>
+        <src obj="Forester_Den"/>
+</cmd>
+
+<cmd id="upgrade_Bloodlust"
+        template_cmd="template_upgrade"
+        name="[[15225654]]@Bloodlust[[]]"
+        rollover_param="[[15237914]]Enables Gray Wolves to inflict critical strikes of #GetClassInt('Forester_WolfMaster', 'bloodlust_damage')# damage against Mounted units and increases Wolf Masters' attack speed by 25%.[[]]"
+        button="forester_bloodlust.bmp"
+        icon="Assets/Interface/Icons/forester_bloodlust.bmp"
+        position="11"
+        param="data/cmds/foresters_upgrade_Bloodlust.vs"
+        execdelay="60000"
+        cost_script="return '120/0/0/0';"
+        requirements="upgrade_ForesterLevel2"
+        disableifdisabled="train_WolfMaster"
+>
+        <src obj="Forester_Den"/>
+</cmd>
+
+<cmd id="upgrade_Ferocity"
+        template_cmd="template_upgrade"
+        name="[[11854397]]@Ferocity[[]]"
+        rollover_param="[[15247915]]Enables Werewolves to gain health equal to their energy when they damage an enemy. In addition makes them stronger by 300hp.[[]]"
+        button="forester_ferocity.bmp"
+        icon="Assets/Interface/Icons/forester_ferocity.bmp"
+        param="data/cmds/forester_ferocity.vs"
+        position="9"
+        execdelay="60000"
+        cost_script="return '450/4/0/0';"
+        disableifdisabled="train_Werewolf"
+>
+        <src obj="Forester_MoonObelisk"/>
+</cmd>
+
+<cmd id="upgrade_StrengthOfTheForest"
+	template_cmd="template_upgrade"
+	param="data/cmds/forester_strenghtoftheforest.vs"
+
+	name="[[15275283]]@Strength of the Forest[[]]"
+	rollover_param="[[15284149]]Increases the health and damage of units trained in your colonies by #GetClassInt('Forester_Townhall', 'strength_of_the_forest_bonus')#%.[[]]"
+	button="forester_strength.bmp"
+	icon="Assets/Interface/Icons/forester_strength.bmp"
+	position="10"
+	execdelay="60000"
+	cost_script="return '150/1/0/0';"
+	requirements="upgrade_ForesterLevel2"
+>
+	<src obj="Forester_Mage_Tower"/>
+</cmd>
+
+
+
+<cmd id="upgrade_WolfScout"
+        template_cmd="template_upgrade"
+        name="[[15257039]]@Scout Wolves[[]]"
+        rollover_param="[[15267934]]Allows Wolf Masters to send wolves as invisible scouts to remote locations.[[]]"
+        button="forester_scout_wolves.bmp"
+        icon="Assets/Interface/Icons/forester_scout_wolves.bmp"
+        position="9"
+        execdelay="35000"
+        cost_script="return '80/0/0/0';"
+        disableifdisabled="train_WolfMaster"
+>
+        <src obj="Forester_Den"/>
+</cmd>
+
+
+<cmd id="upgrade_HuntingParties"
+        template_cmd="template_upgrade"
+
+        name="[[15295551]]Hunting @Parties[[]]"
+        rollover_param="[[15308532]]Increases your population limit by #GetConst('ForesterHuntingPartiesBonus')# for each colony you control, including your main settlement.[[]]"
+        button="hunting parties.bmp"
+        icon="Assets/Interface/Icons/hunting parties.bmp"
+        position="9"
+        execdelay="60000"
+        cost_script="return '500/5/0/0';"
+        requirements="upgrade_ForesterLevel2"
+>
+        <src obj="Forester_Mage_Tower"/>
+</cmd>
+
+<cmd id="upgrade_ForesterMoon"
+        template_cmd="template_upgrade"
+        name="[[ForesterMoon]]@Guardian of the Moon[[]]"
+        rollover_param="[[ForesterMoon1]]Gives additional #GetClassInt(&apos;Forester_Hunter&apos;, &apos;moonguard_health_bonus&apos;)# health points and #GetClassInt(&apos;Forester_Hunter&apos;, &apos;moonguard_armor_bonus&apos;)# armor points to the hunter unit.[[]]"
+        button="ForesterMoon.BMP"
+        icon="Assets/Interface/Icons/ForesterMoon.BMP"
+        param="data/cmds/forester_ForesterMoon.vs"
+        position="12"
+        execdelay="60000"
+        cost_script="return '300/9/0/0';"
+        requirements="upgrade_ForesterLevel3,Forester_Hut_Upgrade : local,Forester_MoonObelisk"
+        disableifdisabled="train_Hunter"
+>
+        <src obj="Forester_Hut"/>
+</cmd>
+
+<cmd id="upgrade_Lycanthropy"
+        template_cmd="template_upgrade"
+        param="data/cmds/forester_lycanthropy.vs"
+
+        name="[[Lycanthropy]]@Lycanthropy[[]]"
+        rollover_param="[[Lycanthropy1]]Adds a small amount of hp to Wolf Masters and Werewolves and in addition grants them the ability to slowly regenerate their health.[[]]"
+        button="forester_Lycanthropy.bmp"
+        icon="Assets/Interface/Icons/forester_Lycanthropy.bmp"
+        position="10"
+        execdelay="75000"
+        cost_script="return '400/15/0/0';"
+        requirements="upgrade_ForesterLevel3"
+        disableifdisabled="train_Werewolf"
+>
+        <src obj="Forester_MoonObelisk"/>
+</cmd>
+
+<!-- ypsilon: Patch 1.41 -->
+
+<cmd id="upgrade_SkilfulArchery"
+        template_cmd="template_upgrade"
+		param="data/cmds/forester_skilful_archery.vs"
+        name="[[archery1]]S@kilful Archery[[]]"
+        rollover_param="[[archery2]]Increases Rangers' attack by #GetClassInt('Forester_Ranger', 'archery_bonus_atack')# and gives them #GetClassInt('Forester_Ranger', 'archery_critical_chance')#% chance to deal critical damage to enemy units.[[]]"
+        button="forester_Skilful_Archery.bmp"
+        icon="Assets/Interface/Icons/forester_Skilful_Archery.bmp"
+        position="12"
+        execdelay="85000"
+        cost_script="return '640/24/0/0';"
+        requirements="upgrade_ForesterLevel3, upgrade_Ranger_Strength_Training, upgrade_Advanced_Bowmaking "
+        disableifdisabled="train_Ranger"
+> 
+        <src obj="Forester_Tower"/>
+</cmd>
+<!--  -->
+<cmd id="upgrade_PrimalFury"
+        template_cmd="template_upgrade"
+        param="data/cmds/forester_primalfury.vs"
+        name="[[PrimalFury1]]@Primal Fury[[]]"
+        rollover_param="[[PrimalFury2]]Increases the damage of all of the forester units by #GetClassInt('Forester_Townhall', 'primal_fury_bonus')#.[[]]"
+        button="PRIMAL_FURY.BMP"
+        icon="Assets/Interface/Icons/forester_PRIMAL_FURY.BMP"
+        position="11"
+        execdelay="60000"
+        cost_script="return '900/36/0/0';"
+        requirements="upgrade_ForesterLevel3"
+>
+        <src obj="Forester_MoonObelisk"/>
+</cmd>
+
+</commands>

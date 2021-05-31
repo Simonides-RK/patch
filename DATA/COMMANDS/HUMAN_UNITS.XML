@@ -1,0 +1,194 @@
+<commands>
+
+<!-- Ivko: Texts edited, 10.03.2005. Please don't remove this comment! -->
+
+<cmd id="heal"
+  name="[[16534056]]Select @Heal[[]]"
+        button="heal.BMP"
+        position="5"
+        rollover_param="[[16546003]]Selects the Heal spell. Heals nearby friendly units by #GetClassInt('Human_Monk', 'heal_amount')# health per second.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/human_monk_switch_heal.vs"
+        selecttarget_text=""
+        modal="1"
+>
+        <src obj="Human_Monk"/>
+</cmd>
+
+<cmd id="lifesteal"
+        name="[[16553800]]Select @Life Steal[[]]"
+        button="human_life_steal.bmp"
+        position="6"
+        rollover_param="[[16567117]]Selects the Life Steal spell. Inflicts #GetClassInt('Human_Monk', 'initial_damage')# damage to enemies and transfers twice as much health to nearby friendly units with Light armour.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/human_monk_switch_lifesteal.vs"
+        requirements="upgrade_LifeSteal"
+        selecttarget_text=""
+        modal="1"
+>
+        <src obj="Human_Monk"/>
+</cmd>
+
+<cmd id="advance"
+        name="[[16571227]]@Advance[[]]"
+        rollover_param=""
+        dispatch_type="execute method"
+        dispatch_param="advance"
+        selecttarget_text=""
+>
+        <src obj="Human_Monk"/>
+</cmd>
+
+<cmd id="promote_Oracle"
+        name="[[16585535]]Promote to @Oracle[[]]"
+        rollover_param="[[16593031]]Promotes the Monk to an Oracle. Oracles can reveal invisible enemies and cast the Exorcism and Holy Armour spells.[[]]"
+        button="promote to oracle.BMP"
+        icon="Assets/Interface/Icons/promote to oracle.BMP"
+        position="9"
+        dispatch_type="execute method"
+        dispatch_param="promote"
+        param="Human_Oracle"
+        
+        rollover_script="data/cmds/rollover_default.vs"
+        verifier_script="data/cmds/human_monk_promote_verify.vs"
+        onaddremove_script="data/cmds/onaddremove_default.vs"
+        checkcost_script="data/cmds/costcheck_default.vs"
+
+        cost_script="return '50/3/0/0';"
+        requirements="upgrade_HumanLevel1"
+>
+        <src obj="Human_Monk"/>
+</cmd>
+
+<cmd id="promote_Cancel"
+        name="[[16601630]]@Cancel Promotion[[]]"
+        rollover_param="[[16617598]]Stop promotion to Oracle.[[]]"
+        button="cancel.bmp"
+        position="9"
+        dispatch_type="run script"
+        dispatch_param="data/subai/human_monk_promote_cancel.vs"
+        param="Human_Prophet"
+        verifier_script="data/cmds/human_monk_promotecancel_verify.vs"
+>
+        <src obj="Human_Monk"/>
+</cmd>
+
+<cmd id="invisibility"
+  name="[[16629934]]Select @Invisibility[[]]"
+        button="human_invisibility.bmp"
+        position="5"
+        rollover_param="[[16637289]]Selects the Invisibility spell. Renders friendly units invisible in battle.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        selecttarget_text=""
+        modal="1"
+>
+        <src obj="Human_Prophet"/>
+</cmd>
+
+<cmd id="spiritual_fire"
+  name="[[16645947]]Select @Spiritual Fire[[]]"
+        button="human_spiritual_fire.bmp"
+        position="6"
+        rollover_param="[[16659216]]Selects the Spiritual Fire spell. Uses the spiritual energy from dead bodies to inflict #GetClassInt('Human_Prophet', 'spiritual_fire_damage1')# damage to all enemy units near the body.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        selecttarget_text=""
+        modal="1"
+>
+        <src obj="Human_Prophet"/>
+</cmd>
+
+<cmd id="Oracle_Exorcism"
+  name="[[16668336]]Select @Exorcism[[]]"
+        button="human_excorsism.bmp"
+        position="5"
+        enabled="1"
+        rollover_param="[[16673450]]Selects the Exorcism spell. Deals #GetClassInt('Human_Oracle','exorcism_damage')# area damage to summoned units and illusions. [[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        requirements="upgrade_Exorcism"
+        modal="1"
+>
+        <src obj="Human_Oracle"/>
+</cmd>
+
+<cmd id="Oracle_HolyArmor"
+  name="[[16680083]]Select Hol@y Armour[[]]"
+        button="holy shield.bmp"
+        position="6"
+        enabled="1"
+        rollover_param="[[16696057]]Selects the Holy Armour spell. Reduces all damage inflicted on the enchanted unit so that it is no greater than #GetClassInt('Human_Oracle', 'holyshield_damagemax')# per hit.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        requirements="upgrade_HolyShield"
+        modal="1"
+>
+        <src obj="Human_Oracle"/>
+</cmd>
+
+<cmd id="Paladin_WarriorMode"
+  name="[[WarriorMode]]Select Warrior&apos;s @Strength[[]]"
+        button="HUMAN_ManaUpMode.bmp"
+        position="5"
+        enabled="1"
+        rollover_param="[[WarriorMode1]]Paladin attacks enemies using physical strength. Energy does not accumulate.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        modal="1"
+>
+        <src obj="Human_Paladin"/>
+</cmd>
+
+<cmd id="Paladin_ManaUpMode"
+  name="[[ManaUpMode]]Select @Wisdom of the Oracle[[]]"
+        button="consternating touch.bmp"
+        position="6"
+        enabled="1"
+        rollover_param="[[ManaUpMode1]]Oracle blesses the paladins, giving them energy. The accumulated energy can be spent activating &quot;Wrath of the Inquisitor&quot;.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        modal="1"
+		requirements="upgrade_PaladinArmor"
+>
+        <src obj="Human_Paladin"/>
+</cmd>
+
+<cmd id="Paladin_InquisitorMode"
+        name="[[InquisitorMode]]Select Wrath of the @Inquisitor[[]]"
+        button="human_wrath_of_the_inquisitor.bmp"
+        position="7"
+        enabled="1"
+        rollover_param="[[InquisitorMode1]]Consuming 10 energy per second paladin receives an aura that damages nearby units. Additionally gets the ability to reveal invisible units.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        requirements="upgrade_PaladinArmor"
+        modal="1"
+>
+        <src obj="Human_Paladin"/>
+</cmd>
+
+<cmd id="UnitRestoration"
+        name="[[17166984]]Re@storation[[]]"
+        button="human_restore.bmp"
+        position="8"
+        rollover_param="[[17177877]]Rebuilds a destroyed colony from the ashes.[[]]"
+        selecttarget_text="[[17188927]]Select a colony to restore[[]]"
+        dispatch_type="execute method"
+        dispatch_param="unitrestoration"
+        selecttarget_verifyscript="return true;"
+        selecttarget_cursor_invalid="cantselect"
+        cost_script="return '2000/60/0/4';"
+        verifier_script="return true;"
+        rollover_script="data/cmds/rollover_default.vs"
+        checkcost_script="data/cmds/costcheck_default.vs"
+        point_command="1"
+        enabled="1"
+        requirements="upgrade_HumanLevel3"
+>
+
+        <src obj="Human_Worker"/>
+</cmd>
+
+</commands>
+

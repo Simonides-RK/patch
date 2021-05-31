@@ -1,0 +1,50 @@
+<class id="Forester_TradePost" cpp_class="CVXBuilding" parent="BaseTradePost" entity="assets/entities/Buildings/Forester_TradePost/Forester_MagicHouse.ent.xml">
+
+<!-- Copied from Forester_BaseTownBuilding: The 'being_built' method is for the building support. -->
+	<method sig="being_built" vs="data/subai/forester_basetownbuilding_being_built.vs"/>
+	<method sig="train_worker" vs="data/subai/forester_tradepost_train_worker.vs" />
+	<method sig="init" vs="data/subai/forester_tradepost_init.vs"/>
+	<method sig="ondie" vs="data/subai/forester_tradepost_ondie.vs"/>
+	<method sig="onsetplayer" vs="data/subai/forester_tradepost_onsetplayer.vs"/>
+
+<!-- General -->
+	<static_str edittree_pos="[[755381]]Structures[[]]/[[5014486]]Foresters[[]]/[[3806146]]Trade Post[[]]"
+				icon="Assets/Interface/Icons/forester_tradepost.bmp"
+				portrait="assets/interface/icons/forester_tradepost.rle"
+				skyimage="assets/interface/sky_forester.bmp"/>
+	<static_str display_name="[[3806146]]Trade Post[[]]" display_name_plural="[[5784449]]Trade Posts[[]]"/>
+	<static_int radius="90" selection_radius="90"/>
+
+	<static_int maxhealth="1750"/>
+
+<!-- Building and build animation -->
+	<static_int leaves_height_cap="-12" />
+	<static_int leaves_l3_height="0" />
+	<static_int leaves_l2_height="-10" />
+	<static_int leaves_l1_height="-32" />
+	<static_int build_time="60000" />
+	<static_int foundation_layer="4"/>
+	<static_str dying_object_class="Forester_TradePost_Die"/>
+	<static_str building_spot="Assets/Entities/visuals/Building Spots/spot2.rle"/>
+
+<!-- Build command properties -->
+	<static_str cost="100/0/0"/>
+	<static_str rollover_description="[[5796928]]Serves as a drop-off point for resources gathered far from your Town Hall.[[]]"/>
+
+<!-- Race specific -->
+	<static_int regenerate_add="1"/>
+	<static_int regenerate_promille="2"/>
+	<static_str race_str="Race_Foresters"/>
+	<static_str rally_object_class="Forester_RallyPoint"/>
+	<member_obj forester_tradepost_fake_queuer=""/>
+	
+
+	<defaultcmd target="Building">
+		<cmd name="set_rally"/>
+	</defaultcmd>
+
+	<defaultcmd target="">
+		<cmd name="set_rally"/>
+	</defaultcmd>
+
+</class>

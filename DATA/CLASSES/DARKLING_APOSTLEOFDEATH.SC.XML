@@ -1,0 +1,53 @@
+<class id="Darkling_ApostleOfDeath" cpp_class="CVXUnit" parent="BaseDarklingUnit" entity="assets/entities/units/Darkling_ApostleOfDeath/Darkling_ApostleOfDeath.ent.xml">
+
+	<method sig="init" vs="data/subai/darkling_apostleofdeath_init.vs"/>
+	<method sig="doattack" vs="data/subai/darkling_apostleofdeath_doattack.vs"/>
+	<method sig="ondie" vs="data/subai/darkling_apostleofdeath_ondie.vs"/>
+
+	<static_int radius="20" selection_radius="25"/>
+	<static_int formation_radius="35" formation_priority="1100"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4024860]]Apostle of Death[[]]"/>
+
+	<static_str display_name="[[4024860]]Apostle of Death[[]]" display_name_plural="[[4036673]]Apostles of Death[[]]"/>
+
+	<static_int maxhealth="520"/>
+	<static_int sight="300"/>
+	<static_int speed="115"/>
+
+	<static_str damage_type="blade"/>
+	<static_int initial_damage="20"/>
+	<static_int initial_armor="2"/>
+
+	<static_str defence_type = "small"/>
+
+	<static_str cost="170/4/3"/>
+	<static_str rollover_description="[[4047312]]Apostles of Death are merciless invisible fighters, which receive a damage bonus for every enemy in their sight. Can be upgraded to deal additional damage to units that have energy and to be reborn as a life-draining ghosts after death.[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/assassin.bmp"
+				portrait="Assets/Interface/Icons/assassin.rle"
+				skyimage="assets/interface/sky_dragon.bmp"/>
+
+	<static_str race_str="Race_Darklings"/>
+	
+	<static_int hatred_add_damage="3"/>
+	<static_int hatred_recalc_time="1500"/>
+	
+	<static_int aether_blade_damage="45"/>
+	<static_int aether_blade_min_energy="5"/>
+	<static_int aether_blade_health_bonus="60"/>
+	<static_int aether_blade_armor_bonus="2"/>
+	
+	<static_int afterlife_damage="10"/>
+	<static_int afterlife_timeout="10000"/>	
+	<static_int afterlife_health_bonus="100"/>
+	<!-- AI -->
+	<static_int ai_melee_protection="1"/>
+	<static_int ai_melee_escape_time="4"/>	
+	<static_int ai_concentrate_group="2"/>   <!-- fast blade damage -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40" ai_hyper_protect_bellow_health="200"/>
+	<!-- AI -->
+	<sounds
+		AnimDie="assets/sounds/Death/Apostle_Of_death/Darkling_ApostleOfDeath_Death.wav"
+		AnimAttack="Darkling_ApostleOfDeath_Attack"
+		command="Apostle0"/>
+</class>

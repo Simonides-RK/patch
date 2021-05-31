@@ -1,0 +1,107 @@
+<class id="Human_BattleAngel" cpp_class="CSSHero" parent="Hero" entity="assets/entities/units/Human_BattleAngel/Human_BattleAngel.ent.xml">
+
+<method sig="init" vs="data/subai/human_battleangel_init.vs"/>
+<method sig="ghost_appear" vs="data/subai/human_battleangel_ghost_appear.vs"/>
+<method sig="onresurrect" vs="data/subai/human_battleangel_onresurrect.vs"/>
+
+<method sig="salvation" vs="data/subai/human_battleangel_salvation.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="altarofhealing" vs="data/subai/human_battleangel_altarofhealing.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="guardianspirit" vs="data/subai/human_battleangel_guardianspirit.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="lightningshield" vs="data/subai/human_battleangel_lightningshield.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="magicswords" vs="data/subai/human_battleangel_magicswords.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="lightningstorm" vs="data/subai/human_battleangel_lightningstorm.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+
+<static_int radius="30" selection_radius="30"/>	
+<static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6118717]]Battle Angel[[]]"/>
+<static_str display_name="[[6118717]]Battle Angel[[]]" display_name_plural="[[6118717]]Battle Angel[[]]"/>
+
+<static_int speed="100"/>
+<static_int sight="600"/>
+
+<static_str race_str="Race_Humans"/>
+
+<static_str areacheck_type="all" areacheck_class="Unit"/>
+<static_int areacheck_time="1000"/>
+<method sig="onenterarea" vs="data/subai/human_battleangel_onenterarea.vs"/>
+<method sig="oninsidearea" vs="data/subai/human_battleangel_oninsidearea.vs"/>
+<method sig="onexitarea" vs="data/subai/human_battleangel_onexitarea.vs"/>
+
+<static_str damage_type="magic"/>
+<static_int maxhealth="600"/>
+<static_int initial_damage="50"/>
+<static_int initial_armor="2"/>
+
+<static_int potion_health="60"/>	
+<static_int potion_damage="5"/>	
+<static_int potion_recharge="10"/>	
+<static_int potion_armor="1"/>	
+
+<static_int formation_priority="100"/>			
+<static_int formation_radius="26"/>				
+<static_str icon="Assets/Interface/Icons/battle angel.BMP"/>
+<static_str largeicon="Assets/Interface/Icons/battle angel large.BMP"/>
+<static_str	portrait="Assets/Interface/Icons/battle angel.rle"/>
+<static_str	skyimage="assets/interface/sky_human.bmp"/>
+
+<static_str rollover_description="[[6125050]]The Battle Angel holds in him the power of the heavens to heal and protect allies. Being both an excellent fighter and a good support unit he can lead any kind of army, but has skills that benefit your Swordsmen and Paladins.[[]]"/>
+
+<static_int salvation_duration="90000"/>
+<static_int angelwings_anim_time="1000"/>
+<static_int salvation_heal_percent="20"/>
+<static_int altar_place_radius="30"/>
+<static_int altar_place_tries="25"/>
+<static_int guardian_duration="120000"/>
+<static_int guardian_absorb="650"/>
+<static_int absorb_animtime="1000"/>
+<static_int exposed_hit_animtime="1000"/>
+<static_int lightningshield_duration="45000"/>
+<static_int lightningshield_range="250"/>
+<static_int lightningshield_damage="25"/>
+<static_int magicsword_duration="25000"/>
+<static_int lightningstorm_range="410"/>
+<static_int lightningstorm_damage="120"/>
+<static_int lightningstorm_damage_initial="400"/>
+<static_int lightningstorm_numtargets="5"/>
+
+<static_str lightningstorm_projectile="Human_LightningStormProjectile"/>
+
+<member_int has_magic_exposure=""/>
+<member_int magicexposure_just_developed="0"/> <!-- flag, used to control magic exposure adding upon developing the skill -->
+<member_obj salvation_altar=""/>
+<member_int altar_just_placed=""/>
+
+<static_int constantly_idle_played="13"/>
+
+<static_str slot1_type="weapon"/>
+<static_str slot2_type="helm"/>
+<static_str slot3_type="powerstone"/>
+<static_str slot4_type="armor"/>
+
+<static_str hero_ai_special_script="hero.bangel.vs"/>
+
+<!-- Before 1.41 -->
+<!--
+<static_str level1_skill1="MagicExposure"/>
+<static_str level1_skill2="LightningShield"/>
+<static_str level1_skill3="GuardianSpirit"/>
+<static_str level1_skill4="AltarOfHealing"/>
+<static_str level2_skill1="Salvation"/>
+<static_str level2_skill2="MagicSwords"/>
+-->
+
+<!-- New for 1.41 -->
+<static_str level1_skill1="MagicExposure"/>
+<static_str level1_skill2="AltarOfHealing"/>
+<static_str level2_skill1="Salvation"/>
+<!-- <static_str level3_skill1=""/> -->
+
+<!-- AI -->
+<static_int ai_melee_protection="1"/>
+<static_int ai_melee_escape_time="5"/>
+<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+<static_int ai_concentrate_group="1"/>   <!-- general melee damage -->
+<!-- AI -->
+
+	<sounds
+		command="Angel0"/>
+</class>

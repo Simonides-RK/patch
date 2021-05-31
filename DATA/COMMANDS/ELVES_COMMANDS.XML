@@ -1,0 +1,156 @@
+<commands>
+
+<!-- Ivko: Texts edited, 22.02.2005. Please don't remove this comment! -->
+
+<cmd id="Spirit_Of_Creation"
+  name="[[13522292]]Recruit @Spirit of Creation[[]]"
+	button="spirith of creation.BMP"
+	largebutton="spirit of creation large.BMP"
+	icon="Assets/Interface/Icons/spirith of creation.BMP"
+	position="8"
+	enabled="0"
+	rollover_param=""
+	dispatch_type="execute method"
+	dispatch_param="train_legend"
+	param="Elves_SpiritOfCreation"
+	cost_script="data/cmds/cost_default.vs"
+	rollover_script="data/cmds/rollover_train_build_default.vs"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+	onaddremove_script="data/cmds/train_legendary_addremove.vs"
+>
+	<src obj="Elves_Settlement"/>
+</cmd>
+
+<cmd id="Develop_Spirit_Of_Creation"
+	template_cmd="template_develop_independent"
+	name="[[13530043]]@Spirit of Creation[[]]"
+	button="spirith of creation.BMP"
+	position="18"
+	rollover_param="[[13544040]]Allows the recruitment of the Spirit of Creation - a unit that regenerates the health of all friendly units around him, sacrificing his own health.[[]]"
+	param="Skill Spirit_Of_Creation, ManaCost 150, MaxMana 150, SettlementPoint Special2, VisualObject Elves_SpiritOfCreationVisual"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Elves_Settlement"/>
+</cmd>
+
+<cmd id="Spring_Of_Life"
+  name="[[13553272]]Spring Of @Life[[]]"
+	position="8"
+	button="spring of life.bmp"
+	largebutton="spring of life large.BMP"
+	enabled="0"
+	rollover_param="[[13564198]]Recruits #GetClassInt('Elves_Settlement', 'spring_of_life_archers')# Elven Archers and #GetClassInt('Elves_Settlement', 'spring_of_life_horseman')# Elven Goat Riders from the colony. These units don't count against your population limit.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="spring_of_life"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+	select_target_text=""
+	onaddremove_script="data/cmds/onaddremove_default.vs"
+	checkcost_script="data/cmds/costcheck_default.vs"
+	rollover_script="data/cmds/rollover_default.vs"
+	cost_script="return '550/6/0';"
+>
+	<src obj="Elves_Settlement"/>
+</cmd>
+
+
+<cmd id="Develop_Spring_Of_Life"
+	template_cmd="template_develop_independent"
+	name="[[13570717]]Spring of @Life[[]]"
+	button="spring of life.bmp"
+	position="19"
+	rollover_param="[[13581878]]Allows the recruitment of elven warriors that don't count against your population limit.[[]]"
+	param="Skill Spring_Of_Life, ManaCost 420, MaxMana 420, SettlementPoint Special1, VisualObject Elves_SpringOfLife"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Elves_Settlement"/>
+</cmd>
+
+<cmd id="Magic_Market"
+  name="[[4926835]]Magic Market[[]]"
+	position="8"
+	button="magic market.bmp"
+	largebutton="magic market large.BMP"
+	enabled="0"
+	rollover_param="[[13595168]]Creates a shop where you can buy magical items for your Champions.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="disabled"
+>
+	<src obj="Elves_Settlement"/>
+</cmd>
+
+<cmd id="Develop_Magic_Market"
+	template_cmd="template_develop_independent"
+	name="[[13604807]]@Magic Market[[]]"
+	button="magic market.bmp"
+	icon="assets/interface/magic market.bmp"
+	position="19"
+	rollover_param="[[13595168]]Creates a shop where you can buy magical items for your Champions.[[]]"
+	param="Skill Magic_Market, ManaCost 0, MaxMana 0, DevScript data/subai/elves_townhall_init_market.vs"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Elves_Settlement"/>
+</cmd>
+
+<cmd id="train_Elf_Archer"
+	template_cmd="template_independent_hire1"
+	name="[[13614509]]Train Elven @Archer[[]]"
+	button="elf archer.BMP"
+	icon="Assets/Interface/Icons/elf archer.BMP"
+	param="Elves_Archer"
+	execdelay="10000"
+	cost_script="data/cmds/elves_cost.vs"
+	disableifdisabled="upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"
+	>
+	<src obj="Elves_Settlement"/>
+</cmd>
+
+<cmd id="train_ElvesHorseArcher"
+	template_cmd="template_independent_hire2"
+	name="[[13620881]]Train Elven @Goat Rider[[]]"
+	button="elf raider.BMP"
+	icon="Assets/Interface/Icons/elf raider.BMP"
+	param="Elves_HorseArcher"
+	execdelay="38000"
+	cost_script="data/cmds/elves_cost.vs"
+	disableifdisabled="upgrade_HumanLevel3,upgrade_ForesterLevel3,upgrade_DarklingLevel3"
+>
+	<src obj="Elves_Settlement"/>
+</cmd>
+
+<cmd id="upgrade_Elven_Unity"
+    template_cmd="template_upgrade"
+	verifier_script="data/cmds/colony_upgrade1_verify.vs"
+    name="[[upgElfArcher1]]Elven @Unity[[]]"
+	rollover_param="[[upgElfArcher2]]Enable the Elven Archers to increase their damage by #GetClassInt('Elves_Archer', 'unity_bonus')# for each other Elven Archer in his sight, with a maximum of #GetClassInt('Elves_Archer', 'unity_max')#.[[]]"
+	button="elven_unity.BMP"
+	icon="Assets/Interface/Icons/elven_unity_icon.BMP"
+	position="11"
+
+	execdelay="22500"
+	cost_script="return '225/5/0';"
+	param="data/cmds/elves_upgrade_unity.vs"
+	requirements=""
+	disableifdisabled="train_Elf_Archer,upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"
+>
+        <src obj="Elves_Settlement"/>
+</cmd>
+
+<cmd id="upgrade_Elven_Encouragement"
+    template_cmd="template_upgrade"
+	verifier_script="data/cmds/colony_upgrade2_verify.vs"
+    name="[[upgElfRider1]]@Encouragement[[]]"
+	rollover_param="[[upgElfRider2]]Enable the Elven Goat Riders to increase their attack and movement speed by #GetClassInt('Elves_HorseArcher', 'encouragement_bonus')#% for each other Goat Rider in his sight with a maximum of #GetClassInt('Elves_HorseArcher', 'encouragement_max')#%.[[]]"
+	button="elven_encouragement.BMP"
+	icon="Assets/Interface/Icons/elven_encouragement_icon.BMP"
+	position="12"
+
+	execdelay="44000"
+	cost_script="return '440/10/0';"
+	param="data/cmds/elves_upgrade_encouragement.vs"
+	requirements=""
+	disableifdisabled="train_ElvesHorseArcher,upgrade_HumanLevel3,upgrade_ForesterLevel3,upgrade_DarklingLevel3"
+>
+        <src obj="Elves_Settlement"/>
+</cmd>
+
+</commands>

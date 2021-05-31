@@ -1,0 +1,43 @@
+<class id="Nomad_Cavalry" cpp_class="CVXUnit" parent="Nomad_Plunderer" entity="assets/entities/units/Nomad_Cavalry/Nomad_Cavalry.ent.xml">
+
+        <method sig="doattack" vs="data/subai/nomad_cavalry_doattack.vs"/>
+		<method sig="init" vs="data/subai/nomad_cavalry_init.vs"/>
+		
+		<static_int radius="50" selection_radius="50"/> 
+        <static_int formation_radius="42" formation_priority="1200"/>
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[6989482]]Nomads[[]]/[[7040127]]Beastmaster[[]]"/>                                                                                      
+        <static_str display_name="[[7040127]]Beastmaster[[]]" display_name_plural="[[7059068]]Beastmasters[[]]"/>
+        
+        <static_int sight="450"/>
+
+        <static_int speed="150"/>       
+        <static_int maxhealth="1900" initial_damage="40" initial_armor="0"/>
+        <static_str cost="250/3/4"/>
+        <static_int legendary="0"/>
+        <static_str damage_type="mace"/>
+        <static_str defence_type = "mounted"/>
+        
+        <static_str rollover_description="[[7064008]]Beastmasters are heavy mounted units, unsurpassed in strength and durability, fast and powerful.[[]]"/>
+        <static_str icon="Assets/Interface/Icons/nomads_cavalry.bmp"
+                                portrait="assets/interface/icons/Nomad_Cavalry.rle"/>
+        <static_str     skyimage="assets/interface/sky_nomad.bmp"/>
+        
+        <static_str race_str="Race_Nomads"/>
+		
+		<static_int plunder_attack="3"/> <!-- Gold increase -->
+		<static_int plunder_destroy="20"/> <!-- Gold increase -->
+		<static_int plunder_armor="2"/>
+        
+        <!-- AI -->
+        <static_int ai_melee_protection="1"/>
+        <static_int ai_melee_escape_time="5"/>
+        <static_int ai_concentrate_group="3"/>   <!-- mace melee damage -->
+        <static_int ai_hyper_protective="1" ai_hyper_protective_coef="40" ai_hyper_protect_bellow_health="250"/>        
+        <!-- AI -->
+        
+        <sounds
+                AnimAttack="Club_Mace_Attack_"
+                UnitSpecific="Nomad_beast_"
+                AnimDie="assets/sounds/Death/Nomad_Death/Nomad_Cavalry_death.wav"
+                command="Nomad0_1"/>
+</class>

@@ -1,0 +1,137 @@
+<class id="Human_WitchQueen" cpp_class="CSSHero" parent="Hero" entity="assets/entities/units/Human_WitchQueen/Human_WitchQueen.ent.xml">
+
+	<method sig="idle" vs="data/subai/human_witchqueen_idle.vs"/>
+	<method sig="init" vs="data/subai/human_witchqueen_init.vs"/>
+	
+	<method sig="attack" vs="data/subai/human_witchqueen_attack.vs" verify="data/subai/unit_attack_verify.vs"/>
+	<method sig="attack" vs="data/subai/human_witchqueen_advance.vs"/>
+	<method sig="unit_attack" vs="data/subai/unit_attack.vs"/>
+	<method sig="unit_attack" vs="data/subai/unit_advance.vs"/>
+	<method sig="airattack" vs="data/subai/human_witchqueen_airattack.vs"/>
+	<method sig="ascend" vs="data/subai/human_witchqueen_ascend.vs" onfinish="data/subai/human_witchqueen_special_onfinish.vs"/>
+	<method sig="descend" vs="data/subai/human_witchqueen_descend.vs" onfinish="data/subai/human_witchqueen_special_onfinish.vs"/>
+	<method sig="develop_levitation" vs="data/subai/human_witchqueen_develop_levitation.vs"/>
+	<method sig="setattacktarget" vs="data/subai/human_witchqueen_setattacktarget.vs" verify="data/subai/human_witchqueen_setattacktarget_verify.vs"/>
+	<method sig="ghost_appear" vs="data/subai/human_witchqueen_ghost_appear.vs"/>
+	<method sig="consume" vs="data/subai/human_witchqueen_consume.vs" onfinish="data/subai/human_witchqueen_special_onfinish.vs"/>
+	<method sig="hauntbuilding" vs="data/subai/human_witchqueen_hauntbuilding.vs" onfinish="data/subai/human_witchqueen_special_onfinish.vs"/>
+	<method sig="polymorph" vs="data/subai/human_witchqueen_polymorph.vs" onfinish="data/subai/human_witchqueen_special_onfinish.vs"/>
+
+	<method sig="post_teleport" vs="data/subai/human_witchqueen_post_teleport.vs"/>
+
+	<behavior script="data/subai/human_witchqueen_polymorphbehavior.vs"/>
+
+	<static_str areacheck_type="enemy" areacheck_class="Unit"/>
+	<static_int areacheck_time="1000"/>
+	<method sig="onenterarea" vs="data/subai/human_witchqueen_onenterarea.vs"/>
+	<method sig="oninsidearea" vs="data/subai/human_witchqueen_oninsidearea.vs"/>
+	<method sig="onexitarea" vs="data/subai/human_witchqueen_onexitarea.vs"/>
+	
+	<static_str race_str="Race_Humans"/>
+	<static_int speed="100"/>
+	
+	<static_int range="350" min_range="2"/>			
+	<static_int radius="20" selection_radius="20"/>	
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6831364]]Witch Queen[[]]"/>
+	<static_str display_name="[[6831364]]Witch Queen[[]]" display_name_plural="[[6831364]]Witch Queen[[]]"/>
+	<static_str icon="Assets/Interface/Icons/witch queen.BMP"/>
+	<static_str largeicon="Assets/Interface/Icons/witch queen large.BMP"/>
+	<static_str	portrait="Assets/Interface/Icons/witch queen.rle"/>
+	<static_str	skyimage="assets/interface/sky_human.bmp"/>
+
+	<static_str rollover_description="[[6844530]]The Witch Queen is a keeper of forgotten rituals and ancient magic. Placing curses on enemy buildings and units the Witch Queen could be the downfall of any enemy especially if aided by a strong army and a few Witches.[[]]"/>
+
+	<static_int maxhealth="450"/> 
+	<static_int initial_damage="34"/>
+	<static_int initial_armor="0"/>
+	<static_int consume_amnt_hp="300"/>
+	<static_int consume_amnt_mp="200"/>
+	<static_int consume_percent="100"/>
+	<static_str damage_type="magic"/>
+	<static_int healthbaroffset="-80"/>
+	<static_int addhealthbaroffset="-80"/>
+
+	<static_int potion_health="40"/>	
+	<static_int potion_damage="4"/>	
+	<static_int potion_recharge="20"/>	
+	<static_int potion_armor="1"/>	
+
+	<static_str projectile_class="Human_WitchQueenProjectile"/>
+	<static_str	projectile_class_building="Human_WitchQueenProjectile"/>
+	<static_int	projectile_angle="-15"/>
+	<static_int	projectile_dist="30"/>
+	<static_int polymorph_duration="12000"/>
+	<static_int	curse_percent = "75"/>
+	<static_int	curse_radius = "400"/>
+	<static_int	curse_damage = "21"/>
+	<static_int curse_timeout = "10000"/>
+	<static_int	witheringbreeze_slowfactor = "25"/>
+	<static_int	haunt_duration = "30000"/>
+	<static_int	haunt_particlecount = "3"/>
+	<static_int haunt_curse_duration = "10000"/>
+	<static_int haunt_curse_damage = "21"/>
+	<static_int haunt_building_damage_per_sec="30"/>
+	<static_int consternating_touch_health = "25"/> <!-- percentage health at which the skill acts -->
+	
+	
+	<member_obj user_attack_target=""/>
+	<member_int polymorph_started="0"/>
+	<member_int witheringbreeze_just_developed="0"/>
+	<member_int voiceofdamnation_available="0"/>
+
+	<static_str slot1_type="ring"/> 
+	<static_str slot2_type="ring"/>
+	<static_str slot3_type="powerstone"/>
+	<static_str slot4_type="wand"/>
+
+	<static_str hero_ai_special_script="hero.wqueen.vs"/>
+	
+	<!-- Before 1.41 -->
+	<!--
+	<static_str level1_skill1="Consume"/>
+	<static_str level1_skill2="Voice_of_Damnation"/>
+	<static_str level1_skill3="Consternating_Touch"/>
+	<static_str level2_skill1="HauntBuilding"/>
+	<static_str level2_skill2="WitheringBreeze"/>
+	<static_str level3_skill2="Polymorph"/>
+	-->
+
+	<!-- New for 1.41 -->
+	<static_str level1_skill1="Consume"/>
+	<static_str level1_skill2="Consternating_Touch"/>
+	<static_str level2_skill1="WitheringBreeze"/>
+	<static_str level3_skill1="Polymorph"/>
+
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+	<!-- AI -->
+	<value id="DamageTextValue" script="int i, b; str s, bd; if( .voiceofdamnation_available != 0 ) b = 0; else b = GetClassInt(.class, 'initial_damage'); if ( b &gt; .damage ) b = .damage; bd = b; i = .damage - b;       s = '&lt;color 255 255 64&gt;' + Translate('[[4165677]]Damage:[[]]')     + ' &lt;color 255 255 255&gt;' + bd; if ( i > 0 ) s = s  + '&lt;color 32 255 32&gt;' + Translate('[[]]+[[]]') + i; return s;" />
+	
+	<defaultcmd target="">
+		<cmd name="move"/>
+	</defaultcmd>
+
+	<defaultcmd target="Hero">
+		<cmd name="attack"/>
+	</defaultcmd>
+
+	<defaultcmd target="ItemHolder">
+		<cmd name="getitems"/>
+	</defaultcmd>
+	
+	<defaultcmd target="Unit">
+		<cmd name="setattacktarget"/>
+		<cmd name="attack"/>
+		<cmd name="follow"/>
+	</defaultcmd>
+
+	<defaultcmd target="Building">
+		<cmd name="setattacktarget"/>
+		<cmd name="attack"/>
+	</defaultcmd>
+
+	<sounds
+		command="Queen0"/>
+</class>

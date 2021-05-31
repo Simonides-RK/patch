@@ -1,0 +1,439 @@
+<commands>
+
+<!-- Ivko: Texts edited, 13.02.2005. Please don't remove this comment! -->
+
+<!-- ******************************************************************************* -->
+<!-- ******************************* BASIC COMMANDS ******************************** -->
+<!-- ******************************************************************************* -->
+
+<cmd id="move"
+  name="[[11184046]]@Move[[]]"
+        button="move.bmp"
+        position="1"
+        priority="10"
+        rollover_param="[[11194564]]Move to the specified position without attacking enemies on the way.[[]]"
+        dispatch_type="execute method with no offset"
+        dispatch_param="move_cmd"
+        selecttarget_text="[[11200036]]Select a position to move to[[]]"
+        point_command="1"
+>
+        <cmdtext target=""
+                 default-text="[[11219007]]Right-click to move to this position[[]]"/>
+
+        <src obj="Unit"/>
+        <nsrc obj="Darkling_Meteor"/>
+</cmd>
+
+<cmd id="attack"
+        name="[[11225364]]@Attack[[]]"
+        button="attack.bmp"
+        position="2"
+        priority="10"
+        rollover_param="[[11230511]]Attack a target until it is destroyed or move to the specified position attacking all enemies encountered.[[]]"
+        dispatch_type="execute method with no offset"
+        dispatch_param="attack"
+        selecttarget_text="[[11248574]]Select a target or a position to move to[[]]"
+        accept_minimap_target="yes"
+        verifier_script="data/cmds/hero_attack_verify.vs"
+>
+        <cmdtext target="Unit"
+                default-text="[[11253765]]Right-click to attack this unit[[]]"/>
+        <cmdtext target="Building"
+                default-text="[[11260046]]Right-click to attack this building[[]]"/>
+        <cmdtext target=""
+                default-text="[[11279193]]Right-click to move to this position while engaging all enemies encountered[[]]"/>
+
+        <src obj="Military"/>
+        <nsrc obj="Darkling_Meteor"/>
+</cmd>
+
+<cmd id="set_target"
+        name="[[11225364]]@Attack[[]]"
+        button="attack.bmp"
+        position="2"
+        rollover_param="[[11288788]]Attack a target until it is destroyed.[[]]"
+        dispatch_type="execute method"
+        dispatch_param="set_target"
+        selecttarget_text="[[11296818]]Select a target to attack[[]]"
+        selecttarget_verifyscript="data/cmds/selectverify_enemiesinrange_tower.vs"
+        selecttarget_cursor_invalid="cantselect"
+>
+        <cmdtext target="Unit"
+                default-text="[[11253765]]Right-click to attack this unit[[]]"/>
+
+        <src obj="Forester_Tower"/>
+</cmd>
+
+<cmd id="set_target_ht"
+        name="[[11225364]]@Attack[[]]"
+        button="attack.bmp"
+        position="1"
+        rollover_param="[[11288788]]Attack a target until it is destroyed.[[]]"
+        dispatch_type="execute method"
+        dispatch_param="set_target"
+        selecttarget_text="[[11296818]]Select a target to attack[[]]"
+        selecttarget_verifyscript="data/cmds/selectverify_enemiesinrange_tower.vs"
+        selecttarget_cursor_invalid="cantselect">
+        <cmdtext target="Unit"
+                default-text="[[11253765]]Right-click to attack this unit[[]]"/>
+
+        <src obj="Human_Tower"/>
+</cmd>
+
+<cmd id="set_plant_target"
+        name="[[11225364]]@Attack[[]]"
+        button="attack.bmp"
+        position="1"
+        priority="9"
+        rollover_param="[[11288788]]Attack a target until it is destroyed.[[]]"
+        dispatch_type="execute method"
+        dispatch_param="attack"
+        selecttarget_text="[[11296818]]Select a target to attack[[]]"
+        selecttarget_verifyscript="data/cmds/selectverify_enemiesinrange.vs"
+        selecttarget_cursor_invalid="cantselect"
+>
+        <cmdtext target="Unit"
+                default-text="[[11253765]]Right-click to attack this unit[[]]"/>
+
+        <src obj="BasePlant"/>
+</cmd>
+
+<cmd id="stand_position"
+        name="[[11300612]]@Hold Position[[]]"
+        button="hold position.BMP"
+        position="3"
+        priority="10"
+        rollover_param="[[11315117]]Remain at the current position while only attacking enemies within range.[[]]"
+        dispatch_type="execute method"
+        dispatch_param="stand_position"
+>
+        <nsrc obj="Darkling_Meteor"/>
+        <src obj="Military"/>
+</cmd>
+
+<cmd id="patrol"
+        name="[[11326411]]@Patrol[[]]"
+        button="patrol.bmp"
+        position="4"
+        priority="10"
+        rollover_param="[[11336552]]Patrol to the specified position and back attacking all enemies encountered.[[]]"
+        dispatch_type="execute method"
+        dispatch_param="patrol"
+        selecttarget_text="[[11343258]]Select patrol point[[]]"
+        point_command="1"
+>
+        <nsrc obj="Darkling_Meteor"/>
+        <src obj="Military"/>
+</cmd>
+
+<cmd id="gather_gold"
+        name="[[11355406]]Gather G@old[[]]"
+        button="gather gold.bmp"
+        position="3"
+        rollover_param="[[11362001]]Gather gold from a Gold Plant.[[]]"
+        dispatch_type="execute method"
+        dispatch_param="gather_gold"
+        selecttarget_text="[[11379224]]Select a Gold Plant to gather gold from[[]]"
+>
+        <cmdtext target="Forester_GoldMine"
+                 default-text="[[11384106]]Right-click to gather gold[[]]"/>
+
+        <src obj="Forester_Worker"/>
+</cmd>
+
+<cmd id="h_gather_gold"
+        name="[[11355406]]Gather G@old[[]]"
+        button="gather gold.bmp"
+        position="3"
+        priority="1"
+        rollover_param="[[11393243]]Gather gold from a Gold Mine.[[]]"
+        dispatch_type="execute method"
+        dispatch_param="gather_gold"
+        selecttarget_text="[[11403968]]Select a Gold Mine to gather gold from[[]]"
+>
+
+        <cmdtext target="Human_GoldMine"
+                 default-text="[[11384106]]Right-click to gather gold[[]]"/>
+
+        <src obj="Human_Worker"/>
+</cmd>
+
+<cmd id="gather_gems"
+        name="[[11415394]]Gather G@ems[[]]"
+        button="gather gems.bmp"
+        position="4"
+        rollover_param="[[11420984]]Gather gems from a Gem Deposit.[[]]"
+        dispatch_type="execute method"
+        dispatch_param="gather_gems"
+        selecttarget_text="[[11431895]]Select a Gem Deposit to gather gems from[[]]"
+>
+        <cmdtext target="BaseGemsDeposit"
+                 default-text="[[11444094]]Right-click to gather gems[[]]"/>
+        <cmdtext target="Forester_MagicWell"
+                 default-text="[[11444094]]Right-click to gather gems[[]]"/>
+
+        <src obj="Forester_Worker"/>
+        <src obj="Human_Worker"/>
+</cmd>
+
+<cmd id="repair"
+        name="[[11459109]]@Repair[[]]"
+        button="human_repair.bmp"
+        position="2"
+        rollover_param="[[11466454]]Repair the selected building.[[]]"
+        selecttarget_text="[[11477471]]Select a building to repair[[]]"
+        dispatch_type="execute method"
+        dispatch_param="repair"
+        selecttarget_verifyscript="data/cmds/selectverify_friendly_building.vs"
+        selecttarget_cursor_invalid="cantselect"
+>
+        <cmdtext target="Building"
+                 default-text="[[11488591]]Right-click to repair[[]]"/>
+
+        <src obj="Human_Worker"/>
+</cmd>
+
+<cmd id="continue_building"
+        name=""
+        dispatch_type="execute method"
+        dispatch_param="continue_building"
+>
+        <cmdtext target="Human_BaseTownBuilding"
+                 default-text="[[11495464]]Right-click to complete this building[[]]"/>
+
+        <src obj="Human_Worker"/>
+</cmd>
+
+<!-- ******************************************************************************* -->
+<!-- ******************************* BUILD COMMANDS ******************************** -->
+<!-- ******************************************************************************* -->
+
+<cmd id="building_cancel_build"
+        name="[[11502962]]Cancel Build[[]]"
+        button="cancel.bmp"
+        position="1"
+        rollover_param="[[11513802]]Cancel this building and get the resources back.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/building_cancel_build.vs"
+        verifier_script="data/cmds/building_cancel_build_verify.vs"
+>
+     <src obj="Building"/>
+</cmd>
+
+<!-- ******************************************************************************* -->
+<!-- ******************************* TRAIN COMMANDS ******************************** -->
+<!-- ******************************************************************************* -->
+
+<cmd id="set_rally"
+  name="[[11522121]]Set @Rally Point[[]]"
+        button="set rally.bmp"
+        icon="Assets/Interface/Icons/rally_icon.bmp"
+        position="1"
+        rollover_param="[[11538128]]Change the rally point of this building. All units automatically go to the rally point once they are trained.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/building_set_rally.vs"
+        param=""
+        cost_script=""
+        onaddremove_script=""
+        selecttarget_text="[[11548324]]Select a new rally point[[]]"
+>
+        <cmdtext target="Hero"
+                 default-text="[[11551229]]Right-click here to order new units to follow this Champion[[]]"/>
+        <cmdtext target="Building"
+                 default-text="[[11569450]]Right-click here to select a new rally point[[]]"/>
+        <cmdtext target=""
+                 default-text="[[11569450]]Right-click here to select a new rally point[[]]"/>
+
+        <src obj="Forester_Townhall"/>
+        <src obj="Forester_Hut"/>
+        <src obj="Forester_Den"/>
+        <src obj="Forester_ShamansHut"/>
+        <src obj="Forester_Tower"/>
+        <src obj="Forester_TradePost"/>
+        <src obj="Dragons_Townhall"/>
+        <src obj="Nomad_Townhall"/>
+        <src obj="Shades_Settlement"/>
+        <src obj="Trolls_Settlement"/>
+        <src obj="Elves_Settlement"/>
+        <src obj="Human_Barracks"/>
+        <src obj="Human_Cathedral"/>
+        <src obj="Human_Stable"/>
+        <src obj="Human_Townhall"/>
+        <src obj="Human_WitchHut"/>
+        <src obj="Human_TradePost"/>
+        <src obj="Darkling_Townhall"/>
+        <src obj="Darkling_GoldMine"/>
+        <src obj="Darkling_AltarOfWar"/>
+        <src obj="Darkling_DarkPalace"/>
+        <src obj="Darkling_NightCouncil"/>
+
+</cmd>
+
+<cmd id="Champions"
+  name="[[11574372]]Call a @Champion[[]]"
+        button="call_a_champion.bmp"
+        position="3"
+        toggle_tab="2"
+        tab_back="Assets/Interface/%racedir%/hero_hire.bmp"
+        rollover_param="[[11582173]]Choose a Champion to join your forces. There are four Champions available, each with a unique set of skills.[[]]"
+        dispatch_type="none"
+>
+        <src obj="BaseTownhall"/>
+</cmd>
+
+<!-- ******************************************************************************* -->
+<!-- ******************************* HERO COMMANDS ********************************* -->
+<!-- ******************************************************************************* -->
+
+<cmd id="Ressurect_Hero"
+  name="[[11597604]]@Resurrect[[]]"
+        button="close.bmp"
+        dispatch_type="insert method"
+        dispatch_param="ressurect"
+        position="31"
+        verifier_script="data/cmds/hero_ressurect.vs"
+        cost_script="data/cmds/hero_ressurect_cost.vs"
+        onaddremove_script="data/cmds/ressurect_addremove.vs"
+        rollover_script="data/cmds/rollover_default.vs"
+        rollover_param="[[11605635]]Starts the resurrection of your Champion (resurrection cost depends on the number of his or her skills). Your Champion can't resurrect near an enemy settlement.[[]]"
+>
+
+        <src obj="Hero"/>
+</cmd>
+
+<!-- ******************************************************************************* -->
+<!-- ******************************* SKILL COMMANDS ******************************** -->
+<!-- ******************************************************************************* -->
+
+<cmd id="Learn_new_skill"
+  name="[[11610346]]@Learn New Skill[[]]"
+        button="plus.bmp"
+        position="30"
+        rollover_param="[[11625215]]Choose a new skill for your Champion. Developing new skills requires glory.[[]]"
+        dispatch_type="none"
+        toggle_tab="1"
+        verifier_script="data/cmds/verifier_hero_learn_skill.vs"
+        tab_back="Assets/Interface/%racedir%/hero_skills.bmp"
+
+>
+        <src obj="Hero"/>
+</cmd>
+
+<cmd id="switch_inventory"
+  name="[[11636717]]Show In@ventory[[]]"
+        button="inventory.bmp"
+        position="29"
+        rollover_param="[[11649733]]Show the inventory of this Champion.[[]]"
+        dispatch_type="none"
+        toggle_tab="3"
+>
+        <src obj="Hero"/>
+</cmd>
+
+<!-- ******************************************************************************* -->
+<!-- ******************************** OTHER COMMANDS ******************************* -->
+<!-- ******************************************************************************* -->
+
+<cmd id="enter_shelter"
+        name=""
+        dispatch_type="execute method"
+        dispatch_param="enter_shelter"
+>
+        <cmdtext target="Human_Shelter"
+                default-text="[[11655295]]Right-click to enter the Shelter[[]]"/>
+
+        <src obj="Unit"/>
+</cmd>
+
+
+<cmd id="open_chest"
+        name=""
+        dispatch_type="execute method"
+        dispatch_param="open_chest"
+>
+        <cmdtext target="BaseChest"
+                default-text="[[11664220]]Right-click to open this chest[[]]"/>
+
+        <src obj="Unit"/>
+</cmd>
+
+<cmd id="darkling_repair"
+        name="[[29519433]]Re@pair[[]]"
+        button="repair_dark mage.BMP"
+        position="5"
+        rollover_param="[[11466454]]Repair the selected building.[[]]"
+        selecttarget_text="[[11477471]]Select a building to repair[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/subai/darkling_townhall_repair.vs"
+>
+        <cmdtext target="Building"
+                 default-text="[[11488591]]Right-click to repair[[]]"/>
+        <src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="darkmage_repair"
+        name="[[11459109]]Repa@ir[[]]"
+        button="repair_dark mage.BMP"
+        position="5"
+        rollover_param="[[11466454]]Repair the selected building.[[]]"
+        selecttarget_text="[[11477471]]Select a building to repair[[]]"
+        dispatch_type="execute method"
+        dispatch_param="repair"
+        selecttarget_verifyscript="data/cmds/selectverify_friendly_building.vs"
+>
+        <cmdtext target="Building"
+                 default-text="[[11488591]]Right-click to repair[[]]"/>
+
+        <src obj="Darkling_DarkMage"/>
+</cmd>
+
+<cmd id="switch_pathstoglory"
+  name="[[11670265]]Paths to Glory[[]]"
+        button="paths_to_glory.bmp"
+        position="28"
+        dispatch_type="none"
+        toggle_tab="12"
+        rollover_param="[[11687975]]Show/hide all ways to obtain glory available to your kingdom. Each colony you control provides a different way to obtain glory.[[]]"
+        verifier_script="data/cmds/paths_to_glory_verify.vs"
+>
+        <src obj="BaseTownhall"/>
+</cmd>
+
+<cmd id="getitems"
+        name=""
+        dispatch_type="run script"
+        dispatch_param="data/cmds/unit_getitems.vs"
+        param=""
+        cost_script=""
+        onaddremove_script=""
+        verifier_script=""
+>
+        <cmdtext target="ItemHolder"
+                 default-text="[[11699770]]Right-click to get item[[]]"/>
+
+        <src obj="Unit"/>
+</cmd>
+
+<cmd id="getitems_special"
+        name=""
+        dispatch_type="execute method"
+        dispatch_param="getitems_special"
+>
+        <cmdtext target="ItemHolder"
+                 default-text="[[11706483]]Right-click to take the item from the shrine[[]]"/>
+
+        <src obj="Hero"/>
+</cmd>
+
+<cmd id="follow"
+        name=""
+        dispatch_type="execute method"
+        dispatch_param="follow"
+>
+        <cmdtext target="Unit"
+                default-text="[[11717026]]Right-click to follow this unit[[]]"/>
+
+        <src obj="Military"/>
+</cmd>
+
+</commands>

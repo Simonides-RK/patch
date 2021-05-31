@@ -1,0 +1,4 @@
+<class id="Magic_Area" cpp_class="CVXScriptObj" parent="Object" entity="">
+<member_obj mage_tower=""/>
+<member_int magic_area_charge=""/>
+</class>

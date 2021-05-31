@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="EntangleFeedbac" type="vx/object" pass_file="">
+<animlayer layer="0" duration="0" sync="1"/>
+<images>
+<image idx="1" file="BigGrowLayer1.rle" drawmode="index" remaping="none" rows="21" columns="1"/>
+<image idx="2" file="BigGrowShadow.rle" drawmode="shadow" remaping="none" rows="21" columns="1"/>
+<image idx="3" file="BigLoopLayer1.rle" drawmode="index" remaping="pingpong" rows="9" columns="1"/>
+<image idx="4" file="BigLoopShadow.rle" drawmode="shadow" remaping="pingpong" rows="9" columns="1"/>
+<image idx="5" file="MediumGrowLayer1.rle" drawmode="index" remaping="none" rows="21" columns="1"/>
+<image idx="6" file="MediumGrowShadow.rle" drawmode="shadow" remaping="none" rows="21" columns="1"/>
+<image idx="7" file="MediumLoopLayer1.rle" drawmode="index" remaping="pingpong" rows="9" columns="1"/>
+<image idx="8" file="MediumLoopShadow.rle" drawmode="shadow" remaping="pingpong" rows="9" columns="1"/>
+<image idx="9" file="SmallGrowLayer1.rle" drawmode="index" remaping="none" rows="21" columns="1"/>
+<image idx="10" file="SmallGrowShadow.rle" drawmode="shadow" remaping="none" rows="21" columns="1"/>
+<image idx="11" file="SmallLoopLayer1.rle" drawmode="index" remaping="pingpong" rows="9" columns="1"/>
+<image idx="12" file="SmallLoopShadow.rle" drawmode="shadow" remaping="pingpong" rows="9" columns="1"/>
+<image idx="13" file="BigGrowLayer1.rle" drawmode="index" remaping="reverse" rows="21" columns="1"/>
+<image idx="14" file="BigGrowShadow.rle" drawmode="shadow" remaping="reverse" rows="21" columns="1"/>
+<image idx="15" file="MediumGrowLayer1.rle" drawmode="index" remaping="reverse" rows="21" columns="1"/>
+<image idx="16" file="MediumGrowShadow.rle" drawmode="shadow" remaping="reverse" rows="21" columns="1"/>
+<image idx="17" file="SmallGrowLayer1.rle" drawmode="index" remaping="reverse" rows="21" columns="1"/>
+<image idx="18" file="SmallGrowShadow.rle" drawmode="shadow" remaping="reverse" rows="21" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="layer1" image="1" z="1001" offsetx="-252" offsety="-274" sortoffsetx="0" sortoffsety="5"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-252" offsety="-274" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="init_state" anim_idx="65536" anim_frame="65536"/>
+<state idx="2" name="small_state" anim_idx="5" anim_frame="21"/>
+<state idx="3" name="medium_state" anim_idx="3" anim_frame="21"/>
+<state idx="4" name="big_state" anim_idx="1" anim_frame="21"/>
+</states>
+<anims>
+<anim idx="1" name="BigGrow" startstate="1" endstate="4" frames="23" duration="3486" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="1" offsetx="-252" offsety="-274" stillframe="0" />
+<replace layer="2" image="2" offsetx="-252" offsety="-274" stillframe="0" />
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="166"/>
+<frame idx="11" duration="166"/>
+<frame idx="12" duration="166"/>
+<frame idx="13" duration="166"/>
+<frame idx="14" duration="166"/>
+<frame idx="15" duration="166"/>
+<frame idx="16" duration="166"/>
+<frame idx="17" duration="166"/>
+<frame idx="18" duration="166"/>
+<frame idx="19" duration="166"/>
+<frame idx="20" duration="166"/>
+<frame idx="21" duration="166"/>
+<frame idx="22" duration="166"/>
+</anim>
+<anim idx="2" name="BigLoop" startstate="4" endstate="4" frames="11" duration="1494" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="3" offsetx="-252" offsety="-274" stillframe="0" />
+<replace layer="2" image="4" offsetx="-252" offsety="-274" stillframe="0" />
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="166"/>
+</anim>
+<anim idx="3" name="MediumGrow" startstate="1" endstate="3" frames="23" duration="3486" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="5" offsetx="-254" offsety="-276" stillframe="0" />
+<replace layer="2" image="6" offsetx="-254" offsety="-276" stillframe="0" />
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="166"/>
+<frame idx="11" duration="166"/>
+<frame idx="12" duration="166"/>
+<frame idx="13" duration="166"/>
+<frame idx="14" duration="166"/>
+<frame idx="15" duration="166"/>
+<frame idx="16" duration="166"/>
+<frame idx="17" duration="166"/>
+<frame idx="18" duration="166"/>
+<frame idx="19" duration="166"/>
+<frame idx="20" duration="166"/>
+<frame idx="21" duration="166"/>
+<frame idx="22" duration="166"/>
+</anim>
+<anim idx="4" name="MediumLoop" startstate="3" endstate="3" frames="11" duration="1494" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="7" offsetx="-254" offsety="-276" stillframe="0" />
+<replace layer="2" image="8" offsetx="-254" offsety="-276" stillframe="0" />
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="166"/>
+</anim>
+<anim idx="5" name="SmallGrow" startstate="1" endstate="2" frames="23" duration="3486" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="9" offsetx="-254" offsety="-270" stillframe="0" />
+<replace layer="2" image="10" offsetx="-254" offsety="-270" stillframe="0" />
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="166"/>
+<frame idx="11" duration="166"/>
+<frame idx="12" duration="166"/>
+<frame idx="13" duration="166"/>
+<frame idx="14" duration="166"/>
+<frame idx="15" duration="166"/>
+<frame idx="16" duration="166"/>
+<frame idx="17" duration="166"/>
+<frame idx="18" duration="166"/>
+<frame idx="19" duration="166"/>
+<frame idx="20" duration="166"/>
+<frame idx="21" duration="166"/>
+<frame idx="22" duration="166"/>
+</anim>
+<anim idx="6" name="SmallLoop" startstate="2" endstate="2" frames="11" duration="1494" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="11" offsetx="-254" offsety="-270" stillframe="0" />
+<replace layer="2" image="12" offsetx="-254" offsety="-270" stillframe="0" />
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="166"/>
+</anim>
+<anim idx="7" name="BigGrowReverse" startstate="1" endstate="1" frames="23" duration="3486" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="13" offsetx="-252" offsety="-274" stillframe="0" />
+<replace layer="2" image="14" offsetx="-252" offsety="-274" stillframe="0" />
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="166"/>
+<frame idx="11" duration="166"/>
+<frame idx="12" duration="166"/>
+<frame idx="13" duration="166"/>
+<frame idx="14" duration="166"/>
+<frame idx="15" duration="166"/>
+<frame idx="16" duration="166"/>
+<frame idx="17" duration="166"/>
+<frame idx="18" duration="166"/>
+<frame idx="19" duration="166"/>
+<frame idx="20" duration="166"/>
+<frame idx="21" duration="166"/>
+<frame idx="22" duration="166"/>
+</anim>
+<anim idx="8" name="MediumGrowRever" startstate="1" endstate="1" frames="23" duration="3486" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="15" offsetx="-254" offsety="-276" stillframe="0" />
+<replace layer="2" image="16" offsetx="-254" offsety="-276" stillframe="0" />
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="166"/>
+<frame idx="11" duration="166"/>
+<frame idx="12" duration="166"/>
+<frame idx="13" duration="166"/>
+<frame idx="14" duration="166"/>
+<frame idx="15" duration="166"/>
+<frame idx="16" duration="166"/>
+<frame idx="17" duration="166"/>
+<frame idx="18" duration="166"/>
+<frame idx="19" duration="166"/>
+<frame idx="20" duration="166"/>
+<frame idx="21" duration="166"/>
+<frame idx="22" duration="166"/>
+</anim>
+<anim idx="9" name="SmallGrowRevers" startstate="1" endstate="1" frames="23" duration="3486" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="15" offsetx="-254" offsety="-270" stillframe="0" />
+<replace layer="2" image="16" offsetx="-254" offsety="-270" stillframe="0" />
+<frame idx="2" duration="166"/>
+<frame idx="3" duration="166"/>
+<frame idx="4" duration="166"/>
+<frame idx="5" duration="166"/>
+<frame idx="6" duration="166"/>
+<frame idx="7" duration="166"/>
+<frame idx="8" duration="166"/>
+<frame idx="9" duration="166"/>
+<frame idx="10" duration="166"/>
+<frame idx="11" duration="166"/>
+<frame idx="12" duration="166"/>
+<frame idx="13" duration="166"/>
+<frame idx="14" duration="166"/>
+<frame idx="15" duration="166"/>
+<frame idx="16" duration="166"/>
+<frame idx="17" duration="166"/>
+<frame idx="18" duration="166"/>
+<frame idx="19" duration="166"/>
+<frame idx="20" duration="166"/>
+<frame idx="21" duration="166"/>
+<frame idx="22" duration="166"/>
+</anim>
+</anims>
+</entity>

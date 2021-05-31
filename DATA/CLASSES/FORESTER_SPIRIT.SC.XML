@@ -1,0 +1,48 @@
+<class id="Forester_Spirit" cpp_class="CVXFlyingUnit" parent="Military" entity="assets/entities/units/Forester_Spirit/Forester_Spirit.ent.xml">
+
+	<method sig="attack" vs="data/subai/forester_spirit_attack.vs" onfinish="data/subai/forester_spirit_attack_onfinish.vs"/>
+	<method sig="engage" vs="data/subai/forester_spirit_engage.vs"/>
+	<method sig="land" vs="data/subai/forester_spirit_land.vs"/>
+	<method sig="wait_for_death" vs="data/subai/forester_spirit_wait_for_death.vs"/>
+	<method sig="init" vs="data/subai/forester_spirit_init.vs"/>
+
+	<static_int radius="15" selection_radius="15"/>
+	<static_int formation_radius="32" formation_priority="400"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5631463]]Sprite[[]]"/>
+
+	<static_str display_name="[[5631463]]Sprite[[]]" display_name_plural="[[5646072]]Sprites[[]]"/>
+
+	<static_int sight="300"/>
+	<static_int speed="100"/>
+
+	<static_int maxhealth="100" initial_damage="10" initial_armor="0"/>
+	<static_int max_energy="50"/>
+
+	<static_str damage_type="magic"/>
+	<static_str defence_type = "medium"/>
+
+	<static_str cost="10/8/2"/>
+	<static_str rollover_description="[[5659493]]Sprites attack by infesting their targets, causing imminent death by slowly decreasing the victim's health. Can be upgraded to deal damage when infesting and to become invisible.[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/spirit.bmp"
+				portrait="Assets/Interface/Icons/spirit.rle"
+				skyimage="assets/interface/sky_forester.bmp"/>
+
+	<static_int attack_sleep = "1000"/>
+	
+	<static_str race_str="Race_Foresters"/>
+
+	<member_obj unit_possessed=""/>
+	
+	<member_int born_flower=""/>
+
+	<!-- must be different of walk anim to be able to detect it when the unit dies so it can play the die anim
+	in same direction and with the same veolicity as the movement anim. usually this anim is the same as the 
+	walk one -->
+	<static_int constantly_idle_played="20"/>
+	
+	<sounds
+		UnitSpecific="Spirit_specific_"
+		AnimDie="Spirit_death_"
+		command="Sprite0"/>
+</class>

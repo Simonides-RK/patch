@@ -1,0 +1,63 @@
+<class id="Trolls_SmallTroll" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Trolls_SmallTroll/Trolls_SmallTroll.ent.xml">
+
+	<method sig="init" vs="data/subai/trolls_smalltroll_init.vs"/>
+	<method sig="ondie" vs="data/subai/trolls_smalltroll_ondie.vs"/>
+	<method sig="attack" vs="data/subai/trolls_smalltroll_attack.vs" onfinish="data/subai/trolls_smalltroll_rolling_onfinish.vs"/>
+	<method sig="doattack" vs="data/subai/stun_doattack.vs"/>
+	<method sig="engage" vs="data/subai/trolls_smalltroll_engage.vs" onfinish="data/subai/trolls_smalltroll_rolling_onfinish.vs"/>
+	<method sig="engage_unit_type" vs="data/subai/trolls_smalltroll_engage_unit_type.vs" onfinish="data/subai/trolls_smalltroll_rolling_onfinish.vs"/>
+	<method sig="load_cannon" vs="data/subai/trolls_smalltroll_load_cannon.vs"/>
+	<method sig="play_unroll_anim" vs="data/subai/trolls_smalltroll_play_unroll_anim.vs"/>
+	<method sig="smashroll" vs="data/subai/trolls_smalltroll_smashroll.vs"/>
+
+	<static_int radius="30" selection_radius="30"/>
+	<static_int formation_radius="42" formation_priority="1000"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[7486042]]Trolls[[]]/[[7606307]]Troll[[]]"/>
+
+	<static_str display_name="[[7606307]]Troll[[]]" display_name_plural="[[7486042]]Trolls[[]]"/>
+
+	<static_int sight="400"/>
+	<static_int speed="75"/>
+
+	<static_int maxhealth="750" initial_damage="21" initial_armor="6"/>
+	<static_str cost="175/0/3"/>
+	
+	<static_int max_energy="65"/>
+	<static_int initial_energy="40"/>	
+
+	<static_str defence_type = "heavy"/>
+	<static_str damage_type="unarmed"/>
+
+	<static_str rollover_description="[[7611712]]Trolls are versatile fighters, which can roll towards incoming enemies and have a chance to stun them in combat. They are effective against ranged and mounted units.[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/Trolls_SmallTroll.bmp"/>
+	<static_str	portrait="Assets/Interface/Icons/Trolls_SmallTroll.rle"/>
+	<static_str	skyimage="assets/interface/sky_troll.bmp"/>
+
+	<static_int idle_anim_percent="5"/>
+
+	<sounds
+		AnimAttack="Club_Mace_Attack_"
+		AnimDie="Troll_death_"
+		AnimWalk2="assets/sounds/UnitSpecials/Small_Troll/Small_Troll_Rolling.wav"
+		command="Troll0"/>
+
+	<static_int stun_percent="40"/>
+	<static_int attack_dist="250"/>
+	<static_int factor="4"/>
+	<static_int crazed_effect_timeout="60000"/>
+	
+	<static_int smash_roll_damage="60"/>
+	<static_int smash_roll_energy="45"/>
+	<static_int smash_roll_radius="150"/>
+	<static_int smash_roll_range="400"/>
+	
+	<static_str race_str="Race_Trolls"/>
+
+	<static_int ai_prefer_as_concentrate_target = "1"/>
+	<static_int ai_concentrate_group="1"/>   <!-- general melee damage -->
+		
+	<member_int rolling=""/>
+	<member_obj cannon=""/>
+	<!-- reserved_int0 - used to mark if the troll has enter the cannon(increased its ref-counter trolls_loaded) -->
+</class>

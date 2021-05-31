@@ -1,0 +1,45 @@
+<class id="Darkling_Cannoneer" cpp_class="CVXUnit" parent="BaseDarklingUnit" entity="assets/entities/units/Darkling_Canonier/Darkling_Canonier.ent.xml">
+
+        <method sig="init"  vs="data/subai/darkling_cannoneer_init.vs"/>
+        <static_int range="650" min_range="2"/>                 
+        <static_int radius="30" selection_radius="30"/> 
+        <static_int formation_radius="35" formation_priority="400"/>
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4103658]]Cannoneer[[]]"/>                                                                                     
+
+        <static_str display_name="[[4103658]]Cannoneer[[]]" display_name_plural="[[4115717]]Cannoneers[[]]"/>
+
+        <static_int sight="670"/>
+        <static_int speed="80"/>
+
+        <static_int maxhealth="480" initial_damage="48" initial_armor="3"/>
+        <static_str cost="220/6/3"/>
+
+        <static_str damage_type="explosive"/>                                   
+        <static_str defence_type = "medium"/>
+
+        <static_str projectile_class="Darkling_Cannoneer_Proj"/>
+        <static_str     projectile_class_building="Darkling_Cannoneer_Proj"/>
+        <static_int     projectile_angle="-15"/>
+        <static_int     projectile_dist="30"/>
+        <static_int     splash_radius="100"/>
+        <static_str rollover_description="[[4127974]]Cannoneers have a powerful long range explosive attack, but are considerably weaker in close combat. Excellent against buildings.[[]]"/>
+
+        <static_str icon="Assets/Interface/Icons/cannoneer.BMP"
+                                portrait="assets/interface/icons/cannonner.rle"
+                                skyimage="assets/interface/sky_dragon.bmp"/>
+
+        <static_str race_str="Race_Darklings"/>
+		<!-- ypsilon: upg bonuses  -->
+		<static_int unholy_armor_bonus="4"/>
+
+        <!-- AI -->
+        <static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+        <static_int ai_draw_back_if_disabled="1"/>
+        <static_int ai_concentrate_group="0"/>
+        <!-- AI -->     
+        <sounds
+                AnimAttack1="Darkling_Cannoneer_non_fortified_attack"
+                AnimSpecial3="Darkling_Cannoneer_fortified_attack"
+                AnimDie="Darkling_Unit_death"
+                command="Cannoneer0"/>
+</class>                                

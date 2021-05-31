@@ -1,0 +1,51 @@
+<class id="Human_Cavalry" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Human_Cavalerist/Human_Cavalerist.ent.xml">
+	
+	<method sig="init" vs="data/subai/human_cavalry_init.vs"/>
+	<method sig="idle" vs="data/subai/human_cavalry_idle.vs"/>
+	<method sig="promote" vs="data/subai/human_cavalry_promote.vs"/>
+	<method sig="dogallop" vs="data/subai/human_cavalry_gallop.vs" onfinish="data/subai/human_cavalry_gallop_onfinish.vs"/>
+
+	<static_int radius="30" selection_radius="35"/>
+	<static_int formation_radius="50" formation_priority="1200"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6242400]]Squire[[]]"/>
+
+	<static_str display_name="[[6242400]]Squire[[]]" display_name_plural="[[6258830]]Squires[[]]"/>
+
+	<static_int maxhealth="680"/>
+	<static_int sight="500"/>
+	<static_int speed="150"/>
+
+	<static_int initial_damage="37"/>
+	<static_int initial_armor="4"/>
+	<static_str damage_type="blade"/>
+	<static_str defence_type="mounted"/>
+	
+	<static_int adv_armor_speed_bonus="35"/>
+	<static_int adv_armor_health_bonus="350"/>
+	
+	<static_str cost="200/4/3"/>
+	<static_str rollover_description="[[6268172]]Squires are very fast mounted units, best at scouting and brief skirmishes. Can be upgraded to become invisible until they attack and to increase their speed and health.[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/light raider.BMP"
+				portrait="assets/interface/icons/light rider.rle"
+				skyimage="assets/interface/sky_forester.bmp"/>
+
+	<static_str race_str="Race_Humans"/>
+
+	<sounds
+		AnimAttack="Sword_Axe_Attack"
+		UnitSpecific="Horse_"
+		AnimDie="Horse_death"
+		command="Squire0"/>
+		
+	<!-- AI -->
+	<static_int ai_melee_protection="1"/>
+	<static_int ai_melee_escape_time="4"/>	
+	<static_int ai_concentrate_group="2"/>   <!-- fast blade damage -->
+	<!-- AI -->
+		
+	<static_int time_to_stealth="10000"/>
+	<static_int time_to_check_stealth="1000"/>
+	
+	<member_int stealth=""/>
+</class>	

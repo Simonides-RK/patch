@@ -1,0 +1,74 @@
+﻿<class id="Forester_WolfMaster" cpp_class="CVXUnit" parent="Military" entity="Assets/Entities/units/Forester_WolfMaster/Forester_WolfMaster.ent.xml">
+
+	<method sig="init" vs="data/subai/forester_wolfmaster_init.vs"/>
+	<method sig="onsetplayer" vs="data/subai/forester_wolfmaster_setplayer.vs"/>
+	<method sig="post_teleport" vs="data/subai/forester_wolfmaster_post_teleport.vs"/>
+	<method sig="wolfscout" vs="data/subai/forester_wolfmaster_scout.vs"/>
+	<method sig="divine_journey_start" vs="data/subai/forester_wolfmaster_divine_journey_start.vs"/>
+	<method sig="divine_journey_end" vs="data/subai/forester_wolfmaster_divine_journey_end.vs"/>
+	
+	<behavior script="data/subai/forester_wolfmaster_behavior_summon_wolves.vs"/>
+
+	<static_int range="320" min_range="2"/>
+	<static_int radius="20" selection_radius="25"/>
+	<static_int formation_radius="70" formation_priority="800"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5854534]]Wolf Master[[]]"/>
+
+	<static_str display_name="[[5854534]]Wolf Master[[]]" display_name_plural="[[5867031]]Wolf Masters[[]]"/>
+
+	<static_int speed="120"/>
+	<static_int sight="400"/>
+
+	<static_int maxhealth="380" initial_damage="9" initial_armor="3"/>
+	<static_int max_energy="65"/>
+	<static_int initial_energy="20"/>	
+
+	<static_str damage_type="blade"/>
+	<static_str defence_type = "mounted"/>
+
+	<static_str cost="165/0/3"/>
+	<static_str rollover_description="[[5878716]]Wolf Masters lead a pack of fierce wolves and are able to summon additional wolves should their minions be killed. Can be upgraded to attack from a distance and to improve their summoning skills.[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/Wolfmaster.bmp"
+				portrait="Assets/Interface/Icons/Wolfmaster.rle"/>
+	<static_str	skyimage="assets/interface/sky_forester.bmp"/>
+
+	<static_str blood_particles="Data/Particles/BloodFeedbackLow.part.xml"/>
+	
+	<static_str projectile_class = "Forester_WolfMasterKnife"
+				projectile_class_building = "Forester_WolfMasterKnife"/>
+	
+	<static_int	projectile_angle="-50" 
+				projectile_dist = "40"/>
+
+	<static_int gray_wolf_summon_time="2000"/>
+	<static_int gray_wolf_energy_cost="45"/>
+	<static_int gray_wolf_energy_cost_upgraded="20"/>
+	<static_int scout_wolf_energy_cost="40"/>
+	<static_int max_gray_wolves="3"/>
+	<static_int max_gray_wolves_upgraded="4"/>
+	<static_int bloodlust_chance="30"/>
+	<static_int bloodlust_damage="150"/>
+	<static_int init_close_combat_range="17"/>
+	<static_int damage_upgrade_bonus="6"/>
+
+	<static_str race_str="Race_Foresters"/>
+
+	<member_int scout_charges="1"/>
+	<member_obj wm_wolf1=""/>
+	<member_obj wm_wolf2=""/>
+	<member_obj wm_wolf3=""/>
+	<member_obj wm_wolf4=""/>
+	
+
+	<sounds
+		AnimAttack="Wolf_attack_"
+		AnimDie="Wolf_death_"
+		command="Wolf0"/>
+		
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+	<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+	<!-- AI -->
+	
+</class>

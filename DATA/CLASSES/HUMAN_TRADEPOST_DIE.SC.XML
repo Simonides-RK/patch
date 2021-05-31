@@ -1,0 +1,4 @@
+<class id="Human_TradePost_Die" cpp_class="CVXDyingBuilding" parent="BaseDyingBuilding" entity="assets/entities/Buildings/Human_Tradepost/Human_Tradepost_Die.ent.xml">
+	<sounds
+		AnimDie="Forester_building_collapse"/>
+</class>

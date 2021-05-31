@@ -1,0 +1,284 @@
+<commands>
+
+<!-- Ivko: Texts edited, 10.03.2005. Please don't remove this comment! -->
+
+<!-- ATTN: alternative cost and addremove scripts -->
+<cmd id="construct_forester_magic_house"
+        template_cmd="template_construct"
+        name="[[13632884]]Plant Magic @House[[]]"
+        button="forester_magichouse.bmp"
+        position="5"
+        param="Forester_MagicHouse"
+        cost_script="data/cmds/cost_house.vs"
+        onaddremove_script="data/cmds/onaddremove_construct_house.vs"
+        verifier_script="data/cmds/house_verify.vs"
+        rollover_param=""
+        shared_position = "1"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+<cmd id="construct_forester_magic_house2"
+        template_cmd="template_construct"
+        name="[[13632884]]Plant Magic @House[[]]"
+        button="forester_magichouse.bmp"
+        position="5"
+        param="Forester_MagicHouse2"
+        cost_script="data/cmds/cost_house.vs"
+        onaddremove_script="data/cmds/onaddremove_construct_house.vs"
+        verifier_script="data/cmds/house_verify.vs"
+        rollover_param=""
+        shared_position = "1"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+<cmd id="construct_forester_tower"
+        template_cmd="template_construct"
+        name="[[13644135]]Plant Ranger's @Tower[[]]"
+        button="forester_tower.bmp"
+        position="6"
+		verifier_script="data/cmds/tower_verify.vs"
+        rollover_param=""
+        param="Forester_Tower"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+<cmd id="construct_forester_den"
+        template_cmd="template_construct"
+        name="[[13656989]]Plant @Den[[]]"
+        button="forester_den.bmp"
+        position="9"
+        rollover_param=""
+        param="Forester_Den"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+<cmd id="construct_forester_hut"
+        template_cmd="template_construct"
+        name="[[13667085]]Plant H@ut[[]]"
+        button="forester_hut.bmp"
+        position="10"
+        rollover_param=""
+        param="Forester_Hut"
+        requirements="upgrade_ForesterLevel1"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+
+<cmd id="construct_independent_forester_trade_post"
+        template_cmd="template_construct_with_worker"
+        name="[[13675774]]Plant Trade @Post[[]]"
+        icon="Assets/Interface/Icons/forester_tower.bmp"
+        button="forester_trade_post.bmp"
+        position="5"
+        rollover_param=""
+        param="Forester_TradePost"
+        requirements="upgrade_ForesterLevel1"
+>
+        <src obj="Forester_Worker"/>
+</cmd>
+
+<cmd id="construct_independent_forester_tower"
+        template_cmd="template_construct_with_worker"
+        name="[[13644135]]Plant Ranger's @Tower[[]]"
+        icon="Assets/Interface/Icons/forester_tower.bmp"
+        button="forester_tower.bmp"
+        position="6"
+		verifier_script="data/cmds/tower_verify.vs"
+        rollover_param=""
+        param="Forester_Tower"
+        requirements="upgrade_ForesterLevel1"
+>
+        <src obj="Forester_Worker"/>
+</cmd>
+
+<cmd id="construct_forester_tower_tradepost"
+	template_cmd="template_construct"
+	execute_for_script="return .forester_tradepost_fake_queuer;"
+	name="[[13786957]]Plant Guard @Tower[[]]"
+	button="forester_tower.bmp"
+	position="5"
+	verifier_script="data/cmds/tower_verify.vs"
+	rollover_param=""
+	param="Forester_Tower"
+	select_building_place_drag_script="data/cmds/BUILDING_PLACING_DRAG_TOWER.vs"
+>
+	<src obj="Forester_TradePost"/>
+</cmd>
+
+<cmd id="construct_independent_forester_magic_well"
+        template_cmd="template_construct_with_worker"
+        name="[[13681890]]Plant Magic W@ell[[]]"
+        button="forester_well.bmp"
+        position="7"
+        rollover_param=""
+        param="Forester_MagicWell"
+        select_building_place_drag_script="data/cmds/building_placing_drag_magic_well.vs"
+        requirements="upgrade_ForesterLevel1"
+>
+        <src obj="Forester_Worker"/>
+</cmd>
+
+<cmd id="construct_independent_forester_gold_mine"
+        template_cmd="template_construct_with_worker"
+        name="[[13699767]]Plant @Gold Plant[[]]"
+        button="forester_gold.bmp"
+        position="8"
+        rollover_param=""
+        param="Forester_GoldMine"
+        select_building_place_drag_script="data/cmds/building_placing_drag_gold_mine.vs"
+        requirements="upgrade_ForesterLevel1, Forester_MagicWell : 1"
+>
+        <src obj="Forester_Worker"/>
+</cmd>
+
+<cmd id="construct_forester_gold_mine"
+        template_cmd="template_construct"
+        name="[[13699767]]Plant @Gold Plant[[]]"
+        button="forester_gold.bmp"
+        position="8"
+        rollover_param=""
+        param="Forester_GoldMine"
+        select_building_place_drag_script="data/cmds/building_placing_drag_gold_mine.vs"
+        requirements="Forester_MagicWell : 1"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+<cmd id="construct_forester_magic_well"
+        template_cmd="template_construct"
+        name="[[13681890]]Plant Magic W@ell[[]]"
+        button="forester_well.bmp"
+        position="7"
+        rollover_param=""
+        param="Forester_MagicWell"
+        select_building_place_drag_script="data/cmds/building_placing_drag_magic_well.vs"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+<cmd id="construct_forester_shamans_hut"
+        template_cmd="template_construct"
+        name="[[13706741]]Plant @Shaman's Hut[[]]"
+        button="forester_shamanhut.bmp"
+        icon="Assets/Interface/Icons/forester_shamanhut.bmp"
+        position="11"
+        rollover_param=""
+        param="Forester_ShamansHut"
+        requirements="upgrade_ForesterLevel2"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+<cmd id="construct_forester_moon_obelisk"
+        template_cmd="template_construct"
+        name="[[13712064]]Plant @Moon Obelisk[[]]"
+        button="forester_moon_obelisk.bmp"
+        position="12"
+        rollover_param=""
+        param="Forester_MoonObelisk"
+        requirements="upgrade_ForesterLevel3"
+>
+        <src obj="Forester_Townhall"/>
+</cmd>
+
+<cmd id="create_heal_area1"
+  name="[[13723581x]]Create @Healing Area[[]]"
+        button="heal area.bmp"
+        position="5"
+        rollover_param="[[13734801x]]Casts a spell that heals up to 9 friendly units with #GetClassInt('Forester_Healing_Area1', 'areaheal_percentage')#% health or less in the affected area.[[]]"
+        rollover_script="data/cmds/rollover_default.vs"
+        dispatch_type="run script"
+        dispatch_param="data/subai/forester_house_createarea.vs"
+        param="MagicAreaClass Forester_Healing_Area1, MagicAreaCharge 9"
+
+        select_building_place_drag_object="TowerAreaHeal"
+        select_building_place_drag_script="data/cmds/building_placing_drag_magic_area.vs"
+
+        selecttarget_text="[[13743673]]Select Healing Area location[[]]"
+        cost_script="return '150/0/0';"
+        onaddremove_script="data/cmds/onaddremove_default.vs"
+        checkcost_script="data/cmds/costcheck_default.vs"
+>
+        <src obj="Forester_Mage_Tower"/>
+</cmd>
+
+
+<cmd id="cast_eye"
+  name="[[13750480]]Cast @All-Seeing Eyes[[]]"
+        button="forester_allseeeye.bmp"
+        position="7"
+        rollover_param="[[13760654]]Enables a unit to detect invisible enemies.[[]]"
+        rollover_script="data/cmds/rollover_default.vs"
+        dispatch_type="run script"
+        dispatch_param="data/subai/forester_house_cast.vs"
+        param="EffectName revealer, EffectTimeout 0"
+
+        selecttarget_text="[[13778561]]Select a nearby unit to enchant[[]]"
+        cost_script="return '75/0/0';"
+        onaddremove_script="data/cmds/onaddremove_effecttarget.vs"
+        checkcost_script="data/cmds/costcheck_default.vs"
+        selecttarget_verifyscript="data/cmds/selectverify_allseeingeyes.vs"
+        selecttarget_cursor_invalid="cantselect"
+        
+>
+<src obj="Forester_Mage_Tower"/>
+</cmd>
+
+
+                                                                                                                                                                                                                                                                                                                                                                           
+ <cmd id="construct_forester_gold_mine_tradepost"
+        template_cmd="template_construct"
+        execute_for_script="return .forester_tradepost_fake_queuer;"
+        name="[[13699767]]Plant @Gold Plant[[]]"
+        button="forester_gold.bmp"
+        position="6"
+        rollover_param=""
+        param="Forester_GoldMine"
+        select_building_place_drag_script="data/cmds/building_placing_drag_gold_mine.vs"
+        requirements="Forester_MagicWell : 1"
+>
+        <src obj="Forester_TradePost"/>
+</cmd>
+
+<cmd id="construct_forester_magic_well_tradepost"
+        template_cmd="template_construct"
+		execute_for_script="return .forester_tradepost_fake_queuer;"
+        name="[[13681890]]Plant Magic W@ell[[]]"
+        button="forester_well.bmp"
+        position="7"
+        rollover_param=""
+        param="Forester_MagicWell"
+        select_building_place_drag_script="data/cmds/BUILDING_PLACING_DRAG_MAGIC_WELL.VS"
+>
+        <src obj="Forester_TradePost"/>
+</cmd>
+
+
+<cmd id="create_heal_area"
+  name="[[13723581]]Create Healing @Zone[[]]"
+        button="heal area1.bmp"
+        position="6"
+        rollover_param="[[13734801]]Casts a spell that heals up to 24 friendly units in the affected zone.[[]]"
+        rollover_script="data/cmds/rollover_default.vs"
+        dispatch_type="run script"
+        dispatch_param="data/subai/forester_house_createarea.vs"
+        param="MagicAreaClass Forester_Healing_Area, MagicAreaCharge 24"
+
+        select_building_place_drag_object="TowerAreaHeal"
+        select_building_place_drag_script="data/cmds/building_placing_drag_magic_area.vs"
+
+        selecttarget_text="[[13743673]]Select Healing Area location[[]]"
+        cost_script="return '230/0/0';"
+        onaddremove_script="data/cmds/onaddremove_default.vs"
+        checkcost_script="data/cmds/costcheck_default.vs"
+        requirements="upgrade_ForesterLevel1"
+>
+        <src obj="Forester_Mage_Tower"/>
+</cmd>
+
+</commands>

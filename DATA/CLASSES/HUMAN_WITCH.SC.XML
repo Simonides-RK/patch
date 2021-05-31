@@ -1,0 +1,59 @@
+<class id="Human_Witch" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Human_Witch/Human_Witch.ent.xml">
+        <method sig="init" vs="data/subai/human_witch_init.vs"/>
+        <method sig="ondamage"                  vs="data/subai/human_witch_ondamage.vs"/>
+        <method sig="attack"                    vs="data/subai/human_witch_attack.vs"                   verify="data/subai/human_witch_attack_verify.vs"/>
+        <method sig="attack_unit_type"  vs="data/subai/unit_attack_unit_type.vs"                verify="data/subai/human_witch_attack_verify.vs"/>
+        <method sig="engage"                    vs="data/subai/human_witch_engage.vs"/>
+        <method sig="engage_unit_type"  vs="data/subai/human_witch_engage_unit_type.vs" verify="data/subai/human_witch_attack_verify.vs"/>
+
+        <static_int range="400" min_range="2"/>                 
+        <static_int radius="16" selection_radius="20"/> 
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6767175]]Witch[[]]"/>                                                                                    
+
+        <static_str display_name="[[6767175]]Witch[[]]" display_name_plural="[[6778704]]Witches[[]]"/>
+
+        <static_int sight="400"/>
+        <static_int speed="100"/>
+
+        <static_int maxhealth="450" initial_damage="18" initial_armor="4"/>
+        <static_str cost="190/8/2"/> 
+
+        <static_int max_energy="350" initial_energy="90"/> 
+
+        <static_str damage_type="magic"/>                                       
+        <static_str defence_type = "medium"/>
+
+        <static_str projectile_class="Human_WitchProjectile"/>
+        <static_str     projectile_class_building="Human_WitchProjectile"/>
+        <static_int     projectile_angle="0"/>
+        <static_int     projectile_dist="35"/>
+
+        <static_str rollover_description="[[6789087]]Witches are adept in casting curses. They are capable of inflicting damage to multiple units at once with their Curse spell and can be upgraded to negate the armour of the cursed enemies.[[]]"/>
+
+        <static_str icon="Assets/Interface/Icons/witch.BMP"
+                                portrait="Assets/Interface/Icons/witch.rle"/>
+        <static_str     skyimage="assets/interface/sky_forester.bmp"/>
+        
+        <static_str race_str="Race_Humans"/>
+        
+        <value id="DamageTextValue" script="int b; str s; b = GetClassInt(.class, 'initial_damage'); s = '&lt;color 255 255 64&gt;' + Translate('[[4165677]]Damage:[[]]') + ' &lt;color 255 255 255&gt;' + b; return s;"/>
+        <value id="DamageName" script="return Translate('[[6799443]]Curse spell[[]]');"/>
+
+        <static_int curse_timeout="10000"/>
+        <static_int time_to_retreat="600"/>
+        <static_int attack_energy="10"/>
+        <static_int attack_energy_sleep="1000"/>
+		<static_int weaken_health_bonus="110"/>
+		<static_int weaken_armor_bonus="1"/>
+
+        <!-- AI -->
+        <static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+        <static_int ai_draw_back_if_disabled="1"/>
+        <!-- AI -->
+
+        <sounds
+                AnimAttack="Witch_attack"
+                AnimDie="With_death"
+                UnitSpecific="Human_Witch_Specific"
+                command="Witch0"/>
+</class>

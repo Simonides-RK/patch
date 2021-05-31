@@ -1,0 +1,4 @@
+<class id="Mage_Tower" cpp_class="CVXBuilding" parent="BaseTownBuilding" entity="">
+
+        <member_obj magic_area=""/>
+</class>

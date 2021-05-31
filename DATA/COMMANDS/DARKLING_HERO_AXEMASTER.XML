@@ -1,0 +1,210 @@
+<commands>
+
+<!-- Ivko: Texts edited, 20.02.2005. Please don't remove this comment! -->
+
+<cmd id="Leap_Attack"
+  name="[[11787977]]L@eap Attack[[]]"
+	button="leap attack.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[11799376]]Makes the Axemaster leap to the specified location, dealing #GetClassInt('Darkling_Axemaster', 'leap_attack_dmg_per_unit')# damage to all enemy units there.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="leap_attack"
+	selecttarget_text="[[11801192]]Select target location[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	select_building_place_drag_object="Area_Axemaster_LeapAttack"
+	select_building_place_drag_script="data/cmds/dragscript_unithighlight.vs"
+	param="RadiusStaticInt leap_attack_dmg_range, Class Unit"
+	selecttarget_verifyscript="data/cmds/selectverify_axemaster_leapattack.vs"
+	selecttarget_cursor_invalid="cantselect"
+	point_command="1"
+	accept_minimap_target="no"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Develop_Leap_Attack"
+	template_cmd="template_develop_hero_level_2"
+	name="[[11816820]]Learn L@eap Attack[[]]"	button="leap attack.bmp"
+	position="17"
+	toggle_tab="1"
+	rollover_param="[[11799376]]Makes the Axemaster leap to the specified location, dealing #GetClassInt('Darkling_Axemaster', 'leap_attack_dmg_per_unit')# damage to all enemy units there.[[]]"
+	param="Skill Leap_Attack, ManaCost 100, MaxMana 150"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+<cmd id="Bash"
+  name="[[11822083]]@Bash[[]]"
+	button="bash.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[11837490]]Enables the Axemaster to stun his enemy and deal #GetClassInt('Darkling_Axemaster', 'bash_multiplyer')# times his normal damage during his next attack.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="bash"
+	selecttarget_text=""
+	verifier_script="data/cmds/darkling_axemaster_bash_verify.vs"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Develop_Bash"
+	template_cmd="template_develop_hero_level_1"
+	name="[[11845527]]Learn @Bash[[]]"
+	button="bash.bmp"
+	position="14"
+	toggle_tab="1"
+	rollover_param="[[11837490]]Enables the Axemaster to stun his enemy and deal #GetClassInt('Darkling_Axemaster', 'bash_multiplyer')# times his normal damage during his next attack.[[]]"
+	param="Skill Bash, ManaCost 80, MaxMana 120"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Ferocity"
+  name="[[11854397]]@Ferocity[[]]"
+	button="ferocity.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[11861940]]Heals the Axemaster by #GetClassInt('Darkling_Axemaster', 'ferocity_heal_percent')#% each time he kills an enemy or by #GetClassInt('Darkling_Axemaster', 'ferocity_heal_percent_extra')+GetClassInt('Darkling_Axemaster', 'ferocity_heal_percent')#% when he kills with a special attack.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Develop_Ferocity"
+	template_cmd="template_develop_hero_level_1"
+	name="[[11875487]]Learn @Ferocity[[]]"
+	button="ferocity.bmp"
+	position="15"
+	toggle_tab="1"
+	rollover_param="[[11861940]]Heals the Axemaster by #GetClassInt('Darkling_Axemaster', 'ferocity_heal_percent')#% each time he kills an enemy or by #GetClassInt('Darkling_Axemaster', 'ferocity_heal_percent_extra')+GetClassInt('Darkling_Axemaster', 'ferocity_heal_percent')#% when he kills with a special attack.[[]]"
+	param="Skill Ferocity, ManaCost 0, MaxMana 0"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Blood_Lust"
+  name="[[11887332]]Blood L@ust[[]]"
+	button="blood lust.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[11892573]]Temporarily increases the Axemaster's damage by #GetClassInt('Darkling_Axemaster', 'blood_lust_bonus_damage')# after he kills an enemy. The bonus is cumulative.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<cmdtext target=""
+	         text=""
+	         default-text="[[]]***[[]]"/>
+
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Develop_Blood_Lust"
+	template_cmd="template_develop_hero_level_1"
+	name="[[11903000]]Learn Blood L@ust[[]]"
+	button="blood lust.bmp"
+	position="16"
+	toggle_tab="1"
+	rollover_param="[[11892573]]Temporarily increases the Axemaster's damage by #GetClassInt('Darkling_Axemaster', 'blood_lust_bonus_damage')# after he kills an enemy. The bonus is cumulative.[[]]"
+	param="Skill Blood_Lust, ManaCost 0, MaxMana 0"
+>
+	<cmdtext target=""
+	         text="[[]]***[[]]"
+	         default-text="[[]]***[[]]"/>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Death_Blow"
+  name="[[11913412]]@Death Blow[[]]"
+	button="death blow.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[11924064]]Enables the Axemaster to deal #GetClassInt('Darkling_Axemaster', 'death_blow_multiplyer')# times his normal damage during his next attack.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="death_blow"
+	selecttarget_text=""
+	verifier_script="data/cmds/darkling_axemaster_death_blow_verify.vs"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Develop_Death_Blow"
+	template_cmd="template_develop_hero_level_1"
+	name="[[11937937]]Learn @Death Blow[[]]"
+	button="death blow.bmp"
+	position="13"
+	toggle_tab="1"
+	rollover_param="[[11924064]]Enables the Axemaster to deal #GetClassInt('Darkling_Axemaster', 'death_blow_multiplyer')# times his normal damage during his next attack.[[]]"
+	param="Skill Death_Blow, ManaCost 80, MaxMana 120"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Revenge"
+  name="[[11940661]]Dea@th's Embrace[[]]"
+	button="death embrace.BMP"
+	position="6"
+	enabled="0"
+	rollover_param="[[11954423]]Sacrifices the Axemaster, focusing his life energy into a wave that deals #GetClassInt('Darkling_Axemaster', 'revenge_damage')# damage to nearby enemies. This skill is automatically activated when the Champion is killed and decreases the resurrection time and cost of the Champion by #GetClassInt('Darkling_Axemaster', 'revenge_decrease_percent')#%.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="revenge"
+	selecttarget_text=""
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Develop_Revenge"
+	template_cmd="template_develop_hero_level_3"
+	name="[[11965744]]Learn Dea@th's Embrace[[]]"
+	button="death embrace.BMP"
+	position="19"
+	toggle_tab="1"
+	rollover_param="[[11971406]]Sacrifices the Axemaster, focusing his life energy into a wave that deals #GetClassInt('Darkling_Axemaster', 'revenge_damage')# damage to nearby enemies. This skill is automatically activated when the Champion is killed  and decreases the resurrection time and cost of the Champion by #GetClassInt('Darkling_Axemaster', 'revenge_decrease_percent')#%.[[]]"
+	param="Skill Revenge, ManaCost 1, MaxMana 1"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Invincibility"
+  name="[[11982285]]@Invincibility[[]]"
+	button="invincibility.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[11992432]]Renders the Axemaster invulnerable to enemy attacks and increases his speed by #GetClassInt('Darkling_Axemaster', 'invincibility_speedbonus')#% for #GetClassInt('Darkling_Axemaster', 'invincibility_timeout') / 1000# seconds.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="invincibility"
+	selecttarget_text=""
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Develop_Invincibility"
+	template_cmd="template_develop_hero_level_2"
+	name="[[12009969]]Learn @Invincibility[[]]"
+	button="invincibility.bmp"
+	position="18"
+	toggle_tab="1"
+	rollover_param="[[11992432]]Renders the Axemaster invulnerable to enemy attacks and increases his speed by #GetClassInt('Darkling_Axemaster', 'invincibility_speedbonus')#% for #GetClassInt('Darkling_Axemaster', 'invincibility_timeout') / 1000# seconds.[[]]"
+	param="Skill Invincibility, ManaCost 120, MaxMana 180"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+<cmd id="Develop_InvincibilityLevel3"
+	template_cmd="template_develop_hero_level_3"
+	name="[[12009969]]Learn @Invincibility[[]]"
+	button="invincibility.bmp"
+	position="18"
+	enabled="0"
+	toggle_tab="1"
+	rollover_param="[[11992432]]Renders the Axemaster invulnerable to enemy attacks and increases his speed by #GetClassInt('Darkling_Axemaster', 'invincibility_speedbonus')#% for #GetClassInt('Darkling_Axemaster', 'invincibility_timeout') / 1000# seconds.[[]]"
+	param="Skill Invincibility, ManaCost 120, MaxMana 180"
+>
+	<src obj="Darkling_Axemaster"/>
+</cmd>
+
+</commands>

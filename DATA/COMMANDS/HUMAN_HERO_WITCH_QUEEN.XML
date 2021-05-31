@@ -1,0 +1,214 @@
+<commands>
+
+<!-- Ivko: Texts edited, 11.03.2005. Please don't remove this comment! -->
+
+<cmd id="Develop_Levitation"
+	template_cmd="template_develop_hero_level_1"
+	name="[[15844608]]Learn Levitatio@n[[]]"
+	button="levitation.bmp"
+	position="13"
+	toggle_tab="1"
+	rollover_param="[[15857208]]Enables the Witch Queen to ascend in the air, rendering her immune to non-ranged attacks.[[]]"
+	param="Skill Levitation, ManaCost 10, MaxMana 10, DevScript data/subai/human_witchqueen_develop_levitation.vs"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Levitation"
+  name="[[15860741]]Levitatio@n[[]]"
+	button="levitation.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[15857208]]Enables the Witch Queen to ascend in the air, rendering her immune to non-ranged attacks.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="ascend"
+	verifier_script="data/cmds/human_witchqueen_ascend_verify.vs"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Land"
+  name="[[15874065]]La@nd[[]]"
+	button="land.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[15882627]]Makes the Witch Queen descend to the ground.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/human_witchqueen_descend.vs"
+	verifier_script="data/cmds/human_witchqueen_descend_verify.vs"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="setattacktarget"
+     name=""
+     dispatch_type="execute method"
+     dispatch_param="setattacktarget"
+>
+
+	<cmdtext target="Unit"
+		default-text="[[11253765]]Right-click to attack this unit[[]]"/>
+	<cmdtext target="Building"
+		default-text="[[11260046]]Right-click to attack this building[[]]"/>
+
+  <src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Develop_Consume"
+	template_cmd="template_develop_hero_level_1"
+	name="[[15894973]]Learn @Consume Power[[]]"
+	button="consume.bmp"
+	position="14"
+	toggle_tab="1"
+	rollover_param="[[15900365]]Consumes up to #GetClassInt('Human_WitchQueen', 'consume_amnt_hp')# points of health and up to #GetClassInt('Human_WitchQueen', 'consume_amnt_mp')# points of energy from the specified enemy transforming them to health points for the Witch Queen.[[]]"
+	param="Skill Consume, ManaCost 80, MaxMana 120"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Consume"
+  name="[[15916833]]@Consume Power[[]]"
+	button="consume.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[15900365]]Consumes up to #GetClassInt('Human_WitchQueen', 'consume_amnt_hp')# points of health and up to #GetClassInt('Human_WitchQueen', 'consume_amnt_mp')# points of energy from the specified enemy transforming them to health points for the Witch Queen.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="consume"
+	selecttarget_text="[[12076972]]Select enemy unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_objects_in_range_from_air.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Develop_WitheringBreeze"
+	template_cmd="template_develop_hero_level_2"
+	name="[[15924613]]Learn @Withering Breeze[[]]"
+	button="withering breeze.BMP"
+	position="18"
+	toggle_tab="1"
+	rollover_param="[[15930601]]Causes cursed units around the Witch Queen to move considerably slower, decreasing their movement and attack speed by #GetClassInt('Human_WitchQueen', 'witheringbreeze_slowfactor')#%.[[]]"
+	param="Skill WitheringBreeze, ManaCost 0, MaxMana 0, DevScript data/subai/human_witchqueen_withbreeze_dev.vs, UndevScript data/subai/human_witchqueen_withbreeze_dev.vs"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="WitheringBreeze"
+  name="[[15945018]]@Withering Breeze[[]]"
+	button="withering breeze.BMP"
+	position="7"
+	enabled="0"
+	rollover_param="[[15930601]]Causes cursed units around the Witch Queen to move considerably slower, decreasing their movement and attack speed by #GetClassInt('Human_WitchQueen', 'witheringbreeze_slowfactor')#%.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Develop_Voice_of_Damnation"
+	template_cmd="template_develop_hero_level_1"
+	name="[[15959618]]Learn Voice of @Damnation[[]]"
+	button="voice of damnation.bmp"
+	position="15"
+	toggle_tab="1"
+	rollover_param="[[15962924]]Enables the Witch Queen to curse nearby enemies while attacking. Cursed units suffer #GetClassInt('Human_WitchQueen', 'curse_damage')# damage per second as long as a Witch is around.[[]]"
+	param="Skill Voice_of_Damnation, ManaCost 0, MaxMana 0, DevScript data/subai/human_witchqueen_voiceofdamnation.vs, UndevScript data/subai/human_witchqueen_voiceofdamnation_undev.vs"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Voice_of_Damnation"
+  name="[[15977035]]Voice of @Damnation[[]]"
+	button="voice of damnation.bmp"
+	position="7"
+	enabled="0"
+	rollover_param="[[15962924]]Enables the Witch Queen to curse nearby enemies while attacking. Cursed units suffer #GetClassInt('Human_WitchQueen', 'curse_damage')# damage per second as long as a Witch is around.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Develop_Consternating_Touch"
+	template_cmd="template_develop_hero_level_1"
+	name="[[15981635]]Learn @Blight[[]]"
+	button="consternating touch.bmp"
+	position="16"
+	toggle_tab="1"
+	rollover_param="[[15998272]]Instantly kills each unit attacked by the Witch Queen that has less than #GetClassInt('Human_WitchQueen', 'consternating_touch_health')#% health.[[]]"
+	param="Skill Consternating_Touch, ManaCost 0, MaxMana 0"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Consternating_Touch"
+	name="[[16006181]]@Blight[[]]"
+	button="consternating touch.bmp"
+	position="7"
+	enabled="0"
+	rollover_param="[[15998272]]Instantly kills each unit attacked by the Witch Queen that has less than #GetClassInt('Human_WitchQueen', 'consternating_touch_health')#% health.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Develop_HauntBuilding"
+	template_cmd="template_develop_hero_level_2"
+	name="[[16017326]]Learn Ha@unt Building[[]]"
+	button="Haunt Building.bmp"
+	position="17"
+	toggle_tab="1"
+	rollover_param="[[16029553]]Enchants an enemy building with a spell that damages the structure with #GetClassInt('Human_WitchQueen', 'haunt_building_damage_per_sec')# health points per second and curses nearby enemies. If the building is a Tower, it can't fire. In addition, the building gets disabled and can't plant buildings or train units anymore.[[]]"
+	param="Skill HauntBuilding, ManaCost 150, MaxMana 225"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="HauntBuilding"
+  name="[[16033011]]Ha@unt Building[[]]"
+	button="Haunt Building.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[16029553]]Enchants an enemy building with a spell that damages the structure with #GetClassInt('Human_WitchQueen', 'haunt_building_damage_per_sec')# health points per second and curses nearby enemies. If the building is a Tower, it can't fire. In addition, the building gets disabled and can't plant buildings or train units anymore.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="hauntbuilding"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+
+	selecttarget_text="[[16043478]]Select enemy building[[]]"
+	selecttarget_verifyscript="data/cmds/selectverify_haunt_building.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Develop_Polymorph"
+	template_cmd="template_develop_hero_level_3"
+	name="[[16052157]]Learn Pol@ymorph[[]]"
+	button="polymorph.bmp"
+	position="19"
+	toggle_tab="1"
+	rollover_param="[[16062190]]Turns all cursed enemy units near the Witch Queen into rats for #GetClassInt('Human_WitchQueen', 'polymorph_duration') / 1000# seconds. Champions are not affected.[[]]"
+	param="Skill Polymorph, ManaCost 180, MaxMana 270"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+<cmd id="Polymorph"
+  name="[[16075037]]Pol@ymorph[[]]"
+	button="polymorph.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[16062190]]Turns all cursed enemy units near the Witch Queen into rats for #GetClassInt('Human_WitchQueen', 'polymorph_duration') / 1000# seconds. Champions are not affected.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="polymorph"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Human_WitchQueen"/>
+</cmd>
+
+</commands>

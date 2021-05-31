@@ -1,0 +1,114 @@
+<class id="Forester_QueenOfTheWolves" cpp_class="CSSHero" parent="Hero" entity="Assets/Entities/Units/Forester_QueenOfTheWolves/Forester_QueenOfTheWolves.ent.xml">
+
+<method sig="init" vs="data/subai/forester_queen_init.vs"/>
+<method sig="idle" vs="data/subai/forester_queen_idle.vs"/>
+<method sig="doattack" vs="data/subai/forester_queen_doattack.vs"/>
+<method sig="stun" vs="data/subai/forester_queen_stun.vs"/>
+<method sig="post_teleport" vs="data/subai/forester_queen_post_teleport.vs"/>
+<method sig="ghost_appear" vs="data/subai/forester_queen_ghost_appear.vs"/>
+<method sig="werewolf_form_leave" vs="data/subai/forester_queen_werewolf_form_leave.vs"/>
+<method sig="divine_journey_start" vs="data/subai/forester_queen_divine_journey_start.vs"/>
+<method sig="divine_journey_end" vs="data/subai/forester_queen_divine_journey_end.vs"/>
+<method sig="stand_position" vs="data/subai/forester_queen_stand_position.vs" onfinish="data/subai/unit_stand_position_onfinish.vs"/>
+
+<method sig="ghost_wolves" vs="data/subai/forester_queen_ghost_wolves.vs"/>
+<method sig="assassin_wolves" vs="data/subai/forester_queen_assassin_wolves.vs"/>
+<method sig="assassin_wolves" vs="data/subai/forester_queen_summon_assasin.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="revive_wolves" vs="data/subai/forester_queen_revive_obj.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="revive_wolves" vs="data/subai/forester_queen_revive_pt.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="airshield" vs="data/subai/forester_queen_airshield.vs"  onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="werewolf_form" vs="data/subai/forester_queen_werewolf_form.vs"  onfinish="data/subai/hero_special_onfinish.vs"/>
+
+<behavior script="data/subai/forester_queen_summon_behavior.vs"/>
+<behavior script="data/subai/forester_queen_behavior_werewolf.vs"/>
+
+<static_int range="300" min_range="2"/>			
+<static_int radius="20" selection_radius="25"/>	
+<static_int healthbaroffset="-75"/>
+<static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5400617]]Queen of the Wolves[[]]"/>
+<static_str display_name="[[5400617]]Queen of the Wolves[[]]" display_name_plural="[[5419743]]Queens of the Wolves[[]]"/>
+<static_int maxhealth="400"/>
+<static_int speed="120"/>
+<static_int max_number_wolves="3"/>
+
+<static_str damage_type="magic"/>
+<static_int initial_damage="16"/>
+<static_int initial_armor="1"/>
+
+<static_str projectile_class = "Forester_QueenOfTheWolves_Projectile"
+			projectile_class_building = "Forester_QueenOfTheWolves_Projectile"/>
+
+<static_int	projectile_angle="-10" 
+			projectile_dist = "54"/>
+
+<static_int potion_health="40"/>	
+<static_int potion_damage="4"/>	
+<static_int potion_recharge="15"/>	
+<static_int potion_armor="1"/>	
+			
+<static_int formation_priority="600"/>			
+<static_int white_wolf_summon_time="16000"/>				
+<static_str icon="Assets/Interface/Icons/queen.bmp"
+			largeicon="Assets/Interface/Icons/queen_large.bmp"
+			portrait="Assets/Interface/Icons/queen.rle"/>
+<static_str	skyimage="assets/interface/sky_forester.bmp"/>
+
+<static_str rollover_description="[[5424501]]The Queen of the Wolves leads a pack of fierce white wolves each inflicting considerable damage. The Queen is best suited for fighting large units, and is ideal for supporting Werewolf and Wolf Master units.[[]]"/>
+
+<static_int ghost_wolves_health_bonus="30"/>
+<static_int assassin_wolves_health_bonus="30"/>
+<static_int open_wounds_time="90000"/> 
+
+<static_int werewolf_state_range="17"/>
+<static_int werewolf_state_duration="60000"/>
+<static_int werewolf_damage_increase="51"/>
+<static_int werewolf_health_increase="300"/>
+
+<static_int airshield_duration_sec="18"/>
+
+<static_str race_str="Race_Foresters"/>
+
+<member_int number_wolves=""/>
+<member_int ghost_wolves_available=""/>
+<member_int queen_state=""/>
+<member_int werewolf_start_time=""/>
+<member_int werewolf_ghost_process=""/>
+<member_obj airshield_obj=""/>
+<member_obj gazeoffear_available=""/>
+
+<static_str slot1_type="wand"/>
+<static_str slot2_type="helm"/>
+<static_str slot3_type="powerstone"/>
+<static_str slot4_type="cloak"/>
+
+<static_str hero_ai_special_script="heroes.queen_of_wolves.vs"/>
+
+<!-- Before 1.41 -->
+<!--
+<static_str level1_skill1="Ghost_Wolves"/>
+<static_str level1_skill2="Blood_Feeding"/>
+<static_str level1_skill3="Revive_Wolves"/>
+<static_str level1_skill4="Gaze_Of_Fear"/>
+<static_str level2_skill1="Assassin_Wolves"/>
+<static_str level2_skill2="Werewolf_Form"/>
+<static_str level3_skill1="Air_Shield"/>
+-->
+
+<!-- New for 1.41 -->
+<static_str level1_skill1="Revive_Wolves"/>
+<static_str level1_skill2="Gaze_Of_Fear"/>
+<static_str level2_skill1="Werewolf_Form"/>
+<static_str level3_skill1="Air_Shield"/>
+	
+<!-- AI -->
+<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+<static_int ai_draw_back_if_disabled="1"/>
+<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+<!-- AI -->
+
+	<sounds
+		AnimAttack1="Forester_Queen_attack"
+		AnimAttack2="Werewolf_Attack_"
+		AnimSpecial5="assets/sounds/HeroSkills/Forester Queen/Forester_Queen_transformation.wav"
+		command="Queen0_1"/>
+</class>

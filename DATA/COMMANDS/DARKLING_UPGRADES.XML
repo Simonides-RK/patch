@@ -1,0 +1,414 @@
+<commands>
+
+<!-- Ivko: Texts edited, 21.02.2005. Please don't remove this comment! -->
+
+<cmd id="upgrade_DarklingLevel1"
+        template_cmd="template_upgrade"
+        verifier_script="data/cmds/upgrade_verify_townhallupgrade1.vs"
+        param="data/cmds/townhall_upgrade.vs"
+
+        name="[[12973443]]T@heocracy[[]]"
+        rollover_param="[[12981945]]First Darkling upgrade. \n\n Allows Dark Mages to forge buildings for resource collection and defence away from the Darkling Town Hall and allows the training of first level units in your colonies.[[]]"
+        button="darkling_teocracy.bmp"
+        icon="Assets/Interface/Icons/darklinkg_teocracy.bmp"
+        position="4"
+        execdelay="60000"
+        cost_script="return '200/10';"
+>
+        <src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_DarklingLevel2"
+        template_cmd="template_upgrade"
+        verifier_script="data/cmds/upgrade_verify_townhallupgrade2.vs"
+        param="data/cmds/townhall_upgrade.vs"
+
+        name="[[12990625]]Di@vine Arts[[]]"
+        rollover_param="[[13005377]]Second Darkling upgrade. \n\n Enables the development of additional Darkling units, buildings and upgrades.[[]]"
+        button="darkling_divine_arts.bmp"
+        icon="Assets/Interface/Icons/darklinkg_divine_arts.bmp"
+        position="4"
+        execdelay="120000"
+        cost_script="return '600/20/0/0';"
+        requirements="upgrade_DarklingLevel1"
+>
+        <src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_DarklingLevel3"
+        template_cmd="template_upgrade"
+        verifier_script="data/cmds/upgrade_verify_townhallupgrade3.vs"
+        param="data/cmds/townhall_upgrade.vs"
+
+        name="[[13017578]]Divine T@ouch[[]]"
+        rollover_param="[[13026605]]Third Darkling upgrade. \n\n Allows the training of second level units in your colonies and enables the development of additional Darkling units, buildings and upgrades.[[]]"
+        button="darkling_divine_touch.bmp"
+        icon="Assets/Interface/Icons/darklinkg_divine_touch.bmp"
+        position="4"
+        execdelay="180000"
+        cost_script="return '900/30/0/0';"
+        requirements="upgrade_DarklingLevel2"
+>
+        <src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_SoulBond"
+        template_cmd="template_upgrade"
+        dispatch_param="upgrade_soulbond"
+
+        name="[[13030518]]Soul @Bond[[]]"       
+        rollover_param="[[13047470]]Increases the limit of your Soulwatchers by one. Soulwatchers are automatically born at your Keep, each providing #GetClassInt('Darkling_SoulWatcher', 'support_points')# population.[[]]"
+        button="darkling_soul_bound.bmp"
+        icon="Assets/Interface/Icons/darklinkg_soul_bound.bmp"
+        position="2"
+        execdelay="20000"
+        cost_script="data/cmds/darkling_soulbond_cost.vs"
+>
+        <src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_LifeBond"
+        template_cmd="template_upgrade"
+        param="data/cmds/darkling_goldspirit_lifebond.vs"
+
+        name="[[13056394]]Spirit @Chains[[]]"
+        rollover_param="[[13069358]]Increases the lifetime of Gold Spirits to #GetClassInt('Darkling_GoldSpirit', 'spirit_bond_lifetime') / 1000# seconds and that of Spirits to #GetClassInt('Darkling_Spirit', 'spirit_bond_lifetime') / 1000# seconds.[[]]"
+        button="darkling_spirit_cains.bmp"
+        icon="Assets/Interface/Icons/darklinkg_spirith_cains.bmp"
+        position="9"
+        execdelay="45000"
+        cost_script="return '70/0/0/0';"
+        requirements="upgrade_DarklingLevel1"
+        disableifdisabled="train_GoldSpirit"
+>
+        <src obj="Darkling_GoldMine"/>
+</cmd>
+
+<cmd id="upgrade_Battle_Shrine"
+        template_cmd="template_building_upgrade"
+
+        name="[[13078158]]@Upgrade to Battle Shrine[[]]"
+        rollover_param="[[13086647]]Allows the training of Apostles of Death, deadly invisible assasins adept at dealing with swarms of small units.[[]]"
+        button="battle shrine.bmp"
+        icon="Assets/Interface/Icons/battle shrine.bmp"
+        position="2"
+        execdelay="45000"
+        requirements="upgrade_DarklingLevel1"
+        cost_script="return '230/5/0/0';"
+>
+        <src obj="Darkling_AltarOfWar"/>
+</cmd>
+
+<cmd id="upgrade_RaiseSpirits"
+        template_cmd="template_upgrade"
+
+        name="[[13099370]]@Raise Spirits[[]]"
+        rollover_param="[[13100590]]Provides Dark Mages with the ability to raise Spirits from the bodies of fallen units. Spirits are summoned units with a limited lifetime.[[]]"
+        button="darkling_raise_spirith.bmp"
+        icon="Assets/Interface/Icons/darklinkg_raise_spirith.bmp"
+        position="8"
+        execdelay="60000"
+        cost_script="return '315/0/0/0';"
+        requirements="upgrade_DarklingLevel2"
+        disableifdisabled="train_DarkMage"
+>
+        <src obj="Darkling_TempleOfNightfall"/>
+</cmd>
+
+<cmd id="upgrade_DarklingEmberTower"
+        template_cmd="template_upgrade_local"
+        name="[[13137967]]Upgrade to @Ember Spire[[]]"
+        button="ember tower.BMP"
+        icon="Assets/Interface/Icons/ember tower.BMP"
+        position="4"
+        execdelay="60000"
+        param="data/cmds/darkling_embertower.vs"
+        cost_script="return '100/2/0/0';"
+        rollover_param="[[13143550]]The Ember Tower deals #GetClassInt('Darkling_TowerUpgrade_Ember', 'ember_damagepersecond')# damage per second to all enemies in its sight.[[]]"
+        requirements="upgrade_DarklingLevel3"
+        disableifdisabled="construct_darkling_tower"
+>
+        <src obj="Darkling_Tower"/>
+</cmd>
+
+<cmd id="upgrade_DarklingMagmaTower"
+        template_cmd="template_upgrade_local"
+        name="[[13153000]]Upgrade to @Magma Spire[[]]"
+        button="spire upgrade.BMP"
+        icon="Assets/Interface/Icons/spire upgrade.BMP"
+        position="3"
+        execdelay="60000"
+        param="data/cmds/darkling_magmatower.vs"
+        cost_script="return '60/0/0/0';"
+        rollover_param="[[13160287]]The Magma Tower thrusts scorching rocks at nearby enemies. Can attack air units.[[]]"
+        verifier_script="data/cmds/magmaspire_verify.vs"
+        disableifdisabled="construct_darkling_tower"
+>
+        <src obj="Darkling_Tower"/>
+</cmd>
+
+<cmd id="upgrade_DarklingCrystalSpire"
+        template_cmd="template_upgrade_local"
+        name="[[13174496]]Upgrade to @Crystal Spire[[]]"
+        button="spire upgrade crystal.BMP"
+        icon="Assets/Interface/Icons/spire upgrade crystal.BMP"
+        position="2"
+        execdelay="30000"
+        param="data/cmds/darkling_crystalspire.vs"
+        cost_script="return '250/0/0/0';"
+        rollover_param="[[13183826]]Enables the Spire to collect gems from the nearest gem deposit.[[]]"
+        verifier_script="data/cmds/crystalspire_verify.vs"
+        disableifdisabled="construct_darkling_tower"
+>
+        <src obj="Darkling_Tower"/>
+</cmd>
+
+<cmd id="upgrade_SacredWar"
+        template_cmd="template_upgrade"
+        name="[[13196342]]Sacred @War[[]]"
+        rollover_param="[[13204537]]Returns half the gold cost of Disciples and Fanatics to your treasury when they fall in battle.[[]]"
+        button="darkling_sacred_war.bmp"
+        icon="Assets/Interface/Icons/darklinkg_sacred_war.bmp"
+        position="8"
+        execdelay="60000"
+        cost_script="return '220/2/0/0';"
+        param="data/cmds/dummy_script.vs"
+        requirements="upgrade_DarklingLevel1"
+>
+        <src obj="Darkling_AltarOfWar"/>
+</cmd>
+
+<cmd id="upgrade_StrengthOfFaith"
+        template_cmd="template_upgrade"
+        name="[[13219374]]@Strength of Faith[[]]"
+        rollover_param="[[13222082]]Increases the Disciples' health by #GetClassInt('Darkling_Disciple', 'strengthoffaith_bonus')#.[[]]"
+        button="darkling_streinght_of_faith.bmp"
+        icon="Assets/Interface/Icons/darklinkg_strenght_of_faith.bmp"
+        position="9"
+        execdelay="20000"
+        cost_script="return '110/0/0/0';"
+        param="data/cmds/darkling_disciple_strengthoffaith.vs"
+        requirements="upgrade_DarklingLevel1"
+        disableifdisabled="train_Disciple"
+>
+        <src obj="Darkling_AltarOfWar"/>
+</cmd>
+
+<cmd id="upgrade_Thundercall"
+        template_cmd="template_upgrade"
+        name="[[13232170]]@Thundercall[[]]"
+        rollover_param="[[13248433]]Provides Disciples with a chance to cast thunderbolts upon their enemies with the help of their battle prayers. Each thunderbolt takes #GetClassInt('Darkling_Disciple', 'thundercall_damage')#% of the target's health points.[[]]"
+        button="darkling_thundercall.bmp"
+        icon="Assets/Interface/Icons/darklinkg_thundercall.bmp"
+        position="10"
+        execdelay="60000"
+        cost_script="return '250/0/0/0';"
+        param="data/cmds/dummy_script.vs"
+        requirements="upgrade_DarklingLevel2"
+        disableifdisabled="train_Disciple"
+>
+        <src obj="Darkling_AltarOfWar"/>
+</cmd>
+
+<cmd id="upgrade_AetherBlade"
+        template_cmd="template_upgrade"
+
+        name="[[13259436]]Aether @Blade[[]]"
+        rollover_param="[[13269346]]Enhances the Apostle of Death's weapon allowing him to deprive an enemy unit from its energy as well as deal #GetClassInt('Darkling_ApostleOfDeath', 'aether_blade_damage')# damage per attack. In additionaly makes them stronger.[[]]"
+        button="darkling_aether_blade.bmp"
+        icon="Assets/Interface/Icons/darklinkg_aether_blade.bmp"
+        position="12"
+        execdelay="60000"
+        cost_script="return '450/10/0/0';"
+        disableifdisabled="train_ApostleOfDeath"
+        requirements="Darkling_AltarOfWar_Upgrade : local,upgrade_DarklingLevel3"
+        param="data/cmds/Darkling_upgrade_AetherBlade.vs"
+> 
+       <src obj="Darkling_AltarOfWar"/>
+</cmd>
+
+<cmd id="upgrade_Afterlife"
+        template_cmd="template_upgrade"
+
+        name="[[13274577]]A@fterlife[[]]"
+        rollover_param="[[13286022]]Allows the Apostle of Death's ethereal body to remain after his death for #GetClassInt('Darkling_ApostleOfDeath', 'afterlife_timeout') / 1000# seconds, dealing #GetClassInt('Darkling_ApostleOfDeath', 'afterlife_damage')# damage per second to all nearby enemies, In additionaly adding them a small amount of hp.[[]]"
+        button="darkling_afterlife.bmp"
+        icon="Assets/Interface/Icons/darklinkg_afterlife.bmp"
+        position="11"
+        param="data/cmds/darkling_upgrade_Afterlife.vs"
+        execdelay="60000"
+        cost_script="return '160/4/0/0';"
+        disableifdisabled="train_ApostleOfDeath"
+        requirements="Darkling_AltarOfWar_Upgrade : local,upgrade_DarklingLevel2"
+>
+        <src obj="Darkling_AltarOfWar"/>
+</cmd>
+
+
+<cmd id="upgrade_Nightweb"
+        template_cmd="template_upgrade"
+        name="[[13298244]]@Nightweb[[]]"
+        rollover_param="[[13306003]]Enables the Dark Rider to redirect healing energy from enemy healers to himself. Also substantially increases his regeneration rate. In additionaly makes them stronger.[[]]"
+        button="darkling_nightweb.bmp"
+        icon="Assets/Interface/Icons/darklinkg_nightweb.bmp"
+        position="10"
+        execdelay="60000"
+        cost_script="return '210/4/0/0';"
+        disableifdisabled="train_DarkRider"
+        param="data/cmds/darkling_nightweb.vs"
+>
+        <src obj="Darkling_DarkPalace"/>
+</cmd>
+
+<cmd id="upgrade_FearStrike"
+        template_cmd="template_upgrade"
+        name="[[13319579]]@Fear Strike[[]]"
+        rollover_param="[[13328080]]Provides Dark Riders with the ability to stun their enemies with the first attack.[[]]"
+        button="darkling_fear_strike.bmp"
+        icon="Assets/Interface/Icons/darklinkg_fear_strike.bmp"
+        position="9"
+        execdelay="60000"
+        cost_script="return '270/6/0/0';"
+        requirements="upgrade_DarklingLevel3"
+        disableifdisabled="train_DarkRider"
+>
+        <src obj="Darkling_DarkPalace"/>
+</cmd>
+
+
+<cmd id="upgrade_Meditation"
+        template_cmd="template_upgrade"
+        name="[[13330358]]@Meditation[[]]"
+        rollover_param="[[13346232]]Increases the regeneration rate of all Darkling units.[[]]"
+        button="darkling_meditation.bmp"
+        icon="Assets/Interface/Icons/darklinkg_meditation.bmp"
+        position="9"
+        execdelay="30000"
+        cost_script="return '240/6/0/0';"
+        param="data/cmds/darkling_meditation.vs"
+>
+        <src obj="Darkling_TempleOfNightfall"/>
+</cmd>
+
+<cmd id="upgrade_Nightfall"
+        template_cmd="template_upgrade"
+        name="[[13355654]]@Nightfall[[]]"
+        rollover_param="[[13360550]]Upgrades the Temple of Nightfall to restore the health of all nearby units.[[]]"
+        button="darkling_nightfall.bmp"
+        icon="Assets/Interface/Icons/darklinkg_nightfall.bmp"
+        position="10"
+        execdelay="20000"
+        cost_script="return '75/0/0/0';"
+        param="data/cmds/darkling_nightfall.vs"
+>
+        <src obj="Darkling_TempleOfNightfall"/>
+</cmd>
+
+<cmd id="upgrade_DivineEnlightment"
+        template_cmd="template_upgrade"
+        name="[[13372649]]Divine @Enlightment[[]]"
+        rollover_param="[[13386856]]Decreases the cost of units trained in your colonies by #GetClassInt('Darkling_Townhall', 'divineenlightment_rebate')#%.[[]]"
+        button="divine enligthment.bmp"
+        icon="Assets/Interface/Icons/divine enligthment.bmp"
+        position="7"
+        execdelay="60000"
+        cost_script="return '190/2/0/0';"
+>
+        <src obj="Darkling_TempleOfNightfall"/>
+</cmd>
+
+<cmd id="upgrade_GoldFlow"
+        template_cmd="template_upgrade"
+        name="[[13390968]]Gold @Flow[[]]"
+        rollover_param="[[13409329]]Increases the Gold production of your Purifiers by #GetConst('DarklingGoldFlowBonus')#%.[[]]"
+        button="gold flow.bmp"
+        icon="Assets/Interface/Icons/gold flow.bmp"
+        position="11"
+        execdelay="60000"
+        cost_script="return '200/30/0/0';"
+>
+        <src obj="Darkling_TempleOfNightfall"/>
+</cmd>
+
+<cmd id="upgrade_CrystalRainfall"
+        template_cmd="template_upgrade"
+        name="[[13415048]]@Crystal Rainfall[[]]"
+        rollover_param="[[13425713]]Increases the speed of Gem extraction by #GetConst('DarklingCrystalRainfallBonus')#%.[[]]"
+        button="crystal rainfall.bmp"
+        icon="Assets/Interface/Icons/crystal rainfall.bmp"
+        position="12"
+        execdelay="60000"
+        cost_script="return '500/10/0/0';"
+>
+        <src obj="Darkling_TempleOfNightfall"/>
+</cmd>
+
+
+<cmd id="upgrade_Evacuation"
+        template_cmd="template_upgrade"
+
+        name="[[13111191]]@Evacuation[[]]"
+        rollover_param="[[13120771]]Enables the Evacuate mode of Stoneshapers. In this mode, the Meteors envelop dying units and teleport them back to your base. In additionaly it makes him stronger.[[]]"
+        button="evacuation.bmp"
+        icon="Assets/Interface/Icons/evacuation.bmp"
+        position="9"
+        execdelay="60000"
+        param="data/cmds/darkling_upgrade_Evacuation.vs"
+        cost_script="return '250/12/0/0';"
+        requirements="upgrade_DarklingLevel3"
+        disableifdisabled="train_StoneShaper"
+>
+        <src obj="Darkling_NightCouncil"/>
+</cmd>
+
+<cmd id="upgrade_berserk"
+        template_cmd="template_upgrade"
+
+        name="[[berserk]]@Unholy Division[[]]"
+        rollover_param="[[berserk1]]Makes fanatics more vicious by adding them #GetClassInt(&apos;Darkling_Fanatic&apos;, &apos;berserk_health_bonus&apos;)# health points and #GetClassInt(&apos;Darkling_Fanatic&apos;, &apos;berserk_armor_bonus&apos;)# armor.[[]]"
+        button="berserk.bmp"
+        icon="Assets/Interface/Icons/berserk.bmp"
+        position="10"
+        execdelay="60000"
+        param="data/cmds/darkling_upgrade_berserk.vs"
+        cost_script="return '800/22/0/0';"
+        requirements="upgrade_DarklingLevel3"
+        disableifdisabled="train_Fanatic"
+>
+        <src obj="Darkling_NightCouncil"/> <!-- It was 9 gems -->
+</cmd>
+
+<cmd id="upgrade_HellRaisedWeapons"
+        template_cmd="template_upgrade"
+        name="[[HellRaisedWeapons]]@Hellraised weapons[[]]"
+        rollover_param="[[HellRaisedWeapons1]]Adding #GetClassInt('Darkling_Townhall', 'hellraisedweapons_bonus_damage')#% amount of damage and #GetClassInt('Darkling_Townhall', 'hellraisedweapons_bonus_attackspeed')#% attack speed to the following units: Dark Rider, Fanatic, Disciple and Apostle of Death.[[]]"
+        button="HellRaisedWeapons.bmp"
+        icon="Assets/Interface/Icons/HellRaisedWeapons.bmp"
+        position="11"
+        execdelay="60000"
+        param="data/cmds/darkling_upgrade_HellRaisedWeapons.vs"
+        cost_script="return '600/24/0/0';"
+        requirements="upgrade_DarklingLevel3"
+        disableifdisabled="train_Fanatic"
+>
+        <src obj="Darkling_NightCouncil"/><!-- It was 9 gems -->
+</cmd>
+
+
+<cmd id="upgrade_UnholyStrength"
+        template_cmd="template_upgrade"
+        name="[[UnholyStrength]]@Unholy Armor[[]]"
+        rollover_param="[[UnholyStrength1]]Adds a small amount of armor to the following units: Cannoneer, Dark Rider, Dark Mage.[[]]"
+        button="Unholyarmor.bmp"
+        icon="Assets/Interface/Icons/Unholyarmor.bmp"
+        position="11"
+        param="data/cmds/darkling_upgrade_Unholyarmor.vs"
+        execdelay="60000"
+        cost_script="return '600/4/0/0';"
+        requirements="upgrade_DarklingLevel3"
+        disableifdisabled="train_DarkRider"
+>
+        <src obj="Darkling_DarkPalace"/>
+</cmd>
+
+</commands>

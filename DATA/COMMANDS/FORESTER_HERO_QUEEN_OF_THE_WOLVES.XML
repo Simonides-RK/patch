@@ -1,0 +1,190 @@
+<commands>
+
+<!-- Ivko: Texts edited, 20.02.2005. Please don't remove this comment! -->
+
+<cmd id="Gaze_Of_Fear"
+  name="[[14001519]]Gaze of @Fear[[]]"
+	button="forester_queen_blind.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[14014142]]Blinds the unit currently attacked by the Queen, rendering it incapable of attack. Doesn't affect Champions.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Develop_Gaze_Of_Fear"
+	template_cmd="template_develop_hero_level_1"
+	name="[[14001519]]Gaze of @Fear[[]]"
+	button="forester_queen_blind.bmp"
+	position="13"
+	toggle_tab="1"
+	rollover_param="[[14014142]]Blinds the unit currently attacked by the Queen, rendering it incapable of attack. Doesn't affect Champions.[[]]"
+	param="Skill Gaze_Of_Fear, ManaCost 0, MaxMana 0"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Ghost_Wolves"
+  name="[[14020724]]@Ghost Wolves[[]]"
+	button="forester_queen_ghostwolves.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[14031454]]Makes all White Wolves around the Queen invisible and increases their health points by #GetClassInt('Forester_QueenOfTheWolves','ghost_wolves_health_bonus')#.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Develop_Ghost_Wolves"
+	template_cmd="template_develop_hero_level_1"
+	name="[[14047629]]Learn @Ghost Wolves[[]]"
+	button="forester_queen_ghostwolves.bmp"
+	position="15"
+	toggle_tab="1"
+	rollover_param="[[14031454]]Makes all White Wolves around the Queen invisible and increases their health points by #GetClassInt('Forester_QueenOfTheWolves','ghost_wolves_health_bonus')#.[[]]"
+	param="Skill Ghost_Wolves, ManaCost 0, MaxMana 0, DevScript data/subai/forester_queen_ghost_wolves.vs, UndevScript data/subai/forester_queen_ghost_wolves_undev.vs"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Blood_Feeding"
+  name="[[14055225]]@Blood Feeding[[]]"
+	button="forester_queen_bloodfeeding.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[14064644]]Increases the critical damage of the White Wolves by #GetClassInt('Forester_WhiteWolf', 'blood_feeding_add_damage')# each time they attack an enemy.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Develop_Blood_Feeding"
+	template_cmd="template_develop_hero_level_1"
+	name="[[14071517]]Learn @Blood Feeding[[]]"
+	button="forester_queen_bloodfeeding.bmp"
+	position="16"
+	toggle_tab="1"
+	rollover_param="[[14064644]]Increases the critical damage of the White Wolves by #GetClassInt('Forester_WhiteWolf', 'blood_feeding_add_damage')# each time they attack an enemy.[[]]"
+	param="Skill Blood_Feeding, ManaCost 0, MaxMana 0"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Revive_Wolves"
+  name="[[14081912]]Wolf Maste@ry[[]]"
+	button="forester_wolf_mastery.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[14093604]]Revives or heals a Wolf Master, Werewolf or the Queen in werewolf form and restores the unit's wolf minions.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="revive_wolves"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	select_building_place_drag_object="Area_QueenOfTheWolves_WolfMastery"
+	select_building_place_drag_script="data/cmds/dragscript_queen_wolfmastery.vs"
+	selecttarget_text="[[14103076]]Select a Wolf Master, Werewolf or the body of such an unit[[]]"
+	selecttarget_verifyscript="data/cmds/selectverify_queen_wolfmastery.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Develop_Revive_Wolves"
+	template_cmd="template_develop_hero_level_1"
+	name="[[14114821]]Learn Wolf Maste@ry[[]]"
+	button="forester_wolf_mastery.bmp"
+	position="14"
+	toggle_tab="1"
+	rollover_param="[[14093604]]Revives or heals a Wolf Master, Werewolf or the Queen in werewolf form and restores the unit's wolf minions.[[]]"
+	param="Skill Revive_Wolves, ManaCost 70, MaxMana 175"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Assassin_Wolves"
+  name="[[14122160]]Assassi@n Wolves[[]]"
+	button="forester_assasins_wolves.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[14132534]]Summons two White Wolves around the selected unit and orders them to attack it. Also increases the critical damage of White Wolves to #GetClassInt('Forester_WhiteWolf', 'critical_hit_damage_assassin')# and their health by #GetClassInt('Forester_QueenOfTheWolves', 'assassin_wolves_health_bonus')#.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="assassin_wolves"
+	selecttarget_text="[[12839034]]Select target to attack[[]]"
+	selecttarget_verifyscript="data/cmds/selectverify_enemy_land_unit.vs"
+	selecttarget_cursor_invalid="cantselect"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	enemy_target="1"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Develop_Assassin_Wolves"
+	template_cmd="template_develop_hero_level_2"
+	name="[[14145995]]Learn Assassi@n Wolves[[]]"
+	button="forester_assasins_wolves.bmp"
+	position="17"
+	toggle_tab="1"
+	rollover_param="[[14132534]]Summons two White Wolves around the selected unit and orders them to attack it. Also increases the critical damage of White Wolves to #GetClassInt('Forester_WhiteWolf', 'critical_hit_damage_assassin')# and their health by #GetClassInt('Forester_QueenOfTheWolves', 'assassin_wolves_health_bonus')#.[[]]"
+	param="Skill Assassin_Wolves, ManaCost 60, MaxMana 90, DevScript data/subai/forester_queen_assassin_wolves.vs"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Werewolf_Form"
+  name="[[14157325]]@Wolf Aspect[[]]"
+	button="forester_queen_werewolf.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[14164980]]Turns the Queen into a powerful werewolf for #GetClassInt('Forester_QueenOfTheWolves', 'werewolf_state_duration') / 1000# seconds. Increases damage by #GetClassInt('Forester_QueenOfTheWolves', 'werewolf_damage_increase')#, health by #GetClassInt('Forester_QueenOfTheWolves', 'werewolf_health_increase')# and provides her with the Open Wounds ability.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="werewolf_form"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Develop_Werewolf_Form"
+	template_cmd="template_develop_hero_level_2"
+	name="[[14172889]]Learn @Wolf Aspect[[]]"
+	button="forester_queen_werewolf.bmp"
+	position="18"
+	toggle_tab="1"
+	rollover_param="[[14164980]]Turns the Queen into a powerful werewolf for #GetClassInt('Forester_QueenOfTheWolves', 'werewolf_state_duration') / 1000# seconds. Increases damage by #GetClassInt('Forester_QueenOfTheWolves', 'werewolf_damage_increase')#, health by #GetClassInt('Forester_QueenOfTheWolves', 'werewolf_health_increase')# and provides her with the Open Wounds ability.[[]]"
+	param="Skill Werewolf_Form, ManaCost 120, MaxMana 120"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Air_Shield"
+  name="[[14181283]]Air @Shield[[]]"
+	button="forester_queen_airshield.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[14194480]]Creates strong air currents around the Queen, ultimately protecting everything nearby from ranged attacks for #GetClassInt('Forester_QueenOfTheWolves', 'airshield_duration_sec')# seconds.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="airshield"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+<cmd id="Develop_Air_Shield"
+	template_cmd="template_develop_hero_level_3"
+	name="[[14206295]]Learn Air @Shield[[]]"
+	button="forester_queen_airshield.bmp"
+	position="19"
+	toggle_tab="1"
+	rollover_param="[[14194480]]Creates strong air currents around the Queen, ultimately protecting everything nearby from ranged attacks for #GetClassInt('Forester_QueenOfTheWolves', 'airshield_duration_sec')# seconds.[[]]"
+	param="Skill Air_Shield, ManaCost 120, MaxMana 180"
+>
+	<src obj="Forester_QueenOfTheWolves"/>
+</cmd>
+
+</commands>

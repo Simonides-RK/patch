@@ -1,0 +1,85 @@
+<class id="Human_WindRider" cpp_class="CSSHero" parent="Hero" entity="assets/entities/units/Human_Windrider/Human_Windrider.ent.xml">
+
+        <static_str areacheck_type="all" areacheck_class="Unit"/>
+        <static_int areacheck_time="1000"/>
+        
+        <method sig="init" vs="data/subai/human_windrider_init.vs"/>
+        <method sig="onenterarea" vs="data/subai/human_windrider_onenterarea.vs"/>
+        <method sig="oninsidearea" vs="data/subai/human_windrider_oninsidearea.vs"/>
+        <method sig="onexitarea" vs="data/subai/human_windrider_onexitarea.vs"/>
+
+        <method sig="windwalk" vs="data/subai/human_windrider_windwalk.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+        <method sig="gallop" vs="data/subai/human_windrider_gallop.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+        <method sig="dogallop" vs="data/subai/human_cavalry_gallop.vs" onfinish="data/subai/human_cavalry_gallop_onfinish.vs"/>
+        <method sig="caltrops" vs="data/subai/human_windrider_caltrops.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+
+        <static_str damage_type="blade"/>                                       
+        <static_int maxhealth="600"/> 
+        <static_int initial_damage="38"/>
+        <static_int initial_armor="6"/>
+
+        <static_int adv_armor_speed_bonus="35"/>
+        <static_int adv_armor_health_bonus="350"/>
+
+
+        <static_int potion_health="55"/>        
+        <static_int potion_damage="9"/> 
+        <static_int potion_recharge="10"/>      
+        <static_int potion_armor="1"/>  
+        
+        <static_int range="17" min_range="2"/>                  
+        <static_int speed="150"/>
+        <static_int radius="30" selection_radius="35"/> 
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6742537]]Wind Rider[[]]"/>                                                                                       
+
+        <static_str display_name="[[6742537]]Wind Rider[[]]" display_name_plural="[[6742537]]Wind Rider[[]]"/>
+
+        <static_str race_str="Race_Humans"/>
+        <static_int formation_priority="1200"/>                 
+        <static_int formation_radius="50"/>                             
+        <static_str icon="Assets/Interface/Icons/whind raider.BMP"/>
+        <static_str largeicon="Assets/Interface/Icons/wind rider large.BMP"/>
+        <static_str     portrait="Assets/Interface/Icons/wind raider.rle"/>
+        <static_str     skyimage="assets/interface/sky_human.bmp"/>
+
+        <static_str rollover_description="[[6753755]]The Wind Rider is unparalleled when it comes to fighting on horseback, crushing all enemies on her path. Priceless when combined with Squires and Knights the Wind Rider easily increases the strength of any cavalry.[[]]"/>
+        
+        <member_int promotion_just_developed=""/> 
+        <member_int charge_just_developed=""/> 
+        <member_int flank_just_developed=""/>
+        <static_int charge_idletime="10000"/>                           
+        <static_int gallop_radius="1500"/>
+        <static_int gallop_damage="160"/>
+        <static_int flank_damage_bonus = "40"/> <!-- damage -->
+        <static_int charge_damage = "60"/> 
+        <static_int loot_amount = "25"/>
+        
+			<!--All-->
+<!--	<static_str level1_skill1="Caltrops"/>
+		<static_str level1_skill2="Looting"/>
+		<static_str level1_skill3="Flanking"/>
+		<static_str level1_skill4="Charge"/>
+		<static_str level2_skill1="Windwalking"/>	 - can't use
+		<static_str level2_skill1="Gallop"/>
+		<static_str level3_skill1="Promotion"/> -->
+		
+		<static_str level1_skill1="Caltrops"/>
+		<static_str level1_skill2="Charge"/>
+		<static_str level2_skill1="Gallop"/>
+		<static_str level3_skill1="Promotion"/>
+		
+		<!-- AI -->
+		<static_int ai_melee_protection="1"/>
+		<static_int ai_melee_escape_time="6"/>
+		<static_int ai_hyper_protective="1" ai_hyper_protective_coef="30"/>
+		<static_int ai_concentrate_group="1"/>   <!-- general melee damage -->
+		<!-- AI -->
+		
+        <static_str slot1_type="weapon"/>
+        <static_str slot2_type="helm"/>
+        <static_str slot3_type="powerstone"/>
+        <static_str slot4_type="armor"/>
+        <static_str hero_ai_special_script="hero.wrider.vs"/>
+        <sounds
+                command="Wind0"/>
+</class>

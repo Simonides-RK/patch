@@ -1,0 +1,50 @@
+<class id="Darkling_DarkRider" cpp_class="CVXUnit" parent="BaseDarklingUnit" entity="assets/entities/units/Darkling_DarkRider/Darkling_DarkRider.ent.xml">
+        <method sig="init" vs="data/subai/darkling_darkrider_init.vs"/>
+        <static_int maxhealth="725"/> 
+        <static_int radius="40" selection_radius="40"/>
+        <static_int formation_radius="45" formation_priority="1200"/>   
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]]/[[4235562]]Dark Rider[[]]"/>                                                                                   
+        <static_str display_name="[[4235562]]Dark Rider[[]]" display_name_plural="[[4243573]]Dark Riders[[]]"/>
+        
+        <static_int constantly_idle_played="13"/>
+
+        <static_str damage_type="magic"/>
+        <static_str defence_type = "mounted"/>
+        <static_int initial_damage="45"/>
+        <static_int initial_armor="6"/>
+        <static_int sight="500"/>
+        <static_int speed="140"/>       
+        <static_int range="200"/>       
+        <static_str cost="200/5/4"/>
+        <static_str rollover_description="[[4257772]]Dark Riders are powerful beast-riding warlocks with a short range attack. Can be upgraded to redirect healing energy to themselves and to stun their enemies in fear.[[]]"/>
+
+        <static_int max_energy="40"/>
+        <static_int initial_energy="40"/>
+
+        <static_str icon="Assets/Interface/Icons/dark raider.BMP"
+                                portrait="assets/interface/icons/dark raider.rle"/>
+        <static_str     skyimage="assets/interface/sky_dragon.bmp"/>
+        
+		<!-- ypsilon: upg bonuses  -->
+		<static_int unholy_armor_bonus="4"/>	
+		<static_int nightweb_health_bonus="150"/>
+	
+        <static_str race_str="Race_Darklings"/>
+        <static_int nightweb_regenrate="20"/>   
+        <static_int     projectile_angle="0" 
+                                projectile_dist = "40"/>        
+        <static_str projectile_class = "Darkling_DarkRider_Projectile"
+                                projectile_class_building = "Darkling_DarkRider_Projectile"/>   
+
+        <sounds
+                AnimAttack="Dark_rider_attack"
+                AnimDie="assets/sounds/Death/Dark_Rider/Dark_Rider_death_1.wav"
+                command="Dark0"/>
+        
+        <behavior script="data/subai/darkling_darkrider_behavior.vs" />
+        <!-- AI -->
+        <static_int ai_hyper_protective="1" ai_hyper_protective_coef="50"/>
+        <static_int ai_draw_back_if_disabled="1"/>
+        <static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+        <!-- AI -->     
+</class>

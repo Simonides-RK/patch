@@ -1,0 +1,35 @@
+<class id="Forester_Hunter" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Forester_Hunter/Forester_Hunter.ent.xml"><method sig="init" vs="data/subai/FORESTER_HUNTER_INIT.VS"/><static_int range="300" min_range="2"/><static_int radius="30" selection_radius="30"/>     <static_int formation_radius="42" formation_priority="600"/><static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5198632]]Hunter[[]]"/><static_str display_name="[[5198632]]Hunter[[]]" display_name_plural="[[5208178]]Hunters[[]]"/>
+
+        <static_str projectile_class = "Forester_HunterBoomerang"
+                                projectile_class_building = "Forester_HunterBoomerang"/>
+
+        <static_int     projectile_angle="0"
+                                projectile_dist = "0"/>
+
+        <static_int sight="600"/>
+        <static_int speed="75"/>
+        <static_int legendary="0"/>
+        <static_int maxhealth="1300" initial_damage="40" initial_armor="10"/>
+
+        <static_int subsequent_unit_damage="7"/>
+        <static_int moonblade_damage="18"/>
+
+        <static_str damage_type="blade"/>                                       
+        <static_str defence_type = "heavy"/> 
+
+        <static_str cost="300/7/4"/>
+        <static_str rollover_description="[[5214714]]Hunters have long-ranged weapons that damage multiple targets and are excellent against small units.[[]]"/>
+
+        <static_str icon="Assets/Interface/Icons/hunter.bmp"
+                                portrait="Assets/Interface/Icons/hunter.rle"/>
+        <static_str     skyimage="assets/interface/sky_forester.bmp"/>
+        
+		<!--Władysław Ańtian: upg bonuses  -->
+		<static_int moonguard_health_bonus="300"/>
+		<static_int moonguard_armor_bonus="2"/>
+	
+        <static_str race_str="Race_Foresters"/> <static_int ai_hyper_protective="1" ai_hyper_protective_coef="50"/><static_int ai_draw_back_if_disabled="1"/><sounds
+                AnimAttack="Hunter_boomerang_"
+                AnimDie="Clodhopper_death_"
+                command="Hunter0"/>
+</class>

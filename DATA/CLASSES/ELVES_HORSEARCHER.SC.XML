@@ -1,0 +1,53 @@
+<class id="Elves_HorseArcher" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Elves_Rider/Elves_Rider.ent.xml">
+
+	<method sig="init" vs="data/subai/elves_rider_init.vs"/>		
+
+    <static_str areacheck_type="friendly" areacheck_class="Elves_HorseArcher"/>
+    <static_int areacheck_time="1000"/>
+	<method sig="oninsidearea" vs="data/subai/elves_rider_oninsidearea.vs"/>
+	
+	<static_int range="350" min_range="2"/>
+	<static_int radius="30" selection_radius="30"/>
+	<static_int formation_radius="42" formation_priority="750"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[4837050]]Elves[[]]/[[4878485]]Elven Goat Rider[[]]"/>
+
+	<static_str display_name="[[4878485]]Elven Goat Rider[[]]" display_name_plural="[[4884309]]Elven Goat Riders[[]]"/>
+
+	<static_int sight="450"/>
+	<static_int speed="150"/>
+
+	<static_int maxhealth="840" initial_damage="28" initial_armor="2"/>
+	<static_str cost="225/5/3"/>
+	<static_int independent_value="390"/>
+
+	<static_str damage_type="arrow"/>
+	<static_str defence_type = "mounted"/>
+
+	<static_str rollover_description="[[4896514]]Elven Goat Rider are fast mounted ranged units. They can easily escape from any combat situation, making them difficult to deal with.[[]]"/>
+	
+	<static_str projectile_class = "Elves_HorseArcher_Projectile"
+				projectile_class_building = "Elves_HorseArcher_Projectile"/>
+
+	<static_int	projectile_angle="0" 
+				projectile_dist = "0"/>
+				
+	<!-- ypsilon: upgrades -->		
+	<static_int encouragement_bonus="5"/>	
+	<static_int encouragement_max="60"/>
+	
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="50"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+	<!-- AI -->
+
+	<static_str icon="Assets/Interface/Icons/elf raider.BMP"
+				portrait="assets/interface/icons/elf raider.rle"/>
+				
+	<static_str race_str="Race_Elves"/>
+
+	<sounds
+		AnimAttack="Arrow_attack_"
+		AnimDie="Elf_death"
+		command="Goat0"/>
+</class>

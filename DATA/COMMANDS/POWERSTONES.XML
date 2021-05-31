@@ -1,0 +1,223 @@
+<commands>
+
+<!-- develop_ commands are used only for mana/max mana, so only the param value matters -->
+
+<cmd id="Develop_Hero_Heal"
+  name="[[17265743]]@Heal[[]]"
+	button="heal.BMP"
+	position="11"
+	enabled="0"
+	rollover_param="[[17275734]]Heals a friendly unit for #GetClassInt('Hero', 'skill_heal_amount')# health points.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_heal"
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_hero_heal.vs"
+	selecttarget_cursor_invalid="cantselect"
+	param="Skill Hero_Heal, ManaCost 30, MaxMana 30 DevScript data/subai/hero_skill_heal_init_mana.vs"
+>
+	<src obj="Hero"/>
+</cmd>
+
+<cmd id="Hero_Heal"
+  name="[[17265743]]@Heal[[]]"
+	button="heal.BMP"
+	position="11"
+	enabled="0"
+	rollover_param="[[17275734]]Heals a friendly unit for #GetClassInt('Hero', 'skill_heal_amount')# health points.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_heal"
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_hero_heal.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<cmdtext target="Unit"
+	         text="[[17286172]]Select friendly unit.[[]]"
+	         default-text="[[]]***[[]]"/>
+
+	<src obj="Hero"/>
+</cmd>
+
+<cmd id="Develop_Hero_Shock"
+  name="[[17265743]]@Heal[[]]"
+	button="forester_stalker_plant.bmp"
+	position="11"
+	enabled="0"
+	rollover_param="[[17306194]]Deals #GetClassInt('Hero', 'skill_shock_damage')# damage to a single unit.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_heal"
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_hero_heal.vs"
+	selecttarget_cursor_invalid="cantselect"
+	param="Skill Hero_Shock, ManaCost 30, MaxMana 30 DevScript data/subai/hero_skill_shock_init_mana.vs"
+>
+	<src obj="Hero"/>
+</cmd>
+
+<cmd id="Hero_Shock"
+  name="[[17296259]]@Shock[[]]"
+	button="lightning storm.bmp"
+	position="11"
+	enabled="0"
+	rollover_param="[[17306194]]Deals #GetClassInt('Hero', 'skill_shock_damage')# damage to a single unit.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_shock"
+	selecttarget_text="[[12076972]]Select enemy unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_hero_shock.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<cmdtext target="Unit"
+	         text="[[17315550]]Select enemy unit.[[]]"
+	         default-text="[[]]***[[]]"/>
+
+	<src obj="Hero"/>
+</cmd>
+
+<cmd id="Develop_Hero_Illusion"
+  name="[[17265743]]@Heal[[]]"
+	button="forester_stalker_plant.bmp"
+	position="11"
+	enabled="0"
+	rollover_param="[[17275734]]Heals a friendly unit for #GetClassInt('Hero', 'skill_heal_amount')# health points.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_heal"
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_hero_heal.vs"
+	selecttarget_cursor_invalid="cantselect"
+	param="Skill Hero_Illusion, ManaCost 30, MaxMana 30 DevScript data/subai/hero_skill_illusion_init_mana.vs"
+>
+	<src obj="Hero"/>
+</cmd>
+
+<cmd id="Hero_Illusion"
+  name="[[13824009]]@Illusion[[]]"
+	button="illusion.bmp"
+	position="11"
+	enabled="0"
+	rollover_param="[[17326048]]Creates an illusionary copy of an unit. Can support only one illusion at a time.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_illusion"
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_hero_illusion.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<cmdtext target="Unit"
+	         text="[[17286172]]Select friendly unit.[[]]"
+	         default-text="[[]]***[[]]"/>
+
+	<src obj="Hero"/>
+</cmd>
+
+<cmd id="Develop_Hero_Invisibility"
+  name="[[17265743]]@Heal[[]]"
+	button="forester_stalker_plant.bmp"
+	position="11"
+	enabled="0"
+	rollover_param="[[17275734]]Heals a friendly unit for #GetClassInt('Hero', 'skill_heal_amount')# health points.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_heal"
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_hero_heal.vs"
+	selecttarget_cursor_invalid="cantselect"
+	param="Skill Hero_Invisibility, ManaCost 60, MaxMana 60 DevScript data/subai/hero_skill_invisibility_init_mana.vs"
+>
+	<src obj="Hero"/>
+</cmd>
+
+<cmd id="Hero_Invisibility"
+  name="[[15003746]]@Invisibility[[]]"
+	button="human_invisibility.bmp"
+	position="11"
+	enabled="0"
+	rollover_param="[[17333756]]Makes the Champion invisible for #GetClassInt('Hero', 'skill_invisibility_timeout') / 1000# seconds.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_invisibility"
+	selecttarget_text=""
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<cmdtext target=""
+	         text=""
+	         default-text="[[]]***[[]]"/>
+
+	<src obj="Hero"/>
+</cmd>
+
+<cmd id="Develop_Hero_SecondSight"
+  name="[[17265743]]@Heal[[]]"
+	button="forester_stalker_plant.bmp"
+	position="11"
+	enabled="0"
+	rollover_param="[[17275734]]Heals a friendly unit for #GetClassInt('Hero', 'skill_heal_amount')# health points.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_heal"
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_hero_heal.vs"
+	selecttarget_cursor_invalid="cantselect"
+	param="Skill Hero_SecondSight, ManaCost 60, MaxMana 60 DevScript data/subai/hero_skill_secondsight_init_mana.vs"
+>
+	<src obj="Hero"/>
+</cmd>
+
+<cmd id="Hero_SecondSight"
+  name="[[17341127]]Se@cond Sight[[]]"
+	button="dragon_eye.bmp"
+	position="11"
+	enabled="0"
+	rollover_param="[[17356719]]Reveals the target area for #GetClassInt('Hero', 'skill_2ndsight_timeout') / 1000# seconds, also uncovering invisible units.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_secondsight"
+	selecttarget_text="[[17366197]]Select target point[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<cmdtext target=""
+	         text="[[17376960]]Select target.[[]]"
+	         default-text="[[]]***[[]]"/>
+
+	<src obj="Hero"/>
+</cmd>
+
+<cmd id="Develop_Hero_Resurrect"
+  name="[[17265743]]@Heal[[]]"
+	button="resurrect.bmp"
+	position="11"
+	enabled="0"
+	rollover_param="[[17275734]]Heals a friendly unit for #GetClassInt('Hero', 'skill_heal_amount')# health points.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_heal"
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_hero_heal.vs"
+	selecttarget_cursor_invalid="cantselect"
+	param="Skill Hero_Resurrect, ManaCost 60, MaxMana 60 DevScript data/subai/hero_skill_resurrect_init_mana.vs"
+>
+	<src obj="Hero"/>
+</cmd>
+
+<cmd id="Hero_Resurrect"
+  name="[[11597604]]@Resurrect[[]]"
+	button="resurrect.bmp"
+	position="11"
+	enabled="0"
+	rollover_param="[[17386183]]Brings a firendly unit back to life.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="skill_resurrect"
+	selecttarget_text="[[17366197]]Select target point[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_hero_resurrect.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<cmdtext target=""
+	         text=""
+	         default-text="[[]]***[[]]"/>
+
+	<src obj="Hero"/>
+</cmd>
+
+</commands>

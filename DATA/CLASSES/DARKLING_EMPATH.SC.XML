@@ -1,0 +1,93 @@
+<class id="Darkling_Empath" cpp_class="CSSHero" parent="Hero" entity="assets/entities/units/Darkling_Empath/Darkling_Empath.ent.xml">
+
+<method sig="possession" vs="data/subai/darkling_empath_possession.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="divinejourney" vs="data/subai/darkling_empath_divinejourney.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="mindblaze" vs="data/subai/darkling_empath_mindblaze.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="realityripple" vs="data/subai/darkling_empath_realityripple.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="fervent_disintegration" vs="data/subai/darkling_empath_disintegrate.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="resurrect_units" vs="data/subai/darkling_empath_resurrect.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="dichotimize" vs="data/subai/darkling_empath_dichotimize.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="spawn" vs="data/subai/darkling_unit_spawn.vs"/>
+
+<static_int radius="20" selection_radius="25" range="350" sight="400"/> 
+<static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4294824]]Empath[[]]"/>
+<static_str display_name="[[4294824]]Empath[[]]" display_name_plural="[[4294824]]Empath[[]]"/>
+
+<static_int speed="100"/>
+
+<static_str race_str="Race_Darklings"/>
+<static_int regenerate_promille="8"/>
+
+<static_str damage_type="magic"/>
+<static_int maxhealth="320"/>
+<static_int initial_damage="32"/>
+<static_int initial_armor="3"/>
+
+        <static_int potion_health="35"/>        
+        <static_int potion_damage="6"/> 
+        <static_int potion_recharge="20"/>      
+        <static_int potion_armor="1"/>  
+ 
+<static_int formation_priority="100"/>                  
+<static_int formation_radius="26"/>                             
+<static_str icon="Assets/Interface/Icons/empath.BMP"/>
+<static_str largeicon="Assets/Interface/Icons/empath large.BMP"/>
+<static_str     portrait="Assets/Interface/Icons/empath.rle"/>
+<static_str     skyimage="assets/interface/sky_dragon.bmp"/>
+
+<static_str rollover_description="[[4306429]]The Empath is the sole who has the power to alter reality through his link to the domain of gods. The perfect utility spellcaster the Empath provides tactical advantage with his versatile magical skills.[[]]"/>
+
+<static_int possession_damage_per_second="10"/>
+<static_int mindblaze_damage="50"/> <!-- percentage -->
+<static_int divinejourney_newitem_min="350"/>
+<static_int divinejourney_newitem_range="450"/>
+<static_int divinejourney_impitem_min="350"/>
+<static_int divinejourney_impitem_range="150"/>
+<static_int journey_duration="20000"/>
+<static_int realityripple_duration="15000"/>
+<static_int realityripple_range="350"/>
+<static_int realityripple_damage="9"/> <!-- percentage -->
+<static_int realityripple_damage_interval="1500"/>
+<static_int resurrect_range="200"/>
+<static_int ressurected_health_perc="20"/>
+<static_int disintegration_damage="250"/>
+<static_int disintegration_range="250"/>
+<static_int disintegration_delay="3000"/>
+
+<!-- Before 1.41 -->
+<!--
+	<static_str level1_skill1="Possession"/>
+	<static_str level1_skill2="MindBlaze"/>
+	<static_str level1_skill3="DivineJourney"/>
+	<static_str level1_skill4="FerventDisintegration"/>
+	<static_str level2_skill1="Resurrect_Skill"/>
+	<static_str level2_skill2="RealityRipple"/>
+	<static_str level3_skill1="Dichotomize"/>
+-->
+
+<!-- New for 1.41 -->
+	<static_str level1_skill1="Possession"/>
+	<static_str level1_skill2="DivineJourney"/>
+	<static_str level2_skill1="Resurrect_Skill"/>
+	<static_str level3_skill1="Dichotomize"/>
+	
+<static_str slot1_type="ring"/>
+<static_str slot2_type="ring"/>
+<static_str slot3_type="powerstone"/>
+<static_str slot4_type="wand"/>
+
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+	<!-- AI -->
+
+<static_str projectile_class = "Darkling_Empath_Projectile"/>
+<static_str projectile_class_building = "Darkling_Empath_Projectile"/>
+<static_int     projectile_angle= "15"/>
+<static_int     projectile_dist = "20"/>
+        <static_str hero_ai_special_script="HERO.EMPATH.VS"/>
+        <sounds
+                AnimAttack="assets/sounds/HeroSkills/Darkling Empath/Empath_Attack.wav"
+                command="Empath0"/>
+</class>

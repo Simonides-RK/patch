@@ -1,0 +1,59 @@
+<class id="Forester_Worker" cpp_class="CVXUnit" parent="BaseWorker" entity="assets/entities/units/Forester_Worker/Forester_Worker.ent.xml">
+
+        <member_obj mine=""/>
+        
+        <method sig="gather_gold" vs="data/subai/forester_worker_gather_gold.vs" onfinish="data/subai/forester_worker_gather_gold_onfinish.vs"/>
+        <method sig="gather_gems" vs="data/subai/forester_worker_gather_gems.vs" onfinish="data/subai/forester_worker_gather_gems_onfinish.vs"/>
+        <method sig="build_far_from_townhall" vs="data/subai/forester_worker_build_far_from_townhall.vs" onfinish="data/subai/forester_worker_build_far_from_townhall_onfinish.vs"/>
+        <method sig="unitrestoration" vs="data/subai/human_worker_restoration.VS" />        
+
+        <behavior script="data/subai/forester_worker_behavior_gather.vs"/>
+
+        <static_int radius="20" selection_radius="20"/>
+        <static_int healthbaroffset="-37"/>
+
+        <static_int formation_radius="30" formation_priority="100"/>
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5884241]]Worker[[]]"/>
+
+        <static_str display_name="[[5884241]]Worker[[]]" display_name_plural="[[5897943]]Workers[[]]"/>
+
+        <static_int maxhealth="230"/>
+        <static_int sight="300"/>
+        <static_int speed="100"/>
+
+        <static_int initial_armor="0"/>
+
+        <static_str defence_type = "small"/>
+
+        <static_str cost="50/0/1"/>
+        <static_str rollover_description="[[5901528]]Workers are needed to collect resources and plant buildings far from the Town Hall. Send a Worker to a Gold Plant to gather gold or to a Magic Well to collect gems.[[]]"/>
+        <static_str blood_particles="Data/Particles/BloodFeedbackLow.part.xml"/>
+        
+        <static_int unitlist_shrink="60"/> <!-- percentage -->
+        <static_str race_str="Race_Foresters"/>
+
+        <defaultcmd target="Forester_GoldMine">
+                <cmd name="gather_gold"/>
+        </defaultcmd>
+        
+        <defaultcmd target="BaseGemsDeposit">
+                <cmd name="gather_gems"/>
+        </defaultcmd>
+
+        <defaultcmd target="Forester_MagicWell">
+                <cmd name="gather_gems"/>
+        </defaultcmd>
+
+        <defaultcmd target="Hero">
+                <cmd name="follow"/>
+        </defaultcmd>
+
+        <static_str icon="Assets/Interface/Icons/worker.bmp"
+                                portrait="Assets/Interface/Icons/worker.rle"/>
+        <static_str     skyimage="assets/interface/sky_forester.bmp"/>
+
+        <sounds
+                AnimDie="Forester_worker_death_"
+                command="Worker0"/>
+
+</class>

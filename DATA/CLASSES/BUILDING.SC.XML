@@ -1,0 +1,59 @@
+<class id="Building" cpp_class="CVXBuilding" parent="BaseGameObject" entity="">
+
+	<static_int target_factor="5000"/>
+	<static_int sight="400"/>
+	<static_str interface="queue, building"/>
+	<static_str building_spot="Assets/Entities/visuals/Building Spots/spot1.rle"/>
+	<static_int can_be_selected="1"/>
+	<static_int can_be_destroyed="1"/>
+	<static_int foundation_layer="-1"/>
+	<static_str blood_particles="Data/Particles/BrickFeedback.part.xml"/>
+	<static_str bld_cancel_cmd="building_cancel_build"/>
+	<static_str defence_type="building"/>
+	<static_int initial_armor="2"/>
+	<static_int non_interactive_building="0"/> <!-- see +Mordred Non-interactive independent houses.txt -->
+	<static_int has_visibility_grid="1"/>
+
+	<static_int allow_rally_object="1"/>
+	<static_str rally_object_class=""/>
+	<member_obj rally_object=""/>
+	<member_obj rally_target=""/> <!-- an object, serving as rally target, the rally_object will follow it -->
+	<static_int place_ignore_pass="0"/>
+	
+	<!-- 'building_upgrade' is now present as a C++ member -->
+	<member_obj building_upgrade_prs=""/>
+	<static_str building_upgrade_class=""/>
+	<static_str building_upgrade_prs_class=""/>
+	<static_str race_str="**Invalid**"/>
+	
+	<static_int build_shape_complete_frame="0"/>
+
+	<member_int glory_cost=""/> <!-- moved from Mage Tower, so other buildings can also have glory cost -->
+	
+	<member_int promille_ready=""/> <!-- just like per-cent, only per-1000 ;) -->
+	<member_int passability_placed=""/>
+	<member_int dismantle_framework=""/>
+	<member_int is_haunted=""/> <!-- needed for Witch Queen to disable cancel button-->
+	
+	<member_obj building_flow=""/> <!-- particle flow object for Darkling buildings, used by being_built_far method -->
+
+	<value id="TrainProgress" script="int i; i = .ProgressReadyPrc; if(i == -1) return ''; return Translate('[[3840323]]Progress [[]]') + i + Translate('[[]]%[[]]');"/>
+	<value id="TrainProgressBar" script="return .ProgressReadyPrc;"/>
+	<value id="QueueBack" script="if(.command != 'idle' &amp;&amp; .command != 'being_built' &amp;&amp; .command != 'being_built_far' &amp;&amp; .command != 'waiting_to_be_built') return 'assets/interface/%racedir%/queue.bmp'; return '';"/>
+	<value id="Armor" script="int i; i = .armor; return i;"/>
+
+	<method sig="init" vs="data/subai/building_init.vs"/>
+	<method sig="ondie" vs="data/subai/building_ondie.vs"/>
+	<!--method sig="set_rally" vs="data/subai/building_set_rally.vs"/-->
+	<method sig="train" vs="data/subai/building_train.vs"/>
+	<method sig="onconstruct" vs="data/subai/building_onconstruct.vs"/>
+	<method sig="upgrade" vs="data/subai/upgrade.vs" onfinish="data/cmds/onfinish_upgrade.vs"/>
+	<method sig="upgrade_local" vs="data/subai/upgrade_local.vs" onfinish="data/cmds/onfinish_upgrade_local.vs"/>
+	<method sig="onsetplayer" vs="data/subai/building_setplayer.vs"/>
+	<method sig="being_restored" vs="data/subai/building_being_restored.vs"/>
+	<method sig="building_upgrade" vs="data/subai/BuildingUpgrade.vs" onfinish="data/subai/building_upgrade_onfinish.vs"/>
+	<method sig="candie" vs="data/subai/BuildingUpgrade_candie.vs"/>
+	<method sig="oncancelbuild" vs="data/subai/building_oncancelbuild.vs" />
+
+	<member_int ai_guard_is_running=""/>
+</class>

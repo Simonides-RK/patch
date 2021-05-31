@@ -1,0 +1,46 @@
+<class id="Shades_Warrior" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Shades_Warrior/Shades_Warrior.ent.xml">
+
+	<method sig="init" vs="data/subai/shades_warrior_init.vs"/>
+	<method sig="spawn" vs="data/subai/shades_unit_spawn.vs"/>
+	<method sig="born" vs="data/subai/shades_unit_born.vs"/>
+	
+	<static_int radius="30" selection_radius="30"/>
+	<static_int formation_radius="42" formation_priority="800"/>
+	
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[7289404]]Shades[[]]/[[7447218]]Shade Warrior[[]]"/>
+
+	<static_str display_name="[[7447218]]Shade Warrior[[]]" display_name_plural="[[7453761]]Shade Warriors[[]]"/>
+
+	<static_int sight="300"/>
+	<static_int speed="80"/>
+	<static_int maxhealth="766" initial_damage="36" initial_armor="0"/>
+
+	<static_str damage_type="blade"/>
+	<static_str defence_type = "small"/>
+
+	<static_str cost="210/2/3"/>
+	<static_int independent_value="335"/>
+
+	<static_str rollover_description="[[7463692]]Shade Warriors are strong fighters capable of evading attacks while moving. Because of this they are very difficult to kill with ranged units or Towers.[[]]"/>
+
+	<static_int	projectile_angle="0" 
+				projectile_dist = "0"/>
+				
+	<static_int bottle_o_fog_reduction="15"/>
+	<static_int moving_reduction="20"/>
+	
+
+	<static_str icon="Assets/Interface/Icons/shades warrior.BMP"
+				portrait="assets/interface/icons/shades warrior.rle"/>
+				
+	<static_str race_str="Race_Shades"/>
+
+	<static_int ai_melee_protection="1"/>
+	<static_int ai_melee_escape_time="4"/>	
+	<static_int ai_concentrate_group="2"/>   <!-- blade damage -->
+
+	<static_int constantly_idle_played="13"/>
+	<sounds
+		AnimAttack="Sword_Axe_Attack"
+		command="Warrior0"/>
+</class>

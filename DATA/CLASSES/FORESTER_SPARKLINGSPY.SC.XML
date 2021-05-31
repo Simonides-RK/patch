@@ -1,0 +1,40 @@
+<class id="Forester_SparklingSpy" cpp_class="CVXUnit" parent="Peaceful" entity="assets/entities/units/Forester_SparklingSpy/Forester_SparklingSpy.ent.xml">
+
+<method sig="init" vs="data/subai/forester_sparklingspy_init.vs"/>
+<method sig="idle" vs="data/subai/forester_sparklingspy_idle.vs"/>
+<method sig="ondie" vs="data/subai/forester_sparklingspy_ondie.vs"/>
+
+<static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5612670]]Sparkling Spy[[]]"/>
+
+<static_str display_name="[[5612670]]Sparkling Spy[[]]" display_name_plural="[[5626672]]Sparkling Spies[[]]"/>
+
+<static_int healthbaroffset="-37"/>
+<static_int maxhealth="100"/>
+<static_int sight="450"/>
+<static_int speed="150"/>
+<static_int can_be_selected="0"/>
+
+<static_str defence_type = "small"/>
+<static_str damage_type="magic"/>
+
+<static_int action_sleep_time="1000"/>
+<static_int damage_taken_per_action="1"/>
+<static_int free_life_time="150000"/>
+<static_int obsessed_life_time="80000"/>
+<static_int area_radius="1000"/>
+<static_int pass_point_tries="150"/>
+<static_int check_move_dist="20"/>
+<static_int cancel_attack_timeout="1000"/>
+<static_int chance_to_change_dir="33"/>
+
+<static_str race_str="Race_Foresters"/>
+
+<member_obj obj_to_spy=""/>
+<member_int poison_effect=""/> <!-- Ivko: Currently unused, but we must keep it for savegame compatibility -->
+<member_int creation_time=""/>
+<member_pt destination=""/>
+<member_obj the_seedkeeper=""/>
+
+<static_int ai_cant_be_in_army="1"/>
+<static_int ai_ignore = "1"/>	
+</class>

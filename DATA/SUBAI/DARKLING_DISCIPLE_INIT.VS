@@ -1,0 +1,17 @@
+//void, Obj this
+int d, s;
+Unit u;
+
+d = GetClassInt("Darkling_Townhall", "hellraisedweapons_bonus_damage"); 
+s = GetClassInt("Darkling_Townhall", "hellraisedweapons_bonus_attackspeed"); 
+u = this.AsUnit();
+
+
+if ( IsUpgradeAvailable(.player, "upgrade_StrengthOfFaith") ) {
+        u.SetMaxHealth(u.GetMaxHealth() + .strengthoffaith_bonus);
+}
+if (IsUpgradeAvailable(.player, "upgrade_HellRaisedWeapons")) 
+{
+	u.damage = u.damage + u.initial_damage * d / 100;
+	u.SetAttackSpeedFactor(u.attack_speed_factor + u.attack_speed_factor * s / 100);
+}

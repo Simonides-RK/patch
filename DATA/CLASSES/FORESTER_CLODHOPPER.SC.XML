@@ -1,0 +1,45 @@
+<class id="Forester_Clodhopper" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Forester_Clodhopper/Forester_Clodhopper.ent.xml">
+
+	<method sig="init" vs="data/subai/forester_clodhopper_init.vs"/>
+	<method sig="doattack" vs="data/subai/forester_clodhopper_doattack.vs"/>
+
+	<static_int radius="30" selection_radius="30"/>
+	<static_int formation_radius="42" formation_priority="1000"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5023008]]Clodhopper[[]]"/>
+
+	<static_str display_name="[[5023008]]Clodhopper[[]]" display_name_plural="[[5039742]]Clodhoppers[[]]"/>
+
+	<static_int maxhealth="1200" initial_damage="45" initial_armor="7"/>
+	<static_int sight="400"/>
+	<static_int speed="85"/>
+
+	<static_str damage_type="mace"/>
+	<static_str defence_type = "heavy"/>
+
+	<static_str cost="210/4/4"/>
+	<static_str rollover_description="[[5048020]]Clodhoppers are strong and sturdy warriors good for fighting at the front line. Can be upgraded to increase their armour and stun small enemy units.[[]]"/>
+
+
+	<static_str icon="Assets/Interface/Icons/clodhopper.bmp"
+				portrait="assets/interface/icons/clodhopper.rle"
+				skyimage="assets/interface/sky_forester.bmp"/>
+
+	<static_int cast_time="5000"/>
+	<static_int stun_percent="35"/>
+	<static_int stun_radius="150"/>
+	<static_int armor_upgrade_bonus="6"/>
+	
+	<static_str race_str="Race_Foresters"/>
+	
+	<!-- AI -->
+	<static_int ai_melee_protection="1"/>
+	<static_int ai_melee_escape_time="5"/>
+	<static_int ai_concentrate_group="3"/>   <!-- mace melee damage -->
+	<!-- AI -->
+	
+	<sounds
+		AnimAttack="Club_Mace_Attack_"
+		AnimDie="Clodhopper_death_"
+		command="Clod0"/>
+
+</class>

@@ -1,0 +1,171 @@
+<class id="Unit" cpp_class="CVXUnit" parent="BaseGameObject" entity="">
+
+	<method sig="init" vs="data/subai/unit_init.vs"/>
+	<method sig="ondie" vs="data/subai/unit_ondie.vs"/>
+	<method sig="onsetplayer" vs="data/subai/unit_setplayer.vs"/>
+
+	<method sig="idle" vs="data/subai/unit_idle.vs"/>
+	<method sig="advance" vs="data/subai/unit_advance.vs"/>
+	<method sig="attack" vs="data/subai/unit_attack.vs" verify="data/subai/unit_attack_verify.vs"/>
+	<method sig="attack" vs="data/subai/unit_advance.vs"/>
+	<method sig="engage" vs="data/subai/unit_engage.vs"/>
+	<method sig="move" vs="data/subai/unit_move.vs"/>
+	<method sig="move_single" vs="data/subai/unit_move_single.vs"/>
+	<method sig="move_straight" vs="data/subai/unit_move_straight.vs"/>
+	<method sig="move_cmd" vs="data/subai/unit_move_cmd.vs"/>
+	<method sig="patrol" vs="data/subai/unit_patrol.vs"/>
+	<method sig="addpatrol" vs="data/subai/unit_addpatrol.vs"/>
+	<method sig="follow" vs="data/subai/unit_follow.vs" verify="data/subai/unit_follow_verify.vs"/>
+	<method sig="selfdestroy" vs="data/subai/unit_selfdestroy.vs"/>
+	<method sig="wander" vs="data/subai/unit_wander.vs"/>
+	<method sig="explore" vs="data/subai/unit_explore.vs"/>
+	<method sig="face" vs="data/subai/unit_face.vs"/>
+	<method sig="dismiss"    vs="data/subai/unit_dismiss.vs"/>
+	<method sig="stand_position" vs="data/subai/unit_stand_position.vs" onfinish="data/subai/unit_stand_position_onfinish.vs"/>
+	<method sig="attack_unit_type" vs="data/subai/unit_attack_unit_type.vs" verify="data/subai/unit_attack_verify.vs"/>
+	<method sig="engage_unit_type" vs="data/subai/unit_engage_unit_type.vs" verify="data/subai/unit_attack_verify.vs"/>
+	<method sig="stun" vs="data/subai/unit_stun.vs"/>
+	<method sig="doattack" vs="data/subai/unit_doattack.vs"/>
+	<method sig="ritual" vs="data/subai/unit_ritual.vs"/>
+	<method sig="false_enter" vs="data/subai/unit_false_enter.vs"/>
+	<method sig="post_teleport" vs="data/subai/unit_post_teleport.vs"/>
+	<method sig="test_attack" vs="data/subai/unit_test_attack.vs"/>
+	<method sig="enter_shelter" vs="data/subai/unit_enter_shelter.vs" verify="data/subai/unit_enter_shelter_verify.vs"/>
+	<method sig="exit_shelter" vs="data/subai/unit_exit_shelter.vs"/>
+	<method sig="disintegrate" vs="data/subai/unit_disintegrate.vs"/>
+	<method sig="hibernate" vs="data/subai/unit_hibernate.vs"/>
+	<method sig="unhibernate" vs="data/subai/unit_unhibernate.vs"/>
+	<method sig="angelwings_save" vs="data/subai/unit_angelwings_save.vs" onfinish="data/subai/unit_angelwings_onfinish.vs"/>	
+	<method sig="move_retreat" vs="data/subai/unit_move_retreat.vs"/>
+	<method sig="open_chest" vs="data/subai/unit_open_chest.vs"/>
+	<method sig="dichotimize_split" vs="data/subai/unit_dichotimize_split.vs"/>
+	<method sig="getitems" vs="data/subai/unit_getitems.vs"/> <!-- Units can pick up charms -->
+	<method sig="divine_journey_start" vs="data/subai/unit_divine_journey_start.vs"/>
+	<method sig="divine_journey_end" vs="data/subai/unit_divine_journey_end.vs"/>
+
+	<method sig="onremovecolonyguard" vs="data/subai/unit_onremovecolonyguard.vs"/>
+	<method sig="dichotomize_copy" vs="data/subai/unit_dichotomize_copy.vs"/>
+
+	<behavior script="data/subai/unit_behavior_manaregen.vs"/>
+
+	<value id="Armor" script="int i; Unit u; u = .AsUnit; i = .armor; if ( u.IsWeakened() ) i = i * -1; return i;"/>
+	<value id="ArmorTextValue" script="int i, b; Unit u; str s; u = .AsUnit; i = 0; if ( !u.IsWeakened() ) { b = GetClassInt(.class, 'initial_armor'); i = .armor - b; } else b = -this.armor; s = '&lt;color 255 255 64&gt;' + Translate('[[7155571]]Amount:[[]]') + ' &lt;color 255 255 255&gt;' + Translate('[[]]' + b + '[[]]'); if ( i > 0 ) s = s  + '&lt;color 32 255 32&gt;' + Translate('[[]]+[[]]') + i; return s;"/>
+
+	<static_int can_be_selected="1"/>
+	<static_int legendary="0"/>
+
+	<static_str display_name="[[7627087]]Unit[[]]" display_name_plural="[[1477212]]Units[[]]"/>
+
+	<static_int maxhealth="200"/>
+	<static_int sight="400"/>
+	<static_int range="17" min_range="2"/>
+	<static_int radius="40" selection_radius="40"/>
+	<static_int speed="50"/>
+	<static_int attack_duration="0"/>
+	<static_int rotation_time="1000"/>
+	<static_int stun_time="7000"/>
+
+	<static_int invisible_under_fog="1"/>
+	<static_int unit_specific_snd_percent="1"/>
+	<static_int idle_anim_percent="10"/>
+
+	<static_int stand_pos_duration="5000"/>
+	<static_int stand_pos_didntmove="10000"/>
+	<static_int stand_pos_didntattack="15000"/>
+	<static_int stand_pos_melee_range_add="0"/>
+	
+	
+	<static_int unitlist_shrink="75"/> <!-- percentage -->
+	
+	<member_int recharge_bonus=""/> <!-- used by mana recharge script (both units & heroes) -->
+	<member_int stand_pos_end_time=""/>
+
+	<!--	0  means that in stand_position script it behaves in the ordinary way
+			-n means that in stand_position it plays it's Abs(-n) animation from time to time
+			n  means that in stand_position it constantly plays it's n-th animation -->
+	<static_int constantly_idle_played="0"/>
+
+	<member_int in_gallop="" />
+	<member_int damage_protection=""/> <!-- used by Guardian Spirit ability -->
+	<member_obj magic_glow=""/>
+	<static_int independent_value="-1"/>
+	<member_obj curse_owner=""/>	<!-- witch which is owner of the curse on this unit -->
+
+	<member_obj salvation_owner=""/> <!-- the battle angel, who cast salvation -->
+	<member_obj in_shelter=""/>
+
+	<member_int independent_glory=""/>
+	<member_int rat_support=""/>
+
+	<static_int summoned_unit="0"/>
+
+	<static_str interface="unitselection"/>
+
+	<static_str race_str="**Invalid**"/>
+	<static_int reinforced_spear_damage="0"/>
+
+	<!-- for all human horsed units -->	
+	<static_int galop_enemy_dist_min="105"/>
+	<static_int galop_enemy_dist_max="125"/>
+	
+	<!-- For the defences 1==protected, 0==no protection, -1=vulnerable -->
+
+	<!--Items support -->
+	<static_str items=""/>		
+	<static_str slot1_type=""/>
+
+	<member_pt  die_pos=""/>
+
+	<defaultcmd target="">
+	        <cmd name="move"/>
+	</defaultcmd>
+
+
+	<defaultcmd target="Human_Shelter">
+		<cmd name="enter_shelter"/>
+		<cmd name="attack"/>
+	</defaultcmd>
+
+	<defaultcmd target="Hero">
+<!--		<cmd name="attach"/>-->
+		<cmd name="attack"/>
+		<cmd name="follow"/>
+	</defaultcmd>
+
+	<defaultcmd target="Unit">
+		<cmd name="attack"/>
+		<cmd name="follow"/>
+	</defaultcmd>
+
+	<defaultcmd target="Forester_Overlord">
+		<cmd name="attack"/>
+	</defaultcmd>
+
+	<defaultcmd target="Forester_StalkerPlant">
+		<cmd name="attack"/>
+	</defaultcmd>
+
+	<defaultcmd target="Human_WizardOfTheBow_CrystalTower">
+		<cmd name="attack"/>
+	</defaultcmd>
+
+	<defaultcmd target="BaseChest">
+		<cmd name="open_chest"/>
+	</defaultcmd>
+
+	<defaultcmd target="Building">
+		<cmd name="attack"/>
+	</defaultcmd>
+
+	<defaultcmd target="ItemHolder">
+		<cmd name="getitems"/>
+	</defaultcmd>
+
+	<sounds AnimDie="UnitDeath"/>
+
+	<behavior script="data/ai/aidebug_behaviour.vs"/>
+	<!-- AI -->
+	<member_int ai_micro_action="" ai_last_tick_health="" ai_danger=""/>
+	<!-- AI -->
+
+</class>

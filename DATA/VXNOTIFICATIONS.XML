@@ -1,0 +1,443 @@
+<notifications>
+<notification
+			id="unit attacked"
+			particledesc="Data/Particles/Unit_Notification.part.xml"
+			text="[[28099850]]Unit under attack[[]]"
+			sound = "Assets/Sounds/Voices/Notifications/human unit under attack.wav"
+			activetime = "7000"
+			suspendradius = "1000"
+			changepositiontime = "4000"
+			framechangetime = "100"
+			priority = "1"
+			objnotifytime = "2000"
+			emitterstoptime = "2500"
+			/>
+
+<notification
+			id="Foresters unit attacked"
+			particledesc="Data/Particles/Unit_Notification.part.xml"
+			text="[[28099850]]Unit under attack[[]]"
+			sound = "Assets/Sounds/Voices/Notifications/forester unit under attack.wav"
+			activetime = "7000"
+			suspendradius = "1000"
+			changepositiontime = "4000"
+			framechangetime = "100"
+			priority = "1"
+			objnotifytime = "2000"
+			emitterstoptime = "2500"
+			/>
+
+<notification
+			id="Humans unit attacked"
+			particledesc="Data/Particles/Unit_Notification.part.xml"
+			text="[[28099850]]Unit under attack[[]]"
+			sound = "Assets/Sounds/Voices/Notifications/human unit under attack.wav"
+			activetime = "7000"
+			suspendradius = "1000"
+			changepositiontime = "4000"
+			framechangetime = "100"
+			priority = "1"
+			objnotifytime = "2000"
+			emitterstoptime = "2500"
+			/>
+
+<notification
+			id="Darklings unit attacked"
+			particledesc="Data/Particles/Unit_Notification.part.xml"
+			text="[[28099850]]Unit under attack[[]]"
+			sound = "Assets/Sounds/Voices/Notifications/darkling unit under attack.wav"
+			activetime = "7000"
+			suspendradius = "1000"
+			changepositiontime = "4000"
+			framechangetime = "100"
+			priority = "1"
+			objnotifytime = "2000"
+			emitterstoptime = "2500"
+			/>
+
+<notification
+			id="building attacked"
+			particledesc="Data/Particles/Building_Notification.part.xml"
+			text="[[28104705]]Building under attack[[]]"
+			sound = "Assets/Sounds/Voices/Notifications/human building under attack.wav"
+			activetime = "5000"
+			suspendradius = "1000"
+			emitterstoptime = "2500"
+			/>
+
+<notification
+			id="Foresters building attacked"
+			particledesc="Data/Particles/Building_Notification.part.xml"
+			text="[[28104705]]Building under attack[[]]"
+			sound = "Assets/Sounds/Voices/Notifications/forester building under attack.wav"
+			activetime = "5000"
+			suspendradius = "1000"
+			emitterstoptime = "2500"
+			/>
+
+<notification
+			id="Humans building attacked"
+			particledesc="Data/Particles/Building_Notification.part.xml"
+			text="[[28104705]]Building under attack[[]]"
+			sound = "Assets/Sounds/Voices/Notifications/human building under attack.wav"
+			activetime = "5000"
+			suspendradius = "1000"
+			emitterstoptime = "2500"
+			/>
+
+<notification
+			id="Darklings building attacked"
+			particledesc="Data/Particles/Building_Notification.part.xml"
+			text="[[28104705]]Building under attack[[]]"
+			sound = "Assets/Sounds/Voices/Notifications/darkling building under attack.wav"
+			activetime = "5000"
+			suspendradius = "1000"
+			emitterstoptime = "2500"
+			/>
+
+<notification
+			id="enemy has taken ind"
+			text="[[28118336]]Our spies report that a short while ago an enemy captured an independent colony[[]]"
+			sound = "Assets/Sounds/Notifications/message.wav"
+			activetime = "5000"
+			suspendradius = "1000"
+			/>
+
+<notification
+			id="Skill is not ready yet"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			text="[[28120404]]Skill is not ready yet[[]]"
+			/>
+<notification
+			id="not enough gold"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			text="[[28131987]]Not enough gold. Gather more gold![[]]"
+			/>
+<notification
+			id="not enough gems"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			text="[[28148413]]Not enough gems. Gather more gems![[]]"
+			/>
+<notification
+			id="not enough glory"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			text="[[28154920]]More glory points needed[[]]"
+			/>
+<notification
+			id="not enough houses"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			text="[[28162374]]Can't support more units[[]]"
+			/>
+<notification
+			id="Foresters not enough houses"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			text="[[28171834]]Can't support more units. Plant more Magic Houses![[]]"
+			/>
+<notification
+			id="Humans not enough houses"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			text="[[28186193]]Can't support more units. Build more Houses![[]]"
+			/>
+<notification
+			id="Darklings not enough houses"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			text="[[28192422]]Can't support more units. More Soulwatchers are needed![[]]"
+			/>
+<notification
+			id="build queue is full"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			text="[[28200476]]Build queue is full[[]]"
+			/>
+<notification
+			id="there can be only one hero"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			text=""
+			/>
+
+<notification
+			id="cannot perform the ritual"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			text=""
+			/>
+
+<notification
+			id="diplomacy changed"
+			text=""
+			sound = ""
+			activetime = "0"
+			/>
+
+<notification
+			id="friendly target only"
+			text="[[28227120]]Can only target friendly units[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="unit target only"
+			text="[[28238968]]Can only target units[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="building target only"
+			text="[[28243439]]Can only target buildings[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="enemy target only"
+			text="[[28259869]]Can only target enemy units[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Gold occupied"
+			text="[[28263080]]This Gold Plant is occupied - can't send more workers[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Gems occupied"
+			text="[[28277572]]This Gem Deposit is occupied - can't send more workers[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="common"
+			text=""
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="location message"
+			particledesc="Data/Particles/Location_Notification.part.xml"
+			text="[[28289536]]Location message[[]]"
+			sound = "Assets/Sounds/Notifications/location message.wav"
+			activetime = "2500"
+			suspendradius = "1000"
+			emitterstoptime = "2500"
+			/>
+<notification
+			id="player lost"
+			text=""
+			sound = "Assets/Sounds/Notifications/message.wav"
+			activetime = "8000"
+			/>
+<notification
+			id="Target Too Close"
+			text="[[28293706]]Target is too close[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Launch In Process"
+			text="[[28306252]]Launch is already in progress[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Cannot Plant"
+			text="[[28310420]]Can't create a plant here, not enough space[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Too Far To Plant"
+			text="[[28322565]]Can't create a plant so far while burrowed[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Already mind controlled"
+			text="[[28336785]]The unit is already under mind control[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Hero cant be mind controlled"
+			text="[[28343357]]Champions can't be mind controlled[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Unit cant be mind controlled"
+			text="[[28351140]]This unit can't be mind controlled[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Illusion already applied"
+			text="[[28361782]]Can't make an illusion of an illusion[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+
+<notification
+			id="Can't apply illusion on heroes"
+			text="[[28370126]]Can't create an illusion of a Champion[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+      id="Already in werewolf form"
+			text="[[28384071]]Queen of the Wolves is already in werewolf form[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime="1000"
+			/>
+<notification
+      id="Too Far To Use Thorns"
+			text="[[28398408]]Can't use thorns at such a distance while burrowed[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime="1000"
+			/>
+<notification
+      id="No townhall or trade post around"
+			text="[[28402813]]Can't collect gold - no Town Hall or Trade Post around[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime="1000"
+			/>		
+<notification
+			id="Cant control unit"
+			text="[[28416389]]The selected unit is on your side, but cannot be directly controlled[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>			
+<notification
+			id="Rage Impulse Impossible"
+			text="[[28420904]]Rage Impulse failed because there are no enemies around target[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>			
+<notification
+			id="No wolf corpses"
+			text="[[28438775]]No Wolf Master or Werewolf bodies found to revive[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>	
+<notification
+			id="cant build there"
+			text="[[28443287]]The building could not be placed[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="No units nearby"
+			text="[[28458739]]No enemy units in the area[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Target too far"
+			text="[[28469828]]Target too far[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Invalid target"
+			text="[[28470598]]Target is invalid[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Pikeman or Longbowman"
+			text="[[28487055]]This skill can only be cast on Pikemen or Longbowmen[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="No units to cast on"
+			text="[[28495136]]There are no Pikemen or Longbowmen around to cast Reequip on[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="No passable pt"
+			text="[[28503916]]Not enough space near target location[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="quests updated"
+			text="[[28512422]]Quests updated[[]]"
+			sound = "Assets/Sounds/Notifications/message.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="objective completed"
+			text="[[28522368]]Objective(s) completed[[]]"
+			sound = "Assets/Sounds/Notifications/message.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="deposit without mine"
+			text="[[28530342]]An unoccupied Gold Deposit is required as a target[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="out of map"
+			text="[[28541906]]Location out of map[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="out of range"
+			text="[[28558929]]Location out of range[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="unit out of range"
+			text="[[28563404]]The unit is out of range[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="on crystal tower"
+			text="[[28579223]]Wizard of the Bow is already on a Crystal Tower[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="no units sel"
+			text="[[25029461]]Can't teleport, no units selected[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Chest locked"
+			text="[[28589246]]The chest won't open[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="Inventory full"
+			text="[[28592867]]Can't pick up this item, inventory full[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="hero dead"
+			text="[[28604172]]Can't use Champion skills while in ghost form[[]]"
+			sound = "Assets/Sounds/Notifications/beep.wav"
+			activetime = "1000"
+			/>
+<notification
+			id="rickroll"
+			text="You got rick rolled. xD"
+			sound = "Assets/Sounds/UI/rickroll.wav"
+			activetime = "1000"
+			/>
+</notifications>			

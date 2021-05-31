@@ -1,0 +1,101 @@
+<class id="Darkling_Soulmonger" cpp_class="CSSHero" parent="Hero" entity="assets/entities/units/Darkling_Soulmonger/Darkling_Soulmonger.ent.xml">
+
+<method sig="init" vs="data/subai/darkling_soulmonger_init.vs"/>
+<method sig="spawn" vs="data/subai/darkling_unit_spawn.vs"/>
+
+<method sig="soulburn" vs="data/subai/darkling_soulmonger_soulburn.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="absorbsoul" vs="data/subai/darkling_soulmonger_absorbsoul.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="soullink" vs="data/subai/darkling_soulmonger_soullink.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="soulnova" vs="data/subai/darkling_soulmonger_soulnova.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="recharge" vs="data/subai/darkling_soulmonger_recharge.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+
+<behavior script="data/subai/darkling_soulmonger_behavior_replenish.vs"/>
+
+<static_str areacheck_type="friendly" areacheck_class="Unit"/>
+<static_int areacheck_time="1000"/>
+<method sig="onexitarea" vs="data/subai/darkling_soulmonger_onexitarea.vs"/>
+
+<static_int constantly_idle_played="13"/>
+
+<static_int radius="30" selection_radius="30" range="320"/>	
+<static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4466056]]Soulmonger[[]]"/>
+<static_str display_name="[[4466056]]Soulmonger[[]]" display_name_plural="[[4466056]]Soulmonger[[]]"/>
+<static_int maxhealth="560"/>
+<static_int initial_damage="20"/>
+<static_int initial_armor="0"/>
+<static_int speed="100"/>
+
+<static_int potion_health="55"/>	
+<static_int potion_damage="3"/>	
+<static_int potion_recharge="15"/>	
+<static_int potion_armor="1"/>	
+
+<static_str race_str="Race_Darklings"/>
+<static_int regenerate_promille="8"/>
+
+<static_str damage_type="magic"/>
+
+
+<static_int soulburn_damage="125"/>
+<static_int soulburn_range="250"/>
+<static_int absorbsoul_bonus="10"/>
+<static_int absorbsoul_range="350"/>
+<static_int soullink_heal="200"/>
+<static_int soullink_rate="200"/> <!-- percentage -->
+<static_int soullink_minhealth="33"/> <!-- percentage -->
+<static_int soullink_healtime="200"/>
+<static_int soulnova_healthcost="200"/>
+<static_int soulnova_damage="300"/>
+<static_int replenish_drain="20"/>
+<static_int replenish_delay="300"/>
+<static_str healprojectile="Darkling_Soulmonger_ProjectileHeal"/>
+
+<member_int replenish_available=""/>
+
+<static_int formation_priority="100"/>			
+<static_int formation_radius="26"/>				
+<static_str icon="Assets/Interface/Icons/soulmonnger.BMP"/>
+<static_str largeicon="Assets/Interface/Icons/soulmonnger large.BMP"/>
+<static_str	portrait="Assets/Interface/Icons/soulmonnger.rle"/>
+<static_str	skyimage="assets/interface/sky_dragon.bmp"/>
+
+<static_str rollover_description="[[4477625]]The Soulmonger is a master of life and death, holding the ability to take and give health to allies at will. For maximum efficiency the Soulmonger is best used in combination with a host of smaller units.[[]]"/>
+
+<static_str projectile_class = "Darkling_Soulmonger_Projectile"/>
+<static_str projectile_class_building = "Darkling_Soulmonger_Projectile"/>
+<static_int	projectile_angle="-10"/>
+<static_int projectile_dist ="60"/>
+
+<static_str hero_ai_special_script="hero.soulmonger.vs"/>
+
+<!-- Before 1.41 -->
+<!--
+<static_str level1_skill1="SoulNova"/>
+<static_str level1_skill2="SoulBurn"/>
+<static_str level1_skill3="AbsorbSoul"/>
+<static_str level2_skill1="Replenish"/>
+<static_str level2_skill2="Reincarnate"/>
+<static_str level3_skill1="Recharge"/>
+-->
+
+<!-- New for 1.41 -->
+<static_str level1_skill1="AbsorbSoul"/>
+<static_str level1_skill2="SoulLink"/>
+<static_str level2_skill1="Reincarnate"/>
+<static_str level3_skill1="Recharge"/>
+
+<static_str slot1_type="bow"/>
+<static_str slot2_type="helm"/>
+<static_str slot3_type="powerstone"/>
+<static_str slot4_type="cloak"/>
+
+<!-- AI -->
+<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+<static_int ai_draw_back_if_disabled="1"/>
+<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+<!-- AI -->
+
+<static_int constantly_idle_played="13"/>
+	<sounds
+		command="Soulmonger0"/>
+</class>

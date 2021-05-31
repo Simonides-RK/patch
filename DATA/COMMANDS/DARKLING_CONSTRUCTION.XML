@@ -1,0 +1,122 @@
+<commands>
+
+<!-- Ivko: Texts edited, 13.02.2005. Please don't remove this comment! -->
+
+<cmd id="construct_darkling_tower_for_crystals"
+	template_cmd="template_construct"
+	name="[[11725131]]Forge @Spire[[]]"
+	button="spire.BMP"
+	position="7"
+	rollover_param=""
+	enabled="0"
+	param="Darkling_AICrystalTower"
+>
+	<src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="construct_darkling_tower"
+	template_cmd="template_construct"
+	name="[[11725131]]Forge @Spire[[]]"
+	button="spire.BMP"
+	position="7"
+	verifier_script="data/cmds/tower_verify.vs"
+	rollover_param=""
+	select_building_place_init_script="data/cmds/darkling_spire_placeinit.vs"
+	select_building_place_done_script="data/cmds/darkling_spire_placedone.vs"
+	param="Darkling_Tower"
+>
+	<src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="construct_darkling_gold_mine"
+	template_cmd="template_construct"
+	select_building_place_drag_script="data/cmds/building_placing_drag_gold_mine.vs"
+	name="[[11730127]]Forge P@urifier[[]]"
+	button="dakrling gold mine.BMP"
+	position="8"
+	rollover_param=""
+	param="Darkling_GoldMine"
+	requirements=""
+>
+	<src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="construct_darkling_altar_of_war"
+	template_cmd="template_construct"
+	name="[[11745216]]Forge Altar of @War[[]]"
+	button="altar of war.BMP"
+	position="9"
+	rollover_param=""
+	param="Darkling_AltarOfWar"
+	requirements=""
+>
+	<src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="construct_darkling_alchemist_guild"
+	template_cmd="template_construct"
+	name="[[11758956]]Forge @Temple of Nightfall[[]]"
+	button="temple of nightfall.BMP"
+	position="10"
+	rollover_param=""
+	param="Darkling_TempleOfNightfall"
+	requirements="upgrade_DarklingLevel1"
+>
+	<src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="construct_darkling_dark_palace"
+	template_cmd="template_construct"
+	name="[[11762858]]Forge Dark C@itadel[[]]"
+	button="dark citadel.bmp"
+	position="11"
+	rollover_param=""
+	param="Darkling_DarkPalace"
+	requirements="upgrade_DarklingLevel2"
+>
+	<src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="construct_darkling_academy_of_night"
+	template_cmd="template_construct"
+	name="[[11776034]]Forge @Night Council[[]]"
+	button="night council.BMP"
+	position="12"
+	rollover_param=""
+	param="Darkling_NightCouncil"
+	requirements="upgrade_DarklingLevel3"
+>
+	<src obj="Darkling_Townhall"/>
+</cmd>
+
+<cmd id="construct_independent_darkling_tower"
+	template_cmd="template_construct_with_worker"
+	name="[[11725131]]Forge @Spire[[]]"
+	button="spire.BMP"
+	position="11"
+	verifier_script="data/cmds/tower_verify.vs"
+	rollover_param=""
+	param="Darkling_Tower"
+	onaddremove_script="data/cmds/onaddremove_construct_far_from_townhall.vs"
+	select_building_place_init_script="data/cmds/darkling_spire_placeinit.vs"
+	select_building_place_done_script="data/cmds/darkling_spire_placedone.vs"
+	requirements="upgrade_DarklingLevel1"
+>
+	<src obj="Darkling_DarkMage"/>
+</cmd>
+
+
+<cmd id="construct_independent_darkling_gold_mine"
+	template_cmd="template_construct_with_worker"
+	name="[[11730127]]Forge P@urifier[[]]"
+	button="dakrling gold mine.BMP"
+	position="10"
+	rollover_param=""
+	param="Darkling_GoldMine"
+	select_building_place_drag_script="data/cmds/building_placing_drag_gold_mine.vs"
+	requirements="upgrade_DarklingLevel1"
+>
+	<src obj="Darkling_DarkMage"/>
+</cmd>
+
+</commands>

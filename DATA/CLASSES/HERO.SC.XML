@@ -1,0 +1,119 @@
+<class id="Hero" cpp_class="CSSHero" parent="Military" entity="">
+
+	<method sig="advance" vs="data/subai/hero_advance.vs"/>
+	<method sig="attack" vs="data/subai/hero_attack.vs" verify="data/subai/unit_attack_verify.vs"/>
+	<method sig="attack" vs="data/subai/hero_advance.vs"/>
+	<method sig="move" vs="data/subai/hero_move.vs"/>
+	<method sig="explore" vs="data/subai/unit_explore.vs"/>
+	<method sig="sneak"		vs="data/subai/hero_sneak.vs"	verify="data/subai/hero_sneak_verify.vs"/>
+	<method sig="engage"	vs="data/subai/hero_engage.vs"/>
+	<method sig="leavearmy" vs="data/subai/hero_leave_army.vs"/>
+	<method sig="attack_unit_type" vs="data/subai/hero_attack_unit_type.vs"/>
+	<method sig="engage_unit_type" vs="data/subai/hero_engage_unit_type.vs"/>
+	<method sig="ressurect" vs="data/subai/hero_ressurect.vs"/>
+	<method sig="ghost_appear" vs="data/subai/hero_ghost_appear.vs"/>
+	<method sig="fall" vs="data/subai/hero_fall.vs"/>
+	<method sig="dropitem" vs="data/subai/unit_dropitem.vs"/>
+	<method sig="giveitem" vs="data/subai/unit_giveitem.vs"/>
+	<method sig="getitems" vs="data/subai/unit_getitems.vs"/>
+	<method sig="moveitem" vs="data/subai/unit_moveitem.vs"/>
+	<method sig="sellitem" vs="data/subai/unit_sellitem.vs"/>
+	<method sig="sellitem" vs="data/subai/unit_sellitem.vs"/>
+	<method sig="onresurrect" vs="data/subai/hero_onresurrect.vs"/>
+	<method sig="herodie" vs="data/subai/hero_herodie.vs"/>
+	<method sig="getitems" vs="data/subai/hero_getitems.vs"/>
+	<method sig="getitems_special" vs="data/subai/hero_getitems_special.vs"/>
+
+	<method sig="skill_heal" vs="data/subai/hero_skill_heal.vs"/>
+	<method sig="skill_shock" vs="data/subai/hero_skill_shock.vs"/>
+	<method sig="skill_illusion" vs="data/subai/hero_skill_illusion.vs"/>
+	<method sig="skill_invisibility" vs="data/subai/hero_skill_invisibility.vs"/>
+	<method sig="skill_secondsight" vs="data/subai/hero_skill_secondsight.vs"/>
+	<method sig="skill_resurrect" vs="data/subai/hero_skill_resurrect.vs"/>
+	
+	<behavior script="data/subai/hero_ressurect_behavior.vs"/>
+
+	<static_int sight="500" speed="90"/>
+	<static_int max_army="12"/>
+	<static_int formation_radius="45"/>
+	<static_int radius="30" selection_radius="32"/>
+
+	<static_str defence_type = "hero"/>
+	<static_int selection_priority="5000"/>
+	<static_int ressurect_time="90000"/>
+	<static_int allow_rally_object="1"/>
+
+	<static_str cost="0/0/0/2"/>
+	
+	<static_int stun_time="3000"/>	
+	
+	<static_str race_str="**Invalid**"/>
+
+	<static_int potion_health="40"/>	
+	<static_int potion_damage="3"/>	
+	<static_int potion_recharge="10"/>	
+	<static_int potion_armor="1"/>	
+
+	<static_str slot5_type=""/>
+	<static_int slot5_active="0"/>
+	<static_str slot6_type=""/>
+	<static_int slot6_active="0"/>
+	<static_str slot7_type=""/>
+	<static_int slot7_active="0"/>
+	<static_str slot8_type=""/>
+	<static_int slot8_active="0"/>
+
+	<static_str slot9_type="level1"/>
+	<static_str slot10_type="level1"/>
+	<static_str slot11_type="level2"/>
+	<static_str slot12_type="level3"/>
+
+	<static_int skill_heal_amount="200"/>
+	<static_int skill_shock_damage="150"/>
+	<static_int skill_invisibility_timeout="20000"/>
+	<static_int skill_2ndsight_timeout="15000"/>
+	
+	<member_obj skill_illusion_unit=""/>
+	
+	<static_str level1_skill1=""/>
+	<static_str level1_skill2=""/>
+	<static_str level1_skill3=""/>
+	<static_str level1_skill4=""/>
+	<static_str level2_skill1=""/>
+	<static_str level2_skill2=""/>
+	<static_str level3_skill1=""/>
+	
+	<member_int got_champion_item=""/>
+	
+	<defaultcmd target="">
+		<cmd name="move"/>
+	</defaultcmd>
+
+	<defaultcmd target="Unit">
+		<cmd name="attack"/>
+		<cmd name="follow"/>
+	</defaultcmd>
+
+	<defaultcmd target="Hero">
+		<cmd name="attack"/>
+	</defaultcmd>
+
+	<defaultcmd target="ItemHolder">
+		<cmd name="getitems"/>
+	</defaultcmd>
+
+	<defaultcmd target="LifegemShrine">
+		<cmd name="getitems_special"/>
+	</defaultcmd>
+
+	
+	<defaultcmd target="Building">
+		<cmd name="attack"/>
+	</defaultcmd>
+	
+	<static_int ai_draw_back_if_disabled="1"/>
+
+	<value id="HeroRank" script="if(.LevelSkillsCount(3) == 1) return Translate('[[5980927]]Demi-god[[]]'); if(.LevelSkillsCount(2) > 0) return Translate('[[5993082]]Master[[]]'); if(.LevelSkillsCount(1) > 0) return Translate('[[6006464]]Advanced[[]]'); return Translate('[[6015200]]Green[[]]');"/>
+	<value id="HealthManaIcon" script="return 'assets/interface/health-mana.bmp';"/>
+		
+</class>

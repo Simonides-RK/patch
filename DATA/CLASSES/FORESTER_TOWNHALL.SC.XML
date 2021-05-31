@@ -1,0 +1,64 @@
+<class id="Forester_Townhall" cpp_class="CVXBuilding" parent="BaseTownhall" entity="assets/entities/Buildings/Forester_Townhall/Forester_Townhall.ent.xml">
+
+        <method sig="init" vs="data/subai/forester_townhall_init.vs" />
+        <method sig="ondie" vs="data/subai/forester_townhall_ondie.vs" />
+        <method sig="idle" vs="data/subai/forester_townhall_idle.vs" />
+        <method sig="train_worker" vs="data/subai/forester_townhall_train_worker.vs" />
+        <method sig="train_hero" vs="data/subai/building_train_hero.vs" />
+
+        <behavior script="data/subai/forester_huntingparties_behavior.vs"/>
+
+        <static_str rally_object_class="Forester_RallyPoint"/>
+        <static_str edittree_pos="[[755381]]Structures[[]]/[[5014486]]Foresters[[]]/[[4678596]]Town Hall[[]]"
+                                portrait="assets/interface/icons/forester_settlement.rle"/>
+        <static_str     skyimage="assets/interface/sky_forester.bmp"/>
+        <static_str icon="assets/interface/icons/forester_treehouse.bmp"/>
+        <static_str race_str="Race_Foresters"/>
+                                
+        <static_str display_name="[[5762289]]Forester Town Hall[[]]" display_name_plural="[[5775015]]Forester Town Halls[[]]"/>
+        <static_int radius="120" selection_radius="120"/> 
+
+        <static_int maxhealth="8000"/>
+        <static_int maxhealthafterlevel1="9000"/>
+        <static_int maxhealthafterlevel2="15000"/>
+        <static_int maxhealthafterlevel3="20000"/>
+        
+        <static_int sight="800"/>
+
+        <static_int support_points="14"/>
+
+        <static_str dying_object_class="Forester_Townhall_Die"/>
+
+        <static_str interface="queue, building_special, townhall"/>
+
+        <value id="SupportPoints" script="int i; i = .support_points; return '&lt;color 255 255 64&gt;' + Translate('[[4705975]]Population provided:[[]]') + ' &lt;color 255 255 255&gt;' + i;"/>
+        <value id="GloryForNext" script="str s; int c, n; c = ClassPlayerObjs('Forester_Mage_Tower,Human_SupportBuilding', .player, true).GetObjList().count; if ( EnvReadInt(.player, 'Houses_Built') &gt; c ) n = 0; else n = c + 1;if (n &gt; 7) n=7; if (c &gt; 9) n=10; s = '&lt;color 255 255 64&gt;' + Translate('[[5291669]]House glory cost:[[]]') + ' &lt;color 255 255 255&gt;'; if ( n &lt; 8 ) s = s + n; else s = s + Translate('[[4150622]]N/A[[]]'); return s;" />
+        <value id="PathToGlory" script="return GetPathToGlory(.player);"/>
+
+        <member_obj fake_unit1="" />
+        <member_obj fake_unit2="" />
+
+
+        <static_int regenerate_add="1"/>
+        <static_int regenerate_promille="2"/>
+
+        <static_int strength_of_the_forest_bonus="15"/> <!-- percentage -->
+		<static_int primal_fury_bonus="6"/>
+		
+        <defaultcmd target="Building">
+                <cmd name="set_rally"/>
+        </defaultcmd>
+
+        <defaultcmd target="BaseGemsDeposit">
+                <cmd name="set_rally"/>
+        </defaultcmd>
+
+        <defaultcmd target="Hero">
+                <cmd name="set_rally"/>
+        </defaultcmd>
+
+        <defaultcmd target="">
+                <cmd name="set_rally"/>
+        </defaultcmd>
+
+</class>

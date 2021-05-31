@@ -1,0 +1,95 @@
+<class id="Darkling_NightAssassin" cpp_class="CSSHero" parent="Hero" entity="assets/entities/units/Darkling_NightAssasin/Darkling_NightAssasin.ent.xml">
+
+<method sig="init" vs="data/subai/darkling_nightassassin_init.vs"/>
+<method sig="idle" vs="data/subai/darkling_nightassassin_idle.vs"/>
+<method sig="ghost_appear" vs="data/subai/darkling_nightassassin_ghost_appear.vs"/>
+<method sig="onresurrect" vs="data/subai/darkling_nightassassin_onresurrect.vs"/>
+<method sig="spawn" vs="data/subai/darkling_unit_spawn.vs"/>
+
+<method sig="shadewalk" vs="data/subai/darkling_nightassassin_shadewalk.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="angelofdeath" vs="data/subai/darkling_nightassassin_angelofdeath.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="backstab" vs="data/subai/darkling_nightassassin_backstab.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="confuse" vs="data/subai/darkling_nightassassin_confuse.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+
+<behavior script="data/subai/darkling_nightassassin_painlink_behavior.vs"/>
+<behavior script="data/subai/darkling_nightassassin_shadowsofthenight_behavior.vs"/>
+
+<static_str areacheck_type="friendly" areacheck_class="Unit"/>
+<static_int areacheck_time="1000"/>
+<method sig="onexitarea" vs="data/subai/darkling_nightassassin_onexitarea.vs"/>
+<method sig="onenterarea" vs="data/subai/darkling_nightassassin_onenterarea.vs"/>
+<method sig="oninsidearea" vs="data/subai/darkling_nightassassin_oninsidearea.vs"/>
+
+<static_int radius="30" selection_radius="30"/>	
+<static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4448565]]Night Assassin[[]]"/>
+<static_str display_name="[[4448565]]Night Assassin[[]]" display_name_plural="[[4448565]]Night Assassin[[]]"/>
+<static_int speed="120"/>
+
+<static_str damage_type="blade"/>
+<static_int maxhealth="420"/>
+<static_int initial_damage="30"/>
+<static_int initial_armor="1"/>
+
+<static_int potion_health="40"/>	
+<static_int potion_damage="8"/>	
+<static_int potion_recharge="10"/>	
+<static_int potion_armor="1"/>	
+
+<static_str race_str="Race_Darklings"/>
+<static_int regenerate_promille="8"/>
+
+<static_int formation_priority="100"/>			
+<static_int formation_radius="26"/>				
+<static_str icon="Assets/Interface/Icons/night assassin.bmp"/>
+<static_str largeicon="Assets/Interface/Icons/night assassin large.BMP"/>
+<static_str	portrait="Assets/Interface/Icons/night assassin.rle"/>
+<static_str	skyimage="assets/interface/sky_dragon.bmp"/>
+
+<static_str rollover_description="[[4451389]]The Night Assassin has a large array of methods to sneak up and kill unsuspecting enemies. The Assassin is strongest when unnoticed by your opponent, and can be used on his own for surprise attacks or concealed in a large army.[[]]"/>
+
+<static_int shadewalk_radius="450"/>
+<static_int shadewalk_radius_allow="700"/>
+<static_int shadewalk_blinkstep="3"/>
+<static_int backstab_damage="450"/>
+<static_int confuse_radius="200"/>
+
+<static_int shadows_of_the_night_dmg_bonus="50"/>
+<static_int time_to_shadows_of_the_night="10000"/>
+<static_int time_to_check_shadows_of_the_night="1000"/>
+
+<member_int cloudofdarkness_available=""/>
+<member_int cloudofdarkness_justdeveloped=""/>
+<member_int painlink_damagetarget=""/>
+<member_int in_shadows_of_the_night=""/>
+
+<static_str slot1_type="weapon"/>
+<static_str slot2_type="helm"/>
+<static_str slot3_type="powerstone"/>
+<static_str slot4_type="armor"/>
+
+<static_str hero_ai_special_script="hero.nassasin.vs"/>
+
+<!-- Before 1.41 -->
+<!--
+<static_str level1_skill1="ShadowsOfTheNight"/>
+<static_str level1_skill2="Confuse"/>
+<static_str level1_skill3="PainLink"/>
+<static_str level2_skill1="AngelOfDeath"/>
+<static_str level3_skill1="Cloud_of_Darkness"/>
+-->
+
+<!-- New for 1.41 -->
+<static_str level1_skill1="Confuse"/>
+<static_str level1_skill2="PainLink"/>
+<static_str level2_skill1="AngelOfDeath"/>
+<static_str level3_skill1="Cloud_of_Darkness"/>
+
+<!-- AI -->
+<static_int ai_melee_protection="1"/>
+<static_int ai_melee_escape_time="6"/>
+<static_int ai_hyper_protective="1" ai_hyper_protective_coef="35"/>
+<static_int ai_concentrate_group="1"/>   <!-- general melee damage -->
+<!-- AI -->
+	<sounds
+		command="Night0"/>
+</class>

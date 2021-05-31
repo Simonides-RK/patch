@@ -1,0 +1,82 @@
+<commands>
+
+<!-- Ivko: Texts edited, 11.03.2005. Please don't remove this comment! -->
+
+<cmd id="vitalize"
+        name="[[14783780]]Select @Vitalize[[]]"
+        button="forester_vitalize.bmp"
+        position="7"
+        rollover_param="[[14796968]]Selects the Vitalize spell. Restores the energy of nearby friendly units to full.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/forester_shaman_switch_vitalize.vs"
+        selecttarget_text=""
+        modal="1"
+        requirements="upgrade_Vitalize"
+>
+        <src obj="Forester_Shaman"/>
+</cmd>
+
+<cmd id="fatigue"
+  name="[[14806474]]Select @Fatigue[[]]"
+        button="forester_fatigue.bmp"
+        position="6"
+        rollover_param="[[14818871]]Selects the Fatigue spell. Decreases the energy of enemies by #GetClassInt('Forester_Shaman', 'fatigue_damage')# inflicting that much damage to them.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/forester_shaman_switch_fatigue.vs"
+        requirements="upgrade_Fatigue"
+        selecttarget_text=""
+        modal="1"
+>
+        <src obj="Forester_Shaman"/>
+</cmd>
+
+<cmd id="channeling"
+  name="[[14829477]]Select @Channelling[[]]"
+        button="forester_channeling.bmp"
+        position="5"
+        rollover_param="[[14831616]]Selects the Channelling spell. Allows Shamans to concentrate their powers, firing blasts of devastating energy at greater distances. The damage and range depend on the number of Shamans.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        selecttarget_text=""
+        modal="1"
+>
+        <src obj="Forester_Shaman"/>
+</cmd>
+
+<cmd id="Wolf_Scout"
+  name="[[14842310]]Wolf @Scout[[]]"
+        button="forester_scout_wolves.bmp"
+        position="5"
+        enabled="1"
+        rollover_param="[[14858223]]Sends one of the minion wolves as an invisible scout to the specified location.[[]]"
+        dispatch_type="execute method"
+        dispatch_param="wolfscout"
+        selecttarget_text="[[11801192]]Select target location[[]]"
+        verifier_script="data/cmds/forester_wolfmaster_scout_verify.vs"
+>
+        <src obj="Forester_WolfMaster"/>
+</cmd>
+<cmd id="UnitRestoration"
+        name="[[17166984]]@Restoration[[]]"
+        button="forester_restore.bmp"
+        position="2"
+        rollover_param="[[17177877]]Rebuilds a destroyed colony from the ashes.[[]]"
+        selecttarget_text="[[17188927]]Select a colony to restore[[]]"
+        dispatch_type="execute method"
+        dispatch_param="unitrestoration"
+        selecttarget_verifyscript="return true;"
+        selecttarget_cursor_invalid="cantselect"
+        cost_script="return '2000/60/0/4';"
+        verifier_script="return true;"
+        rollover_script="data/cmds/rollover_default.vs"
+        checkcost_script="data/cmds/costcheck_default.vs"
+        point_command="1"
+        enabled="1"
+        requirements="upgrade_ForesterLevel3"
+>
+
+        <src obj="Forester_Worker"/>
+</cmd>
+
+
+</commands>

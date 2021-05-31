@@ -1,0 +1,40 @@
+<class id="Forester_GrayWolf" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/GrayWolf/GrayWolf.ent.xml">
+
+	<static_int radius="20" selection_radius="20"/>
+	<static_str display_name="[[5178630]]Gray Wolf[[]]" display_name_plural="[[5188874]]Gray Wolves[[]]"/>
+
+	<static_int maxhealth="190" initial_damage="12" initial_armor="0"/>
+	<static_int sight="400"/>
+	<static_int speed="130"/>
+
+	<static_str defence_type = "small"/>
+	<static_str damage_type="unarmed"/>
+
+	<static_int wolfstate_sentry="-2"/>
+
+	<member_obj wolf_master="" />
+	<member_obj wolf_master_scout="" />
+	<member_int wolf_state="" />
+	<static_int summoned_unit="1"/>
+	<static_int nodarkened_playercol="1"/>
+
+	<method sig="init" vs="data/subai/forester_graywolf_init.vs"/>
+	<method sig="idle" vs="data/subai/forester_graywolf_idle.vs"/>
+	<method sig="return_to_master" vs="data/subai/forester_graywolf_return_to_master.vs"/>
+	<method sig="advance" vs="data/subai/forester_graywolf_advance.vs"/>
+	<method sig="engage" vs="data/subai/forester_graywolf_engage.vs"/>
+	<method sig="doattack" vs="data/subai/forester_graywolf_doattack.vs"/>
+	<method sig="ondie" vs="data/subai/forester_graywolf_ondie.vs"/>
+	
+	<static_str icon="Assets/Interface/Icons/graywolf.bmp"
+				portrait="Assets/Interface/Icons/graywolf.rle"
+				skyimage="assets/interface/sky_forester.bmp"/>
+	<static_str blood_particles="Data/Particles/BloodFeedbackLow.part.xml"/>
+	
+	<static_str race_str="Race_Foresters"/>
+	
+	<static_int ai_ignore = "1"/>
+	<sounds
+		AnimAttack="Wolf_attack_"
+		AnimDie="Wolf_death_"/>
+</class>

@@ -1,0 +1,48 @@
+<class id="Trolls_BoulderThrower" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Trolls_BoulderThrower/Trolls_BoulderThrower.ent.xml">
+
+	<static_int range="420" min_range="100"/>
+	<static_int radius="30" selection_radius="35"/>
+	<static_int formation_radius="42" formation_priority="800"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[7486042]]Trolls[[]]/[[7495247]]Earthshaker[[]]"/>
+
+	<static_str display_name="[[7495247]]Earthshaker[[]]" display_name_plural="[[7501748]]Earthshakers[[]]"/>
+
+	<static_int legendary="1"/>
+
+	<static_int sight="550"/>
+	<static_int speed="70"/>
+
+	<static_int maxhealth="850" initial_damage="80" initial_armor="5"/>
+
+	<static_str cost="250/0/5"/>
+
+	<static_str damage_type="explosive"/>
+	<static_str defence_type = "heavy"/>
+
+	<static_str rollover_description="[[7517458]]The Earthshaker is the ultimate ranged unit, capable of hurling rocks that damage and stun multiple enemies.[[]]"/>
+
+	<static_int stun_percent="50"
+				splash_radius="50"/>
+
+	<static_str projectile_class = "Trolls_Boulder"
+				projectile_class_building = "Trolls_Boulder"/>
+	<static_int	projectile_angle="0" 
+				projectile_dist = "120"/>
+
+
+	<static_str icon="Assets/Interface/Icons/trolls_bouldertroll.bmp"
+				portrait="assets/interface/icons/trolls_bouldertroll.rle"/>
+	<static_str	skyimage="assets/interface/sky_troll.bmp"/>
+	
+	<static_str race_str="Race_Trolls"/>
+
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+	<static_int ai_prefer_as_concentrate_target = "2"/>
+	<static_int ai_concentrate_group="0"/>
+	<static_int ai_draw_back_if_disabled="0"/>
+	<static_int override_ai_value="7"/>	
+	<sounds
+		AnimAttack="EarthShaker_attack"
+		AnimDie="Troll_death_"
+		command="Earth0"/>
+</class>

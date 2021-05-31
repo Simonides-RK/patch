@@ -1,0 +1,11 @@
+<class id="Forester_Healing_Area1" cpp_class="CVXScriptObj" parent="Magic_Area" entity="">
+        <method sig="idle" vs="data/subai/forester_healing_area_idle.vs"/>
+        <method sig="oninsidearea" vs="data/subai/forester_healing_area1_oninside.vs"/>
+
+        <static_str areacheck_type="all" areacheck_class="Unit"/>
+        <static_int areacheck_time="500"/>
+		<static_int areaheal_percentage="60"/>
+
+        <static_int sight="400"/>
+        <static_int place_distance="350"/>
+</class>

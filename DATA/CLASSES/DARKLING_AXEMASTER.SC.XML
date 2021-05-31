@@ -1,0 +1,120 @@
+<class id="Darkling_Axemaster" cpp_class="CSSHero" parent="Hero" entity="assets/entities/units/Darkling_Axemaster/Darkling_Axemaster.ent.xml">
+
+	<method sig="init" vs="data/subai/darkling_axemaster_init.vs"/>
+	<method sig="doattack" vs="data/subai/darkling_axemaster_doattack.vs"/>
+	<method sig="spawn" vs="data/subai/darkling_unit_spawn.vs"/>
+	
+	<method sig="ghost_appear" vs="data/subai/darkling_axemaster_ghost_appear.vs"/>
+	
+	<method sig="leap_attack" vs="data/subai/darkling_axemaster_leap_attack.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+	<method sig="bash" vs="data/subai/darkling_axemaster_bash.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+	<method sig="death_blow" vs="data/subai/darkling_axemaster_death_blow.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+	<method sig="invincibility" vs="data/subai/darkling_axemaster_invincibility.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+	<method sig="revenge" vs="data/subai/darkling_axemaster_revenge.vs" onfinish="data/subai/hero_special_onfinish.vs"/>	
+	
+	<method sig="revenge_shockwave" vs="data/subai/darkling_axemaster_revenge_shockwave.vs"/>
+	
+	<behavior script="data/subai/darkling_axemaster_behavior_glow.vs"/>
+	
+	<static_str damage_type="axe"/>
+	<static_int range="20" min_range="2"/>			
+	<static_int radius="30" selection_radius="35"/>	
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4078174]]Axemaster[[]]"/>											
+
+	<static_str display_name="[[4078174]]Axemaster[[]]" display_name_plural="[[4082491]]Axemasters[[]]"/>
+
+	<static_int maxhealth="560"/>
+	<static_int speed="90"/>
+	<static_int initial_damage="40"/>
+	<static_int initial_armor="1"/>
+
+	<static_int potion_health="55"/>	
+	<static_int potion_damage="5"/>	
+	<static_int potion_recharge="10"/>	
+	<static_int potion_armor="1"/>	
+
+	<static_str rollover_description="[[4097694]]The Axemaster is the ultimate combat being, capable of single-handedly destroying entire armies. A great leader for any army, his only drawback is being a little slow.[[]]"/>
+
+	<static_int formation_priority="100"/>			
+	<static_int formation_radius="26"/>				
+	<static_str icon="Assets/Interface/Icons/axemaster.BMP"/>
+	<static_str largeicon="Assets/Interface/Icons/axemaster large.BMP"/>
+	<static_str	portrait="Assets/Interface/Icons/axemaster.rle"/>
+	<static_str	skyimage="assets/interface/sky_dragon.bmp"/>
+	<static_int slot1_coordsx="80" slot1_coordsy="20"/>
+
+	<static_str slot1_type="weapon"/>
+	<static_str slot2_type="helm"/>
+	<static_str slot3_type="powerstone"/>
+	<static_str slot4_type="armor"/>
+
+	<static_str race_str="Race_Darklings"/>	
+	<static_int regenerate_promille="8"/>
+	
+	<static_int leap_attack_range="600"/>
+	<static_int leap_attack_radius="50"/>
+	<static_int leap_attack_dmg_range="150"/>
+	<static_int leap_attack_dmg_per_unit="150"/>
+	
+	<static_int bash_multiplyer="4"/>
+	
+	<static_int death_blow_multiplyer="8"/>
+	
+	<static_int ferocity_heal_percent="10"/>
+	<static_int ferocity_heal_percent_extra="15"/> <!-- additional heal when special attack kills enemy -->
+	
+	<static_int blood_lust_bonus_damage="20"/>
+	<static_int blood_lust_timeout="25000"/>
+	
+	<static_int invincibility_timeout="12000"/>
+	<static_int invincibility_speedbonus="30"/> <!-- percentage -->
+	
+	<static_int revenge_damage="300"/>
+	<static_int revenge_radius="300"/>
+	<static_int revenge_wave_zones="5"/>
+	<static_int revenge_speed_pxls_sec="130"/>
+	<static_int revenge_decrease_percent="50"/>
+	
+	<static_int glow_update_time="50"/>
+	<static_int glow_trans_change="5"/>
+	<static_int glow_color_change="13"/>
+	
+	<member_int activated_bash=""/>
+	<member_int activated_death_blow=""/>
+	<member_int activated_glow=""/>
+	<member_int glow_trans=""/>
+	<member_int clr_end=""/>
+	<member_int clr_current=""/>
+	
+	<static_str hero_ai_special_script="hero.axemaster.vs"/>
+	
+<!-- Before 1.41 -->
+<!--
+	<static_str level1_skill1="Death_Blow"/>
+	<static_str level1_skill2="Bash"/>
+	<static_str level1_skill3="Ferocity"/>
+	<static_str level1_skill4="Blood_Lust"/>
+	<static_str level2_skill1="Leap_Attack"/>
+	<static_str level2_skill2="Invincibility"/>
+	<static_str level3_skill1="Revenge"/>
+-->
+
+<!-- New for 1.41 -->
+	<static_str level1_skill1="Ferocity"/>
+	<static_str level1_skill2="Blood_Lust"/>
+	<static_str level2_skill1="Leap_Attack"/>
+	<static_str level3_skill1="Revenge"/>
+	
+	<!-- AI -->
+	<static_int ai_melee_protection="1"/>
+	<static_int ai_melee_escape_time="6"/>
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="35"/>
+	<static_int ai_concentrate_group="1"/>   <!-- general melee damage -->
+	<!-- AI -->
+	
+	<sounds
+		AnimAttack="Axemaster_attack"
+		AnimSpecial2="assets/sounds/HeroSkills/Darkling Axemaster/Darkling_Axemaster_Leap_attack.wav"
+		AnimAttack2="assets/sounds/HeroSkills/Darkling Axemaster/Darkling_Axemaster_Bash_Deathblow.wav"
+		command="Axe0"/>
+</class>

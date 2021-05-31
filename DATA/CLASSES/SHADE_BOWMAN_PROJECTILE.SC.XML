@@ -1,0 +1,6 @@
+<class id="Shade_Bowman_Projectile" cpp_class="CVXScriptObj" parent="BaseNonParticleProjectile" entity="assets/entities/MapObjects/Forester_Ranger_Arrow/Forester_Ranger_Arrow.ent.xml">
+
+	<method sig="idle" vs="data/subai/shade_bowmanprojectile_idle.vs"/>
+	<static_int speed="1000"/>
+
+</class>

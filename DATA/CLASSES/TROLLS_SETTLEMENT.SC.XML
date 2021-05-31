@@ -1,0 +1,34 @@
+<class id="Trolls_Settlement" cpp_class="CVXBuilding" parent="Independent_Settlement" entity="assets/entities/buildings/Trolls_Settlement/Trolls_Settlement.ent.xml">
+
+	<method sig="init" vs="data/subai/trolls_settlement_init.vs"/>
+	<method sig="ondie" vs="data/subai/trolls_settlement_ondie.vs"/>	
+						 
+	<member_obj troll_pad=""/>						 
+						 
+	<behavior script="data/subai/trollsettlement_behavior_treasury.vs"/>
+
+	<static_str dying_object_class="Trolls_Settlement_Die"/>
+
+	<static_int radius="140" selection_radius="140"/>
+
+	<static_str edittree_pos="[[755381]]Structures[[]]/[[7486042]]Trolls[[]]/[[7582646]]Troll Cave[[]]"/>
+	<static_str display_name="[[7582646]]Troll Cave[[]]" display_name_plural="[[7599199]]Troll Caves[[]]"/>
+	<static_str portrait="assets/interface/icons/trolls_settlement.rle"/>
+	<static_str icon="assets/interface/icons/trolls_settlement.bmp"/>
+	<static_str	skyimage="assets/interface/sky_troll.bmp"/>
+	<static_str race_str="Race_Trolls"/>
+
+	<static_str independent_unit_1="Trolls_SmallTroll" independent_unit_2="Trolls_MountainTroll"/>
+
+	<static_str independent_specials="Deep_Gold_Mine, Boulder_Thrower, Troll_Catapult"/>
+	
+	<static_int cannon_trolls_to_launch="3"/>
+	<static_int cannon_deviation="100"/>
+	<static_int min_canon_range="750"/>
+	
+	<static_int gold_mine_percent="60"/>
+
+	<defaultcmd target="">
+		<cmd name="set_rally"/>
+	</defaultcmd>
+</class>

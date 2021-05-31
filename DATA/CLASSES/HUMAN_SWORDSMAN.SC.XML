@@ -1,0 +1,44 @@
+<class id="Human_Swordsman" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Human_Swordsman/Human_Swordsman.ent.xml">
+
+        <method sig="init" vs="data/subai/human_swordsman_init.vs"/>
+
+        <static_int range="250" min_range="2"/>
+        <static_int radius="17" selection_radius="20"/>
+        <static_int formation_radius="42" formation_priority="1000"/>
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6660709]]Swordsman[[]]"/>
+        <static_str display_name="[[6660709]]Swordsman[[]]" display_name_plural="[[6670721]]Swordsmen[[]]"/>
+
+        <static_int sight="400"/>
+        <static_int speed="100"/>
+
+        <static_int maxhealth="500" initial_damage="28" initial_armor="5"/>
+        <static_str cost="105/0/2"/>
+
+        <static_str damage_type="blade"/>
+        <static_str defence_type = "small"/>
+
+        <static_int stamina_speed_bonus="40"/>
+        <static_int stamina_attackspeed_bonus="65"/>
+        <static_int goldenshield_damage_reduction="30"/> <!-- percentage -->
+
+        <static_str rollover_description="[[6684202]]Swordsmen are skilled warriors, the core of the Human army. Strong and sturdy fighters.[[]]"/>
+
+        <static_str projectile_class="Human_MagicSwords_Projectile"/>
+        <static_str     projectile_class_building="Human_MagicSwords_Projectile"/>
+        <static_int     projectile_angle="40"/>
+        <static_int     projectile_dist="-27"/>
+
+        <static_str icon="Assets/Interface/Icons/swordsman.BMP"
+                                portrait="assets/interface/icons/swordsman.rle"
+                                skyimage="assets/interface/sky_human.bmp"/>
+
+        <static_str race_str="Race_Humans"/>
+        
+        <static_int ai_melee_protection="1"/>
+        <static_int ai_melee_escape_time="4"/>
+        <static_int ai_concentrate_group="1"/>   <!-- general melee damage -->
+                
+        <sounds
+                AnimAttack="Sword_Axe_Attack"
+                command="Sword0"/>
+</class>

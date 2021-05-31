@@ -1,0 +1,25 @@
+<class id="Human_Blacksmith" cpp_class="CVXBuilding" parent="Human_BaseTownBuilding" entity="assets/entities/Buildings/Human_Blacksmith/Human_Blacksmith.ent.xml">
+
+<!-- General -->
+	<static_str edittree_pos="[[755381]]Structures[[]]/[[6060392]]Humans[[]]/[[6139189]]Advanced Weaponry[[]]"
+				skyimage="assets/interface/sky_human.bmp"
+				icon="assets/interface/icons/blacksmith.BMP"
+				portrait="assets/interface/icons/blacksmith.rle"/>
+	<static_str display_name="[[6139189]]Advanced Weaponry[[]]" display_name_plural="[[6149515]]Advanced Weaponries[[]]"/>
+	<static_int radius="120" selection_radius="120"/>
+
+	<static_int maxhealth="2000"/>
+
+<!-- Race specific -->
+	<static_str race_str="Race_Humans"/>
+
+<!-- Building and build animation -->
+	<static_int build_time="60000" />
+	<static_str dying_object_class="Human_Blacksmith_Die"/>
+	<static_int build_shape_complete_frame="10"/>
+		
+	<!-- Build command properties -->
+	<static_str cost="250/6/0"/>
+	<static_str rollover_description="[[6154850]]Allows advanced upgrades for Pikemen, Swordsmen, Longbowmen, Squires and Knights. Can also provide items for your Champions and makes units in your colonies train faster.[[]]"/>
+
+</class>

@@ -1,0 +1,193 @@
+<commands>
+
+<!-- Ivko: Texts edited, 22.02.2005. Please don't remove this comment! -->
+
+<cmd id="Develop_Fury"
+	template_cmd="template_develop_independent"
+	name="[[13435921]]Dragon @Fury[[]]"
+	button="dragon_fury.bmp"
+	icon="assets/interface/dragon_fury_icon.bmp"
+	position="18"
+	rollover_param="[[13448626]]Sends three Red Dragons from the colony to scorch an area of your choice.[[]]"
+	param="Skill Fury, ManaCost 360, MaxMana 360, SettlementPoint Special2, VisualObject Dragons_StoneDragon"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Dragons_Townhall"/>
+</cmd>
+
+<cmd id="Fury"
+	name="[[13435921]]Dragon @Fury[[]]"
+	button="dragon_fury.bmp"
+	largebutton="dragon_fury_large.bmp"
+	position="8"
+	enabled="0"
+	rollover_param="[[13448626]]Sends three Red Dragons from the colony to scorch an area of your choice.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="fury"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+	selecttarget_text="[[11801192]]Select target location[[]]"
+	point_command="1"
+>
+	<src obj="Dragons_Townhall"/>
+</cmd>
+
+<cmd id="Develop_Portal"
+	template_cmd="template_develop_independent"
+	name="[[13458191]]Dragon @Portal[[]]"
+	button="dragon_portal.bmp"
+	icon="assets/interface/dragon_portal_icon.bmp"
+	position="19"
+	rollover_param="[[13466828]]Instantly teleports all currently selected units and the army around them to a friendly settlement of your choice.[[]]"
+	param="Skill Portal, ManaCost 180, MaxMana 180, SettlementPoint Special2, VisualObject Dragons_Portal, NoReplaceSelection 1"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Dragons_Townhall"/>
+</cmd>
+
+<cmd id="Portal"
+	name="[[13458191]]Dragon @Portal[[]]"
+	button="dragon_portal.bmp"
+	largebutton="dragon_portal_large.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[13466828]]Instantly teleports all currently selected units and the army around them to a friendly settlement of your choice.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dragons_townhall_portal.vs"
+	selecttarget_text="[[13477059]]Select settlement to teleport to[[]]"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+	point_command="1"
+>
+	<src obj="Dragons_Townhall"/>
+</cmd>
+
+<cmd id="Develop_Eye"
+	template_cmd="template_develop_independent"
+	name="[[13489218]]Dragon @Eye[[]]"
+	button="dragon_eye.bmp"
+	icon="assets/interface/dragon_eye_icon.bmp"
+	position="19"
+	rollover_param="[[13490427]]Reveals the entire map to you and your allies for #GetClassInt('Dragons_Townhall', 'eye_duration') / 1000# seconds.[[]]"
+	param="Skill Eye, ManaCost 180, MaxMana 180, SettlementPoint Special2, VisualObject Dragons_Eye"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Dragons_Townhall"/>
+</cmd>
+
+<cmd id="Eye"
+  name="[[13489218]]Dragon @Eye[[]]"
+	position="8"
+	button="dragon_eye.bmp"
+	largebutton="dragon_eye_large.bmp"
+	enabled="0"
+	rollover_param="[[13490427]]Reveals the entire map to you and your allies for #GetClassInt('Dragons_Townhall', 'eye_duration') / 1000# seconds.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="eye"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+>
+	<src obj="Dragons_Townhall"/>
+</cmd>
+
+<cmd id="train_PoisonDragon"
+	dispatch_type="enqueue method"
+	dispatch_param="hire_dragon"
+	cost_script="data/cmds/cost_independent.vs"
+	rollover_script="data/cmds/rollover_train_build_default.vs"
+	onaddremove_script="data/cmds/train_addremove.vs"
+	verifier_script="data/cmds/colonyunit_level1_verify.vs"
+
+	name="[[13502075]]Train W@yrm[[]]"
+	button="dragon_poisondragon.bmp"
+	icon="Assets/Interface/Icons/dragons_poisondragon.bmp"
+	position="5"
+	rollover_param=""
+	param="Dragons_GreenDragon"
+	execdelay="45000"
+	disableifdisabled="upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"
+>
+	<src obj="Dragons_Townhall"/>
+</cmd>
+
+<cmd id="train_RedDragon"
+	dispatch_type="enqueue method"
+	dispatch_param="hire_dragon"
+	cost_script="data/cmds/cost_independent.vs"
+	rollover_script="data/cmds/rollover_train_build_default.vs"
+	onaddremove_script="data/cmds/train_addremove.vs"
+	verifier_script="data/cmds/colonyunit_level2_verify.vs"
+
+	name="[[13511964]]Train @Red Dragon[[]]"
+	button="dragon_firedragon.bmp"
+	icon="Assets/Interface/Icons/dragons_firedragon.bmp"
+	position="6"
+	rollover_param=""
+	param="Dragons_RedDragon"
+	execdelay="80000"
+	disableifdisabled="upgrade_HumanLevel3,upgrade_ForesterLevel3,upgrade_DarklingLevel3"
+>
+	<src obj="Dragons_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_Weakening_Acid"
+    template_cmd="template_upgrade"
+	verifier_script="data/cmds/colony_upgrade1_verify.vs"
+    name="[[upgWeakAcid1]]Weakening Acid[[]]"
+	rollover_param="[[upgWeakAcid2]]Enables the Wyrm to render his target more vulnerable to damage by #GetClassInt('Dragons_GreenDragon', 'acid_vulnerabilty_increase')#%.[[]]"
+	button="dragons_weakening_acid.BMP"
+	icon="Assets/Interface/Icons/dragons_weakening_acid_icon.BMP"
+	position="11"
+
+	execdelay="22500"
+	cost_script="return '225/5/0';"
+	param="data/cmds/dragons_upgrade_weakening_acid.vs"
+	requirements=""
+	disableifdisabled="train_PoisonDragon,upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"
+>
+        <src obj="Dragons_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_Burning_Wings"
+    template_cmd="template_upgrade"
+	verifier_script="data/cmds/colony_upgrade2_verify.vs"
+    name="[[upgBurningWings1]]Burning Wings[[]]"
+	rollover_param="[[upgBurningWings2]]Gives the Red Dragon the ability to activate 'Burning Wings': His movement speed gets increased by #GetClassInt('Dragons_RedDragon', 'burning_wings_speed')#%, attack speed by #GetClassInt('Dragons_RedDragon', 'burning_wings_atkspeed')#% but he takes #GetClassInt('Dragons_RedDragon', 'burning_wings_damage')# damage per second while it is activated.[[]]"
+	button="dragons_burningwings.bmp"
+	icon="Assets/Interface/Icons/dragons_burningwings_icon.bmp"
+	position="12"
+
+	execdelay="44000"
+	cost_script="return '440/10/0';"
+	param="data/cmds/data/cmds/dragons_upgrade_burning_wings.vs"
+	requirements=""
+	disableifdisabled="train_RedDragon,upgrade_HumanLevel3,upgrade_ForesterLevel3,upgrade_DarklingLevel3"
+>
+        <src obj="Dragons_Townhall"/>
+</cmd>
+
+<cmd id="RedDragon_Normal"
+  name="[[NormalMode]]Select Normal Mode[[]]"
+        button="dragons_normalwings.bmp"
+        position="5"
+        enabled="1"
+        rollover_param=""
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        modal="1"
+>
+        <src obj="Dragons_RedDragon"/>
+</cmd>
+
+<cmd id="RedDragon_BurningWingsMode"
+  name="[[BurningWingsMode]]Select @Burning Wings Mode[[]]"
+        button="dragons_burningwings.bmp"
+        position="6"
+        enabled="1"
+        rollover_param="[[BurningWingsMode1]]The Dragons movement speed gets increased by #GetClassInt('Dragons_RedDragon', 'burning_wings_speed')#%, his attack speed by #GetClassInt('Dragons_RedDragon', 'burning_wings_atkspeed')#% but he takes #GetClassInt('Dragons_RedDragon', 'burning_wings_damage')# damage per second while this is activated.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        modal="1"
+		requirements="upgrade_Burning_Wings"
+>
+        <src obj="Dragons_RedDragon"/>
+</cmd>
+
+</commands>

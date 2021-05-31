@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Area_Hailstorm" type="vx/object" pass_file="">
+<animlayer layer="0" duration="0" sync="1"/>
+<images>
+<image idx="1" file="area_hailstorm.rle" drawmode="index" remaping="none" rows="1" columns="1"/>
+</images>
+<points>
+</points>
+<layers>
+<layer idx="1" name="layer1" image="1" z="200" offsetx="-194" offsety="-141" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="idle" anim_idx="65536" anim_frame="65536"/>
+</states>
+<anims>
+</anims>
+</entity>

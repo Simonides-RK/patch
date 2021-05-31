@@ -1,0 +1,181 @@
+<effects>
+        <effect id="stun" group="On Attack" item_name="[[22738977]]Stunning[[]]" effect="[[22746502]]%d1%% chance to stun enemies[[]]"
+                min="15" max="45" step="15" costmin="50" costmid="425" costmax="1000" />
+        <effect id="life_regeneration" group="Bonuses" item_name="[[22751848]]Regeneration[[]]" effect="[[22763135]]Health regeneration +%d1[[]]"
+                min="1" max="12" costmin="50" costmid="425" costmax="1000" />
+        <effect id="bonus_attack" group="Bonuses" item_name="[[22774305]]Strength[[]]" effect="[[22789535]]Damage +%d1[[]]" 
+                min="2" max="30" step="2" costmin="50" costmid="425" costmax="1000" />
+        <effect id="critical_hit" group="Specials" item_name="[[22790737]]Critical Strike[[]]" effect="[[22802530]]%d1%% chance to deal double damage[[]]"
+                min="10" max="50" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="quad_damage" group="Specials" item_name="[[22815159]]Pain[[]]" effect="[[22821261]]%d1%% chance to deal quadruple damage[[]]"
+                min="3" max="20" step="3" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="death_blow" group="Specials" item_name="[[22834644]]Sudden Death[[]]" effect="[[22849360]]Target dies when at %d1%% of its health[[]]"
+                min="10" max="20" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="mana_regeneration" group="Bonuses" item_name="[[22853303]]Mana[[]]" effect="[[22865011]]Faster skill recharging +%d1%%[[]]"
+                min="10" max="40" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="blind" group="On Attack" item_name="[[22879568]]Blinding[[]]" effect="[[22881250]]%d1%% chance to blind enemy on attack (blinded enemies can't attack)[[]]"
+                min="10" max="50" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="energy_burn" group="On Attack" item_name="[[22897057]]Energy Burn[[]]" effect="[[22906816]]Drains up to %d1 energy and deals that much damage[[]]"
+                min="20" max="50" step="10" costmin="20" costmid="200" costmax="500"></effect>
+        <effect id="exorcism" group="On Attack" item_name="[[22919870]]Exorcism[[]]" effect="[[22926514]]+%d1 damage to summoned units[[]]"
+                min="30" max="100" step="10" costmin="20" costmid="200" costmax="500"></effect>
+        <effect id="armor" group="Bonuses" item_name="[[22932337]]Protection[[]]" effect="[[22941858]]Armour +%d1[[]]" min="1" max="7"
+                costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="health" group="Bonuses" item_name="[[22959880]]Vitality[[]]" effect="[[22964612]]Health +%d1[[]]" min="50" max="500" step="25"
+                costmin="50" costmid="375" costmax="1000"></effect>
+        <effect id="return_damage" group="Specials" item_name="[[22973219]]Spikes[[]]" effect="[[22986394]]%d1%% return damage[[]]"
+                min="10" max="100" step="10" costmin="50" costmid="850" costmax="2000"></effect>
+        <effect id="vampiric_attack" group="On Attack" item_name="[[22995384]]Life Stealing[[]]" effect="[[23002132]]%d1%% life steal[[]]"
+                min="10" max="45" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="energy_drain" group="On Attack" item_name="[[ManaBurnName]]Mana burn[[]]" effect="[[ManaBurnDescription]]%d1 Mana Burn.[[]]"
+                min="1" max="7" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="drain_health" group="On Attack" item_name="[[23010328]]Bleeding[[]]" effect="[[23028848]]Attacks reap %d1%% of the enemy's maximum health[[]]"
+                min="1" max="6" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="attack_speed" group="Bonuses" item_name="[[23030903]]Agility[[]]" effect="[[23040944]]Attack speed +%d1%%[[]]"
+                min="10" max="50" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="poison_strike" group="On Attack" item_name="[[23055029]]Poison[[]]" effect="[[23061010]]%d1 poison damage for 3 seconds[[]]"
+                min="2" max="25" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="paralyze" group="On Attack" item_name="[[23077732]]Petrification[[]]" effect="[[23088552]]%d1%% chance to paralyze enemy for 5 seconds[[]]"
+                min="5" max="45" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="lightning" group="On Attack" item_name="[[23099707]]Storms[[]]" effect="[[23106373]]Deals %d1 lightning damage and could stun the enemy[[]]"
+                min="9" max="54" step="9" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="movement" group="Bonuses" item_name="[[23115288]]Speed[[]]" effect="[[23123142]]+%d1%% movement speed[[]]" min="10"
+                max="66" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="dodge" group="Specials" item_name="[[23134783]]Evasion[[]]" effect="[[23144391]]%d1%% chance to avoid attacks[[]]"
+                min="5" max="33" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="mind_control_chance" group="Specials" item_name="[[23157537]]Mind Control[[]]" effect="[[23161604]]%d1%% chance to gain control of enemies[[]]"
+                min="1" max="10" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="polymorph_chance" group="Specials" item_name="[[23174065]]Morphing[[]]" effect="[[23183035]]%d1%% chance to turn units into a rat.[[]]"
+                min="1" max="10" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="regeneration" group="Specials" item_name="[[23199256]]Restoration[[]]" effect="[[23201487]]Nearby allies health regeneration +%d1[[]]"
+                min="1" max="8" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="chosenone" group="Specials" item_name="[[23212555]]Divinity[[]]" effect="[[23228385]]May only be carried by the Chosen One[[]]"
+                min="0" max="0" costmin="50" costmid="425" costmax="1000"></effect>
+	
+        <!-- specific hero -->
+        <!-- Forester Sharpshooter -->
+        <effect id="entangle_bonus" group="Skill bonus (Forester)" item_name="[[23238804]]Earth[[]]" effect="[[23241010]]Units stay entangled %d1 secs longer[[]]" classreq="Forester_Sharpshooter"
+                min="1" max="3" costmin="1" costmid="425" costmax="1000"></effect>
+        <effect id="corrosivegas_bonus" group="Skill bonus (Forester)" item_name="[[23252696]]Poison Gas[[]]" effect="[[23266167]]Corrosive gas deals %d1 more damage[[]]" classreq="Forester_Sharpshooter"
+                min="3" max="15" step="3" costmin="5" costmid="425" costmax="1000"></effect>
+        <effect id="fog_bouns" group="Skill bonus (Forester)" item_name="[[23270854]]Fog[[]]" effect="[[23284783]]Fog lasts %d1 secs longer[[]]" classreq="Forester_Sharpshooter"
+                min="2" max="10" step="2" costmin="3" costmid="425" costmax="1000"></effect>
+        <effect id="aimedshot_bonus" group="Skill bonus (Forester)" item_name="[[23291942]]Precision[[]]" effect="[[23307843]]Aimed shot deals %d1 more damage[[]]" classreq="Forester_Sharpshooter"
+                min="15" max="105" step="15" costmin="50" costmid="425" costmax="1000"></effect>
+        <!-- Forester Fairy -->
+        <effect id="spirits_bonus" group="Skill bonus (Forester)" item_name="[[23316072]]Sprites[[]]" effect="[[23325443]]+%d1%% to Sprite's Call efficiency[[]]" classreq="Forester_Fairy"
+                min="5" max="25" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="illusion_bonus" group="Skill bonus (Forester)" item_name="[[23335958]]Tricks[[]]" effect="[[23340522]]%d1%% chance to create an additional illusion[[]]" classreq="Forester_Fairy"
+                min="5" max="20" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="forced_empathy_bonus" group="Skill bonus (Forester)" item_name="[[23350182]]Empathy[[]]" effect="[[23369677]]+%d1 damage to Forced Empathy[[]]" classreq="Forester_Fairy"
+                min="20" max="80" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="mindcontrol_bonus" group="Skill bonus (Forester)" item_name="[[23373345]]Mind[[]]" effect="[[23386955]]Units are mind controlled %d1%% secs longer[[]]" classreq="Forester_Fairy"
+                min="50" max="100" step="25" costmin="50" costmid="425" costmax="1000"></effect>
+        <!-- Forester Queen Of The Wolves -->
+        <effect id="wilderness_bonus" group="Skill bonus (Forester)" item_name="[[23390701]]Savagery[[]]" effect="[[23409188]]+%d1 damage to critical hit of White Wolves[[]]" classreq="Forester_QueenOfTheWolves"
+                min="10" max="100" step="10" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="moon_bonus" group="Skill bonus (Forester)" item_name="[[23416045]]Fangs[[]]" effect="[[23423553]]+%d1 health to White Wolves[[]]" classreq="Forester_QueenOfTheWolves"
+                min="10" max="50" step="10" costmin="50" costmid="850" costmax="2000"></effect>
+        <effect id="werewolf_bonus" group="Skill bonus (Forester)" item_name="[[23455761]]Moonlight[[]]" effect="[[23467431]]Chance to deal %d1 critical damage while Werewolf[[]]" classreq="Forester_QueenOfTheWolves"
+                min="25" max="200" step="25" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="werewolf_lifesteal_bonus" group="Skill bonus (Forester)" item_name="[[23476552]]Bloodfeeding[[]]" effect="[[23486394]]%d1%% life steal while Werewolf[[]]" classreq="Forester_QueenOfTheWolves"
+                min="3" max="60" step="3" costmin="50" costmid="425" costmax="1000"></effect>
+        <!-- Forester Seedkeeper -->
+        <effect id="venom_bonus" group="Skill bonus (Forester)" item_name="[[23496246]]Venom[[]]" effect="[[23502284]]+%d1 damage to Venom[[]]"
+                min="1" max="6" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="thorns_bonus" group="Skill bonus (Forester)" item_name="[[23514151]]Thorns[[]]" effect="[[23524309]]+%d1%% damage to Thorns[[]]"
+                min="15" max="75" step="15" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="reproduction_bonus" group="Skill bonus (Forester)" item_name="[[23533815]]Fertility[[]]" effect="[[23542436]]+%d1%% chance to not take a charge when creating plants[[]]" 
+                min="5" max="45" step="5" costmin="500" costmid="1100" costmax="1800"></effect>
+        <!-- Human Wind Rider -->
+        <effect id="loot_bonus" group="Skill bonus (Human)" item_name="[[23553609]]Looting[[]]" effect="[[23564416]]+%d1 gold from Looting[[]]" 
+                min="5" max="25" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="galop_bonus" group="Skill bonus (Human)" item_name="[[23577061]]Wind[[]]" effect="[[23584723]]+%d1 damage while in Gallop[[]]" 
+                min="25" max="100" step="25" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="flank_bonus" group="Skill bonus (Human)" item_name="[[23593260]]Flanking[[]]" effect="[[23604991]]+%d1 damage to Flanking[[]]" 
+                min="5" max="15" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <!-- Human Battle Angel -->
+        <effect id="guardianspirit_bonus" group="Skill bonus (Human)" item_name="[[23614193]]Guardians[[]]" effect="[[23627927]]+%d1 damage prevented by Guardian Spirit[[]]" 
+                min="50" max="300" step="50" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="lightningshield_bonus" group="Skill bonus (Human)" item_name="[[23639112]]Lightning[[]]" effect="[[23643785]]Lightning shield lasts %d1 secs longer[[]]" 
+                min="5" max="35" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="altar_bonus" group="Skill bonus (Human)" item_name="[[23658202]]Prayers[[]]" effect="[[23666999]]Altar of Healing lasts %d1 secs longer[[]]" 
+                min="15" max="60" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="magicsword_bonus" group="Skill bonus (Human)" item_name="[[23672893]]Aether[[]]" effect="[[23686456]]+%d1%% damage to Magic Swords[[]]" 
+                min="5" max="45" step="5" costmin="500" costmid="1100" costmax="1800"></effect>
+        <!-- Human Wizard of The Bow -->
+        <effect id="starstorm_bonus" group="Skill bonus (Human)" item_name="[[23695101]]Hail[[]]" effect="[[23700951]]+%d1 damage to Hailstorm[[]]" 
+                min="5" max="20" step="5" costmin="50" costmid="1000" costmax="2200"></effect>
+        <effect id="crystal_bonus" group="Skill bonus (Human)" item_name="[[23710378]]Crystal[[]]" effect="[[23725662]]+%d1%% health to Crystal Tower and Shelter[[]]" 
+                min="5" max="50" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="electricity_bonus" group="Skill bonus (Human)" item_name="[[23738026]]Frost[[]]" effect="[[23743329]]Increases the casting rate of Frost Shield by %d1%%[[]]" 
+                min="5" max="30" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <!-- Human Queen of Witches -->
+        <effect id="polymorph_bonus" group="Skill bonus (Human)" item_name="[[23754884]]Polymorph[[]]" effect="[[23761198]]Polymorph lasts %d1 secs longer[[]]" 
+                min="3" max="9" step="3" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="consume_bonus" group="Skill bonus (Human)" item_name="[[23776223]]Channelling[[]]" effect="[[23781491]]+%d1%% more health gain from Consume[[]]" 
+                min="15" max="50" step="15" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="consternation_bonus" group="Skill bonus (Human)" item_name="[[23794723]]Blight[[]]" effect="[[23801862]]Increases the effect of Blight by %d1%%[[]]" 
+                min="2" max="8" step="2" costmin="50" costmid="425" costmax="1000"></effect>
+        <!-- Darkling Soul Monger -->
+        <effect id="soulnova_bonus" group="Skill bonus (Darkling)" item_name="[[23811574]]Nova[[]]" effect="[[23828993]]%d1%% chance to not suffer damage from Soul Nova[[]]" 
+                min="5" max="25" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="absorbsoul_bonus" group="Skill bonus (Darkling)" item_name="[[23830374]]Absorbtion[[]]" effect="[[23841073]]+%d1%% chance to increase your max health by 10 more points with Absorb Soul[[]]" 
+                min="5" max="30" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="reincarnate_bonus" group="Skill bonus (Darkling)" item_name="[[23851997]]Reincarnation[[]]" effect="[[23862200]]Incarnates have +%d1%% health[[]]" 
+                min="15" max="45" step="15" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="soullink_bonus" group="Skill bonus (Darkling)" item_name="[[23875910]]Soul Link[[]]" effect="[[23884037]]Uses %d1%% less health when healing units with Soul Link[[]]" 
+                min="15" max="45" step="15" costmin="50" costmid="425" costmax="1000"></effect>
+        <!-- Darkling Assasin -->
+        <effect id="angelofdeath_bonus" group="Skill bonus (Darkling)" item_name="[[23897834]]Death[[]]" effect="[[23902280]]+%d1%% damage to Angels of Death[[]]" 
+                min="15" max="75" step="15" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="backstab_bonus" group="Skill bonus (Darkling)" item_name="[[23911799]]Backstabbing[[]]" effect="[[23927844]]+%d1 damage to Backstab[[]]"
+                min="25" max="100" step="25" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="shadewalk_bonus" group="Skill bonus (Darkling)" item_name="[[23933990]]Shadewalk[[]]" effect="[[23945377]]+%d1%% chance Shadewalk not to take a charge upon use[[]]"
+                min="5" max="65" step="5" costmin="50" costmid="425" costmax="1000"></effect>
+        <!-- Darkling Axemaster -->
+        <effect id="invincibility_bonus" group="Skill bonus (Darkling)" item_name="[[23954431]]Invincibility[[]]" effect="[[23966636]]Invincibility lasts %d1 secs longer[[]]"
+                min="3" max="9" step="3" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="leap_bonus" group="Skill bonus (Darkling)" item_name="[[23975358]]Smashing[[]]" effect="[[23983330]]+%d1 damage to Leap Attack[[]]"
+                min="10" max="50" step="10" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="bash_bonus" group="Skill bonus (Darkling)" item_name="[[23990410]]Bashing[[]]" effect="[[24007487]]+%d1%% chance Bash not to take a charge upon use[[]]"
+                min="10" max="50" step="10" costmin="50" costmid="425" costmax="1000"></effect>
+        <!-- Darkling Empath -->
+        <effect id="mind_blaze_bonus" group="Skill bonus (Darkling)" item_name="[[24017659]]Mind Blaze[[]]" effect="[[24027853]]+%d1%% chance Mind Blaze not to take a charge upon use[[]]"
+                min="10" max="50" step="10" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="divine_journey_bonus" group="Skill bonus (Darkling)" item_name="[[24030486]]Divine Path[[]]" effect="[[24046875]]Units return with %d1%% more expensive items from Divine Journey[[]]"
+                min="10" max="50" step="10" costmin="50" costmid="425" costmax="1000"></effect>
+        <!--ypsilon: Potions -->
+        <effect id="potion_vitality" group="Potions" item_name="[[22959880]]Vitality[[]]" effect="[[24057157]]Permanently increases a Champion's health points, depending on her class.[[]]"
+                min="0" max="0" step="1" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="potion_innerfire" group="Potions" item_name="[[24062728]]Inner Fire[[]]" effect="[[24071012]]Permanently increases a Champion's damage, depending on her class.[[]]"
+                min="0" max="0" step="1" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="potion_energy" group="Potions" item_name="[[24085656]]Mental Energy[[]]" effect="[[24090381]]Permanently increases a Champion's skill recharge speed, depending on her class.[[]]"
+                min="0" max="0" step="1" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="potion_sturdiness" group="Potions" item_name="[[24101851]]Sturdiness[[]]" effect="[[24111571]]Permanently increases a Champion's armour, depending on her class.[[]]"
+                min="0" max="0" step="1" costmin="50" costmid="425" costmax="1000"></effect>
+        <!--ypsilon: Charms -->
+        <effect id="charm_healing" group="Charms" item_name="[[24124995]]Healing[[]]" effect="[[24138243]]Restores up to %d1 health points[[]]"
+                min="150" max="160" step="150" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="charm_restoration" group="Charms" item_name="[[23199256]]Restoration[[]]" effect="[[24145999]]Restores up to %d1 health points of all nearby units[[]]"
+                min="100" max="300" step="100" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="charm_recharge" group="Charms" item_name="[[22853303]]Mana[[]]" effect="[[24150476]]Recharges all skills of a single Champion[[]]"
+                min="1" max="1" step="1" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="charm_invulnerability" group="Charms" item_name="[[19459412]]Invulnerability[[]]" effect="[[24168402]]Renders a single Champion invulnerable[[]]"
+                min="1" max="1" step="1" costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="charm_invisibility" group="Charms" item_name="[[24172133]]Invisibility[[]]" effect="[[24182403]]Renders a single Champion invisible[[]]"
+                min="1" max="1" step="1" costmin="50" costmid="425" costmax="1000"></effect>
+        <!--ypsilon: Powerstone skills -->              
+        <effect id="Hero_Heal" group="Active" item_name="[[24194995]]Healing[[]]"
+                effect="[[24205095]]Heal[[]]" skill="Hero_Heal" min="1" max="1"  costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="Hero_Shock" group="Active" item_name="[[24215287]]Shock[[]]"
+                effect="[[24225287]]Shock[[]]" skill="Hero_Shock" min="1" max="1"  costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="Hero_Illusion" group="Active" item_name="[[24237081]]Illusion[[]]"
+                effect="[[24247081]]Illusion[[]]" skill="Hero_Illusion" min="1" max="1"  costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="Hero_Invisibility" group="Active" item_name="[[24252133]]Invisibility[[]]"
+                effect="[[24262133]]Invisibility[[]]" skill="Hero_Invisibility" min="1" max="1"  costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="Hero_SecondSight" group="Active" item_name="[[24279280]]Second Sight[[]]"
+                effect="[[24289280]]Second Sight[[]]" skill="Hero_SecondSight" min="1" max="1"  costmin="50" costmid="425" costmax="1000"></effect>
+        <effect id="Hero_Resurrect" group="Active" item_name="[[24294990]]Resurrection[[]]"
+                effect="[[24306727]]Resurrect (brings a friendly unit back to life, recharge for 60 seconds)[[]]" skill="Hero_Resurrect" min="1" max="1"  costmin="250" costmid="825" costmax="1200"></effect>
+</effects>

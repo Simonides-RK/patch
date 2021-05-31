@@ -1,0 +1,65 @@
+<class id="Forester_Tower" cpp_class="CVXBuilding" parent="Tower" entity="assets/entities/Buildings/Forester_Tower1/Forester_Tower1.ent.xml">
+
+<!-- Copied from Forester_BaseTownBuilding: The 'being_built' method is for the building support. -->
+	<method sig="being_built" vs="data/subai/forester_basetownbuilding_being_built.vs"/>
+	<method sig="train_ranger" vs="data/subai/forester_tower_train_ranger.vs"/>
+	<method sig="set_target" vs="data/subai/forester_tower_set_target.vs" verify="data/subai/forester_tower_set_target_verify.vs"/>
+	<method sig="ondie" vs="data/subai/forester_tower_ondie.vs"/>
+
+	<behavior script="data/subai/forester_tower_behavior.vs"/>
+
+	<static_str projectile_class="Forest_Tower_Projectile" projectile_class_building="Forest_Tower_Projectile"/>
+	<static_int	projectile_angle="0" projectile_dist="0"/>
+
+	<static_str damage_type="magic"/>
+	<static_int maxhealth="1200"/>
+	<static_int initial_damage="55"/>
+	<static_int attack_duration="1600"/>
+
+	<static_int sight="450"/>
+	<static_int range="420" min_range="0"/>
+
+<!-- General -->
+	<static_str edittree_pos="[[755381]]Structures[[]]/[[5014486]]Foresters[[]]/[[5717094]]Ranger's Tower[[]]"
+				icon="assets/interface/icons/forester_Tower.bmp"
+				portrait="assets/interface/icons/forester_Tower.rle"
+				skyimage="assets/interface/sky_forester.bmp"/>
+	<static_str display_name="[[5717094]]Ranger's Tower[[]]" display_name_plural="[[5723575]]Ranger's Towers[[]]"/>
+	<static_int radius="64" selection_radius="64"/>
+
+	<value id="DisplayName" script="if ( EnvReadString( this, 'upgrade_upgrade_EntanglingTower' ) == 'available' ) return Translate(GetClassStr('Forester_TowerUpgrade_Entangling', 'display_name')); return Translate(.display_name);" />
+
+<!-- Building and build animation -->
+	<static_int leaves_height_cap="20" />
+	<static_int leaves_l3_height="0" />
+	<static_int leaves_l2_height="0" />
+	<static_int leaves_l1_height="-40" />
+	<static_int build_time="80000" />
+	<static_int foundation_layer="6"/>
+	<static_str dying_object_class="Forester_Tower1_Die"/>	
+	<static_str building_spot="Assets/Entities/visuals/Building Spots/spot2.rle"/>
+
+<!-- Build command properties -->
+	<static_str cost="200/0/0"/>
+	<static_str rollover_description="[[5736690]]Provides defence against enemies and trains Rangers. Can be upgraded to Entangling Tower.[[]]"/>
+
+<!-- Race specific -->
+	<static_int regenerate_add="1"/>
+	<static_int regenerate_promille="2"/>
+	<static_str race_str="Race_Foresters"/>
+	<static_str rally_object_class="Forester_RallyPoint" /> 
+
+	<defaultcmd target="Unit">
+		<cmd name="set_target"/>
+	</defaultcmd>
+
+	<defaultcmd target="">
+		<cmd name="set_rally"/>
+	</defaultcmd>	
+
+	<static_int target_evaluation_sleep="1000"/>
+	<static_int vines_time="5000"/>
+	<static_int entangle_time="10000"/>
+	
+	<member_obj the_target=""/>
+</class>

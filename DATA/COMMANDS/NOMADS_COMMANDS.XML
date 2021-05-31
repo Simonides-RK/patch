@@ -1,0 +1,149 @@
+<commands>
+
+<!-- Ivko: Texts edited, 22.02.2005. Please don't remove this comment! -->
+
+<cmd id="Develop_Restoration"
+	template_cmd="template_develop_independent"
+	name="[[17166984]]R@estoration[[]]"
+	button="nomads_restore.bmp"
+	icon="assets/interface/nomads_restore_icon.bmp"
+	position="18"
+	rollover_param="[[17177877]]Rebuilds a destroyed colony from the ashes.[[]]"
+	param="Skill Restoration, ManaCost 450, MaxMana 450, DevScript data/subai/nomads_townhall_init_fountain.vs"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Nomad_Townhall"/>
+</cmd>
+
+<cmd id="Restoration"
+	name="[[17166984]]R@estoration[[]]"
+	button="nomads_restore.bmp"
+	largebutton="nomads_restore_large.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[17177877]]Rebuilds a destroyed colony from the ashes.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="restoration"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+	selecttarget_text="[[17188927]]Select a colony to restore[[]]"
+	point_command="1"
+>
+	<src obj="Nomad_Townhall"/>
+</cmd>
+
+<cmd id="Develop_Plunder"
+	template_cmd="template_develop_independent"
+	name="[[17191292]]@Raiding Party[[]]"
+	button="nomads_plunder.bmp"
+	icon="assets/interface/nomads_plunder_icon.bmp"
+	position="19"
+	rollover_param="[[17201456]]Sends a Nomad raiding party from the colony to destroy all enemy buildings in an area.[[]]"
+	param="Skill Plunder, ManaCost 360, MaxMana 360, SettlementPoint Special1, VisualObject Nomads_Tower"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Nomad_Townhall"/>
+</cmd>
+
+<cmd id="Plunder"
+	name="[[17191292]]@Raiding Party[[]]"
+	button="nomads_plunder.bmp"
+	largebutton="nomads_plunder_large.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[17201456]]Sends a Nomad raiding party from the colony to destroy all enemy buildings in an area.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="plunder"
+	execute_for_script="data/cmds/independent_execute_for_fake_queuer.vs"
+	selecttarget_text="[[11801192]]Select target location[[]]"
+	point_command="1"
+>
+	<src obj="Nomad_Townhall"/>
+</cmd>
+
+<cmd id="Develop_Bazaar"
+	template_cmd="template_develop_independent"
+	name="[[17210875]]Ba@zaar[[]]"
+	button="nomads_bazaar.bmp"
+	icon="assets/interface/nomads_bazaar_icon.bmp"
+	position="19"
+	rollover_param="[[17223309]]Generates #GetClassInt('Nomad_Townhall', 'gems_revenue')# gems every 10 seconds and provides an additional glory point for each new colony you capture.[[]]"
+	param="Skill Bazaar, ManaCost 0, MaxMana 0, DevScript data/subai/nomads_townhall_init_bazar.vs"
+	cost_script="return '0/0/0';"
+>
+	<src obj="Nomad_Townhall"/>
+</cmd>
+
+<cmd id="Bazaar"
+  name="[[17237411]]Bazaar[[]]"
+	position="8"
+	button="nomads_bazaar.bmp"
+	largebutton="nomads_bazaar_large.bmp"
+	enabled="0"
+	rollover_param="[[17223309]]Generates #GetClassInt('Nomad_Townhall', 'gems_revenue')# gems every 10 seconds and provides an additional glory point for each new colony you capture.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="disabled"
+>
+	<src obj="Nomad_Townhall"/>
+</cmd>
+
+<cmd id="train_Nomad_Spearman"
+	template_cmd="template_independent_hire1"
+	name="[[17247347]]Train Nomad @Spearman[[]]"
+	button="nomads_spearman.bmp"
+	icon="Assets/Interface/Icons/nomads_spearman.bmp"
+	param="Nomad_Spearman"
+	execdelay="25000"
+	disableifdisabled="upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"
+>
+	<src obj="Nomad_Townhall"/>
+</cmd>
+
+<cmd id="train_Nomad_Cavalry"
+	template_cmd="template_independent_hire2"
+	name="[[17257930]]Train @Beastmaster[[]]"
+	button="nomads_cavalry.bmp"
+	icon="Assets/Interface/icons/nomads_cavalry.bmp"
+	param="Nomad_Cavalry"
+	execdelay="45000"
+	disableifdisabled="upgrade_HumanLevel3,upgrade_ForesterLevel3,upgrade_DarklingLevel3"
+>
+	<src obj="Nomad_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_Horse_Hunters"
+    template_cmd="template_upgrade"
+	verifier_script="data/cmds/colony_upgrade1_verify.vs"
+    name="[[upgHorseHunters1]]Horse Hunters[[]]"
+	rollover_param="[[upgHorseHunters2]]Increases Nomad Spearman's speed by #GetClassInt('Nomad_Spearman', 'hunter_bonus_speed')# and his health by #GetClassInt('Nomad_Spearman', 'hunter_bonus_health')#.[[]]"
+	button="nomads_horse_hunting.BMP"
+	icon="Assets/Interface/Icons/nomads_horse_hunting_icon.BMP"
+	position="11"
+
+	execdelay="22500"
+	cost_script="return '225/5/0';"
+	param="data/cmds/nomad_spearman_upgrade.vs"
+	requirements=""
+	disableifdisabled="train_Nomad_Spearman,upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"
+>
+        <src obj="Nomad_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_Plundering"
+    template_cmd="template_upgrade"
+	verifier_script="data/cmds/colony_upgrade2_verify.vs"
+    name="[[upgPlundering1]]Plundering[[]]"
+	rollover_param="[[upgPlundering2]]Enables the Beastmaster to salvage #GetClassInt('Nomad_Cavalry', 'plunder_attack')# Gold for each time he hits an enemy building and #GetClassInt('Nomad_Cavalry', 'plunder_destroy')# each time he destroys a building. In addition grants +#GetClassInt('Nomad_Cavalry', 'plunder_armor')# armor.[[]]"
+	button="nomads_plundering.BMP"
+	icon="Assets/Interface/Icons/nomads_plundering_icon.BMP"
+	position="12"
+
+	execdelay="44000"
+	cost_script="return '440/10/0';"
+	param="data/cmds/nomad_upgrade_plundering.vs"
+	requirements=""
+	disableifdisabled="train_Nomad_Cavalry,upgrade_HumanLevel3,upgrade_ForesterLevel3,upgrade_DarklingLevel3"
+>
+        <src obj="Nomad_Townhall"/>
+</cmd>
+
+</commands>

@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Cannon" type="vx/unit" pass_file="Trolls_Cannon.pass">
+<animlayer layer="0" duration="0" sync="1"/>
+<images>
+<image idx="1" file="Attack.rle" drawmode="player_color" remaping="none" rows="23" columns="12"/>
+<image idx="2" file="Attack_shadow.rle" drawmode="shadow" remaping="none" rows="23" columns="12"/>
+<image idx="3" file="Die.rle" drawmode="player_color" remaping="none" rows="17" columns="1"/>
+<image idx="4" file="Die_shadow.rle" drawmode="shadow" remaping="none" rows="17" columns="1"/>
+<image idx="5" file="Idle.rle" drawmode="player_color" remaping="none" rows="8" columns="1"/>
+<image idx="6" file="Idle_shadow.rle" drawmode="shadow" remaping="none" rows="8" columns="1"/>
+<image idx="7" file="Special1.rle" drawmode="player_color" remaping="none" rows="3" columns="12"/>
+<image idx="8" file="Special1_shadow.rle" drawmode="shadow" remaping="none" rows="3" columns="12"/>
+<image idx="9" file="Special2.rle" drawmode="player_color" remaping="none" rows="3" columns="12"/>
+<image idx="10" file="Special2_shadow.rle" drawmode="shadow" remaping="none" rows="3" columns="12"/>
+<image idx="11" file="Walk.rle" drawmode="player_color" remaping="none" rows="16" columns="1"/>
+<image idx="12" file="Walk_shadow.rle" drawmode="shadow" remaping="none" rows="16" columns="1"/>
+<image idx="13" file="Special1.rle" drawmode="player_color" remaping="reverse" rows="3" columns="12"/>
+<image idx="14" file="Special1_shadow.rle" drawmode="shadow" remaping="reverse" rows="3" columns="12"/>
+<image idx="15" file="Special2.rle" drawmode="player_color" remaping="reverse" rows="3" columns="12"/>
+<image idx="16" file="Special2_shadow.rle" drawmode="shadow" remaping="reverse" rows="3" columns="12"/>
+<image idx="17" file="Idle.rle" drawmode="player_color" remaping="reverse" rows="8" columns="1"/>
+<image idx="18" file="Idle_shadow.rle" drawmode="shadow" remaping="reverse" rows="8" columns="1"/>
+</images>
+<points>
+<point idx="1" type="1" x="121" y="57"/>
+</points>
+<layers>
+<layer idx="1" name="unit" image="1" z="1000" offsetx="-111" offsety="-100" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="unit_shadow" image="2" z="800" offsetx="-111" offsety="-100" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="init" anim_idx="19" anim_frame="1"/>
+<state idx="2" name="up_loaded" anim_idx="17" anim_frame="1"/>
+<state idx="3" name="down_empty" anim_idx="19" anim_frame="8"/>
+<state idx="4" name="up_empty" anim_idx="18" anim_frame="1"/>
+</states>
+<anims>
+<anim idx="5" name="Attack" startstate="2" endstate="1" frames="25" duration="1518" default_duration="0" action_time="1118" step="0">
+<replace layer="1" image="1" offsetx="-111" offsety="-100" stillframe="0" />
+<replace layer="2" image="2" offsetx="-111" offsety="-100" stillframe="0" />
+<frame idx="2" duration="66"/>
+<frame idx="3" duration="66"/>
+<frame idx="4" duration="66"/>
+<frame idx="5" duration="66"/>
+<frame idx="6" duration="66"/>
+<frame idx="7" duration="66"/>
+<frame idx="8" duration="66"/>
+<frame idx="9" duration="66"/>
+<frame idx="10" duration="66"/>
+<frame idx="11" duration="66"/>
+<frame idx="12" duration="66"/>
+<frame idx="13" duration="66"/>
+<frame idx="14" duration="66"/>
+<frame idx="15" duration="66"/>
+<frame idx="16" duration="66"/>
+<frame idx="17" duration="66"/>
+<frame idx="18" duration="66"/>
+<frame idx="19" duration="66"/>
+<frame idx="20" duration="66"/>
+<frame idx="21" duration="66"/>
+<frame idx="22" duration="66"/>
+<frame idx="23" duration="66"/>
+<frame idx="24" duration="66"/>
+</anim>
+<anim idx="9" name="Die" startstate="1" endstate="1" frames="19" duration="16226" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="3" offsetx="-111" offsety="-100" stillframe="0" />
+<replace layer="2" image="4" offsetx="-111" offsety="-100" stillframe="0" />
+<frame idx="2" duration="66"/>
+<frame idx="3" duration="66"/>
+<frame idx="4" duration="66"/>
+<frame idx="5" duration="66"/>
+<frame idx="6" duration="66"/>
+<frame idx="7" duration="66"/>
+<frame idx="8" duration="66"/>
+<frame idx="9" duration="66"/>
+<frame idx="10" duration="66"/>
+<frame idx="11" duration="66"/>
+<frame idx="12" duration="66"/>
+<frame idx="13" duration="500"/>
+<frame idx="14" duration="1000"/>
+<frame idx="15" duration="2000"/>
+<frame idx="16" duration="4000"/>
+<frame idx="17" duration="4000"/>
+<frame idx="18" duration="4000"/>
+</anim>
+<anim idx="17" name="Special1" startstate="2" endstate="2" frames="5" duration="198" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="7" offsetx="-111" offsety="-100" stillframe="0" />
+<replace layer="2" image="8" offsetx="-111" offsety="-100" stillframe="0" />
+<frame idx="2" duration="66"/>
+<frame idx="3" duration="66"/>
+<frame idx="4" duration="66"/>
+</anim>
+<anim idx="18" name="Special2" startstate="4" endstate="4" frames="5" duration="198" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="9" offsetx="-111" offsety="-100" stillframe="0" />
+<replace layer="2" image="10" offsetx="-111" offsety="-100" stillframe="0" />
+<frame idx="2" duration="66"/>
+<frame idx="3" duration="66"/>
+<frame idx="4" duration="66"/>
+</anim>
+<anim idx="19" name="Special3" startstate="1" endstate="3" frames="10" duration="1200" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="5" offsetx="-111" offsety="-100" stillframe="0" />
+<replace layer="2" image="6" offsetx="-111" offsety="-100" stillframe="0" />
+<frame idx="2" duration="150"/>
+<frame idx="3" duration="150"/>
+<frame idx="4" duration="150"/>
+<frame idx="5" duration="150"/>
+<frame idx="6" duration="150"/>
+<frame idx="7" duration="150"/>
+<frame idx="8" duration="150"/>
+<frame idx="9" duration="150"/>
+</anim>
+<anim idx="20" name="Up-Empty" startstate="3" endstate="1" frames="10" duration="1200" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="17" offsetx="-111" offsety="-100" stillframe="0" />
+<replace layer="2" image="18" offsetx="-111" offsety="-100" stillframe="0" />
+<frame idx="2" duration="150"/>
+<frame idx="3" duration="150"/>
+<frame idx="4" duration="150"/>
+<frame idx="5" duration="150"/>
+<frame idx="6" duration="150"/>
+<frame idx="7" duration="150"/>
+<frame idx="8" duration="150"/>
+<frame idx="9" duration="150"/>
+</anim>
+<anim idx="29" name="Special4" startstate="3" endstate="2" frames="18" duration="992" default_duration="0" action_time="0" step="10">
+<replace layer="1" image="11" offsetx="-111" offsety="-100" stillframe="0" />
+<replace layer="2" image="12" offsetx="-111" offsety="-100" stillframe="0" />
+<frame idx="2" duration="62"/>
+<frame idx="3" duration="62"/>
+<frame idx="4" duration="62"/>
+<frame idx="5" duration="62"/>
+<frame idx="6" duration="62"/>
+<frame idx="7" duration="62"/>
+<frame idx="8" duration="62"/>
+<frame idx="9" duration="62"/>
+<frame idx="10" duration="62"/>
+<frame idx="11" duration="62"/>
+<frame idx="12" duration="62"/>
+<frame idx="13" duration="62"/>
+<frame idx="14" duration="62"/>
+<frame idx="15" duration="62"/>
+<frame idx="16" duration="62"/>
+<frame idx="17" duration="62"/>
+</anim>
+<anim idx="30" name="Special5" startstate="2" endstate="2" frames="5" duration="198" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="13" offsetx="-111" offsety="-100" stillframe="0" />
+<replace layer="2" image="14" offsetx="-111" offsety="-100" stillframe="0" />
+<frame idx="2" duration="66"/>
+<frame idx="3" duration="66"/>
+<frame idx="4" duration="66"/>
+</anim>
+<anim idx="31" name="Special6" startstate="4" endstate="4" frames="5" duration="198" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="15" offsetx="-111" offsety="-100" stillframe="0" />
+<replace layer="2" image="16" offsetx="-111" offsety="-100" stillframe="0" />
+<frame idx="2" duration="66"/>
+<frame idx="3" duration="66"/>
+<frame idx="4" duration="66"/>
+</anim>
+<anim idx="32" name="Special7" startstate="4" endstate="1" frames="3" duration="1" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="5" offsetx="-111" offsety="-100" stillframe="0" />
+<replace layer="2" image="6" offsetx="-111" offsety="-100" stillframe="0" />
+<frame idx="2" duration="1"/>
+</anim>
+</anims>
+</entity>

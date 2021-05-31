@@ -1,0 +1,52 @@
+<class id="Elves_Archer" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Elves_Archer/Elves_Archer.ent.xml">
+
+	<method sig="init" vs="data/subai/elves_archer_init.vs"/>		
+
+    <static_str areacheck_type="friendly" areacheck_class="Elves_Archer"/>
+    <static_int areacheck_time="1000"/>
+    <method sig="oninsidearea" vs="data/subai/elves_archer_oninsidearea.vs"/>
+	
+	<static_int range="400" min_range="2"/>
+	<static_int radius="20" selection_radius="20"/>
+	<static_int formation_radius="20" formation_priority="500"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[4837050]]Elves[[]]/[[4847724]]Elven Archer[[]]"/>
+
+	<static_str display_name="[[4847724]]Elven Archer[[]]" display_name_plural="[[4856816]]Elven Archers[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/elf archer.BMP"
+				portrait="assets/interface/icons/elf archer.rle"/>
+
+	<static_int sight="550"/>
+	<static_int speed="110"/>
+
+	<static_int maxhealth="190" initial_damage="12" initial_armor="0"/>
+	<static_str cost="45/0/1"/>
+	<static_int independent_value="90"/>
+
+	<static_str damage_type="magic"/>
+	<static_str defence_type = "medium"/>
+
+	<static_str rollover_description="[[4867027]]Elven Archers are cheap ranged units with a magic attack. They are low on health but deal reasonable damage.[[]]"/>
+
+	<static_str projectile_class = "Elves_Archer_Projectile"
+				projectile_class_building = "Elves_Archer_Projectile"/>
+
+	<static_int	projectile_angle="0" 
+				projectile_dist = "0"/>
+			
+	<!-- ypsilon: upgrades -->		
+	<static_int unity_bonus="1"/>	
+	<static_int unity_max="13"/>
+
+	<sounds
+		AnimAttack="Elf_archer_attack"
+		AnimDie="Elf_death"
+		command="Eleven0"/>
+				
+	<static_str race_str="Race_Elves"/>
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="50"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+	<!-- AI -->
+</class>

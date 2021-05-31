@@ -1,0 +1,118 @@
+<class id="Forester_Sharpshooter" cpp_class="CSSHero" parent="Hero" entity="Assets/Entities/Units/Forester_Sharpshooter/Forester_Sharpshooter.ent.xml">
+
+<method sig="eagle_eye" vs="data/subai/forester_sharpshooter_eagle_eye.vs"/>
+<method sig="aimed_shot" vs="data/subai/forester_sharpshooter_aimed_shot.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="entangling_shot" vs="data/subai/forester_sharpshooter_entangling_shot.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="corrosive_gas_shot" vs="data/subai/forester_sharpshooter_corrosive_gas_shot.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="ambush_special" vs="data/subai/forester_sharpshooter_ambush_special.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+<method sig="fog_strike" vs="data/subai/forester_sharpshooter_fog_strike.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
+
+<static_int range="400" min_range="2"/>                 
+<static_int radius="30" selection_radius="25"/> 
+<static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5583638]]Sharpshooter[[]]"/>
+<static_str display_name="[[5583638]]Sharpshooter[[]]" display_name_plural="[[5593391]]Sharpshooters[[]]"/>
+<static_int maxhealth="370"/>
+<static_int speed="120"/>
+
+<static_str damage_type="arrow"/>
+<static_int initial_damage="36"/>
+<static_int initial_armor="2"/>
+
+<static_int formation_priority="600"/>                  
+<static_str icon="Assets/Interface/Icons/sharpshooter.bmp"/>
+<static_str largeicon="Assets/Interface/Icons/sharpshooter_large.bmp"/>
+<static_str     portrait="Assets/Interface/Icons/sharpshootter.rle"/>
+<static_str     skyimage="assets/interface/sky_forester.bmp"/>
+
+<static_int potion_health="35"/>        
+<static_int potion_damage="6"/> 
+<static_int potion_recharge="15"/>      
+<static_int potion_armor="1"/>  
+
+<static_str rollover_description="[[5601808]]The Sharpshooter is a master of ranged attacks, who uses his bow and magic arrows to cause havoc among the enemies. Skilled in slowing the enemy and concealment the Sharpshooter is best combined with ranged units.[[]]"/>
+
+<static_str projectile_class = "Forester_SharpshooterArrow"/>
+<static_str projectile_class_building = "Forester_SharpshooterArrow"/>
+<static_int     projectile_angle="-30"/>
+<static_int     projectile_dist="30"/>
+
+<!-- eagle eye properties !-->
+<static_int eagle_eye_sight_bonus="250"/>
+<static_int eagle_eye_range_bonus="150"/>
+
+<!-- aimed arrow properties !-->
+<static_int aimed_arrow_range="1100"/>
+<static_int aimed_arrow_damage="340"/>
+
+<!-- corrosive gas properties !-->
+<static_int gas_dmg_unit="30"/>
+<static_int gas_dmg_building="60"/>
+<static_int gas_time_effect="15000"/>
+<static_int gas_time_fadeout="1000"/>
+<static_int gas_range="150"/> <!-- ATTN: Changing this won't affect the value! It's in the 'sight' of the Forester_SharpshooterCorrosiveGas class! -->
+
+<!-- ambush -->
+<static_int ambush_damage="130"/>
+<static_int ambush_delay="10000"/>
+<static_int ambush_duration="35000"/>
+
+<!-- splitting arrows -->
+<static_int attack_speed_penalty="0"/>
+
+<static_int fogstrike_lifetime="20000"/>
+<static_int fogstrike_range="150"/> <!-- ATTN: Changing this won't affect the value! It's in the 'sight' of the Forester_Sharpshooter_Fog class! -->
+
+<!-- entangling shot properties !-->
+<static_int es_spread_area="130"/>
+<static_int es_max_units="4"/>
+<static_int es_time_effect="8000"/>
+<static_int es_time_fadeout="400"/>
+<static_int es_delay="200"/>
+<static_int es_imobilize_delay="700"/>
+
+<!-- wall of flames properties !-->
+<static_int wof_particles="30"/>
+<static_int wof_delay_new_fire="40"/>
+<static_int wof_inner_radius="220"/>
+<static_int wof_outer_radius="360"/>
+<static_int wof_time_effect="15000"/>
+<static_int wof_time_fadeout="2000"/>
+<static_int wof_dmg_unit="12"/>
+<static_int wof_slow_percent="45"/>
+
+<static_str race_str="Race_Foresters"/>
+
+<!-- Before 1.41 -->
+<!--
+<static_str level1_skill1="Eagle_Eye"/>
+<static_str level1_skill2="Aimed_Shot"/>
+<static_str level1_skill3="Entangling_Shot"/>
+<static_str level1_skill4="Splitting_Arrows"/>
+<static_str level2_skill1="Corrosive_Gas_Shot"/>
+<static_str level2_skill2="Ambush"/>
+<static_str level3_skill1="Fog_Strike"/>
+-->
+
+<!-- New for 1.41 -->
+<static_str level1_skill1="Eagle_Eye"/>
+<static_str level1_skill2="Entangling_Shot"/>
+<static_str level2_skill1="Ambush"/>
+<static_str level3_skill1="Fog_Strike"/>
+	
+<static_str slot1_type="bow"/>
+<static_str slot2_type="helm"/>
+<static_str slot3_type="powerstone"/>
+<static_str slot4_type="cloak"/>
+
+<!-- AI -->
+<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+<static_int ai_draw_back_if_disabled="1"/>
+<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+<!-- AI -->
+	
+<member_obj arrow=""/>
+        <static_str hero_ai_special_script="hero.sniper.vs"/>
+        <sounds
+                AnimSpecial1="assets/sounds/HeroSkills/Forester Sharpshooter/Sharpshooter_aimed_arrow.wav"
+                command="Sharp0"/>
+</class>

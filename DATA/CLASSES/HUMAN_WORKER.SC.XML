@@ -1,0 +1,72 @@
+﻿<class id="Human_Worker" cpp_class="CVXUnit" parent="BaseWorker" entity="assets/entities/units/Human_Worker/Human_Worker.ent.xml">
+
+        <method sig="init" vs="data/subai/human_worker_init.vs"/>
+        <method sig="gather_gold" vs="data/subai/human_worker_gather_gold.vs" onfinish="data/subai/human_worker_gather_gold_onfinish.vs"/>
+        <method sig="gather_gems" vs="data/subai/human_worker_gather_gems.vs" onfinish="data/subai/human_worker_gather_gems_onfinish.vs"/>      
+        <method sig="repair" vs="data/subai/human_worker_repair.vs" verify="data/subai/human_worker_repair_verify.vs"/>
+        <method sig="build_far_from_townhall" vs="data/subai/human_worker_build_far_from_townhall.vs" onfinish="data/subai/human_worker_build_far_from_townhall_onfinish.vs"/>
+        <method sig="unitrestoration" vs="data/subai/HUMAN_WORKER_RESTORATION.VS" />
+        <method sig="continue_building" vs="data/subai/human_worker_continue_building.vs" verify="data/subai/human_worker_continue_building_verify.vs" onfinish="data/subai/human_worker_continue_building_onfinish.vs"/>
+
+        <behavior script="data/subai/human_worker_behavior_repair.vs"/>
+        <behavior script="data/subai/human_worker_behavior_gather.vs"/>
+
+        <static_int range="17" min_range="2"/>                  
+        <static_int maxhealth="260"/>
+        <static_int speed="70"/> 
+        <static_int radius="14" selection_radius="20"/> 
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6891566]]Peasant[[]]"/>                                                                                  
+        <static_str display_name="[[6891566]]Peasant[[]]" display_name_plural="[[6902579]]Peasants[[]]"/>
+        
+        <static_str race_str="Race_Humans"/>
+
+        <static_int initial_armor="0"/>
+
+        <static_str defence_type = "small"/>
+
+        <static_str cost="50/0/1"/>
+        <static_str rollover_description="[[6912793]]Peasants are needed to collect resources and construct buildings far from the Town Hall. Send a Peasant to a Gold Mine to mine gold or to a gem deposit to collect gems.[[]]"/>
+
+        <static_str blood_particles="Data/Particles/BloodFeedbackLow.part.xml"/>
+
+        <static_int gather_time_needed="30000"/>
+        <static_int repair_check_time="5000"/>
+
+        <static_str icon="Assets/Interface/Icons/human worker.BMP"/>
+        <static_str portrait="Assets/Interface/Icons/human worker.rle"/>
+
+        <!-- Repair is per animation. Animation time is 500ms. -->
+        <static_int gold_repair_percent="30"/>
+        <static_int min_gold_per_repair="1"/>
+        <static_int health_repair="5"/>
+        <static_int health_fract_repair="4"/>
+
+        <member_obj builder_mine=""/>
+        <member_obj builder_gems=""/>
+        <member_int move_retreat=""/>
+        <member_obj worker_attacker=""/>
+        <member_int inside_mine=""/>
+
+        <defaultcmd target="Human_GoldMine">
+                <cmd name="continue_building"/>
+                <cmd name="repair"/>    
+                <cmd name="gather_gold"/>
+        </defaultcmd>
+
+        <defaultcmd target="BaseGemsDeposit">
+                <cmd name="gather_gems"/>
+        </defaultcmd>
+        
+        <defaultcmd target="Hero">
+                <cmd name="follow"/>
+        </defaultcmd>
+
+        <defaultcmd target="Building">
+                <cmd name="continue_building"/>
+                <cmd name="repair"/>
+        </defaultcmd>
+
+        <sounds
+                AnimSpecial3="assets/sounds/UnitSpecials/Human_Builder/Human_Builder_repair_1.wav"
+                command="Peasant0"/>
+</class>

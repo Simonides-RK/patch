@@ -1,0 +1,59 @@
+﻿<class id="Darkling_Fanatic" cpp_class="CVXUnit" parent="BaseDarklingUnit" entity="assets/entities/units/Darkling_Fanatic/Darkling_Fanatic.ent.xml">
+
+	<behavior script="data/subai/darkling_fanatic_behavior_energy.vs"/>
+	
+	<method sig="idle"             vs="data/subai/darkling_fanatic_idle.vs"/>
+	<method sig="init"             vs="data/subai/darkling_fanatic_init.vs"/>
+	<method sig="ondie"            vs="data/subai/darkling_fanatic_ondie.vs"/>
+	<method sig="engage"           vs="data/subai/darkling_fanatic_engage.vs"/>
+	<method sig="engage_unit_type" vs="data/subai/darkling_fanatic_engage_unit_type.vs" verify="data/subai/unit_attack_verify.vs"/>
+	
+	<static_int range="17" min_range="2"/>
+	<static_int radius="20" selection_radius="25"/>	
+	<static_int formation_radius="35" formation_priority="1200"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4312253]]Fanatic[[]]"/>											
+
+	<static_str display_name="[[4312253]]Fanatic[[]]" display_name_plural="[[4329961]]Fanatics[[]]"/>
+
+	<static_int sight="400"/>
+	<static_int speed="90"/>
+	<static_int max_energy="16"/>
+	<static_int maxhealth="700" initial_damage="65" initial_armor="6"/>
+
+	<static_str damage_type="axe"/>
+	<static_str defence_type = "small"/>
+	
+	<static_int energy_restoration_divider="200"/>
+
+	<static_str cost="300/4/3"/>
+	<static_str rollover_description="[[4337596]]Fanatics are the most vicious of Darkling warriors capable of lightning-speed movement during battle. Perfect for disposing a specific enemy.[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/fanatic.BMP"
+				portrait="assets/interface/icons/fanatic.rle"
+				skyimage="assets/interface/sky_dragon.bmp"/>
+
+	<static_str race_str="Race_Darklings"/>
+
+	<static_int fast_walk_time="1000"/>
+	<static_int enemies_speed_factor="6"/>
+	<static_int energy_inc_rate="2"/>
+	<static_int energy_dec_rate="-1"/>
+	<!-- ypsilon: upg bonuses  -->
+	<static_int berserk_health_bonus="250"/>
+	<static_int berserk_armor_bonus="2"/>
+	
+	<static_int holy_rage_last_attack_effect="5000"/>
+	
+	<member_int energy_used=""/>
+	
+	<static_str swift_move_sound="Fanatic_Swift_Move_"/>
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="40"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<static_int ai_concentrate_group="1"/> 
+	<!-- AI -->	
+	<sounds
+		AnimDie="Darkling_Unit_death"
+		AnimAttack="Sword_Axe_Attack"
+		command="Fanatic0"/>
+</class>

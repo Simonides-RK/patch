@@ -1,0 +1,283 @@
+<commands>
+
+<!-- Ivko: Texts edited, 11.03.2005. Please don't remove this comment! -->
+
+<cmd id="Reequip"
+	name="[[16081174]]@Reequip[[]]"
+	button="reequip.bmp"
+	position="7"
+	enabled="0"
+	rollover_param="[[16099699]]Converts up to #GetClassInt('Human_WizardOfTheBow','reequip_count')# friendly units from Pikemen to Longbowmen or vice-verca.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="reequip"
+	selecttarget_text="[[16107539]]Select friendly Pikeman or Longbowman[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_wizardofthebow_reequip.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="Develop_Reequip"
+	template_cmd="template_develop_hero_level_1"
+	name="[[16112529]]Learn @Reequip[[]]"
+	button="reequip.bmp"
+	position="13"
+	toggle_tab="1"
+	rollover_param="[[16099699]]Converts up to #GetClassInt('Human_WizardOfTheBow','reequip_count')# friendly units from Pikemen to Longbowmen or vice-verca.[[]]"
+	param="Skill Reequip, ManaCost 30, MaxMana 45"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="Flare"
+	name="[[16125213]]@Flare[[]]"
+	button="flare.bmp"
+	position="8"
+	enabled="0"
+	rollover_param="[[16139400]]Fires an arrow that reveals the chosen location, increasing the damage of ranged attacks in the area by #GetClassInt('Human_WizardOfTheBow','flare_dmg_inc_percent')#%. The arrow also reveals invisible enemies.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="flare"
+	selecttarget_text="[[11801192]]Select target location[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_wizardofthebow_flare.vs"
+	selecttarget_cursor_invalid="cantselect"
+	point_command="1"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="Develop_Flare"
+	template_cmd="template_develop_hero_level_1"
+	name="[[16143085]]Learn @Flare[[]]"
+	button="flare.bmp"
+	position="14"
+	toggle_tab="1"
+	rollover_param="[[16139400]]Fires an arrow that reveals the chosen location, increasing the damage of ranged attacks in the area by #GetClassInt('Human_WizardOfTheBow','flare_dmg_inc_percent')#%. The arrow also reveals invisible enemies.[[]]"
+	param="Skill Flare, ManaCost 60, MaxMana 90"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="StarStorm"
+	name="[[16156106]]Hail@storm[[]]"
+	button="hail storm.bmp"
+	position="9"
+	enabled="0"
+	rollover_param="[[16160224]]Calls down a hailstorm that deals #GetClassInt('Human_WizardOfTheBow','starstorm_dmg_per_sec')# damage per second to all units and structures in an area. Units caught in this effect also have their speed decreased. The storm lasts #GetClassInt('Human_WizardOfTheBow','starstorm_lifetime')/1000# seconds. [[]]"
+	dispatch_type="execute method"
+	dispatch_param="starstorm"
+	selecttarget_text="[[11801192]]Select target location[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	select_building_place_drag_object="Area_WizardOfTheBow_HailStorm"
+	select_building_place_drag_script="data/cmds/dragscript_unithighlight.vs"
+	param="RadiusStaticInt starstorm_range, Class BaseGameObject, FriendlyObjects 1"
+	selecttarget_verifyscript="data/cmds/selectverify_wizardofthebow_starstorm.vs"
+	selecttarget_cursor_invalid="cantselect"
+	point_command="1"
+	accept_minimap_target="no"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="Develop_StarStorm"
+	template_cmd="template_develop_hero_level_2"
+	name="[[16174142]]Learn Hail@storm[[]]"
+	button="hail storm.bmp"
+	position="17"
+	toggle_tab="1"
+	rollover_param="[[16160224]]Calls down a hailstorm that deals #GetClassInt('Human_WizardOfTheBow','starstorm_dmg_per_sec')# damage per second to all units and structures in an area. Units caught in this effect also have their speed decreased. The storm lasts #GetClassInt('Human_WizardOfTheBow','starstorm_lifetime')/1000# seconds. [[]]"
+	param="Skill StarStorm, ManaCost 120, MaxMana 180"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="Develop_Frost_Arrows"
+	template_cmd="template_develop_hero_level_1"
+	name="[[16184324]]Learn Fros@t Arrows[[]]"
+	button="frost arrows.bmp"
+	position="16"
+	toggle_tab="1"
+	rollover_param="[[16199120]]Enables the Wizard to use magical ice arrows, which considerably decrease the speed of their targets and affect up to #GetClassInt('Human_WizardOfTheBow', 'frostarrows_additionaltgts') + 1# units.[[]]"
+	param="Skill Frost_Arrows, ManaCost 0, MaxMana 0, DevScript data/subai/human_wizardofthebow_frostarrows_dev.vs, UndevScript data/subai/human_wizardofthebow_frostarrows_undev.vs"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="Frost_Arrows"
+	name="[[16200995]]Fros@t Arrows[[]]"
+	button="frost arrows.bmp"
+	position="10"
+	enabled="0"
+	rollover_param="[[16199120]]Enables the Wizard to use magical ice arrows, which considerably decrease the speed of their targets and affect up to #GetClassInt('Human_WizardOfTheBow', 'frostarrows_additionaltgts') + 1# units.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="Develop_Crystal_Tower"
+	template_cmd="template_develop_hero_level_1"
+	name="[[16214073]]Learn @Crystal Tower[[]]"
+	button="crystal tower.bmp"
+	position="15"
+	toggle_tab="1"
+	rollover_param="[[16228971]]Creates a Crystal Tower with #GetClassInt('Human_WizardOfTheBow_CrystalTower','maxhealth')# health, upon which the Wizard climbs. While on the Tower his range is increased and his attacks deal #GetClassInt('Human_WizardOfTheBow','crystal_tower_dmg_inc')# additional damage.[[]]"
+	param="Skill Crystal_Tower, ManaCost 25, MaxMana 25, DevScript data/subai/human_wizardofthebow_develop_crystal_tower.vs"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<!-- all the template_construct_with_worker params are written here explicitly -->
+<cmd id="Crystal_Tower"
+	selecttarget_text="[[16234215]]Select a place for the Crystal Tower[[]]"
+	onaddremove_script="data/cmds/onaddremove_construct_far_from_townhall.vs"
+	checkcost_script="data/cmds/costcheck_default.vs"
+	accept_minimap_target="no"
+	rollover_script="data/cmds/rollover_default.vs"
+	cost_script="data/cmds/cost_default.vs"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/human_wizardofthebow_onconstruct_crystal_tower.vs"
+	select_building_place_drag_script="data/cmds/human_wizardofthebow_crystal_tower_placing.vs"
+	execute_for_script=""
+	selecttarget_cursor="hidden"
+	selecttarget_verifyscript="data/cmds/selectverify_wizardofthebow_crystal_tower.vs"
+	selecttarget_cursor_invalid="cantselect"
+	verifier_script="data/cmds/human_wizardofthebow_crystal_tower_verify.vs"
+
+	name="[[16246892]]@Crystal Tower[[]]"
+	icon="Assets/Interface/Icons/crystal tower.bmp"
+	button="crystal tower.bmp"
+	position="10"
+	enabled="0"
+	rollover_param="[[16228971]]Creates a Crystal Tower with #GetClassInt('Human_WizardOfTheBow_CrystalTower','maxhealth')# health, upon which the Wizard climbs. While on the Tower his range is increased and his attacks deal #GetClassInt('Human_WizardOfTheBow','crystal_tower_dmg_inc')# additional damage.[[]]"
+	param="Human_WizardOfTheBow_CrystalTower"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="Leave_Crystal_Tower"
+  name="[[16256487]]Leave @Crystal Tower[[]]"
+	button="leave crystal tower.BMP"
+	position="10"
+	enabled="0"
+	rollover_param="[[16261450]]Leave the Crystal Tower.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/human_wizardofthebow_leave_crystal_tower.vs"
+	selecttarget_text=""
+	verifier_script="data/cmds/human_wizardofthebow_leave_crystal_tower_verify.vs"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="set_the_target"
+     name=""
+     dispatch_type="execute method"
+     dispatch_param="set_the_target"
+>
+	<cmdtext target="Unit"
+		default-text="[[11253765]]Right-click to attack this unit[[]]"/>
+	<cmdtext target="Building"
+		default-text="[[11260046]]Right-click to attack this building[[]]"/>
+
+  <src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="Develop_Shelter"
+	template_cmd="template_develop_hero_level_2"
+	name="[[16275574]]Learn Sh@elter[[]]"
+	button="shelter.bmp"
+	position="18"
+	toggle_tab="1"
+	rollover_param="[[16281058]]Creates a magical dome with #GetClassInt('Human_Shelter','maxhealth')# health that protects your units from attacks, also allowing them to slowly restore their health. Units can freely enter and exit the Shelter.[[]]"
+	param="Skill Shelter, ManaCost 90, MaxMana 135"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="Shelter"
+	selecttarget_text="[[16296100]]Select Shelter location[[]]"
+	onaddremove_script="data/cmds/onaddremove_construct_far_from_townhall.vs"
+	checkcost_script="data/cmds/costcheck_default.vs"
+	rollover_script="data/cmds/rollover_default.vs"
+	cost_script="data/cmds/cost_default.vs"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/human_wizardofthebow_onconstruct_shelter.vs"
+	select_building_place_drag_script="data/cmds/building_placing_drag_shelter.vs"
+	execute_for_script=""
+	selecttarget_cursor="hidden"
+	selecttarget_verifyscript="data/cmds/selectverify_wizardofthebow_shelter.vs"
+	selecttarget_cursor_invalid="cantselect"
+	verifier_script="data/cmds/human_wizardofthebow_shelter_verify.vs"
+
+	name="[[16305117]]Sh@elter[[]]"
+	icon="Assets/Interface/Icons/shelter.bmp"
+	button="shelter.bmp"
+	position="11"
+	enabled="0"
+	rollover_param="[[16281058]]Creates a magical dome with #GetClassInt('Human_Shelter','maxhealth')# health that protects your units from attacks, also allowing them to slowly restore their health. Units can freely enter and exit the Shelter.[[]]"
+	param="Human_Shelter"
+	point_command="1"
+	accept_minimap_target="no"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="shelter_get_everyone_out"
+	name="[[16313952]]@Evacuate Shelter[[]]"
+	icon="Assets/Interface/Icons/shelter.bmp"
+	button="evacuate shelter.BMP"
+	position="1"
+	dispatch_type="execute method"
+	dispatch_param="everyone_out"
+	rollover_param="[[29399830]]Makes all units leave the Shelter[[]]"
+>
+	<src obj="Human_Shelter"/>
+</cmd>
+
+<cmd id="shelter_attack"
+	name="[[11225364]]@Attack[[]]"
+	icon="Assets/Interface/Icons/shelter.bmp"
+	button="attack.bmp"
+	position="2"
+	dispatch_type="execute method"
+	dispatch_param="attack"
+	rollover_param="[[29407610]]Orders all units from the Shelter to attack the chosen target[[]]"
+	selecttarget_text="[[16326039]]Select enemy unit or building[[]]"
+>
+	<cmdtext target="Unit"
+	         default-text="[[16331540]]Right-click to order units inside the Shelter to attack this unit[[]]"/>
+	<cmdtext target="Building"
+	         default-text="[[16346682]]Right-click to order units inside the Shelter to attack this building[[]]"/>
+
+	<src obj="Human_Shelter"/>
+</cmd>
+
+<cmd id="ElectrostaticCocoon"
+	name="[[16358930]]Frost S@hield[[]]"
+	button="frost shields.bmp"
+	position="14"
+	enabled="0"
+	rollover_param="[[16360949]]Envelops the Wizard in a shield of frost, which strikes nearby enemies with ice bolts. Each bolt deals #GetClassInt('Human_WizardOfTheBow', 'electrostatic_damage')# damage and stuns the enemy. When the Wizard is hit by melee attack, the Frost Shield is destroyed.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="cocoon"
+	selecttarget_text=""
+	verifier_script="data/cmds/human_wizardofthebow_cocoon_verify.vs"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+<cmd id="Develop_ElectrostaticCocoon"
+	template_cmd="template_develop_hero_level_3"
+	name="[[16377309]]Learn Frost Shiel@d[[]]"
+	button="frost shields.bmp"
+	position="19"
+	toggle_tab="1"
+	rollover_param="[[16360949]]Envelops the Wizard in a shield of frost, which strikes nearby enemies with ice bolts. Each bolt deals #GetClassInt('Human_WizardOfTheBow', 'electrostatic_damage')# damage and stuns the enemy. When the Wizard is hit by melee attack, the Frost Shield is destroyed.[[]]"
+	param="Skill ElectrostaticCocoon, ManaCost 30, MaxMana 45"
+>
+	<src obj="Human_WizardOfTheBow"/>
+</cmd>
+
+</commands>

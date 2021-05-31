@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../entity.xsl"?>
+
+<entity name="Salvation" type="vx/unit" pass_file="">
+<animlayer layer="0" duration="0" sync="1"/>
+<images>
+<image idx="1" file="altar.rle" drawmode="player_color" remaping="none" rows="12" columns="1"/>
+<image idx="2" file="shadow.rle" drawmode="shadow" remaping="none" rows="12" columns="1"/>
+</images>
+<layers>
+<layer idx="1" name="main" image="1" z="1000" offsetx="-111" offsety="-100" sortoffsetx="0" sortoffsety="0"/>
+<layer idx="2" name="shadow" image="2" z="800" offsetx="-111" offsety="-100" sortoffsetx="0" sortoffsety="0"/>
+</layers>
+<states>
+<state idx="1" name="main" anim_idx="17" anim_frame="11"/>
+</states>
+<anims>
+<anim idx="17" name="Special0-Appear" startstate="1" endstate="1" frames="11" duration="1518" default_duration="0" action_time="0" step="0">
+<replace layer="1" image="1" offsetx="-225" offsety="-322" stillframe="0"/>
+<replace layer="2" image="2" offsetx="-225" offsety="-322" stillframe="0"/>
+<frame idx="2" duration="66"/>
+<frame idx="3" duration="66"/>
+<frame idx="4" duration="66"/>
+<frame idx="5" duration="66"/>
+<frame idx="6" duration="66"/>
+<frame idx="7" duration="66"/>
+<frame idx="8" duration="66"/>
+<frame idx="9" duration="66"/>
+<frame idx="10" duration="66"/>
+<frame idx="11" duration="66"/>
+</anim>
+</anims>
+</entity>

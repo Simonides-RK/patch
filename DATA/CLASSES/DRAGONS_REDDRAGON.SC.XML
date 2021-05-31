@@ -1,0 +1,72 @@
+<class id="Dragons_RedDragon" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Dragons_RedDragon/Dragons_RedDragon.ent.xml">
+
+        <method sig="init" vs="data/subai/dragons_reddragon_init.vs"/>
+        <method sig="attack" vs="data/subai/dragons_reddragon_attack.vs"/>
+        <method sig="engage" vs="data/subai/dragons_reddragon_engage.vs"/>
+        <method sig="engage_unit_type" vs="data/subai/dragons_reddragon_engage_unit_type.vs"/>
+        <method sig="fury" vs="data/subai/dragons_reddragon_fury.vs"/>
+        <method sig="group_rejoin" vs="data/subai/dragons_reddragon_group_rejoin.vs"/>
+        <method sig="take_off" vs="data/subai/dragons_takeoff.vs"/>
+        <method sig="stand_position" vs="data/subai/dragons_reddragon_stand_position.vs" onfinish="data/subai/unit_stand_position_onfinish.vs"/>
+        <method sig="rotate" vs="data/subai/dragons_reddragon_rotate.vs"/>
+        <method sig="stun" vs="data/subai/dragon_stun.vs"/>
+		<method sig="behavior" vs="data/subai/dragons_reddragon_behavior.vs"/>
+		<behavior script="data/subai/dragons_reddragon_behavior.vs"/>
+		
+        <static_int flying="1"/>
+        <static_int range="300" min_range="0"/>
+        <static_int fly_range="300"/>
+        <static_int close_range="250"/>
+        <static_int radius="30" selection_radius="50"/>
+        <static_int formation_radius="42" formation_priority="1500"/>
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[4752399]]Dragons[[]]/[[4799500]]Red Dragon[[]]"/>
+        <static_str display_name="[[4799500]]Red Dragon[[]]" display_name_plural="[[4807184]]Red Dragons[[]]"/>
+        <static_int legendary="1"/>
+                           
+        <static_int sight="450"/>
+        <static_int speed="140"/>
+        <static_int maxhealth="1000" initial_damage="180" initial_armor="4"/>
+        <static_str cost="420/12/5"/>
+        <static_str damage_type="explosive"/>
+        <static_str defence_type = "heavy"/>
+        <static_int fire_splash_radius="150"/>
+        <static_str rollover_description="[[4811796]]Red Dragons have a devastating explosive attack that damages multiple enemies. They are very effective at destroying buildings or wiping out hordes of weak units.[[]]"/>
+        <static_str projectile_class="Dragons_RedDragonFire"/>
+        <static_str     projectile_class_building="Dragons_RedDragonFire"/>
+        <static_int     projectile_angle="0"/>
+        <static_int     projectile_dist="90"/>
+        <static_str icon="Assets/Interface/Icons/dragons_firedragon.bmp"/>
+        <static_str     portrait="Assets/Interface/Icons/dragons_reddragon.rle"/>
+        <static_str     skyimage="assets/interface/sky_dragon.bmp"/>
+        <static_int turn_around_radius="180"/>
+        <static_int turn_around_angle="45"/>
+        <static_int selection_height="0"/>
+        <static_int feedback_height="-200"/>
+		
+		<static_int mb_normal="4"/>
+		<static_int mb_burning_wings="5"/>
+		
+		<static_int burning_wings_speed="65"/> <!--percentage -->
+		<static_int burning_wings_atkspeed="30"/> <!--percentage -->
+		<static_int burning_wings_damage="25"/> 
+        
+        <static_str race_str="Race_Dragons"/>
+        
+        <static_int attack_angle="48"/>
+        <static_int attack_time="4000"/>
+        <static_int attack_angle_parts="4"/>
+        <member_int attack_last_time=""/>
+		<member_int is_fury=""/>
+        
+        <static_int fury_size1="800"/>
+        <sounds
+                AnimAttack="Dragon_attack_"
+                AnimDie="assets/sounds/Death/Dragon_Death/Large_Dragon_death.wav"/>
+                
+        <static_int ai_damage_sec="45"/>
+
+        <!-- must be different of walk anim to be able to detect it when the unit dies so it can play the die anim
+        in same direction and with the same veolicity as the movement anim. usually this anim is the same as the 
+        walk one -->
+        <static_int constantly_idle_played="13"/>
+</class>

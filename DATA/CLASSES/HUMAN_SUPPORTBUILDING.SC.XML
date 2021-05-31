@@ -1,0 +1,34 @@
+<class id="Human_SupportBuilding" cpp_class="CVXBuilding" parent="Human_BaseTownBuilding" entity="">
+
+        <method sig="onconstruct" vs="data/subai/basehouse_onconstruct.vs"/>
+        <method sig="init"                vs="data/subai/basehouse_init.vs"/>
+        <method sig="ondie"       vs="data/subai/basehouse_ondie.vs"/>
+        <method sig="onsetplayer" vs="data/subai/basehouse_onsetplayer.vs"/>
+
+<!-- General -->
+        <static_str icon="assets/interface/icons/forester_magichouse.bmp"
+                                portrait="assets/interface/icons/forester_magichouse.rle"
+                                skyimage="assets/interface/sky_forester.bmp"/>
+        <static_str display_name="[[6638023]]House[[]]" display_name_plural="[[6648616]]Houses[[]]"/>
+        <static_int maxhealth="350"/>
+
+<!-- Building and build animation -->
+        <static_int build_time="25000" />
+        <static_int foundation_layer="5"/>
+        <static_str building_spot="Assets/Entities/visuals/Building Spots/spot2.rle"/>
+
+<!-- Build command properties -->
+        <static_str cost="150/0/0"/>
+        <static_str rollover_description="[[6657240]]Provides #GetClassInt('Human_SupportBuilding', 'support_points')# population, increasing the maximum number of units that can be trained.[[]]"/>
+
+<!-- Race specific -->
+        <static_str race_str="Race_Humans"/>
+
+<!-- Others -->
+        <static_int support_points="10"/>
+        <static_str interface="building_special"/>
+
+        <value id="SupportPoints" script="int i; i = .support_points; return '&lt;color 255 255 64&gt;' + Translate('[[4705975]]Population provided:[[]]') + ' &lt;color 255 255 255&gt;' + i;"/>
+        <value id="GloryForNext" script="str s; int c, n; c = ClassPlayerObjs('Forester_Mage_Tower,Human_SupportBuilding', .player, true).GetObjList().count; if ( EnvReadInt(.player, 'Houses_Built') &gt; c ) n = 0; else n = c + 1; if (n &gt; 7) n=7; if (c &gt; 9) n=10; s = '&lt;color 255 255 64&gt;' + Translate('[[5291669]]House glory cost:[[]]') + '&lt;color 255 255 255&gt;';  if ( n &lt; 8 ) s = s + n; else s = s + Translate('[[4150622]]N/A[[]]'); return s;" />
+
+</class>

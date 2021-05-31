@@ -1,0 +1,806 @@
+<items>
+        <!-- Armors -->
+        <item id="light_armor" name="[[24439667]]Light Armour of %s1[[]]" slottype="armor" itemholderclass="SackArmor"
+                type="CommonItem" icon="assets/interface/items/armor_LightArmour.bmp" probability="90">
+                <effect effectid="health" prob="90" />
+                <effect effectid="armor" prob="50" factor="5" />
+                <effect effectid="return_damage" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="33" factor="3"/>
+        </item>
+        <item id="shadow_plates" name="[[24444648]]Shadow Plate of %s1[[]]" slottype="armor" itemholderclass="SackArmor"
+                type="CommonItem" icon="assets/interface/items/armor_ShadowPlates.bmp" probability="10">
+                <effect effectid="armor" prob="90" />
+                <effect effectid="attack_speed" prob="90" />
+                <effect effectid="dodge" prob="50" factor="3" />
+                <effect effectid="return_damage" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="33" factor="3"/>
+        </item>
+        <item id="heavy_armor" name="[[24439667]]Heavy Armour of %s1[[]]" slottype="armor" itemholderclass="SackArmor"
+                type="CommonItem" icon="assets/interface/items/armor_LightArmour.bmp" probability="50">
+                <effect effectid="health" prob="90" />
+                <effect effectid="armor" prob="50" factor="5" />
+                <effect effectid="return_damage" prob="33" factor="3"/>
+        </item>		
+        <!-- Weapons -->
+        <item id="steel sword" name="[[24452668]]Steel Sword of %s1[[]]" slottype="weapon" itemholderclass="SackWeapon"
+                type="CommonItem" icon="assets/interface/items/weapon_Sword1.bmp" probability="90">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="critical_hit" prob="90" />
+                <effect effectid="quad_damage" prob="75" factor="7" />
+                <effect effectid="attack_speed" prob="33" factor="3" />
+        </item>
+        <!-- Helm -->
+        <item id="helm" name="[[24464239]]Great Helm of %s1[[]]" slottype="helm" itemholderclass="SackHelm" type="CommonItem"
+                icon="assets/interface/items/helm_Helm.bmp" probability="90">
+                <effect effectid="armor" prob="90" />
+                <effect effectid="health" prob="90" />
+                <effect effectid="quad_damage" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="50" factor="5" />
+        </item>	<!--	ypsilon: Too big image XD
+        <item id="crown" name="[[244642399]]Crown of %s1[[]]" slottype="helm" itemholderclass="SackHelm" type="CommonItem"
+                icon="assets/interface/items/HELM_CROWN.BMP" probability="25">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="dodge" prob="50" factor="5" />
+                <effect effectid="movement" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="50" factor="5"/>
+                <effect effectid="critical_hit" prob="50" factor="5" />
+        </item>		-->
+        <item id="dazzling_crown" name="[[24464240]]Dazzling Crown of %s1[[]]" slottype="helm" itemholderclass="SackHelm" type="CommonItem"
+                icon="assets/interface/items/HELM_DAZZLINGCROWN.BMP" probability="10">
+                <effect effectid="armor" prob="90" />
+                <effect effectid="dodge" prob="33" factor="3" />
+                <effect effectid="health" prob="50" factor="5" />
+                <effect effectid="return_damage" prob="75" factor="7" />
+                <effect effectid="paralyze" prob="33" factor="3" />
+                <effect effectid="blind" prob="75" factor="7" />
+                <effect effectid="movement" prob="50" factor="5" />
+        </item>		
+        <!-- Powerstone -->
+        <item id="powerstone" name="[[24472367]]Power Stone of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="CommonItem" icon="assets/interface/items/powerstone_FrozenGem.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="critical_hit" prob="90" />
+                <effect effectid="armor" prob="90" />
+                <effect effectid="health" prob="50" factor="5" />
+                <effect effectid="mana_regeneration" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="33" factor="3" />
+                <effect effectid="dodge" prob="33" factor="3" />
+                <effect effectid="energy_burn" prob="33" factor="3" />
+                <effect effectid="exorcism" prob="33" factor="3" />
+                <effect effectid="energy_drain" prob="33" factor="3" />		
+        </item>
+        <!-- Cloak -->
+        <item id="cloak" name="[[24482708]]Cloak of %s1[[]]" slottype="cloak" itemholderclass="SackCloak" type="CommonItem"
+                icon="assets/interface/items/cloak_Cloak.bmp" probability="90">
+                <effect effectid="attack_speed" prob="90" />
+                <effect effectid="movement" prob="90" />
+                <effect effectid="dodge" prob="75" factor="7" />
+                <effect effectid="armor" prob="50" factor="5" />
+                <effect effectid="health" prob="33" factor="3" />
+                <effect effectid="return_damage" prob="33" factor="3" />
+        </item>
+	  <item id="сursed сloak" name="[[24807395]]Cursed Cloak of %s1 [[]]" slottype="cloak" itemholderclass="SackCloak" type="CommonItem"
+				icon="assets/interface/items/cloak_runedrobe.bmp" probability="10">
+                <effect effectid="health" prob="33" factor="3" />
+                <effect effectid="armor" prob="90" />
+                <effect effectid="movement" prob="50" factor="5" />
+                <effect effectid="attack_speed" prob="60" factor="6" />
+                <effect effectid="energy_drain" prob="50" factor="5"/>
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="polymorph_chance" prob="50" factor="5"/>
+        </item>		
+        <!-- Bow -->
+        <item id="Elven_bow" name="[[24493457]]Elven Bow of %s1[[]]" slottype="bow" itemholderclass="SackBow"
+                type="CommonItem" icon="assets/interface/items/bow_ElvenBow.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="attack_speed" prob="75" factor="7" />
+                <effect effectid="poison_strike" prob="75" factor="7" />
+                <effect effectid="quad_damage" prob="75" factor="7" />
+                <effect effectid="paralyze" prob="33" factor="3"/>
+        </item>
+        <!-- Wand -->
+        <item id="magic_wand" name="[[24505937]]Magic Wand of %s1 [[]]" slottype="wand" itemholderclass="SackWand"
+                type="CommonItem" icon="assets/interface/items/wand_BlackStaff.bmp" probability="100">
+                <effect effectid="drain_health" prob="90" />
+                <effect effectid="bonus_attack" prob="75" factor="7" />
+                <effect effectid="blind" prob="50" factor="3" />
+                <effect effectid="exorcism" prob="33" factor="3" />
+                <effect effectid="energy_drain" prob="33" factor="3" />
+                <effect effectid="energy_burn" prob="33" factor="3" />
+        </item>
+        <!-- Ring -->
+        <item id="rusty_ring" name="[[24517770]]Rusty Ring of %s1[[]]" slottype="ring" itemholderclass="SackRing"
+                type="CommonItem" icon="assets/interface/items/ring_RustyRing.bmp" probability="50">
+                <effect effectid="mana_regeneration" prob="90"/>
+                <effect effectid="armor" prob="75" factor="7" />
+                <effect effectid="health" prob="33" factor="3" />
+                <effect effectid="bonus_attack" prob="33" factor="3" />
+                <effect effectid="life_regeneration" prob="33" factor="3"/>
+                <effect effectid="exorcism" prob="33" factor="3" />
+                <effect effectid="energy_drain" prob="33" factor="3" />
+                <effect effectid="movement" prob="20" factor="2" />
+        </item>
+        <item id="silver_ring" name="[[24523402]]Silver Ring of %s1[[]]" slottype="ring" itemholderclass="SackRing"
+                type="CommonItem" icon="assets/interface/items/ring_SilverRing.bmp" probability="50">
+                <effect effectid="mana_regeneration" prob="90" />
+                <effect effectid="armor" prob="75" factor="7" />
+                <effect effectid="health" prob="33" factor="3" />
+                <effect effectid="bonus_attack" prob="33" factor="3" />
+                <effect effectid="life_regeneration" prob="33" factor="3" />
+                <effect effectid="exorcism" prob="33" factor="3" />
+                <effect effectid="energy_drain" prob="33" factor="3" />
+                <effect effectid="movement" prob="20" factor="2" />
+        </item>
+        <!--  Queen Of The Wolves Artefact -->
+        <!-- attack speed, movement, armor, (health), ((attack)) -->
+        <!-- special mind_control_chance -->
+        <item id="wolven_robe" name="[[24539029]]Wolf Robe of %s1[[]]" slottype="cloak" itemholderclass="SackCloak"
+                type="Forester_QueenOfTheWolves" icon="assets/interface/items/cloak_WolfRobe.bmp" probability="50">
+                <effect effectid="attack_speed" prob="90" />
+                <effect effectid="dodge" prob="90" />
+                <effect effectid="armor" prob="75" factor="7" />
+                <effect effectid="movement" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="moon_bonus" prob="25" factor="5"/>
+        </item>
+        <item id="moon_stone" name="[[24546957]]Moon Stone of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Forester_QueenOfTheWolves" icon="assets/interface/items/powerstone_MoonStone.bmp" probability="100">
+                <effect effectid="attack_speed" prob="90" />
+                <effect effectid="armor" prob="90" />
+                <effect effectid="dodge" prob="75" factor="7" />
+                <effect effectid="drain_health" prob="50" factor="5" />
+                <effect effectid="health" prob="50" factor="5" />
+                <effect effectid="movement" prob="50" factor="5" />
+                <effect effectid="critical_hit" prob="50" factor="5" />
+                <effect effectid="bonus_attack" prob="33" factor="3" />
+                <effect effectid="life_regeneration" prob="33" factor="3" />
+                <effect effectid="mana_regeneration" prob="25" factor="2" />
+                <!-- hero skill bonuses -->
+                <effect effectid="moon_bonus" prob="25" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="mind_control_chance" prob="20" factor="2" />
+				<!-- hero heal --> 
+				<effect effectid="Hero_Heal" prob="20" />
+        </item>
+        <item id="forestcrown" name="[[24558574]]Forest Crown of %s1[[]]" slottype="helm" itemholderclass="SackHelm"
+                type="Forester_QueenOfTheWolves" icon="assets/interface/items/helm_ForestCrown.bmp" probability="50">
+                <effect effectid="armor" prob="90" />
+                <effect effectid="dodge" prob="75" factor="7" />
+                <effect effectid="health" prob="50" factor="5" />
+                <effect effectid="quad_damage" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="50" factor="5" />
+                <effect effectid="movement" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="moon_bonus" prob="25" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="mind_control_chance" prob="20" factor="2" />
+        </item>
+        <!-- Stones Seedkeeper Artefact -->
+        <!-- health, return_damage, poison_strike, manna regen, (armor), (manna regen)-->
+        <!-- special paralyze -->
+        <item id="sparkling_stone" name="[[24563968]]Sparkling Stone of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Forester_Stalker" icon="assets/interface/items/powerstone_SparklingStone.bmp" probability="100">
+                <effect effectid="health" prob="75" factor="7" />
+                <effect effectid="return_damage" prob="50" factor="5"/>
+                <effect effectid="poison_strike" prob="50" factor="5"/>
+                <effect effectid="bonus_attack" prob="50" factor="5" />
+                <effect effectid="armor" prob="50" factor="5" />
+                <effect effectid="mana_regeneration" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="reproduction_bonus" prob="50" factor="5"/>
+                <effect effectid="venom_bonus" prob="50" factor="5"/>
+                <effect effectid="thorns_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="paralyze" prob="20" factor="2"/>
+				<!--hero second sight-->
+				<effect effectid="Hero_SecondSight" prob="20" />
+        </item>
+        <item id="wooden_crown" name="[[24576821]]Wooden Crown of %s1[[]]" slottype="helm" itemholderclass="SackHelm"
+                type="Forester_Stalker" icon="assets/interface/items/helm_WoodenCrown.bmp" probability="50">
+                <effect effectid="mana_regeneration" prob="90" />
+                <effect effectid="health" prob="90" />
+                <effect effectid="return_damage" prob="50" factor="5"/>
+                <effect effectid="poison_strike" prob="50" factor="5"/>
+                <effect effectid="armor" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="reproduction_bonus" prob="50" factor="5"/>
+                <effect effectid="venom_bonus" prob="50" factor="5"/>
+                <effect effectid="thorns_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="paralyze" prob="20" factor="2"/>
+        </item>
+        <item id="sparkling_cloak" name="[[24581532]]Sparkling Cloak of %s1[[]]" slottype="cloak" itemholderclass="SackCloak"
+                type="Forester_Stalker" icon="assets/interface/items/cloak_SparklingCloak.bmp" probability="50">
+                <effect effectid="health" prob="75" factor="7"/>
+                <effect effectid="dodge" prob="75" factor="7" />
+                <effect effectid="reproduction_bonus" prob="50" factor="5"/>
+                <effect effectid="return_damage" prob="50" factor="5"/>
+                <effect effectid="armor" prob="50" factor="5" />
+                <effect effectid="return_damage" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="reproduction_bonus" prob="50" factor="5"/>
+                <effect effectid="venom_bonus" prob="50" factor="5"/>
+                <effect effectid="thorns_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="paralyze" prob="20" factor="2"/>
+        </item>
+        <!-- Sharpshooter Artefact -->
+        <!-- attack, movement, manna regen, ((dodge))-->
+        <!-- special mind control -->
+        <item id="precise_bow" name="[[24595779]]Precise Bow of %s1[[]]" slottype="bow" itemholderclass="SackBow"
+                type="Forester_Sharpshooter" icon="assets/interface/items/bow_PreciseBow.bmp" probability="100">
+                <effect effectid="critical_hit" prob="90" />
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="poison_strike" prob="50" factor="5" />
+                <effect effectid="mana_regeneration" prob="50" factor="5"/>
+                <!-- hero skill bonuses -->
+                <effect effectid="aimedshot_bonus" prob="50" factor="5" />
+                <effect effectid="corrosivegas_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="paralyze" prob="20" factor="2"/>
+        </item>
+        <item id="eagle_helm" name="[[24608009]]Eagle Cap of %s1[[]]" slottype="helm" itemholderclass="SackHelm"
+                type="Forester_Sharpshooter" icon="assets/interface/items/helm_EagleHelm.bmp" probability="100">
+                <effect effectid="dodge" prob="90" />
+                <effect effectid="critical_hit" prob="90" />
+                <effect effectid="movement" prob="90" />
+                <effect effectid="mana_regeneration" prob="50" factor="5"/>
+                <effect effectid="armor" prob="33" factor="3" />
+                <effect effectid="health" prob="33" factor="3"/>
+                <!-- hero skill bonuses -->
+                <effect effectid="aimedshot_bonus" prob="50" factor="5" />
+                <effect effectid="corrosivegas_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="paralyze" prob="20" factor="2"/>
+        </item>
+        <item id="talon_stone" name="[[24611392]]Talon of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Forester_Sharpshooter" icon="assets/interface/items/powerstone_TalonStone.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="critical_hit" prob="90" />
+                <effect effectid="dodge" prob="90" />
+                <effect effectid="movement" prob="90" />
+                <effect effectid="mana_regeneration" prob="50" factor="5"/>
+                <effect effectid="armor" prob="33" factor="3" />
+                <effect effectid="health" prob="33" factor="3"/>
+                <!-- hero skill bonuses -->
+                <effect effectid="aimedshot_bonus" prob="50" factor="5" />
+                <effect effectid="corrosivegas_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="paralyze" prob="20" factor="2"/>
+				<!-- hero shcock --> 
+				<effect effectid="Hero_Shock" prob="20" />				
+				
+        </item>
+        <item id="leather_vest" name="[[24625342]]Leather Vest of %s1[[]]" slottype="cloak" itemholderclass="SackCloak"
+                type="Forester_Sharpshooter" icon="assets/interface/items/cloak_LeatherVest.bmp" probability="100">
+                <effect effectid="dodge" prob="90" />
+                <effect effectid="movement" prob="50" factor="5" />
+                <effect effectid="armor" prob="50" factor="5" />
+                <effect effectid="attack_speed" prob="50" factor="5" />
+                <effect effectid="health" prob="33" factor="3"/>
+                <!-- hero skill bonuses -->
+                <effect effectid="aimedshot_bonus" prob="50" factor="5" />
+                <effect effectid="corrosivegas_bonus" prob="50" factor="5" />
+        </item>
+                
+        <!-- Fairy Artefact -->
+        <!-- manna regen, attack, (energy burn), (life regen), (movement), ((dodge))-->
+        <!-- special mind control -->
+        <item id="mind_stone" name="[[24630323]]Mind Stone of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Forester_Fairy" icon="assets/interface/items/powerstone_MindStone.bmp" probability="100">
+                <effect effectid="mana_regeneration" prob="90"/>
+                <effect effectid="bonus_attack" prob="75" factor="7"/>
+                <effect effectid="health" prob="33" factor="3" />
+                <effect effectid="energy_burn" prob="33" factor="3"/>
+                <effect effectid="mana_regeneration" prob="50" factor="5" />
+                <effect effectid="movement" prob="33" factor="3" />
+                <effect effectid="dodge" prob="20" factor="2" />
+                <!-- hero skill bonuses -->
+                <effect effectid="spirits_bonus" prob="50" factor="5"/>
+                <effect effectid="mindcontrol_bonus" prob="50" factor="5"/>
+                <effect effectid="forced_empathy_bonus" prob="50" factor="5"/>
+                <effect effectid="illusion_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="mind_control_chance" prob="20" factor="2" />
+				<!--hero invisibility--> 
+	            <effect effectid="Hero_Invisibility" prob="20" />			
+        </item>
+        <item id="psyonic_ring" name="[[24641307]]Psyonic Ring of %s1[[]]" slottype="ring" itemholderclass="SackRing"
+                type="Forester_Fairy" icon="assets/interface/items/ring_PsyonicRing.bmp" probability="50">
+                <effect effectid="mana_regeneration" prob="90" />
+                <effect effectid="bonus_attack" prob="75" factor="7" />
+                <effect effectid="armor" prob="75" factor="7" />
+                <effect effectid="health" prob="33" factor="3" />
+                <effect effectid="bonus_attack" prob="33" factor="3" />
+                <effect effectid="life_regeneration" prob="33" factor="3" />
+                <effect effectid="exorcism" prob="33" factor="3" />
+                <effect effectid="energy_drain" prob="33" factor="3" />
+                <effect effectid="movement" prob="20" factor="2" />
+                <effect effectid="dodge" prob="20" factor="2" />
+                <!-- hero skill bonuses -->
+                <effect effectid="spirits_bonus" prob="50" factor="5"/>
+                <effect effectid="mindcontrol_bonus" prob="50" factor="5"/>
+                <effect effectid="forced_empathy_bonus" prob="50" factor="5"/>
+                <effect effectid="illusion_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="mind_control_chance" prob="20" factor="2" />
+        </item>
+        <item id="fairy_wand" name="[[24655883]]Fairy Wand of %s1 [[]]" slottype="wand" itemholderclass="SackWand"
+                type="Forester_Fairy" icon="assets/interface/items/wand_FairyWand.bmp" probability="50">
+                <effect effectid="drain_health" prob="90" />
+                <effect effectid="bonus_attack" prob="75" factor="7" />
+                <effect effectid="blind" prob="75" factor="7" />
+                <effect effectid="exorcism" prob="33" factor="3" />
+                <effect effectid="energy_drain" prob="33" factor="3" />
+                <effect effectid="energy_burn" prob="33" factor="3" />
+                <effect effectid="mana_regeneration" prob="33" factor="3"/>
+                <!-- hero skill bonuses -->
+                <effect effectid="spirits_bonus" prob="50" factor="5"/>
+                <effect effectid="mindcontrol_bonus" prob="50" factor="5"/>
+                <effect effectid="forced_empathy_bonus" prob="50" factor="5"/>
+                <effect effectid="illusion_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="mind_control_chance" prob="20" factor="2" />
+        </item>
+        <!-- Wind Rider Artefact -->
+        <!-- critical, dodge, attack, health, (movement)-->
+        <!-- special stun -->
+        <item id="storm_sabre" name="[[24660078]]Storm Sabre of %s1[[]]" slottype="weapon" itemholderclass="SackWeapon"
+                type="Human_WindRider" icon="assets/interface/items/weapon_StormSabre.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="critical_hit" prob="90" />
+                <effect effectid="dodge" prob="50" factor="5" />
+                <effect effectid="attack_speed" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="flank_bonus" prob="50" factor="5"/>
+                <effect effectid="galop_bonus" prob="50" factor="5"/>
+                <effect effectid="loot_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="stun" prob="20" factor="2"/>
+        </item>
+        <item id="golden_armor" name="[[24677711]]Golden Armour of %s1[[]]" slottype="armor" itemholderclass="SackArmor"
+                type="Human_WindRider" icon="assets/interface/items/armor_GoldArmour.bmp" probability="100">
+                <effect effectid="health" prob="90" />
+                <effect effectid="dodge" prob="70" factor="7"/>
+                <effect effectid="movement" prob="50" factor="5" />
+                <effect effectid="armor" prob="50" factor="5"/>
+                <!-- hero skill bonuses -->
+                <effect effectid="flank_bonus" prob="50" factor="5"/>
+                <effect effectid="galop_bonus" prob="50" factor="5"/>
+                <effect effectid="loot_bonus" prob="50" factor="5"/>
+        </item>
+        <item id="winged_crown" name="[[24684503]]Winged Crown of %s1[[]]" slottype="helm" itemholderclass="SackHelm"
+                type="Human_WindRider" icon="assets/interface/items/helm_wingedcrown.bmp" probability="100">
+                <effect effectid="health" prob="90" />
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="dodge" prob="50" factor="5" />
+                <effect effectid="movement" prob="50" factor="5" />
+                <effect effectid="critical_hit" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="flank_bonus" prob="50" factor="5"/>
+                <effect effectid="galop_bonus" prob="50" factor="5"/>
+                <effect effectid="loot_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="stun" prob="20" factor="2"/>
+        </item>
+        <item id="wind_orb" name="[[24698921]]Wind Orb of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Human_WindRider" icon="assets/interface/items/powerstone_WindOrb.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="critical_hit" prob="90" />
+                <effect effectid="health" prob="90" />
+                <effect effectid="armor" prob="50" factor="5" />
+                <effect effectid="attack_speed" prob="33" factor="3" />
+                <effect effectid="dodge" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="flank_bonus" prob="50" factor="5"/>
+                <effect effectid="galop_bonus" prob="50" factor="5"/>
+                <effect effectid="loot_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="stun" prob="20" factor="2"/>
+				<!--hero second sight-->
+				<effect effectid="Hero_SecondSight" prob="20" />				
+				
+        </item>
+        
+        
+        <!-- Battle Angel Artefact -->
+        <!-- health, attack, (armor), (life regen), (movement)-->
+        <!-- special lightning -->
+        <item id="lightning_sword" name="[[24708211]]Lightning Sword of %s1[[]]" slottype="weapon" itemholderclass="SackWeapon"
+                type="Human_BattleAngel" icon="assets/interface/items/weapon_LightningSword.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="critical_hit" prob="90" />
+                <effect effectid="attack_speed" prob="33" factor="3" />
+                <effect effectid="drain_health" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="guardianspirit_bonus" prob="50" factor="5"/>
+                <effect effectid="lightningshield_bonus" prob="50" factor="5"/>
+                <effect effectid="altar_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="lightning" prob="20" factor="2"/>
+        </item>
+        <item id="angelic_armor" name="[[24719900]]Angelic Armour of %s1[[]]" slottype="armor" itemholderclass="SackArmor"
+                type="Human_BattleAngel" icon="assets/interface/items/armor_AngelicArmour.bmp" probability="100">
+                <effect effectid="health" prob="90"/>
+                <effect effectid="armor" prob="90" />
+                <effect effectid="movement" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="50" factor="5"/>
+                <effect effectid="dodge" prob="50" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="guardianspirit_bonus" prob="50" factor="5"/>
+                <effect effectid="lightningshield_bonus" prob="50" factor="5"/>
+                <effect effectid="altar_bonus" prob="50" factor="5"/>
+        </item>
+        <item id="godlike_crown" name="[[24729228]]Battle Crown of %s1[[]]" slottype="helm" itemholderclass="SackHelm"
+                type="Human_BattleAngel" icon="assets/interface/items/helm_BattleCrown.bmp" probability="100">
+                <effect effectid="armor" prob="90" />
+                <effect effectid="health" prob="90" />
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="dodge" prob="50" factor="5" />
+                <effect effectid="movement" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="50" factor="5"/>
+                <effect effectid="critical_hit" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="guardianspirit_bonus" prob="50" factor="5"/>
+                <effect effectid="lightningshield_bonus" prob="50" factor="5"/>
+                <effect effectid="altar_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="lightning" prob="20" factor="2"/>
+        </item>
+        <item id="god_orb" name="[[24735626]]Divine Orb of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Human_BattleAngel" icon="assets/interface/items/powerstone_DivineOrb.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="critical_hit" prob="90" />
+                <effect effectid="armor" prob="90" />
+                <effect effectid="health" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="50" factor="5" />
+                <effect effectid="dodge" prob="33" factor="3" />
+                <effect effectid="exorcism" prob="33" factor="3" />
+                <effect effectid="energy_drain" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="guardianspirit_bonus" prob="50" factor="5"/>
+                <effect effectid="lightningshield_bonus" prob="50" factor="5"/>
+                <effect effectid="altar_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="lightning" prob="20" factor="2"/>
+				<!-- hero heal --> 
+				<effect effectid="Hero_Heal" prob="20" />					
+        </item>
+        <!-- Wizard of The Bow Artefact -->
+        <!-- attack, critical, (armor), (health)-->
+        <!-- movement-->
+        <item id="long_bow" name="[[24747808]]Longbow of %s1[[]]" slottype="bow" itemholderclass="SackBow" type="Human_WizardOfTheBow"
+                icon="assets/interface/items/bow_LongBow.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="attack_speed" prob="75" factor="7" />
+                <effect effectid="quad_damage" prob="75" factor="7" />
+                <effect effectid="paralyze" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="electricity_bonus" prob="50" factor="5"/>
+                <effect effectid="crystal_bonus" prob="50" factor="5"/>
+                <effect effectid="starstorm_bonus" prob="50" factor="5"/>
+        </item>
+        <item id="wizard_robe" name="[[24758061]]Wizard's Robe of %s1[[]]" slottype="cloak" itemholderclass="SackCloak"
+                type="Human_WizardOfTheBow" icon="assets/interface/items/cloak_WizardRobe.bmp" probability="100">
+                <effect effectid="attack_speed" prob="90" />
+                <effect effectid="movement" prob="90" />
+                <effect effectid="dodge" prob="75" factor="7" />
+                <effect effectid="armor" prob="50" factor="5" />
+                <effect effectid="health" prob="33" factor="3" />
+                <effect effectid="life_regeneration" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="electricity_bonus" prob="50" factor="5"/>
+                <effect effectid="crystal_bonus" prob="50" factor="5"/>
+                <effect effectid="starstorm_bonus" prob="50" factor="5"/>
+        </item>
+        <item id="frozen_gem" name="[[24764116]]Frozen Gem of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Human_WizardOfTheBow" icon="assets/interface/items/powerstone_FrozenGem.bmp" probability="100">
+                <effect effectid="attack_speed" prob="90" />
+                <effect effectid="movement" prob="90" />
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="quad_damage" prob="90" />
+                <effect effectid="dodge" prob="33" factor="3" />
+                <effect effectid="energy_burn" prob="33" factor="3" />
+                <effect effectid="life_regeneration" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="electricity_bonus" prob="50" factor="5"/>
+                <effect effectid="crystal_bonus" prob="50" factor="5"/>
+                <effect effectid="starstorm_bonus" prob="50" factor="5"/>
+				<!--hero invisibility--> 
+	            <effect effectid="Hero_Invisibility" prob="20" />				
+        </item>
+        <item id="nordic_cap" name="[[24774109]]Nordic Cap of %s1[[]]" slottype="helm" itemholderclass="SackHelm"
+                type="Human_WizardOfTheBow" icon="assets/interface/items/helm_NordicCap.bmp" probability="10">
+                <effect effectid="attack_speed" prob="90" />
+                <effect effectid="dodge" prob="75" factor="7" />
+                <effect effectid="armor" prob="50" factor="5" />
+                <effect effectid="quad_damage" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="electricity_bonus" prob="50" factor="5"/>
+                <effect effectid="crystal_bonus" prob="50" factor="5"/>
+                <effect effectid="starstorm_bonus" prob="50" factor="5"/>
+        </item>
+        <!-- Learning Stones Queen of Witches Artefact -->
+        <!-- movement, poison_strike, (health), (armor)-->
+        <!-- life regen, health, (attack_speed) -->
+        <!-- special polymorph chance -->
+        <item id="voodoo_rock" name="[[24786913]]Voodoo Rock of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Human_WitchQueen" icon="assets/interface/items/powerstone_VoodooRock.bmp" probability="50">
+                <effect effectid="armor" prob="90" />
+                <effect effectid="poison_strike" prob="75" factor="7" />
+                <effect effectid="mana_regeneration" prob="50" factor="5" />
+                <effect effectid="movement" prob="50" factor="5"/>
+                <effect effectid="dodge" prob="33" factor="3" />
+                <effect effectid="health" prob="33" factor="3" />
+                <effect effectid="attack_speed" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="consume_bonus" prob="50" factor="5"/>
+                <effect effectid="consternation_bonus" prob="50" factor="5"/>
+                <effect effectid="polymorph_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="polymorph_chance" prob="50" factor="5"/>
+				<!--hero illusion--> 				
+                <effect effectid="Hero_Illusion" prob="20"/>				
+        </item>
+        <item id="rusty_witch_ring" name="[[24791540]]Witch Ring of %s1[[]]" slottype="ring" itemholderclass="SackRing"
+                type="Human_WitchQueen" icon="assets/interface/items/ring_WitchRing.bmp" probability="100">
+                <effect effectid="mana_regeneration" prob="90"/>
+                <effect effectid="armor" prob="75" factor="7" />
+                <effect effectid="dodge" prob="50" factor="5" />
+                <effect effectid="health" prob="33" factor="3" />
+                <effect effectid="attack_speed" prob="33" factor="3" />
+                <effect effectid="movement" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="consume_bonus" prob="50" factor="5"/>
+                <effect effectid="consternation_bonus" prob="50" factor="5"/>
+                <effect effectid="polymorph_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="polymorph_chance" prob="50" factor="5"/>
+        </item>
+        <item id="black_wand" name="[[24807394]]Black Wand of %s1 [[]]" slottype="wand" itemholderclass="SackWand"
+                type="Human_WitchQueen" icon="assets/interface/items/wand_BlackStaff.bmp" probability="50">
+                <effect effectid="mana_regeneration" prob="90"/>
+                <effect effectid="drain_health" prob="90" />
+                <effect effectid="attack_speed" prob="50" factor="5" />
+                <effect effectid="bonus_attack" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="consume_bonus" prob="50" factor="5"/>
+                <effect effectid="consternation_bonus" prob="50" factor="5"/>
+                <effect effectid="polymorph_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="polymorph_chance" prob="50" factor="5"/>
+	  </item>
+        <!-- Learning Stones Soulmonger Artefact -->
+        <!-- early gains health, life regen -->
+        <!-- late gains armor, (attack_speed) -->
+        <!-- special vampiric -->
+        <item id="soul_crossbow" name="[[24815000]]Soul Crossbow of %s1[[]]" slottype="bow" itemholderclass="SackBow"
+                type="Darkling_Soulmonger" icon="assets/interface/items/bow_SoulCrossbow.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="75" />
+                <effect effectid="attack_speed" prob="75" factor="7" />
+                <effect effectid="poison_strike" prob="50" factor="5" />
+                <effect effectid="paralyze" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="absorbsoul_bonus" prob="50" factor="5" />
+                <effect effectid="reincarnate_bonus" prob="50" factor="5" />
+                <effect effectid="soullink_bonus" prob="50" factor="5" />
+                <effect effectid="soulnova_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="vampiric_attack" prob="90" />
+        </item>
+        <item id="bone_crown" name="[[24826042]]Bone Crown of %s1[[]]" slottype="helm" itemholderclass="SackHelm"
+                type="Darkling_Soulmonger" icon="assets/interface/items/helm_BoneCrown.bmp" probability="100">
+                <effect effectid="life_regeneration" prob="90" />
+                <effect effectid="health" prob="90" />
+                <effect effectid="return_damage" prob="75" factor="7" />
+                <effect effectid="paralyze" prob="33" factor="3" />
+                <effect effectid="mana_regeneration" prob="33" factor="3"/>
+                <!-- hero skill bonuses -->
+                <effect effectid="absorbsoul_bonus" prob="50" factor="5" />
+                <effect effectid="reincarnate_bonus" prob="50" factor="5" />
+                <effect effectid="soullink_bonus" prob="50" factor="5" />
+                <effect effectid="soulnova_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="vampiric_attack" prob="20" factor="2" />
+        </item>
+        <item id="cursed_rune" name="[[24835360]]Cursed Rune of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Darkling_Soulmonger" icon="assets/interface/items/powerstone_CursedRune.bmp" probability="100">
+                <effect effectid="life_regeneration" prob="90" />
+                <effect effectid="health" prob="90" />
+                <effect effectid="bonus_attack" prob="50" factor="5" />
+                <effect effectid="attack_speed" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="absorbsoul_bonus" prob="50" factor="5" />
+                <effect effectid="reincarnate_bonus" prob="50" factor="5" />
+                <effect effectid="soullink_bonus" prob="50" factor="5" />
+                <effect effectid="soulnova_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="vampiric_attack" prob="20" factor="2" />
+				<!-- hero shcock --> 
+				<effect effectid="Hero_Shock" prob="20" />					
+				
+        </item>
+        <item id="dark_cloak" name="[[24843492]]Flesh Cloak of %s1[[]]" slottype="cloak" itemholderclass="SackCloak"
+                type="Darkling_Soulmonger" icon="assets/interface/items/cloak_FleshRobe.bmp" probability="100">
+                <effect effectid="health" prob="90" />
+                <effect effectid="return_damage" prob="75" factor="7" />
+                <effect effectid="movement" prob="50" factor="5" />
+                <effect effectid="attack_speed" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="absorbsoul_bonus" prob="50" factor="5" />
+                <effect effectid="reincarnate_bonus" prob="50" factor="5" />
+                <effect effectid="soullink_bonus" prob="50" factor="5" />
+                <effect effectid="soulnova_bonus" prob="50" factor="5" />
+        </item>
+        <!-- Learning Stones Night Assasin Artefact -->
+        <!-- early gains dodge, attack, quad_damage, energy burn, (manna regen) -->
+        <!-- late gains attack_speed -->
+        <!-- special attack, vampiric -->
+        <item id="assassin_blade" name="[[24851122]]Assassin's Blade of %s1[[]]" slottype="weapon" itemholderclass="SackWeapon"
+                type="Darkling_NightAssassin" icon="assets/interface/items/weapon_AssasinBlade.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="energy_burn" prob="75" factor="7" />
+                <effect effectid="attack_speed" prob="50" factor="5" />
+                <effect effectid="critical_hit" prob="33" factor="3" />
+                <effect effectid="death_blow" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="shadewalk_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="vampiric_attack" prob="90" />
+        </item>
+        <item id="dark_mask" name="[[24863343]]Dark Mask of %s1[[]]" slottype="helm" itemholderclass="SackHelm"
+                type="Darkling_NightAssassin" icon="assets/interface/items/helm_DarkMask.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="mana_regeneration" prob="50" factor="5" />
+                <effect effectid="armor" prob="90" />
+                <effect effectid="quad_damage" prob="90" />
+                <effect effectid="health" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="shadewalk_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="vampiric_attack" prob="20" factor="2" />
+        </item>
+        <item id="dark_armor" name="[[24871892]]Dark Scale Armour of %s1[[]]" slottype="armor" itemholderclass="SackArmor"
+                type="Darkling_NightAssassin" icon="assets/interface/items/armor_DarkScaleArmour.bmp" probability="100">
+                <effect effectid="armor" prob="90" />
+                <effect effectid="health" prob="50" factor="5" />
+                <effect effectid="dodge" prob="50" factor="5" />
+                <effect effectid="movement" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="shadewalk_bonus" prob="50" factor="5" />
+        </item>
+        <item id="deceased_orb" name="[[24883675]]Cursed Orb of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Darkling_NightAssassin" icon="assets/interface/items/powerstone_DeceasedOrb.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="dodge" prob="50" factor="5" />
+                <effect effectid="health" prob="33" factor="3" />
+                <effect effectid="energy_burn" prob="33" factor="3" />
+                <effect effectid="death_blow" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="shadewalk_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="vampiric_attack" prob="20" factor="2" />
+				<!--hero illusion--> 				
+                <effect effectid="Hero_Illusion" prob="20"/>				
+        </item>
+        <!-- Axemaster -->
+        <!-- health, armor, attack -->
+        <!-- (manna regen), life regen -->
+        <!-- special stun -->
+        <item id="magma_mail_armor" name="[[24895621]]Magma Armour of %s1[[]]" slottype="armor" itemholderclass="SackArmor"
+                type="Darkling_Axemaster" icon="assets/interface/items/armor_MagmaMailArmor.bmp" probability="90">
+                <effect effectid="health" prob="90" />
+                <effect effectid="armor" prob="50" factor="5" />
+                <effect effectid="return_damage" prob="50" factor="5" />
+                <effect effectid="life_regeneration" prob="20" factor="2" />
+                <!-- hero skill bonuses -->
+                <effect effectid="invincibility_bonus" prob="50" factor="5"/>
+                <effect effectid="leap_bonus" prob="50" factor="5"/>
+                <effect effectid="bash_bonus" prob="50" factor="5"/>
+        </item>
+        <item id="heavy_battle_axe" name="[[24909159]]Heavy Battle Axe of %s1[[]]" slottype="weapon" itemholderclass="SackWeapon"
+                type="Darkling_Axemaster" icon="assets/interface/items/weapon_BattleAxe.bmp" probability="90">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="quad_damage" prob="90" />
+                <effect effectid="mana_regeneration" prob="50" factor="5"/>
+                <effect effectid="death_blow" prob="20" factor="2" />
+                <!-- hero skill bonuses -->
+                <effect effectid="invincibility_bonus" prob="50" factor="5"/>
+                <effect effectid="leap_bonus" prob="50" factor="5"/>
+                <effect effectid="bash_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="stun" prob="50" factor="5" />
+        </item>
+        <item id="war_helmet" name="[[24914067]]War Helm of %s1[[]]" slottype="helm" itemholderclass="SackHelm"
+                type="Darkling_Axemaster" icon="assets/interface/items/helm_WarCrown.bmp" probability="10">
+                <effect effectid="life_regeneration" prob="90" />
+                <effect effectid="health" prob="90" />
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="armor" prob="75" factor="7" />
+                <effect effectid="quad_damage" prob="50" factor="5" />
+                <effect effectid="mana_regeneration" prob="50" factor="5" />
+                <!-- hero skill bonuses -->
+                <effect effectid="invincibility_bonus" prob="50" factor="5"/>
+                <effect effectid="leap_bonus" prob="50" factor="5"/>
+                <effect effectid="bash_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="stun" prob="20" factor="2" />
+        </item>
+        <item id="magma_gems" name="[[24928304]]Magma Gem of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Darkling_Axemaster" icon="assets/interface/items/powerstone_MagmaGem.bmp" probability="100">
+                <effect effectid="bonus_attack" prob="90" />
+                <effect effectid="health" prob="90" />
+                <effect effectid="armor" prob="50" factor="5" />
+                <effect effectid="mana_regeneration" prob="50" factor="5" />
+                <effect effectid="attack_speed" prob="50" factor="5" />
+                <effect effectid="vampiric_attack" prob="33" factor="3" />
+                <!-- hero skill bonuses -->
+                <effect effectid="invincibility_bonus" prob="50" factor="5"/>
+                <effect effectid="leap_bonus" prob="50" factor="5"/>
+                <effect effectid="bash_bonus" prob="50" factor="5"/>
+                <!-- hero special -->
+                <effect effectid="stun" prob="20" factor="2" />
+				<!-- hero heal --> 
+				<effect effectid="Hero_Heal" prob="20" />				
+        </item>
+        <!-- Learning Stones Empath -->
+        <!-- mana regeneration, attack, movement, life drain,  (health) -->
+        <!-- life regen -->
+        <!-- special mind control -->
+        <item id="brain_gem" name="[[24936471]]Gemmed Skull of %s1[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="Darkling_Empath" icon="assets/interface/items/powerstone_BrainGem.bmp" probability="50">
+                <effect effectid="armor" prob="90" />
+                <effect effectid="life_drain" prob="50" factor="5" />
+                <effect effectid="mana_regeneration" prob="50" factor="5" />
+                <effect effectid="bonus_attack" prob="50" factor="5" />
+                <effect effectid="movement" prob="50" factor="5"/>
+                <effect effectid="health" prob="50" factor="5"/>
+                <effect effectid="life_regeneration" prob="33" factor="3" />
+                <effect effectid="dodge" prob="33" factor="3" />
+                <effect effectid="energy_burn" prob="20" factor="2" />
+                <effect effectid="exorcism" prob="20" factor="2" />
+                <effect effectid="energy_drain" prob="20" factor="2" />
+                <!-- hero skill bonuses -->
+                <effect effectid="mind_blaze_bonus" prob="50" factor="5" />
+                <effect effectid="divine_journey_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="mind_control_chance" prob="20" factor="2" />
+				<!--hero second sight-->
+				<effect effectid="Hero_SecondSight" prob="20" />					
+        </item>
+        <item id="dazzling_stick" name="[[24940920]]Forked Staff of %s1[[]]" slottype="wand" itemholderclass="SackWand"
+                type="Darkling_Empath" icon="assets/interface/items/wand_BlackStaff.bmp" probability="50">
+                <effect effectid="mana_regeneration" prob="50" factor="5" />
+                <effect effectid="armor" prob="90" />
+                <effect effectid="bonus_attack" prob="75" factor="7" />
+                <effect effectid="life_drain" prob="50" factor="5" />
+                <effect effectid="movement" prob="50" factor="5"/>
+                <!-- hero skill bonuses -->
+                <effect effectid="mind_blaze_bonus" prob="50" factor="5" />
+                <effect effectid="divine_journey_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="mind_control_chance" prob="20" factor="2" />
+        </item>
+        <item id="hypnosis_ring" name="[[24952984]]Hypnotic Ring of %s1[[]]" slottype="ring" itemholderclass="SackRing"
+                type="Darkling_Empath" icon="assets/interface/items/ring_HypnosisRing.bmp" probability="100">
+                <effect effectid="mana_regeneration" prob="50" factor="5" />
+                <effect effectid="armor" prob="75" factor="7" />
+                <effect effectid="bonus_attack" prob="33" factor="3" />
+                <effect effectid="health" prob="33" factor="3" />
+                <effect effectid="life_regeneration" prob="33" factor="3"/>
+                <effect effectid="movement" prob="20" factor="2" />
+                <!-- hero skill bonuses -->
+                <effect effectid="mind_blaze_bonus" prob="50" factor="5" />
+                <effect effectid="divine_journey_bonus" prob="50" factor="5" />
+                <!-- hero special -->
+                <effect effectid="mind_control_chance" prob="20" factor="2" />
+        </item>
+        <item id="lifestone" name="[[24426949]]Lifegem[[]]" slottype="powerstone" itemholderclass="SackPowerstone"
+                type="CommonItem" icon="assets/interface/items/powerstone_lifegem.bmp" probability="5">
+                <effect effectid="regeneration" prob="100" factor="10" />
+				<effect effectid="Hero_Resurrect" prob="100" />
+				<effect effectid="chosenone" prob="100"/>
+		</item>	<!-- --> 		
+</items>

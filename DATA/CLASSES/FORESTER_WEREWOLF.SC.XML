@@ -1,0 +1,65 @@
+﻿<class id="Forester_Werewolf" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Forester_Werewolf/Forester_Werewolf.ent.xml">
+
+        <method sig="doattack" vs="data/subai/forester_werewolf_doattack.vs"/>
+        <method sig="init" vs="data/subai/forester_werewolf_init.vs"/>
+        <method sig="idle" vs="data/subai/forester_werewolf_idle.vs"/>
+        <method sig="ondie" vs="data/subai/forester_werewolf_ondie.vs"/>
+        <method sig="stun" vs="data/subai/forester_werewolf_stun.vs"/>
+        <method sig="turn_small" vs="data/subai/forester_werewolf_turn_small.vs"/>
+        <method sig="turn_big" vs="data/subai/forester_werewolf_turn_big.vs"/>
+        
+        <behavior script="data/subai/forester_werewolf_behavior_state.vs"/>
+        <behavior script="data/subai/forester_werewolf_behavior_add_damage.vs"/>
+        <static_int legendary="0"/>
+        <static_int radius="30" selection_radius="20"/>
+        <static_int formation_radius="32" formation_priority="1000"/>
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5808284]]Werewolf[[]]"/>
+
+        <static_str display_name="[[5808284]]Werewolf[[]]" display_name_plural="[[5813300]]Werewolves[[]]"/>
+
+        <static_int sight="250"/>
+        <static_int speed="120"/>
+
+        <static_int maxhealth="350" initial_damage="45" initial_armor="7"/>
+        <static_str cost="350/7/6"/>
+
+        <static_str damage_type="unarmed"/>
+        <static_str defence_type = "heavy"/>
+
+        <static_str rollover_description="[[5829662]]Werewolves are strong fighters and are very difficult to kill. They can regenerate while idle and cause Open Wounds, preventing enemy units from healing. Can be upgraded to gain health on attack.[[]]"/>
+
+        <static_str icon="Assets/Interface/Icons/werewolf.bmp"
+                                portrait="Assets/Interface/Icons/werewolf.rle"
+                                skyimage="assets/interface/sky_forester.bmp"/>
+                                
+        <static_int regeneration_amount="5"/>
+        <static_int regeneration_time="1000"/>
+        <static_int big_state_idle_time="2000"/>
+        <static_int state_small_max_health="350"/>
+        <static_int state_big_max_health="1450"/>
+        <static_int open_wounds_time="90000"/>
+        <static_int energy_decrease_per_attack="4"/>
+        <static_int max_energy="45"/>
+		<static_int ferocity_armor_bonus="4"/>
+        
+        <static_int unitlist_shrink="50"/> <!-- percentage -->
+        <static_str race_str="Race_Foresters"/>
+        
+        <member_int werewolf_state=""/>
+        <member_int last_regeneration_time=""/>
+        <member_int regeneration_started=""/>
+
+        <!-- AI -->
+        <static_int ai_melee_protection="1"/>
+        <static_int ai_melee_escape_time="5"/>
+        <static_int ai_concentrate_group="1"/>   <!-- general melee damage -->
+        <static_int ai_hyper_protective="1" ai_hyper_protective_coef="40" ai_hyper_protect_bellow_health="250"/>
+        <!-- AI -->
+        
+        <sounds
+                AnimAttack="Werewolf_Attack_"
+                UnitSpecific="Werewolf_specific_"
+                AnimSpecial3="Werewolf_death_"
+                AnimDie="Forester_worker_death_"
+                command="Werewolf0"/>
+</class>

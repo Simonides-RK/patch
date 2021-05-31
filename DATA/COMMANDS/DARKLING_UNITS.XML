@@ -1,0 +1,165 @@
+<commands>
+
+<!-- Ivko: Texts edited, 21.02.2005. Please don't remove this comment! -->
+
+<!-- New command needed in order to change position from Patrol -->
+<cmd id="Soulwatcher_patrol"
+        name="[[11326411]]@Patrol[[]]"
+        button="patrol.bmp"
+        position="4"
+        priority="1"
+        rollover_param="[[12823668]]Patrol to the specified position and back.[[]]"
+        dispatch_type="execute method"
+        dispatch_param="patrol"
+        selecttarget_text="[[11343258]]Select patrol point[[]]"
+>
+        <src obj="Darkling_SoulWatcher"/>
+</cmd>
+
+<cmd id="DarklingTower_SetAttackTarget"
+        name="[[11225364]]@Attack[[]]"
+        dispatch_type="enqueue method"
+        dispatch_param="setattacktarget"
+        button="attack.bmp"
+        position="1"
+        rollover_param="[[11288788]]Attack a target until it is destroyed.[[]]"
+        selecttarget_text="[[12839034]]Select target to attack[[]]"
+        selecttarget_verifyscript="data/cmds/selectverify_enemiesinrange_tower.vs"
+        selecttarget_cursor_invalid="cantselect"
+>
+        <cmdtext target="Unit"
+                default-text="[[11253765]]Right-click to attack this unit[[]]"/>
+  <src obj="Darkling_Tower"/>
+</cmd>
+
+<cmd id="DarkMage_MindTwist"
+  name="[[12842199]]Select Mind @Twist[[]]"
+        button="mind twist.bmp"
+        position="6"
+        enabled="1"
+        rollover_param="[[12853266]]Selects the Mind Twist spell. Affects the minds of lesser animals, dealing #GetClassInt('Darkling_DarkMage', 'mind_twist_damage')# damage per second to mounted units and making them vulnerable to all other attacks.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        modal="1"
+>
+        <src obj="Darkling_DarkMage"/>
+</cmd>
+
+
+<cmd id="DarkMage_RaiseSpirits"
+  name="[[12862492]]Select @Raise Spirits[[]]"
+        button="raise spirith.bmp"
+        position="7"
+        enabled="1"
+        rollover_param="[[12871210]]Selects the Raise Spirits spell. Raises Spirits from the bodies of fallen units.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        requirements="upgrade_RaiseSpirits"
+        modal="1"
+>
+        <src obj="Darkling_DarkMage"/>
+</cmd>
+
+<cmd id="DarkMage_Reveal"
+        name="[[UnholyEye]]Unholy @Eye[[]]"
+        button="darkling_allseeeye.bmp"
+        position="8"
+        enabled="1"
+        rollover_param="[[UnholyEyeDescription]]This unholy eye ability will grant dark mage with the ability to detect invisible units but in a cost of 5 mana per second.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        requirements="upgrade_DarklingLevel1"
+        modal="1"
+>
+        <src obj="Darkling_DarkMage"/>
+</cmd>
+
+
+<cmd id="GoldEssence"
+  name="[[12885720]]@Gold Essence[[]]"
+        button="gold essence.bmp"
+        position="9"
+        enabled="1"
+        rollover_param="[[12891304]]Creates Gold Spirits from a gold deposit. Gold Spirits have a limited lifetime, but provide gold to their controller when killed.[[]]"
+        dispatch_type="execute method"
+        dispatch_param="gold_essence"
+        selecttarget_text="[[12908000]]Select a free gold deposit[[]]"
+        verifier_script="data/cmds/darkling_darkmage_gold_essence_verify.vs"
+>
+        <src obj="Darkling_DarkMage"/>
+</cmd>
+
+<cmd id="darkmage_continue_building"
+        name=""
+        dispatch_type="execute method"
+        dispatch_param="continue_building"
+        requirements="upgrade_DarklingLevel1"
+>
+        <cmdtext target="Building"
+                 default-text="[[11495464]]Right-click to complete this building[[]]"/>
+        <src obj="Darkling_DarkMage"/>
+</cmd>
+
+<cmd id="StoneShaper_Annihilate"
+  name="[[12918653]]Select @Annihilate[[]]"
+        button="annihilate.bmp"
+        position="5"
+        enabled="1"
+        rollover_param="[[12921977]]Selects the Annihilate mode. The Meteors remain near the Stoneshaper and attack enemy units.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/darkling_stoneshaper_unmark_meteors.vs"
+        modal="1"
+>
+        <src obj="Darkling_StoneShaper"/>
+</cmd>
+
+<cmd id="StoneShaper_Devastate"
+  name="[[12935620]]Select @Devastate[[]]"
+        button="devastate.bmp"
+        position="6"
+        enabled="1"
+        rollover_param="[[12943903]]Selects the Devastate mode. The Meteors fly off and explode over enemy units and buildings, dealing #GetClassInt('Darkling_Meteor', 'explosive_damage')# explosive damage.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/darkling_stoneshaper_unmark_meteors.vs"
+        modal="1"
+>
+        <src obj="Darkling_StoneShaper"/>
+</cmd>
+
+<cmd id="StoneShaper_Evacuation"
+  name="[[12951628]]Select @Evacuate[[]]"
+        button="evacuate.bmp"
+        position="7"
+        enabled="1"
+        rollover_param="[[12961461]]Selects the Evacuate mode. The Meteors envelop dying units and teleport them back to your base.[[]]"
+        dispatch_type="run script"
+        dispatch_param="data/cmds/dummy_script.vs"
+        modal="1"
+        requirements="upgrade_Evacuation"
+>
+        <src obj="Darkling_StoneShaper"/>
+</cmd>
+
+<cmd id="UnitRestoration"
+        name="[[17166984]]Rest@oration[[]]"
+        button="darkling_restore.bmp"
+        position="12"
+        rollover_param="[[17177877]]Rebuilds a destroyed colony from the ashes.[[]]"
+        selecttarget_text="[[17188927]]Select a colony to restore[[]]"
+        dispatch_type="execute method"
+        dispatch_param="unitrestoration"
+        selecttarget_verifyscript="return true;"
+        selecttarget_cursor_invalid="cantselect"
+        cost_script="return '2000/60/0/4';"
+        verifier_script="return true;"
+        rollover_script="data/cmds/rollover_default.vs"
+        checkcost_script="data/cmds/costcheck_default.vs"
+        point_command="1"
+        enabled="1"
+        requirements="upgrade_DarklingLevel3"
+> <!--Władysław Ańtian: ATTENTION! Cost is in subai/human_worker_restoration_verify.vs -->
+
+        <src obj="Darkling_DarkMage"/>
+</cmd> 
+
+</commands>

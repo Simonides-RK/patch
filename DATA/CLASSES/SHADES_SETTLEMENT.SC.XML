@@ -1,0 +1,25 @@
+<class id="Shades_Settlement" cpp_class="CVXBuilding" parent="Independent_Settlement" entity="assets/entities/Buildings/Shades_Settlement/Shades_Settlement.ent.xml">
+
+	<method sig="init" vs="data/subai/shades_settlement_init.vs"/>
+
+	<static_int radius="160" selection_radius="180"/>
+
+	<static_str edittree_pos="[[755381]]Structures[[]]/[[7289404]]Shades[[]]/[[7438562]]Shaded Ruins[[]]"/>
+	<static_str display_name="[[7438562]]Shaded Ruins[[]]" display_name_plural="[[7438562]]Shaded Ruins[[]]"/>
+
+	<static_str independent_unit_1="Shades_Bowman" independent_unit_2="Shades_Warrior"/>
+
+	<static_str independent_specials="Soul_Collector, Immortality, Ancient_Executioner"/>
+	<static_str race_str="Race_Shades"/>
+	
+	<static_str portrait="assets/interface/icons/shade ruins.rle"/>
+	<static_str icon="assets/interface/icons/shade ruins.BMP"/>
+	<static_str	skyimage="assets/interface/sky_troll.bmp"/>
+
+	<defaultcmd target="">
+		<cmd name="set_rally"/>
+	</defaultcmd>
+
+	<static_str dying_object_class="Shades_Settlement_Die"/>
+
+</class>

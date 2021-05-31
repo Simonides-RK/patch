@@ -1,0 +1,3 @@
+<class id="Forester_Tradepost_Fake_Building_Queuer" cpp_class="CVXScriptObj" parent="Base_Fake_Building_Queuer" entity="">
+	<method sig="construct" vs="data/subai/forester_tradepost_construct.vs" />
+</class>

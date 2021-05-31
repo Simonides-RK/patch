@@ -1,0 +1,117 @@
+<class id="Forester_Shaman" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Forester_Shaman/Forester_Shaman.ent.xml">
+
+	<method sig="move_cmd"			vs="data/subai/forester_shaman_move_cmd.vs"/>
+	<method sig="attack"			vs="data/subai/forester_shaman_attack.vs" verify="data/subai/forester_shaman_attack_verify.vs" onfinish="data/subai/forester_shaman_attack_onfinish.vs"/>
+	<method sig="engage"			vs="data/subai/forester_shaman_engage.vs"/>
+	<method sig="engage_unit_type"	vs="data/subai/forester_shaman_engage_unit_type.vs" verify="data/subai/forester_shaman_attack_verify.vs"/>
+	<method sig="init"				vs="data/subai/forester_shaman_init.vs"/>
+	<method sig="idle"				vs="data/subai/forester_shaman_idle.vs"/>
+	<method sig="channel"			vs="data/subai/forester_shaman_channel.vs" onfinish="data/subai/forester_shaman_channel_onfinish.vs"/>
+	<method sig="vitalize"			vs="data/subai/forester_shaman_vitalize.vs" onfinish="data/subai/forester_shaman_vitalize_onfinish.vs"/>
+	<method sig="fatigue"			vs="data/subai/forester_shaman_fatigue.vs" onfinish="data/subai/forester_shaman_fatigue_onfinish.vs"/>
+	<method sig="stand_position"	vs="data/subai/forester_shaman_stand_position.vs" onfinish="data/subai/unit_stand_position_onfinish.vs"/>
+	<method sig="advance"			vs="data/subai/forester_shaman_advance.vs"/>
+	<method sig="attack"			vs="data/subai/forester_shaman_advance.vs"/>
+
+	<behavior script="data/subai/forester_shaman_behavior_rangerecalc.vs"/>
+	
+	<value id="DamageType" script="str s; s = .damage_type; if ( .modal_button == .mb_fatigue ) s = 'magic'; else if ( .modal_button == .mb_vitalize ) s = 'none'; return 'assets/interface/weapons/'+ s +'.bmp';" />
+	<value id="DamageName" script="str s; s = .DamageTypeText; if ( .modal_button == .mb_fatigue ) s = '[[5485080]]Fatigue spell[[]]';  else if ( .modal_button == .mb_vitalize ) s = '[[5493663]]Vitalize spell[[]]'; if ( .modal_button == .mb_channeling ) s = '[[5506911]]Channeling spell[[]]'; return Translate(s);" />
+	<value id="DamageTextValue" script="int b; str bd, s; b = .damage; if ( .modal_button == .mb_vitalize ) bd = Translate('[[4150622]]N/A[[]]'); else if ( .modal_button == .mb_fatigue ) bd = Translate('[[]]0-[[]]') + .fatigue_damage; else bd = b; s = '&lt;color 255 255 64&gt;' + Translate('[[4165677]]Damage:[[]]')     + ' &lt;color 255 255 255&gt;' + bd; return s;" />
+	
+	<static_int range="450" min_range="0"/>
+	<static_int radius="20" selection_radius="20"/>
+	<static_int formation_radius="32" formation_priority="500"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5513071]]Shaman[[]]"/>
+	<static_str display_name="[[5513071]]Shaman[[]]" display_name_plural="[[5521188]]Shamans[[]]"/>
+
+	<static_str projectile_class="Forester_ShamanProjectileNormal"/>
+	<static_str	projectile_class_building="Forester_ShamanProjectileNormal"/>
+	<static_int	projectile_angle="11"/>
+	<static_int	projectile_dist="60"/>
+
+	<static_int sight="750"/>
+	<static_int speed="85"/>
+
+	<static_int maxhealth="500" initial_damage="40" initial_armor="2"/>
+
+	<static_str cost="140/4/2"/>
+	<static_int attack_duration="1000"/>
+
+	<static_str damage_type="explosive"/>
+	<static_str defence_type = "medium"/>
+
+	<static_str rollover_description="[[5531320]]Shamans are adept at manipulating magical energies. They can combine their powers for a devastating group long range attack and be upgraded to decrease the energy of enemies or restore the energy of friendly units.[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/Shaman.bmp"
+				portrait="Assets/Interface/Icons/Shaman.rle"
+				skyimage="assets/interface/sky_forester.bmp"/>
+				
+	<static_int max_energy="220"/>
+	<static_int initial_energy="150"/>
+
+	<static_int range_recalc_sleep = "1600"/>
+	<static_int projectile_lifetime="1000"/>
+	<static_int projectile_fadeouttime="600"/>
+
+	<static_int range1_shamans="3"/>
+	<static_int range2_shamans="6"/>
+	<static_int range1="700"/>
+	<static_int range2="850"/>
+	<static_int range3="1000"/>
+	<static_str projectile1="Forester_ShamanProjectileGreen"/>
+	<static_str projectile2="Forester_ShamanProjectileYellow"/>
+	<static_str projectile3="Forester_ShamanProjectileRed"/>
+	<static_str projectile_channel="Forester_ShamanProjectileChannel"/>
+	<static_int close_proximity="300"/>
+	<static_int energize_time="4000"/>
+	<static_int fatigue_damage="55"/>
+
+	<static_int vitalize_delay="1500"/>
+	
+	<static_str race_str="Race_Foresters"/>
+	
+	<static_int energy_vitalize="11"/> <!--Władysław Ańtian: was 3 -->
+	<static_int energy_fatigue="22"/> <!--Władysław Ańtian: was 6 -->
+	
+	<static_int mb_channeling="4"/>
+	<static_int mb_fatigue="5"/>
+	<static_int mb_vitalize="6"/>
+	
+	<member_int shamans_channeling=""/>
+	<member_int shamans_channeled=""/>
+	<member_int attacking=""/>
+	<member_obj unit_attacked=""/>
+	<member_int in_air=""/>
+	<member_int shaman_last_attack_time=""/>	<!-- because shaman doesn't use .Attack(u) method -->
+	<member_int in_attack=""/>
+	<member_int initially_visible=""/>
+	<member_int initially_enemy=""/>
+	<static_int hero_cap_damage="400"/>
+
+	<sounds
+		AnimAttack1="assets/sounds/Special_Fight_Sounds/Shaman/Shaman_single_attack.wav"
+		AnimAttack2="assets/sounds/Special_Fight_Sounds/Shaman/Shaman_channel_energy.wav"
+		AnimSpecial2="assets/sounds/Special_Fight_Sounds/Shaman/Shaman_in_the_air.wav"
+		AnimSpecial3="assets/sounds/Special_Fight_Sounds/Shaman/Shaman _group_attack_1.wav"
+		AnimSpecial4="assets/sounds/Special_Fight_Sounds/Shaman/Shaman _group_attack_2.wav"
+		AnimDie="Ranger_death_"
+		command="Shaman0"/>
+
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="50"/>
+	<static_int ai_shaman="1"/>
+	
+	<static_int ai_fatigue_chance="3" 
+				ai_vitalize_chance="3" 
+				ai_concentrate_chance="1"/>
+	<!-- AI -->
+
+	<defaultcmd target="Unit">
+		<cmd name="attack"/>
+		<cmd name="follow"/>
+	</defaultcmd>
+	
+	<!-- reserved_obj5 stores enemy to follow object -->
+
+</class>

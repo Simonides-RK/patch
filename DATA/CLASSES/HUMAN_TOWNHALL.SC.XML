@@ -1,0 +1,50 @@
+<class id="Human_Townhall" cpp_class="CVXBuilding" parent="BaseTownhall" entity="assets/entities/buildings/Human_Townhall/Human_Townhall.ent.xml">
+
+
+        <method sig="init" vs="data/subai/human_townhall_init.vs" />
+        <method sig="train_hero" vs="data/subai/building_train_hero.vs" />
+
+        <static_int support_points="14"/>
+        <static_int sight="800"/>
+
+<!-- General -->
+        <static_str edittree_pos="[[755381]]Structures[[]]/[[6060392]]Humans[[]]/[[4678596]]Town Hall[[]]"
+                                portrait="assets/interface/icons/human townhall.rle"
+                                skyimage="assets/interface/sky_human.bmp"/>
+        <static_str display_name="[[6720480]]Human Town Hall[[]]" display_name_plural="[[6733654]]Human Town Halls[[]]"/>
+        <static_int radius="150" selection_radius="152"/> 
+        
+        <static_int maxhealth="8000"/>
+        <static_int maxhealthafterlevel1="9000"/>
+        <static_int maxhealthafterlevel2="15000"/>
+        <static_int maxhealthafterlevel3="20000"/>
+		<static_int spiritual_blessing_bonus="20"/> <!-- needed for the spiritual blessing -->
+        
+        <static_str cost="500/0/0"/>    <!-- needed for the repair -->
+        
+<!-- Building and build animation -->
+        <static_str dying_object_class="Human_Townhall_Die"/>
+        
+<!-- Race specific -->
+        <static_str race_str="Race_Humans"/>
+        <static_str rally_object_class="Human_RallyPoint"/>
+<!-- Others -->
+        <static_str firesmoke0="Data/Particles/smoke01.part.xml"/>
+        <static_str interface="queue, building_special, townhall"/>
+        <static_int weaponmarket_speedup="40"/> <!-- percent -->
+
+        <value id="SupportPoints" script="int i; i = .support_points; return '&lt;color 255 255 64&gt;' + Translate('[[4705975]]Population provided:[[]]') + ' &lt;color 255 255 255&gt;' + i;"/>
+        <value id="GloryForNext" script="str s; int c, n; c = ClassPlayerObjs('Forester_Mage_Tower,Human_SupportBuilding', .player, true).GetObjList().count; if ( EnvReadInt(.player, 'Houses_Built') &gt; c ) n = 0; else n = c + 1; if (n &gt; 7) n=7; if (c &gt; 9) n=10; s = '&lt;color 255 255 64&gt;' + Translate('[[5291669]]House glory cost:[[]]') + '&lt;color 255 255 255&gt;';  if ( n &lt; 8 ) s = s + n; else s = s + Translate('[[4150622]]N/A[[]]'); return s;" />
+        <value id="PathToGlory" script="return GetPathToGlory(.player);"/>
+
+        <defaultcmd target="Building">
+                <cmd name="set_rally"/>
+        </defaultcmd>
+        <defaultcmd target="BaseGemsDeposit">
+                <cmd name="set_rally"/>
+        </defaultcmd>
+        <defaultcmd target="">
+                <cmd name="set_rally"/>
+        </defaultcmd>
+
+</class>

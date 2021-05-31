@@ -1,0 +1,429 @@
+<commands>
+
+<!-- Ivko: 21.02.2005. Please don't remove this comment! -->
+
+<cmd id="upgrade_HumanLevel1"
+        template_cmd="template_upgrade"
+        verifier_script="data/cmds/upgrade_verify_townhallupgrade1.vs"
+        param="data/cmds/townhall_upgrade.vs"
+
+        name="[[16703466]]@Iron Working[[]]"
+        rollover_param="[[16713797]]First Human upgrade. \n\n Allows Peasants to construct buildings for resource collection and defence away from the Human Town Hall and allows the training of first level units in your colonies.[[]]"
+        button="human_iron_working.bmp"
+        icon="Assets/Interface/Icons/human_iron_working.bmp"
+        position="4"
+        execdelay="45000"
+        cost_script="return '200/10/0/0';"
+>
+        <src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_HumanLevel2"
+        template_cmd="template_upgrade"
+        verifier_script="data/cmds/upgrade_verify_townhallupgrade2.vs"
+        param="data/cmds/townhall_upgrade.vs"
+
+        name="[[16720640]]Cra@ftsmanship[[]]"
+        rollover_param="[[16736680]]Second Human upgrade. \n\n Enables the development of additional Human units, buildings and upgrades.[[]]"
+        button="human_craftmanship.bmp"
+        icon="Assets/Interface/Icons/human_craftmanship.bmp"
+        position="4"
+        execdelay="120000"
+        cost_script="return '600/20/0/0';"
+        requirements="upgrade_HumanLevel1, Human_Cathedral : 1"
+>
+        <src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_HumanLevel3"
+        template_cmd="template_upgrade"
+        verifier_script="data/cmds/upgrade_verify_townhallupgrade3.vs"
+        param="data/cmds/townhall_upgrade.vs"
+
+        name="[[16742090]]@New Frontiers[[]]"
+        rollover_param="[[16758566]]Third Human upgrade. \n\n Allows the training of second level units in your colonies and enables the development of additional Human units, buildings and upgrades.[[]]"
+        button="human_new_frontiers.bmp"
+        icon="Assets/Interface/Icons/human_new_frontiers.bmp"
+        position="4"
+        execdelay="180000"
+        cost_script="return '900/30/0/0';"
+        requirements="upgrade_HumanLevel2"
+>
+        <src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="upgrade_Human_Barracks"
+        template_cmd="template_building_upgrade"
+
+        name="[[16769223]]@Upgrade to Archery Range[[]]"
+        rollover_param="[[16774823]]Allows the training of Longbowmen. Longbowmen are versatile ranged units, which can be upgraded to have a very long range and inflict additional damage to buildings.[[]]"
+        button="archery range.BMP"
+        icon="Assets/Interface/Icons/archery range.BMP"
+        position="2"
+        execdelay="45000"
+        cost_script="return '135/2/0/0';"
+        requirements="upgrade_HumanLevel1"
+>
+        <src obj="Human_Barracks"/>
+</cmd>
+
+<cmd id="upgrade_Militia"
+        template_cmd="template_upgrade"
+        name="[[16782459]]@Militia[[]]"
+        rollover_param="[[16792141]]Improves the Pikemen's training to fight in town, tripling their damage when near friendly buildings.[[]]"
+        button="human_militia.bmp"
+        icon="Assets/Interface/Icons/human_militia.bmp"
+        position="9"
+        execdelay="20000"
+cost_script="return  '100/0/0/0';"
+disableifdisabled="train_Pikeman"
+>
+        <src obj="Human_Barracks"/>
+</cmd>
+
+
+<cmd id="upgrade_ReinforcedArrows"
+        template_cmd="template_upgrade"
+        name="[[16822183]]Pre@cision[[]]"
+        rollover_param="[[16839556]]Increases Longbowmen damage by #GetClassInt('Human_Longbowman', 'reinfarrows_bonus')#.[[]]"
+        button="reinforced arrows.BMP"
+        icon="Assets/Interface/Icons/reinforced arrows.BMP"
+        position="11"
+        execdelay="60000"
+        cost_script="return '170/3/0';"
+        param="data/cmds/human_reinforcedarrows.vs"
+        requirements="Human_BarracksUpgrade : local, upgrade_HumanLevel2"
+        disableifdisabled="train_Longbowman"
+>
+        <src obj="Human_Barracks"/>
+</cmd>
+
+<cmd id="upgrade_ExplosiveArrows"
+        template_cmd="template_upgrade"
+        name="[[16842332]]@Explosive Arrows[[]]"
+        rollover_param="[[16853093]]Enables Longbowmen to deal 1-#GetClassInt('Human_Longbowman', 'explosivearrow_damage_max')# additional damage to buildings.[[]]"
+        button="human_explosive_arrows.bmp"
+        icon="Assets/Interface/Icons/human_explosive_arrows.bmp"
+        position="12"
+        execdelay="60000"
+        cost_script="return '270/4/0/0';"
+        param="data/cmds/human_explosivearrows.vs"
+        requirements="upgrade_HumanLevel3,Human_BarracksUpgrade : 1"
+        disableifdisabled="train_Longbowman"
+> 
+        <src obj="Human_Barracks"/>
+</cmd>
+
+<cmd id="upgrade_Swordsman_Stamina"
+        template_cmd="template_upgrade"
+        name="[[16868063]]Swordsman S@tamina[[]]"
+        rollover_param="[[16877142]]Increases the movement and attack speed of Swordsmen by #GetClassInt('Human_Swordsman', 'stamina_speed_bonus')#%.[[]]"
+        button="human_swordsman_stamina.bmp"
+        icon="Assets/Interface/Icons/human_swordsman_stamina.bmp"
+        position="10"
+        execdelay="30000"
+        cost_script="return '350/0/0/0';"
+        param="data/cmds/human_swordsman_stamina.vs"
+        disableifdisabled="train_Swordsman"
+        requirements="Human_Barracks"
+>
+        <src obj="Human_Blacksmith"/>
+</cmd>
+
+<cmd id="upgrade_ReinforcedSpears"
+        template_cmd="template_upgrade"
+        name="[[16883346]]@Reinforced Pikes[[]]"
+        rollover_param="[[16894973]]Increases the Pikemen's damage against mounted units by #GetClassInt('Human_Pikeman', 'reinforced_spear_damage')#.[[]]"
+        button="reinforced spears.bmp"
+        icon="Assets/Interface/Icons/reinforced spears.bmp"
+        position="8"
+        execdelay="30000"
+        cost_script="return '140/0/0/0';"
+        param="data/cmds/human_pikeman_reinfspears.vs"
+        disableifdisabled="train_Pikeman"
+        requirements="Human_Barracks"
+>
+        <src obj="Human_Blacksmith"/>
+</cmd>
+
+<cmd id="upgrade_CompositeLongbows"
+        template_cmd="template_upgrade"
+        name="[[16901969]]@Composite Longbows[[]]"
+        rollover_param="[[16914314]]Doubles the Longbowmen's range.[[]]"
+        button="human_composite_longbow.bmp"
+        icon="Assets/Interface/Icons/human_composite_longbow.bmp"
+        position="9"
+        execdelay="30000"
+        cost_script="return '120/4/0/0';"
+        param="data/cmds/human_complongbows.vs"
+        requirements="upgrade_HumanLevel2,Human_BarracksUpgrade : 1"
+        disableifdisabled="train_Longbowman"
+>
+        <src obj="Human_Blacksmith"/>
+</cmd>
+
+
+<cmd id="upgrade_Cavalry_AdvArmor"
+        template_cmd="template_upgrade"
+        name="[[16928744]]@Boiled Leather[[]]"
+        rollover_param="[[16931516]]Increases the speed of your cavalry units by 20% and their health by #GetClassInt('Human_Cavalry','adv_armor_health_bonus')#.[[]]"
+        button="human_boilet_leather.bmp"
+        icon="Assets/Interface/Icons/human_boilet_leather.bmp"
+        position="11"
+        execdelay="30000"
+        cost_script="return '450/6/0/0';"
+        param="data/cmds/human_cavalry_advarmor.vs"
+        requirements="Human_Stable"
+>
+        <src obj="Human_Blacksmith"/>
+</cmd>
+
+
+<cmd id="upgrade_Human_Cathedral"
+        template_cmd="template_building_upgrade"
+
+        name="[[16947886]]@Upgrade to Cathedral of the Sun[[]]"
+        rollover_param="[[16953139]]Allows the training of Paladins. Paladins are powerful warriors, best suited to lead an army of smaller units.[[]]"
+        button="cathedral.bmp"
+        icon="Assets/Interface/Icons/cathedral.BMP"
+        position="2"
+        execdelay="60000"
+        cost_script="return '430/6/0/0';"
+        requirements="upgrade_HumanLevel2"
+>
+        <src obj="Human_Cathedral"/>
+</cmd>
+
+<cmd id="upgrade_LifeSteal"
+        template_cmd="template_upgrade"
+        name="[[16961210]]@Life Steal[[]]"
+        rollover_param="[[16974945]]Enables Monks to steal life energy from enemy units and transfer it to nearby friendly units in Light armour.[[]]"
+        button="human_life_steal.bmp"
+        icon="Assets/Interface/Icons/human_life_steal.bmp"
+        position="7"
+        execdelay="60000"
+        cost_script="return '250/0/0/0';"
+        param="data/cmds/human_monk_lifesteal.vs"
+        disableifdisabled="train_Monk"
+        requirements="upgrade_HumanLevel2">
+>
+        <src obj="Human_Cathedral"/>
+</cmd>
+
+<cmd id="upgrade_Leadership"
+        template_cmd="template_upgrade"
+        name="[[16986070]]@Leadership[[]]"
+        rollover_param="[[16997777]]Allows Paladins to increase the damage of nearby allied warriors by #GetClassInt('Human_Paladin', 'leadership_percent')#% each time the Paladin kills an enemy.[[]]"
+        button="human_leadership.bmp"
+        icon="Assets/Interface/Icons/human_leadership.bmp"
+        position="10"
+        execdelay="60000"
+        cost_script="return '315/4/0/0';"
+        requirements="Human_CathedralUpgrade : local"
+        disableifdisabled="train_Paladin"
+>
+        <src obj="Human_Cathedral"/>
+</cmd>
+
+
+<cmd id="upgrade_Weaken"
+        template_cmd="template_upgrade"
+        name="[[17009470]]@Weakness[[]]"
+        rollover_param="[[17012452]]Renders cursed units incapable of defending themselves, making their armour value negative.In additional making both witch and the shadow mistress stronger.[[]]"
+        button="human_weakness.bmp"
+        icon="Assets/Interface/Icons/human_weakness.bmp"
+        position="9"
+        param="data/cmds/human_upgrade_Weaken.vs"
+        execdelay="60000"
+        cost_script="return '300/17/0/0';"
+        requirements="upgrade_HumanLevel3"
+        disableifdisabled="train_Witch"
+>
+        <src obj="Human_WitchHut"/>
+</cmd>
+
+<cmd id="upgrade_DeathBlow"
+        template_cmd="template_upgrade"
+        name="[[11913412]]@Death Blow[[]]"
+        rollover_param="[[17024042]]Enables Paladins to use a special attack that instantly kills any enemy with less than #GetClassInt('Human_Paladin', 'death_blow_health_percent')#% health.[[]]"
+        button="human_death_blow.bmp"
+        icon="Assets/Interface/Icons/human_death_blow.bmp"
+        position="11"
+        execdelay="45000"
+        cost_script="return '300/4/0/0';"
+        requirements="Human_CathedralUpgrade:local, upgrade_HumanLevel3"
+        disableifdisabled="train_Paladin"
+>
+        <src obj="Human_Cathedral"/>
+</cmd>
+
+
+<cmd id="upgrade_Exorcism"
+        template_cmd="template_upgrade"
+        name="[[17039503]]@Exorcism[[]]"
+        rollover_param="[[17040330]]Provides Oracles with a spell that deals #GetClassInt('Human_Oracle','exorcism_damage')# area damage to summoned units and illusions.[[]]"
+        button="human_excorsism.bmp"
+        icon="Assets/Interface/Icons/human_excorsism.bmp"
+        position="8"
+        execdelay="45000"
+        cost_script="return '150/5/0/0';"
+        param="data/cmds/human_oracle_exorcism.vs"
+        requirements="upgrade_HumanLevel1"
+        disableifdisabled="train_Monk"
+>
+        <src obj="Human_Cathedral"/>
+</cmd>
+
+<cmd id="upgrade_HolyShield"
+        template_cmd="template_upgrade"
+        name="[[17051286]]@Holy Armour[[]]"
+        rollover_param="[[holyarmour]]Provides Oracles with the Holy Armour spell, which doesn't allow a unit to receive more than #GetClassInt('Human_Oracle', 'holyshield_damagemax')# damage per hit.[[]]"
+        button="holy shield.bmp"
+        icon="Assets/Interface/Icons/holy shield.bmp"
+        position="9"
+        execdelay="45000"
+        cost_script="return '240/8/0/0';"
+        param="data/cmds/human_oracle_holyshield.vs"
+        disableifdisabled="train_Monk"
+        requirements="upgrade_HumanLevel2"
+>
+        <src obj="Human_Cathedral"/>
+</cmd>
+
+<cmd id="upgrade_CavalryStealth"
+        template_cmd="template_upgrade"
+        name="[[17061738]]@Stealth[[]]"
+        rollover_param="[[17074851]]Allows Squires to move in complete silence, making them invisible for enemies until they attack.[[]]"
+        button="Stealth.bmp"
+        icon="Assets/Interface/Icons/stealth.bmp"
+        position="9"
+        execdelay="30000"
+        cost_script="return '300/3/0/0';"
+        param="data/cmds/human_cavalry_stealth.vs"
+        disableifdisabled="train_Cavalry"
+>
+        <src obj="Human_Stable"/>
+</cmd>
+
+<cmd id="upgrade_HeavyCavalry_AdvArmor"
+        template_cmd="template_upgrade"
+        name="[[17088778]]@Heavy Horse Armour[[]]"
+        rollover_param="[[17090275]]Allows the training of Knights.[[]]"
+        button="human_heavy_horse_armor.bmp"
+        icon="Assets/Interface/Icons/human_heavy_horse_armor.bmp"
+        position="10"
+        execdelay="60000"
+        cost_script="return '550/10/0/0';"
+        requirements="upgrade_HumanLevel3"
+        disableifdisabled="train_HeavyCavalry"
+>
+        <src obj="Human_Stable"/>
+</cmd>
+
+<cmd id="upgrade_HumanTowerSentry"
+        template_cmd="template_upgrade_local"
+        name="[[17101423]]@Sentry Tower[[]]"
+        button="sentry tower.bmp"
+        icon="Assets/Interface/Icons/sentry tower.bmp"
+        position="2"
+        execdelay="30000"
+        param="data/cmds/human_towersentry.vs"
+        cost_script="return '75/0/0/0';"
+        rollover_param="[[17119511]]Enables the Tower to reveal all invisible units in its sight.[[]]"
+>
+        <src obj="Human_Tower"/>
+</cmd>
+
+<cmd id="upgrade_WeaponMarkets"
+        template_cmd="template_upgrade"
+
+        name="[[17128894]]@Weapon Markets[[]]"
+        rollover_param="[[17135534]]Decreases the training time of units trained in your colonies by #GetClassInt('Human_Townhall', 'weaponmarket_speedup')#%.[[]]"
+        button="weapon market.bmp"
+        icon="Assets/Interface/Icons/weapon market.bmp"
+        position="7"
+        execdelay="60000"
+        cost_script="return '370/8/0/0';"
+        requirements="upgrade_HumanLevel3"
+>
+        <src obj="Human_Blacksmith"/>
+</cmd>
+
+<cmd id="upgrade_ChampionsEquipment"
+        template_cmd="template_upgrade"
+        param="data/cmds/human_ChampionsEquipment.vs"
+
+        name="[[17143614]]@Champion's Equipment[[]]"
+        rollover_param="[[17158222]]Equips each of your Champions, including the ones not yet hired, with a new item of fine quality.[[]]"
+        button="champions equipment.bmp"
+        icon="Assets/Interface/Icons/champions equipment.bmp"
+        position="6"
+        execdelay="60000"
+        cost_script="return '400/6/0/0';"
+>
+        <src obj="Human_Blacksmith"/>
+</cmd>
+
+<cmd id="upgrade_SpiritualBlessing"
+        template_cmd="template_upgrade"
+        param="DATA/CMDS/HUMAN_SPIRITUALBLESSING.VS"
+        name="[[SpiritualBlessing]]Health Potion@s[[]]"
+        rollover_param="[[SpiritualBlessing1]]Increases the health of all human units by #GetClassInt(&apos;Human_Townhall&apos;, &apos;spiritual_blessing_bonus&apos;)#%.[[]]"
+        button="SpiritualBlessing.bmp"
+        icon="Assets/Interface/Icons/SpiritualBlessing.bmp"
+        position="12"
+        execdelay="80000"
+        cost_script="return '800/12/0/0';" 
+        requirements="upgrade_HumanLevel3"
+>
+        <src obj="Human_Blacksmith"/>
+</cmd>                                        <!-- ypsilon: at 1.40 - It was 600 gold -->
+
+<cmd id="upgrade_GoldenShield"
+        template_cmd="template_upgrade"
+        name="[[16805527]]@Golden Armour[[]]"
+        verifier_script="data/cmds/upgrade_verify_GoldenShield.vs"
+        rollover_param="[[168193472]]Reduces the damage infantry and cavalry receive from ranged attacks by  #GetClassInt('Human_Swordsman', 'goldenshield_damage_reduction')#%.[[]]"
+        button="HUMAN_GOLDEN_SHIELDS.BMP"
+        icon="Assets/Interface/Icons/HUMAN_GOLDEN_SHIELDS.BMP"
+        position="10"
+        execdelay="60000"
+        cost_script="return '650/6/0/0';"
+        param="data/cmds/human_goldenshield.vs"
+        requirements="upgrade_HumanLevel3"
+        disableifdisabled="train_Pikeman"
+>
+        <src obj="Human_Barracks"/>
+</cmd> 											<!--ypsilon: 1.40 - It was 800/10 -->
+
+<cmd id="upgrade_GoldenShieldPikeman"
+        template_cmd="template_upgrade"
+        verifier_script="data/cmds/upgrade_verify_GoldenShield.vs"
+        name="[[16805526]]@Golden Shield[[]]"
+        rollover_param="[[168193472x]]Reduces the damage Pikemen receive from ranged attacks by #GetClassInt('Human_Pikeman', 'goldenshield_damage_reduction')#%.[[]]"
+        button="human_goldenshields.bmp"
+        icon="Assets/Interface/Icons/human_golden_shield.bmp"
+        position="10"
+        execdelay="60000"
+        cost_script="return '300/0/0/0';"
+        param="data/cmds/human_pikeman_goldenshield.vs"
+        disableifdisabled="train_Pikeman"
+>
+        <src obj="Human_Barracks"/>
+</cmd>
+
+<cmd id="upgrade_PaladinArmor"
+        template_cmd="template_upgrade"
+        name="[[ArmoredArms]]@Inquisitor's Way[[]]"
+        rollover_param="[[ArmoredArms1]]Gives your Paladins two abilities to use: &quot;Wisdom of the Oracle&quot; and &quot;Wrath of the Inquisitor&quot;. &quot;Wisdom of the Oracle&quot; allows the Paladins to accumulate the energy required to activate the &quot;Wrath of the Inquisitor&quot;. &quot;Wrath&quot;, adds an aura that damages nearby enemies and grants the ability to reveal invisible units[[]]"
+        button="human_wrath_of_the_inquisitor.bmp"
+        icon="assets/interface/human_wrath_of_the_inquisitor_m.bmp"
+        position="12"
+        execdelay="90000"
+        cost_script="return '620/6/0/0';"
+        requirements="Human_CathedralUpgrade:local, upgrade_HumanLevel3"
+        disableifdisabled="train_Paladin"
+>
+        <src obj="Human_Cathedral"/>
+</cmd>																		<!--ypsilon: 1.40 - It was 600/4 -->
+</commands>

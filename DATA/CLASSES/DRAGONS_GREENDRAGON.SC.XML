@@ -1,0 +1,59 @@
+<class id="Dragons_GreenDragon" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Dragons_GreenDragon/Dragons_GreenDragon.ent.xml">
+
+	<method sig="take_off" vs="data/subai/dragons_takeoff.vs"/>
+	<method sig="stun" vs="data/subai/dragon_stun.vs"/>
+
+	<static_int flying="1"/>
+	<static_int idle_anim_percent="0"/>
+
+	<static_int range="340" min_range="2"/>
+	<static_int radius="40" selection_radius="40"/>
+	<static_int formation_radius="42" formation_priority="1500"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[4752399]]Dragons[[]]/[[4767163]]Wyrm[[]]"/>
+
+	<static_str display_name="[[4767163]]Wyrm[[]]" display_name_plural="[[4777326]]Wyrms[[]]"/>
+
+	<static_int sight="450"/>
+	<static_int speed="250"/>
+
+	<static_int maxhealth="300" initial_damage="14" initial_armor="0"/>
+	<static_str cost="220/0/3"/>
+
+	
+	<static_str damage_type="magic"/>
+	<static_str defence_type = "heavy"/>
+
+	<static_str rollover_description="[[4789783]]Wyrms attack their enemies with paralyzing venom, rendering their targets incapable of attacking.[[]]"/>
+
+	<static_int	projectile_angle="0"/>
+	<static_int	projectile_dist="60"/>
+	
+	<static_int selection_height="115"/>
+	
+	<static_int acid_vulnerabilty_increase="30"/> <!--percentage -->
+	<static_int acid_duration="3000"/>
+	
+	<static_str projectile_class="Dragons_GreenDragonFire"/>
+	<static_str	projectile_class_building="Dragons_GreenDragonFire"/>
+	
+	<static_str icon="Assets/Interface/Icons/dragons_poisondragon.bmp"/>
+	<static_str	portrait="Assets/Interface/Icons/dragons_poisondragon.rle"/>
+	<static_str	skyimage="assets/interface/sky_dragon.bmp"/>
+	
+	<static_str race_str="Race_Dragons"/>
+		
+	<static_int rotation_time="3000"/>
+	<sounds
+		AnimAttack="Green_Dragon_Attack"
+		AnimDie="assets/sounds/Death/Dragon_Death/Small_dragon_Death.wav"/>
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="60"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+	<!-- AI -->
+			
+	<!-- must be different of walk anim to be able to detect it when the unit dies so it can play the die anim
+	in same direction and with the same veolicity as the movement anim. usually this anim is the same as the 
+	walk one -->
+	<static_int constantly_idle_played="13"/>
+</class>

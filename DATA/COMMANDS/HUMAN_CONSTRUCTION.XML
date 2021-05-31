@@ -1,0 +1,187 @@
+<commands>
+
+<!-- Ivko: Texts edited, 10.03.2005. Please don't remove this comment! -->
+
+<cmd id="construct_human_house"
+	template_cmd="template_construct"
+	name="[[15311244]]Construct @House[[]]"
+	button="house 1.BMP"
+	position="5"
+	param="Human_House"
+	cost_script="data/cmds/cost_house.vs"
+	onaddremove_script="data/cmds/onaddremove_construct_house.vs"
+	verifier_script="data/cmds/house_verify.vs"
+	rollover_param=""
+	shared_position = "1"
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="construct_human_house2"
+	template_cmd="template_construct"
+	name="[[15311244]]Construct @House[[]]"
+	button="house 2.BMP"
+	position="5"
+	param="Human_House1"
+	cost_script="data/cmds/cost_house.vs"
+	onaddremove_script="data/cmds/onaddremove_construct_house.vs"
+	verifier_script="data/cmds/house_verify.vs"
+	rollover_param=""
+	shared_position = "1"
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="construct_independent_human_trade_post"
+	template_cmd="template_construct_with_worker"
+	name="[[15328790]]Construct Trade @Post[[]]"
+	icon="Assets/Interface/Icons/trade post.BMP"
+	button="trade post.BMP"
+	position="5"
+	rollover_param=""
+	param="Human_TradePost"
+	requirements="upgrade_HumanLevel1"
+>
+	<src obj="Human_Worker"/>
+</cmd>
+
+<cmd id="construct_independent_human_tower"
+	template_cmd="template_construct_with_worker"
+	name="[[15339549]]Construct Guard @Tower[[]]"
+	icon="Assets/Interface/Icons/tower.BMP"
+	button="tower.BMP"
+	position="6"
+	verifier_script="data/cmds/tower_verify.vs"
+	rollover_param=""
+	param="Human_Tower"
+	requirements="upgrade_HumanLevel1"
+>
+	<src obj="Human_Worker"/>
+</cmd>
+
+<cmd id="construct_independent_human_goldmine"
+	template_cmd="template_construct_with_worker"
+	name="[[15349887]]Construct @Gold Mine[[]]"
+	icon="Assets/Interface/Icons/gold mine.BMP"
+	button="gold mine.BMP"
+	position="7"
+	rollover_param=""
+	param="Human_GoldMine"
+	select_building_place_drag_script="data/cmds/building_placing_drag_human_gold_mine.vs"
+	requirements="upgrade_HumanLevel1"
+>
+	<src obj="Human_Worker"/>
+</cmd>
+
+<cmd id="construct_human_barracks"
+	template_cmd="template_construct"
+	name="[[15354422]]Construct @Barracks[[]]"
+	button="barracks.BMP"
+	position="8"
+	rollover_param=""
+	param="Human_Barracks"
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="construct_human_church"
+	template_cmd="template_construct"
+	name="[[15367478]]Construct Ch@urch[[]]"
+	button="church.BMP"
+	position="9"
+	rollover_param=""
+	param="Human_Cathedral"
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="construct_human_stable"
+	template_cmd="template_construct"
+	name="[[15376067]]Construct @Stable[[]]"
+	button="stable.BMP"
+	position="10"
+	rollover_param=""
+	param="Human_Stable"
+	requirements="upgrade_HumanLevel1"	
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="construct_human_blacksmith"
+	template_cmd="template_construct"
+	name="[[15387402]]Construct Advanced W@eaponry[[]]"
+	button="blacksmith.BMP"
+	position="11"
+	rollover_param=""
+	param="Human_Blacksmith"
+	requirements="upgrade_HumanLevel2"
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="construct_human_witchhut"
+	template_cmd="template_construct"
+	name="[[15394379]]Construct Academy of @Occult Arts[[]]"
+	button="which house.BMP"
+	position="12"
+	rollover_param=""
+	param="Human_WitchHut"
+	requirements="upgrade_HumanLevel3"
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="construct_human_tower"
+	template_cmd="template_construct"
+	name="[[15339549]]Construct Guard @Tower[[]]"
+	button="tower.BMP"
+	position="6"
+	verifier_script="data/cmds/tower_verify.vs"
+	rollover_param=""
+	param="Human_Tower"
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="construct_human_gold_mine"
+	template_cmd="template_construct"
+	name="[[15400143]]Construct @Gold Mine[[]]"
+	button="gold mine.BMP"
+	position="7"
+	rollover_param=""
+	param="Human_GoldMine"
+	select_building_place_drag_script="data/cmds/building_placing_drag_human_gold_mine.vs"
+	requirements=""
+>
+	<src obj="Human_Townhall"/>
+</cmd>
+
+<cmd id="construct_human_tower_tradepost"
+	template_cmd="template_construct"
+	execute_for_script="return .human_tradepost_fake_queuer;"
+	name="[[15339549]]Construct Guard @Tower[[]]"
+	button="tower.BMP"
+	position="5"
+	verifier_script="data/cmds/tower_verify.vs"
+	rollover_param=""
+	param="Human_Tower"
+	select_building_place_drag_script="data/cmds/BUILDING_PLACING_DRAG_TOWER.vs"
+>
+	<src obj="Human_TradePost"/>
+</cmd>
+
+<cmd id="construct_human_gold_mine_tradepost"
+	template_cmd="template_construct"
+	execute_for_script="return .human_tradepost_fake_queuer;"
+	name="[[15400143]]Construct @Gold Mine[[]]"
+	button="gold mine.BMP"
+	position="7"
+	rollover_param=""
+	param="Human_GoldMine"
+	select_building_place_drag_script="data/cmds/building_placing_drag_human_gold_mine.vs"
+	requirements=""
+>
+	<src obj="Human_TradePost"/>
+</cmd>
+
+</commands>

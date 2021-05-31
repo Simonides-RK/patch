@@ -1,0 +1,49 @@
+<class id="Forester_Mage_Tower" cpp_class="CVXBuilding" parent="Mage_Tower" entity="">
+
+<!-- Copied from Forester_BaseTownBuilding: The 'being_built' method is for the building support. -->
+	<method sig="being_built" vs="data/subai/forester_basetownbuilding_being_built.vs"/>
+	<method sig="onconstruct" vs="data/subai/basehouse_onconstruct.vs"/>
+	<method sig="onsetplayer" vs="data/subai/basehouse_onsetplayer.vs"/>
+	<method sig="init"		  vs="data/subai/basehouse_init.vs"/>
+	<method sig="idle"		  vs="data/subai/forester_house_idle.vs"/>
+	<method sig="ondie"		  vs="data/subai/forester_house_ondie.vs"/>
+
+<!-- General -->
+	<static_str icon="assets/interface/icons/forester_magichouse.bmp"
+				portrait="assets/interface/icons/forester_magichouse.rle"
+				skyimage="assets/interface/sky_forester.bmp"/>
+	<static_str display_name="[[5265397]]Magic House[[]]" display_name_plural="[[5279677]]Magic Houses[[]]"/>
+	<static_int radius="60" selection_radius="60"/>
+
+	<static_int maxhealth="700"/>
+	<static_int sight="550"/>
+
+<!-- Building and build animation -->
+	<static_int leaves_height_cap="-124" />
+	<static_int leaves_l3_height="0" />
+	<static_int leaves_l2_height="-104" />
+	<static_int leaves_l1_height="-120" />
+	<static_int build_time="15000" />
+	<static_int foundation_layer="5"/>
+	<static_str building_spot="Assets/Entities/visuals/Building Spots/spot2.rle"/>
+
+<!-- Build command properties -->
+	<static_str cost="150/0/0"/>
+	<static_str rollover_description="[[5280919]]Provides #GetClassInt('Forester_Mage_Tower','support_points')# population, increasing the maximum number of units that can be trained. Can also create various helpful enchantments and allows important upgrades.[[]]"/>
+
+<!-- Race specific -->
+	<static_int regenerate_add="1"/>
+	<static_int regenerate_promille="2"/>
+	<static_str race_str="Race_Foresters"/>
+
+<!-- Others -->
+	<static_int support_points="10"/>
+
+	<member_obj mhouse_reveal_ps=""/>
+	
+	<static_str interface="building_special, queue"/>
+
+	<value id="SupportPoints" script="int i; i = .support_points; return '&lt;color 255 255 64&gt;' + Translate('[[4705975]]Population provided:[[]]') + ' &lt;color 255 255 255&gt;' + i;"/>
+	<value id="GloryForNext" script="str s; int c, n; c = ClassPlayerObjs('Forester_Mage_Tower,Human_SupportBuilding', .player, true).GetObjList().count; if ( EnvReadInt(.player, 'Houses_Built') &gt; c ) n = 0; else n = c + 1; s = '&lt;color 255 255 64&gt;' + Translate('[[5291669]]House glory cost:[[]]') + '&lt;color 255 255 255&gt;';  if ( n &lt; 8 ) s = s + n; else s = s + Translate('[[4150622]]N/A[[]]'); return s;" />
+
+</class>

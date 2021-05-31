@@ -1,0 +1,2270 @@
+<effects>
+<!--
+Order of calling from C++:
+  1. OnDealDamage of attacked
+  2. OnDealtDamage of defender
+
+Priority guidelines:
+ondealdamage
+  a) effects that add to the damage (50)
+  b) effects that multiply the damage (100)
+  c) effects that prevent damage (200)
+  d) effects that set the damage to a constant (?) (300)
+  d) effects that depend on the exact damage dealt (these should not modify the damage, if they do - think!) (400)
+ondealtdamage
+  a) effects that add to the damage (50)
+  b) effects that multiply the damage (100)
+  c) effects that prevent damage (200)
+  d) effects that set the damage to a constant (?) (300)
+  d) effects that depend on the exact damage dealt (these should not modify the damage, if they do - think!) (400)
+-->
+
+<!--    About 'combine_param'   -->
+<!-- This is what operation should be used to combine two effects from the same  -->
+<!-- type on a single unit. Possible values: 'add' or 'add_probability'. -->
+<effect
+        id="stunned"
+        priority="0"
+        single="1"
+        onadd_script=".SetCantMove(true);"
+        onremove_script=".SetCantMove(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="Cloud_of_Darkness"
+        priority="0"
+        single="1"
+        onadd_script=".SetVisible(false);.SetMaxHealth(.GetMaxHealth()+50);"
+        onremove_script=".SetVisible(true);.SetMaxHealth(.GetMaxHealth()-50);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="entangle"
+        single="1"
+        onadd_script=".SetCantMove(true);.SetVisible(false);"
+        onremove_script=".SetCantMove(false); .SetVisible(true); CreateFeedback('EntangleFeedbackRemove', this, false);"
+        ondealtdamage_script="if (bDirectDamage) damage = damage * 3 / 2;"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        priority="100"
+        feedback="EntangleFeedback"/>
+
+<effect
+        id="disable"
+        single="1"
+        onadd_script=".SetCannotAttackFlag(true);"
+        onremove_script=".SetCannotAttackFlag(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/Blind.part.xml"/>
+
+<effect
+        id="cantattack"
+        single="1"
+        onadd_script=".SetCannotAttackFlag(true);"
+        onremove_script=".SetCannotAttackFlag(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/CantAttack.part.xml"/>
+
+<effect
+        id="revealer"
+        combine_param1=""
+        combine_param2=""
+        onadd_script=".SetRevealer(true);"
+        onremove_script=".SetRevealer(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="AllSeeingEye"/>
+
+<effect
+        id="invisible"
+        combine_param1="add"
+        combine_param2="add"
+        onadd_script=".SetVisible(false);"
+        onremove_script=".SetVisible(true);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="poison"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/venomrain_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/VenomRain.part.xml"/>
+
+<!-- Note: the check must be changed - what if the unit is disabled? -->
+<effect
+        id="shadeblurred"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_shadeblurred_ondealtdamage.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="300"/> <!-- The damage prevention effect should be last -->
+
+<effect
+        id="immortal"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_immortal_ondealtdamage.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback="data/particles/ActivateImmortality.part.xml"
+        remove_feedback="data/particles/DeactivateImmortality.part.xml"
+        feedback=""
+        priority="500"/>
+
+<effect
+        id="mind_control"
+        single="1"
+        onadd_script=""
+        onremove_script=".SetPlayer(param1); if (param2==1) .SetUncontrollableFlag(true);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/MindControlled.part.xml"/>
+
+<effect
+        id="illusion"
+        single="1"
+        onadd_script=".SetIllusionFlag(true); .SetCantBeHealed(true);"
+        onremove_script=""
+        ondealtdamage_script="damage = damage * 2 / 3;"
+        ondealdamage_script="damage = 0;"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="300"/>
+
+<effect
+        id="possessed"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/SpiritInside.part.xml"/>
+
+<effect
+        id="pain_channeling"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_pain_channeling_ondealtdamage.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="200"/>
+
+<effect
+        id="sparkling_spy_friend"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/SparklingSpy.part.xml"/>
+
+<effect
+        id="sparkling_spy_enemy"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/SparklingSpy.part.xml"/>
+
+<effect
+        id="energized"
+        single="1"
+        onadd_script=".SetInfiniteEnergyFlag(true);"
+        onremove_script=".SetInfiniteEnergyFlag(false); SetFlag(.user_flags1, .to_be_vitalized, false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/Energized.part.xml"/>
+
+<effect
+        id="open_wounds"
+        single="1"
+        onadd_script=".AsUnit().SetCantBeHealed(true);"
+        onremove_script=".AsUnit().SetCantBeHealed(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/OpenWounds.part.xml"/>
+
+<effect
+        id="open_wounds_ranger"
+        single="1"
+        onadd_script=".AsUnit().SetSlowHeal(true);"
+        onremove_script=".AsUnit().SetSlowHeal(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/OpenWounds.part.xml"/>
+
+<effect
+        id="ressurecting"
+        single="1"
+        onadd_script=""
+        onremove_script=".CmdEnable('Learn_new_skill');"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="ressurected"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<!-- Alex: See the salvation behavior - IsValid statement -->
+<effect
+        id="salvation"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_salvation_ondealtdamage.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_salvation_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="400"/>
+
+<effect
+        id="evacuation"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_evacuation_ondealtdamage.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_evacuation_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="400"/>
+
+<effect
+        id="guardianspirit"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_guardianspirit_ondamagedealt.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/GuardianSpirit.part.xml"
+        priority="200"/>
+
+<effect
+        id="magicexposure"
+        single="1"
+        onadd_script=".SetMagicExposure(true);"
+        onremove_script=".SetMagicExposure(false);"
+        ondealtdamage_script="data/subai/effect_magicexposure_ondamagedealt.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        priority="100"
+        feedback="data/particles/Blind.part.xml"/>
+<effect
+        id="golden"
+        single="1"
+        onadd_script=".SetGoldenFX(true);"
+        onremove_script=".SetGoldenFX(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="100"/>
+		
+<effect
+        id="goldenshield"
+        single="1"
+        onadd_script=".SetGoldenFX(true);"
+        onremove_script=".SetGoldenFX(false);"
+        ondealtdamage_script="data/subai/effect_goldenshield_ondamagedealt.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="100"/>
+		
+<effect
+        id="goldenshield_swordsmans"
+        single="1"
+        onadd_script=".SetGoldenFX(true);"
+        onremove_script=".SetGoldenFX(false);"
+        ondealtdamage_script="data/subai/effect_goldenshield_swordsmans_ondamagedealt.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="100"/>
+
+<effect
+        id="reinfspears"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="data/subai/effect_reinfspears_damage.vs"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="50"/>
+
+<effect
+        id="leadership"
+        single="1"
+        onadd_script=   ".damage = .damage + .initial_damage * param1 / 100;"
+        onremove_script=".damage = .damage - .initial_damage * param1 / 100;"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/Leadership.part.xml"/>
+
+<effect
+        id="leadership_attacked"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_leadership_attacked_ondamagedealt.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        priority="400"
+        feedback=""/>
+
+<effect
+        id="promote"
+        single="1"
+        onadd_script="" 
+        onremove_script=".SetBlockCommand(false); SetFlag(.user_flags1, .cant_be_stunned, false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        />
+
+<effect
+        id="holy_armor"
+        single="1"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script="if ( bDirectDamage &amp;&amp; (damage &gt; param1) ) damage = param1;"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="HolyShield"
+        priority="300"/>
+
+<effect
+        id="curse"
+        single="1"
+        onadd_script="Unit u; u = .AsUnit();  u.SetSlowHeal(true);u.SetCursedFX(true);" 
+        onremove_script="Unit u; u = .AsUnit();u.SetSlowHeal(false);u.SetCursedFX(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_behavior_curse.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="weaken"
+        single="1"
+        onadd_script=".SetWeakened(true)" 
+        onremove_script=".SetWeakened(false)" 
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="polymorph"
+        single="1"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback="data/particles/summon.part.xml"
+        remove_feedback="data/particles/summon.part.xml"
+        feedback=""/>
+
+<effect
+        id="polymorph1"
+        single="1"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback="data/particles/summon.part.xml"
+        remove_feedback="data/particles/summon.part.xml"
+        feedback=""/>
+
+<effect
+        id="electro_cocoon"
+        single="1"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script="Unit u; if (!bDirectDamage) return; u = src.AsUnit(); if(u.IsAlive) if (!u.IsRanged()) .RemoveEffect('electro_cocoon', 0, 0);"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_electrococoon_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/FrostShield.part.xml"
+        priority="400"/>
+
+<effect
+        id="exposed"
+        single="1"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_exposed_ondamagedealt.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        priority="100"
+        feedback=""/>
+
+<effect
+        id="mind_blend"
+        single="0"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="lightningshield"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_lightningshield_ondamagedealt.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="LightningShield"/>
+
+<effect
+        id="magicsword"
+        single="1"
+        onadd_script="data/subai/effect_magicsword_onnadd.vs" 
+        onremove_script="data/subai/effect_magicsword_onremove.vs"
+        ondealtdamage_script="data/subai/effect_magicswords_ondealtdamage.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="lightningstorm"
+        single="1"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_lightningstorm_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="stealth"
+        single="1"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_stealth_ondealtdamage.vs"
+        ondealdamage_script="data/subai/effect_stealth_ondealdamage.vs"
+        onattack_script=""
+        behavior_script="data/subai/effect_stealth_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="shadows_of_the_night"
+        single="1"
+        onadd_script=".SetVisible(false);.SetMaxHealth(.GetMaxHealth() + 50);" 
+        onremove_script=".SetVisible(true);.SetMaxHealth(.GetMaxHealth() - 50);"
+        ondealtdamage_script="data/subai/effect_shadows_of_the_night_ondealtdamage.vs"
+        ondealdamage_script="data/subai/effect_shadows_of_the_night_ondealdamage.vs"
+        onattack_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="paralyze"
+        single="1"
+        onadd_script=".SetCantMove(true); .SetCannotAttackFlag(true);" 
+        onremove_script=".SetCantMove(false); .SetCannotAttackFlag(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="soullink"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_soullink_ondamagedealt.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_soullink_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="315"/>
+
+<effect
+        id="soullink_hero"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_soullink_hero_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="painlink"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_painlink_ondamagedealt.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="charge"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="if(damage == 0) return; if(bDirectDamage) { damage = damage + GetClassInt('Human_WindRider', 'charge_damage'); .RemoveEffect('charge', 0, 0); }"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        priority="50"
+        feedback="data/particles/Charge.part.xml"/>
+
+<effect
+        id="flanking"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="data/subai/effect_flanking_dealdamage.vs"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        priority="50"
+        feedback=""/>
+
+<effect
+        id="promotable"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="data/subai/effect_promotable_dealdamage.vs"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="400"/>
+
+<effect
+        id="slow"
+        single="1"
+        onadd_script=".SetSpeedFactor(.speed_factor - param1); .SetAttackSpeedFactor(.attack_speed_factor - param1);"
+        onremove_script=".SetSpeedFactor(.speed_factor + param1); .SetAttackSpeedFactor(.attack_speed_factor + param1);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_slow_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/Blind.part.xml"/>
+
+<effect
+        id="confuse"
+        onadd_script="ObjList ol; ol.Add(this); MakeControllable(ol, param1); .SetCannotAttackFlag(true); if (.IsIndependentGuardian()) .SetUncontrollableFlag(false);"
+        onremove_script="ObjList ol; ol.Add(this); if ( param1 != .player ) MakeUncontrollable(ol, param1); .SetCannotAttackFlag(false); if (.IsIndependentGuardian()) .SetUncontrollableFlag(true);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        oncommand_script="if ( player == .player ) .AsUnit().RemoveEffect('confuse', param1, 0);"
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="Confuse"/>
+
+<effect
+        id="queen_werewolf_dummy"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="nightfall_heal_visualize"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        oncommand_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/Heal_Unit_Feedback.part.xml"/>
+
+<effect
+        id="possession"
+        single="1"
+        onadd_script=".SetMaxHealth(.GetMaxHealth() + .maxhealth); .SetHealth(.GetMaxHealth()); .damage = .damage + .initial_damage; .SetCantBeHealed(true);"
+        onremove_script=".SetMaxHealth(.GetMaxHealth() - .maxhealth); .damage = .damage - .initial_damage; .SetCantBeHealed(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        oncommand_script=""
+        behavior_script="data/subai/effect_possession_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback="Possession"/>
+
+<effect
+        id="divine_journey"
+        single="1"
+        onadd_script=".SetCommand('divine_journey_start');"
+        onremove_script="if (!.ExistEffect('dichotimize')) .SetHealth(.GetMaxHealth);.SetCommand('divine_journey_end');"
+        ondealtdamage_script="damage = 0;"
+        ondealdamage_script=""
+        onattack_script=""
+        oncommand_script=""
+        behavior_script="data/subai/effect_divinejourney_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="realityripple"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        oncommand_script=""
+        behavior_script="data/subai/effect_realityripple_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/SpiritInside.part.xml"/>
+
+<effect
+        id="disintegration"
+        single="1"
+        onadd_script=""
+        onremove_script=".InsertCommand('disintegrate', oParam);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        oncommand_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="Disintegration"/>
+
+<effect
+        id="hibernated"
+        single="1"
+        onadd_script=".SetHibernatedFX(true); .SetInvulnerable(true); .SetBlockCommand(true); .SetCannotAttackFlag(true); .SetEnemyCannotTargetFlag(true); .SetCantBeHealed(true);"
+        onremove_script=".SetHibernatedFX(false); .SetInvulnerable(false); .SetBlockCommand(false); .SetCannotAttackFlag(false); .SetEnemyCannotTargetFlag(false); .SetCantBeHealed(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="strength_of_the_forest"
+        single="1"
+        onadd_script="data/subai/effect_strengthoftheforest_onadd.vs"
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="frozen"
+        single="1"
+        onadd_script="int speed; speed = param1; if (.AsHero()) speed = speed/2; .SetFrozenFX(true); .SetSpeedFactor(.speed_factor - speed); .SetAttackSpeedFactor(.attack_speed_factor - speed);"
+        onremove_script="int speed; speed = param1; if (.AsHero()) speed = speed/2; .SetFrozenFX(false); .SetSpeedFactor(.speed_factor + speed); .SetAttackSpeedFactor(.attack_speed_factor + speed);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_frozen_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="legendary_item"
+        single="1"
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_stun"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="if(damage == 0) return; if(rand(100) &lt; param1 &amp;&amp; bDirectDamage) if(dest.AsUnit.IsAlive) dest.SetCommand('stun');"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        priority="400"
+        feedback=""/>
+
+<effect
+        id="item_life_regeneration"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_liferegen_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="Lycanthropy"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_liferegen_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+
+
+
+<effect
+        id="item_bonus_attack"
+        combine_param1="add" combine_param2="add"
+        onadd_script=".damage = .damage + param1;" 
+        onremove_script=".damage = .damage - param1;"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_critical_hit"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="int dmg; if(damage == 0) return;  dmg = damage*2; if(rand(100) &lt; param1 &amp;&amp; bDirectDamage &amp;&amp; dest.AsUnit().IsValid()) { damage = dmg; FloatingText(Translate('[[]]-[[]]') + dmg, dest.pos, GetConst('CriticalDamageColor'), 0); }"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        priority="100"
+        feedback=""/>
+        
+<effect
+        id="item_quad_damage"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="int dmg; if(damage == 0) return;  dmg = damage*4; if(rand(100) &lt; param1 &amp;&amp; bDirectDamage &amp;&amp; dest.AsUnit().IsValid()) { damage = dmg; FloatingText(Translate('[[]]-[[]]') + dmg, dest.pos, GetConst('CriticalDamageColor'), 0); }"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        priority="100"
+        feedback=""/>
+
+<effect
+        id="item_death_blow"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="if(damage == 0) return; if (dest.AsUnit().IsValid()) if(dest.health*100/dest.GetMaxHealth &lt; param1 &amp;&amp; bDirectDamage) if (dest.AsUnit().ExistEffect('immortal')) damage = 1000000; else dest.DropDead;"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="item_mana_regeneration"
+        combine_param1="add" combine_param2="add"
+        onadd_script=".recharge_bonus += param1;" 
+        onremove_script=".recharge_bonus -= param1;"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_blind"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="if(damage == 0) return; if(rand(100) &lt; param1 &amp;&amp; dest.AsUnit.IsAlive &amp;&amp; bDirectDamage) dest.AsUnit.AddEffectTimeout('disable', 0, 0, 2500);"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+                
+<effect
+        id="item_energy_burn"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="data/subai/effect_energy_burn_ondealdamage.vs"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="50"/>
+
+<effect
+        id="item_exorcism"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="data/subai/effect_item_exorcism_ondealdamage.vs"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""     
+        priority="50"/>
+
+<effect
+        id="item_armor"
+        combine_param1="add" combine_param2="add"
+        onadd_script=".armor = .armor + param1;" 
+        onremove_script=".armor = .armor - param1;"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_health"
+        combine_param1="add" combine_param2="add"
+        onadd_script=".SetMaxHealth(.GetMaxHealth+param1);" 
+        onremove_script=".SetMaxHealth(.GetMaxHealth-param1);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_return_damage"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script="data/subai/effect_item_returndamage_ondamagedealt.vs"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="400"/>
+
+<effect
+        id="item_vampiric_attack"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="if (bDirectDamage) if (.IsAlive()) if(.IsRanged) .Heal(1+damage*param1/150); else .Heal(1+damage*param1/100);"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="400"/>
+
+<effect
+        id="item_drain_health"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="if(damage == 0) return; if (bDirectDamage) if(dest.AsUnit.IsValid) damage = damage + dest.GetMaxHealth*param1/100;"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="50"/>
+
+<effect
+        id="item_attack_speed"
+        combine_param1="add" combine_param2="add"
+        onadd_script=".SetAttackSpeedFactor(.attack_speed_factor + param1);" 
+        onremove_script=".SetAttackSpeedFactor(.attack_speed_factor - param1);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_poison_strike"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="if(damage == 0) return; if(dest.AsUnit.IsAlive &amp;&amp; bDirectDamage) dest.AsUnit.AddEffectTimeoutObjParam('poison', param1, 1000, this, 3000);"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_paralyze"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="Unit u; if(damage == 0) return; u = dest.AsUnit(); if ( rand(100) &lt; param1 &amp;&amp; u.IsAlive  &amp;&amp; bDirectDamage ) if(u.AsHero.IsValid) u.AddEffectTimeout('paralyze', 0, 0, 2000); else u.AddEffectTimeout('paralyze', 0, 0, 5000);"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_lightning"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script="data/subai/effect_lightning_dealdamage.vs"
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_movement"
+        combine_param1="add" combine_param2="add"
+        onadd_script=".SetSpeedFactor(.speed_factor + param1);" 
+        onremove_script=".SetSpeedFactor(.speed_factor - param1);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_dodge"
+        combine_param1="add" combine_param2="add"
+		onadd_script="" 
+		onremove_script=""
+		ondealtdamage_script="if (bDirectDamage) if (rand(100) &lt; param1) { damage = 0; FloatingText(Translate('[[1935151]]Miss![[]]'), .pos, GetConst('MissTextColor'), 0); }"
+		ondealdamage_script=""
+		onattack_script=""
+		behavior_script=""
+		add_feedback=""
+		remove_feedback=""
+		feedback=""
+		priority="300"/>
+
+<effect
+		id="item_energy_drain"
+		combine_param1="add" combine_param2="add"
+		onadd_script="" 
+		onremove_script=""
+		ondealtdamage_script=""
+		ondealdamage_script="data/subai/effect_itemmanasteal_dealdamage.vs"
+		onattack_script=""
+		behavior_script=""
+		add_feedback=""
+		remove_feedback=""
+		feedback=""/>
+<effect
+		id="item_mind_control_chance"
+		combine_param1="add" combine_param2="add"
+		onadd_script="" 
+		onremove_script=""
+		ondealtdamage_script=""
+		ondealdamage_script="data/subai/effect_itemmindcontrol_dealdamage.vs"
+		onattack_script=""
+		behavior_script=""
+		add_feedback=""
+		remove_feedback=""
+		feedback=""/>
+
+<effect
+		id="item_polymorph_chance"
+		combine_param1="add" combine_param2="add"
+		onadd_script="" 
+		onremove_script=""
+		ondealtdamage_script=""
+		ondealdamage_script="data/subai/effect_itempolymorph_dealdamage.vs"
+		onattack_script=""
+		behavior_script=""
+		add_feedback=""
+        remove_feedback=""
+		feedback=""/>
+
+<!-- Human Battle Angel -->
+<effect
+id="item_magicsword_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="item_altar_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="item_lightningshield_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="item_guardianspirit_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>                   
+
+<!-- Forester Queen Of The Wolves -->
+<effect
+        id="item_wilderness_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_werewolf_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="item_werewolf_lifesteal_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_moon_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="data/subai/forester_queen_add_moon_bonus.vs" 
+        onremove_script="data/subai/forester_queen_remove_moon_bonus.vs"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="item_assasin_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<!-- Forester Sharpshooter -->
+<effect
+        id="item_aimedshot_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="item_fog_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_corrosivegas_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="item_entangle_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+<!-- Forester Seedkeeper -->            
+<effect
+        id="item_venom_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_thorns_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_reproduction_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script="" 
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<!-- Forester Fairy --> 
+<effect
+        id="item_illusion_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script="" 
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+<effect
+        id="item_mindcontrol_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script="" 
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+<effect
+        id="item_spirits_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_forced_empathy_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+<!-- Human Wind Rider -->
+<effect
+        id="item_loot_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+        
+<effect
+        id="item_galop_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+        
+<effect
+        id="item_flank_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+<!-- Human Wizard of the Bow -->
+<effect
+        id="item_starstorm_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+<effect
+        id="item_electricity_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+<effect
+        id="item_crystal_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+<!-- Human Queen of Witches -->
+<effect
+        id="item_consternation_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+                
+<effect
+        id="item_consume_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+                
+<effect
+        id="item_polymorph_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+        
+<!-- Darkling Soul Monger -->
+<effect
+        id="item_soulnova_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+<effect
+        id="item_absorbsoul_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+<effect
+        id="item_reincarnate_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+<effect
+        id="item_soullink_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>   
+<!-- Darkling Assasin -->       
+<effect
+        id="item_angelofdeath_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+<effect
+        id="item_backstab_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+<effect
+        id="item_shadewalk_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<!-- Darkling Axemaster -->
+<effect
+        id="item_invincibility_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+<effect
+        id="item_leap_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_bash_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+<!-- Darkling Empath -->
+<effect
+        id="item_divine_journey_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="item_mind_blaze_bonus"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="bloodlust"
+        combine_param1="add"
+        combine_param2=""
+        onadd_script=".damage = .damage + param1;"
+        onremove_script=".damage = .damage - param1;"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+		
+<effect
+        id="invincibility_axemaster"
+        single="1"
+        combine_param1=""
+        combine_param2=""
+        onadd_script=".damage+=20;.SetVisible(false); .SetSpeedFactor(.speed_factor + .invincibility_speedbonus);"
+        onremove_script=".damage-=20; .SetVisible(true);.SetSpeedFactor(.speed_factor - .invincibility_speedbonus);"
+        ondealtdamage_script="damage = 0;"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/Invincibility.part.xml"
+        priority="300"/>
+        
+<effect
+        id="invincibility"
+        single="1"
+        combine_param1=""
+        combine_param2=""
+        onadd_script=".damage+=20;.SetVisible(false);"
+        onremove_script=".damage-=20; .SetVisible(true);"
+        ondealtdamage_script="damage = 0;"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/Invincibility.part.xml"
+        priority="300"/>
+
+ <!--   like don't work 
+        This can be strange with Curse, Poison, etc., but this way is the better way
+ -->
+
+<effect
+        id="unit_in_shelter"
+        single="1"
+        combine_param1="" combine_param2=""
+
+        onadd_script=".SetBlockCommand(true);   .AsUnit.SetEnemyCannotTargetFlag(true);SetFlag(.user_flags1,.cant_be_stunned, true);                       .SetBlockCommand(false);" 
+        onremove_script=".SetBlockCommand(true);.AsUnit.SetEnemyCannotTargetFlag(false);SetFlag(.user_flags1, .cant_be_stunned, false);.in_shelter.Clear();.SetBlockCommand(false);"
+
+        ondealtdamage_script="damage = 0;"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="300"/>
+        
+<effect
+        id="spirit"
+        single="1"
+        combine_param1="" combine_param2=""
+        onadd_script="" 
+        onremove_script="if(!IsFlagSet(.user_flags1, .to_be_divine_journeyd)) .SetCommand('selfdestroy');"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="ethereal"
+        single="1"
+        combine_param1="" combine_param2=""
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script="Unit u; u = src.AsUnit(); if (bDirectDamage) if(u.IsAlive()) if(u.IsRanged()) if(rand(100) &lt; param1) {damage = 0; FloatingText(Translate('[[1935151]]Miss![[]]'), .pos, GetConst('MissTextColor'), 0); };"        
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="300"/>
+
+<effect
+        id="mind_twist"
+        single="1"
+        combine_param1="" combine_param2=""
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script="if (bDirectDamage) damage = damage * param1;"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_mind_twist_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        priority="100"
+        feedback="data/particles/MindTwist.part.xml"/>
+
+<effect
+        id="consecrated_axes"
+        single="1"
+        combine_param1="" combine_param2=""
+        onadd_script=".damage = .damage + param1;"
+        onremove_script=".damage = .damage - param1;"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="hatred"
+        single="1"
+        combine_param1="" combine_param2=""
+        onadd_script=""
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_hatred_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+        
+<effect
+        id="crazed"
+        single="1"
+        combine_param1="" combine_param2=""
+        onadd_script="" 
+        onremove_script="if(!IsFlagSet(.user_flags1, .to_be_divine_journeyd)) .SetCommand('selfdestroy');"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="dichotimize"
+        combine_param1="add" combine_param2="add"
+        onadd_script=".SetCantBeHealed(true);"
+        onremove_script=".SetCantBeHealed(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="resurected"
+        combine_param1="add" combine_param2="add"
+        onadd_script=".SetCantBeHealed(true);"
+        onremove_script=".SetCantBeHealed(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_potion_vitality"
+        combine_param1="add" combine_param2="add"
+        onadd_script="if ( !.AsHero().IsValid() ) return; .SetMaxHealth(.GetMaxHealth() + .potion_health); FloatingText(Translate('[[25601940]]Health +[[]]') + .potion_health, .pos, 0xCC3366, 0);"
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_potion_innerfire"
+        combine_param1="add" combine_param2="add"
+        onadd_script="if ( !.AsHero().IsValid() ) return; .damage += .potion_damage; FloatingText(Translate('[[25619875]]Damage +[[]]') + .potion_damage, .pos, 0xFFFF00, 0);"
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_potion_energy"
+        combine_param1="add" combine_param2="add"
+        onadd_script="if ( !.AsHero().IsValid() ) return; .recharge_bonus += .potion_recharge; FloatingText(Translate('[[25628699]]Skill Recharge +[[]]') + .potion_recharge + Translate('[[]]%[[]]') , .pos,  0x66FFFF, 0);"
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_potion_sturdiness"
+        combine_param1="add" combine_param2="add"
+        onadd_script="if ( !.AsHero().IsValid() ) return; .armor += .potion_armor; FloatingText(Translate('[[25632054]]Armour +[[]]') + .potion_armor, .pos, 0x33CC00 , 0);" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_charm_healing"
+        combine_param1="add" combine_param2="add"
+        onadd_script=".Heal(param1);" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_charm_restoration"
+        combine_param1="add" combine_param2="add"
+        onadd_script="data/subai/effect_charm_restoration_add.vs" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_charm_recharge"
+        combine_param1="add" combine_param2="add"
+        onadd_script="data/subai/effect_charm_recharge_add.vs" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_charm_invulnerability"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script="damage = 0;"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="300"/>
+
+<effect
+        id="item_charm_invisibility"
+        combine_param1="add" combine_param2="add"
+        onadd_script=".SetVisible(false);" 
+        onremove_script=".SetVisible(true);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_regeneration"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_item_regeneration_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="item_chosenone"
+        combine_param1="add" combine_param2="add"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_item_chosenone_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="just_built"
+        combine_param1="add" combine_param2="add"
+        onadd_script=".SetNoTransparent(true);" 
+        onremove_script=".SetNoTransparent(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="die"
+        single="1"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_die_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="ambush_prepare"
+        single="1"
+        onadd_script=".SetCannotAttackFlag(true);.SetVisible(false);"
+        onremove_script=".SetCannotAttackFlag(false); .AddEffectTimeoutObjParam('ambush', param1, param2, oParam, GetClassInt('Forester_Sharpshooter', 'ambush_duration'));"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_ambush_prepare_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="ambush"
+        single="1"
+        onadd_script=""
+        onremove_script=".SetVisible(true);"
+        ondealtdamage_script=""
+        ondealdamage_script="data/subai/effect_ambush_ondealdamage.vs"
+        onattack_script=""
+        behavior_script="data/subai/effect_ambush_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""
+        priority="50"/>
+
+<effect
+        id="fog_strike"
+        single="1"
+        onadd_script=".SetCannotAttackFlag(true);"
+        onremove_script=".SetCannotAttackFlag(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_fogstrike_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/FogStrike_Feedback.part.xml"/>
+
+<effect
+        id="rage_impulse"
+        single="1"
+        onadd_script=".SetBlockCommand(true);"
+        onremove_script=".SetBlockCommand(false); if ( .IsIndependentGuardian() ) .SetCommand('idle');"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback="Data/Particles/RageImpulseEnemy.part.xml"
+        remove_feedback=""
+        feedback=""
+        priority="200"/>
+        
+<effect
+        id="corrosive_gas"
+        single="1"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="absorb_damage"
+        single="1"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script="damage = damage - damage * param1 / 100"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="PaladinArmor"
+        single="1"
+        onadd_script=".SetRevealer(true);"
+        onremove_script=".SetRevealer(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_paladinarmor_behavior.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback="AllSeeingEye"/>
+<effect
+        id="wizard_on_crystal_tower"
+        single="1"
+        onadd_script=".SetCantMove(true);"
+        onremove_script=".SetCantMove(false);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<!-- ypsilon:  Effect for upg Spiritual Blessing -->
+<effect
+        id="spiritual_blessing_effect"
+        single="1"
+        onadd_script="int b, h; b = GetClassInt('Human_Townhall', 'spiritual_blessing_bonus'); h = .maxhealth * b / 100; .SetMaxHealth(.GetMaxHealth() + h);  "
+        onremove_script="int b, h; b = GetClassInt('Human_Townhall', 'spiritual_blessing_bonus'); h = .maxhealth * b / 100; .SetMaxHealth(.GetMaxHealth() - h);  "
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+<!-- ypsilon:  Effect for upg Primal Fury -->		
+<effect
+        id="primal_fury"
+        single="1"
+        onadd_script="data/subai/effect_primalfury_onadd.vs"
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+		
+<effect
+        id="BurningWings"
+        single="1"
+        onadd_script="data/subai/effect_burningwings_onadd.vs"
+        onremove_script="data/subai/effect_burningwings_onremove.vs"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        feedback="data/particles/Fire.part.xml"/>
+		
+<effect
+        id="weakening_acid"
+        single="1"
+        combine_param1="" combine_param2=""
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script="if (bDirectDamage) damage = damage + damage * param1/100;"
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
+        add_feedback=""
+        remove_feedback=""
+        priority="100"
+        feedback="data/particles/VenomRain.part.xml"/>
+		
+<effect
+        id="get_champion_item"
+        single="1"
+        onadd_script="" 
+        onremove_script=""
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script="data/subai/effect_get_champion_item.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+		
+</effects>
+

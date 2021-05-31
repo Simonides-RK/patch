@@ -1,0 +1,51 @@
+<class id="Human_Pikeman" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Human_Pikeman/Human_Pikeman.ent.xml">
+	<method sig="init" vs="data/subai/human_pikeman_init.vs"/>
+	
+<!--	<method sig="doattack" vs="data/subai/human_pikeman_doattack.vs"/> -->
+
+	<behavior script="data/subai/human_pikeman_behavior_glow.vs"/>
+		
+	<static_int radius="20" selection_radius="20"/>
+	<static_int formation_radius="42" formation_priority="800"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6505285]]Pikeman[[]]"/>
+
+	<static_str display_name="[[6505285]]Pikeman[[]]" display_name_plural="[[6515297]]Pikemen[[]]"/>
+
+	<static_int sight="400"/>
+	<static_int speed="100"/>
+
+	<static_int maxhealth="420"/>
+	<static_int initial_damage="28"/>
+	<static_int initial_armor="3"/>
+	<static_str cost="75/0/2"/>
+
+	<static_int reinforced_spear_damage="70"/>
+
+	<static_int goldenshield_damage_reduction="42"/> <!-- percentage -->
+	<static_int damage_bonus_militia="200"/> <!-- percentage -->
+
+	<static_str damage_type="spear"/>
+	<static_str defence_type = "small"/>
+
+	<static_str rollover_description="[[6525562]]Pikemen are trained as town guards and are not the most powerful of units, yet are extremely good against mounted units. Can be upgraded to triple their damage when fighting near friendly buildings and to dodge ranged attacks.[[]]"/>
+
+
+	<static_str icon="Assets/Interface/Icons/pikeman.BMP"
+				portrait="assets/interface/icons/pikeman.rle"
+				skyimage="assets/interface/sky_human.bmp"/>
+
+	<static_str race_str="Race_Humans"/>
+	
+	<member_int nearby_buildings="0"/>
+	<member_int militia_applied="0"/>
+	<member_int militia_glow_trans="0"/>
+
+	<static_int ai_melee_protection="1"/>
+	<static_int ai_melee_escape_time="4"/>
+	<static_int ai_concentrate_group="1"/>   <!-- general melee damage -->
+		
+	<sounds
+		AnimAttack="Spear_Attack_"
+		AnimDie="Pikeman_death"
+		command="Pike0"/>
+</class>

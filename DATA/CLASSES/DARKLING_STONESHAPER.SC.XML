@@ -1,0 +1,79 @@
+<class id="Darkling_StoneShaper" cpp_class="CVXUnit" parent="BaseDarklingUnit" entity="assets/entities/units/Darkling_StoneShaper/Darkling_StoneShaper.ent.xml">
+
+        <method sig="init" vs="data/subai/darkling_stoneshaper_init.vs"/>
+        <method sig="ondie" vs="data/subai/darkling_stoneshaper_ondie.vs"/>
+        <method sig="onsetplayer" vs="data/subai/darkling_stoneshaper_setplayer.vs"/>
+        <method sig="attack" vs="data/subai/darkling_stoneshaper_attack.vs" verify="data/subai/unit_attack_verify.vs" onfinish="data/subai/darkling_stoneshaper_attack_onfinish.vs"/>>
+        <method sig="engage" vs="data/subai/darkling_stoneshaper_engage.vs"/>
+        <method sig="engage_unit_type" vs="data/subai/darkling_stoneshaper_engage_unit_type.vs"/>
+        <method sig="stand_position" vs="data/subai/darkling_stoneshaper_stand_position.vs" onfinish="data/subai/unit_stand_position_onfinish.vs"/>
+        <method sig="divine_journey_start" vs="data/subai/darkling_stoneshaper_divine_journey_start.vs"/>
+        <method sig="divine_journey_end" vs="data/subai/darkling_stoneshaper_divine_journey_end.vs"/>
+        <method sig="init_meteors" vs="data/subai/darkling_stoneshaper_init_meteors.vs"/>
+        
+        <behavior script="data/subai/darkling_stoneshaper_behavior.vs"/>
+
+        <static_str areacheck_type="friendly" areacheck_class="Unit"/>
+        <static_int areacheck_time="1000"/>
+        <method sig="onenterarea" vs="data/subai/darkling_stoneshaper_onenterarea.vs"/>
+        <method sig="onexitarea" vs="data/subai/darkling_stoneshaper_onexitarea.vs"/>
+        <method sig="oninsidearea" vs="data/subai/darkling_stoneshaper_oninsidearea.vs"/>
+
+        <value id="DamageName" script="if ( .modal_button == .mb_devastate ) return Translate('[[4526512]]Devastate mode[[]]'); if ( .modal_button == .mb_evacuate ) return Translate('[[4536381]]Evacuate mode[[]]'); return Translate('[[4546390]]Annihilate mode[[]]');"/>
+        <value id="DamageTextValue" script="return '&lt;color 255 255 64&gt;' + Translate('[[4165677]]Damage:[[]]')     + ' &lt;color 255 255 255&gt;' + Translate('[[4150622]]N/A[[]]');" />
+        <static_int legendary="0"/>
+        <static_str damage_type="magic"/>
+        <static_int range="280" min_range="2"/>                 
+        <static_int maxhealth="770"/> 
+        <static_int radius="30" selection_radius="25" initial_armor="10"/>
+        <static_int formation_radius="35" formation_priority="400"/>
+        <static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4550539]]Stoneshaper[[]]"/>
+        <static_int sight="650"/>
+        <static_int speed="85"/>
+        <static_int max_energy="25"/>
+        <static_int initial_energy="0"/>
+        <static_str defence_type="heavy"/> 
+        
+        <static_str display_name="[[4550539]]Stoneshaper[[]]" display_name_plural="[[4562390]]Stoneshapers[[]]"/>
+        <static_str icon="Assets/Interface/Icons/stonecaster.BMP"
+                                portrait="assets/interface/icons/stonecaster.rle"
+                                skyimage="assets/interface/sky_dragon.bmp"/>
+                                
+        <static_str cost="320/8/5"/>
+        <static_str rollover_description="[[4570223]]Stoneshapers are the ultimate Darkling units, capable of controlling burning meteors and using them in battle. Can be upgraded to use the meteors to save your units and move them to a safe location.[[]]"/>
+
+        <static_str race_str="Race_Darklings"/>
+        
+        <static_int mb_annihilate="4"/>
+        <static_int mb_devastate="5"/>
+        <static_int mb_evacuate="6"/>
+
+        <static_int meteor_radius="100"/>
+        <static_int meteor_check_time="300"/>
+
+        <static_int devastate_period="3000"/>
+        <static_int devastate_search_step="50"/>
+        <static_int tangent_search_deg_step="5"/>
+        <static_int pixels_per_meter="30"/>
+        <static_int evacuate_health_percent="5"/>
+        <static_int evacuate_timeout="10000"/>
+        <static_int evacuate_health_bonus="350"/>
+		<static_int evacuate_armor_bonus="2"/>
+		
+        <member_obj meteor1=""/>
+        <member_obj meteor2=""/>
+        <member_obj meteor3=""/>
+        <member_obj meteor4=""/>
+        <member_int last_devastate_time=""/>
+        <member_obj unit_to_attack=""/>
+        
+        <static_str summon_meteor_sound="StoneShaper_Summon_Meteor_"/>
+
+        <!-- AI -->
+        <static_int ai_hyper_protective="1" ai_hyper_protective_coef="30"/>
+        <static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+        <!-- AI -->
+        <sounds
+                AnimDie="Darkling_Unit_death"
+                command="Stone0"/>
+</class>

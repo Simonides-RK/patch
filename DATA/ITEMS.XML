@@ -1,0 +1,285 @@
+<items>
+
+<item
+        id="ring_of_stun"
+        name="[[24317287]]Ring of Stunning[[]]"
+        type="ring"
+        cost="300"
+        itemholderclass="SackRing"
+        description=""
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="armor" amount="3"/>
+</item>
+
+<item
+        id="potion_of_vitality"
+        name="[[7225705]]Potion of Vitality[[]]"
+        type="potion"
+        cost="0"
+        itemholderclass="PotionVitality"
+        description=""
+        useonpickup="1"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="potion_vitality" amount="0"/>
+</item>
+
+<item
+        id="potion_of_inner_fire"
+        name="[[7194481]]Potion of Inner Fire[[]]"
+        type="potion"
+        cost="0"
+        itemholderclass="PotionInnerFire"
+        description=""
+        useonpickup="1"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="potion_innerfire" amount="0"/>
+</item>
+
+<item
+        id="potion_of_mental_energy"
+        name="[[24320511]]Potion of Wisdom[[]]"
+        type="potion"
+        cost="0"
+        itemholderclass="PotionMentalEnergy"
+        description=""
+        useonpickup="1"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="potion_energy" amount="0"/>
+</item>
+
+<item
+        id="potion_of_swiftness"
+        name="[[7213851]]Potion of Swiftness[[]]"
+        type="potion"
+        cost="0"
+        itemholderclass="PotionSwiftness"
+        description=""
+        useonpickup="1"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="potion_sturdiness" amount="0"/>
+</item>
+
+<item
+        id="charm_lesser_healing"
+        name="[[24333957]]Lesser Healing Charm[[]]"
+        type="charm"
+        cost="0"
+        itemholderclass="HealCharmSmall"
+        description=""
+        useonpickup="1"
+        timeout="-1"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="charm_healing" amount="250"/>
+</item>
+
+<item
+        id="charm_healing"
+        name="[[24349960]]Healing Charm[[]]"
+        type="charm"
+        cost="0"
+        itemholderclass="HealCharm"
+        description=""
+        useonpickup="1"
+        timeout="-1"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="charm_healing" amount="450"/>
+</item>
+
+<item
+        id="charm_greater_healing"
+        name="[[24358181]]Greater Healing Charm[[]]"
+        type="charm"
+        cost="0"
+        itemholderclass="HealCharmLarge"
+        description=""
+        useonpickup="1"
+        timeout="-1"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="charm_healing" amount="1000"/>
+</item>
+
+<item
+        id="charm_lesser_restoration"
+        name="[[24368580]]Lesser Revival Charm[[]]"
+        type="charm"
+        cost="0"
+        itemholderclass="RestorationCharmSmall"
+        description=""
+        useonpickup="1"
+        timeout="-1"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="charm_restoration" amount="200"/>
+</item>
+
+<item
+        id="charm_restoration"
+        name="[[24375683]]Revival Charm[[]]"
+        type="charm"
+        cost="0"
+        itemholderclass="RestorationCharm"
+        description=""
+        useonpickup="1"
+        timeout="-1"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="charm_restoration" amount="400"/>
+</item>
+
+<item
+        id="charm_greater_restoration"
+        name="[[24380900]]Greater Revival Charm[[]]"
+        type="charm"
+        cost="0"
+        itemholderclass="RestorationCharmLarge"
+        description=""
+        useonpickup="1"
+        timeout="-1"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="charm_restoration" amount="700"/>
+</item>
+
+<item
+        id="charm_mana"
+        name="[[24397203]]Charm of Mana[[]]"
+        type="charm"
+        cost="0"
+        itemholderclass="ManaCharm"
+        description=""
+        useonpickup="1"
+        timeout="-1"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="charm_recharge" amount="1"/>
+</item>
+
+<item
+        id="charm_invulnerability"
+        name="[[24404055]]Invulnerability Charm[[]]"
+        type="charm"
+        cost="0"
+        itemholderclass="InvulnerabilityCharm"
+        description=""
+        useonpickup="1"
+        timeout="30000"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="charm_invulnerability" amount="1"/>
+</item>
+
+<item
+        id="charm_invisibility"
+        name="[[24413113]]Invisibility Charm[[]]"
+        type="charm"
+        cost="0"
+        itemholderclass="InvisibilityCharm"
+        description=""
+        useonpickup="1"
+        timeout="120000"
+        icon="assets/interface/items/ring_RustyRing.bmp">
+        <effect id="charm_invisibility" amount="1"/>
+</item>
+
+<item
+        id="lifegem"
+        name="[[24426949]]Lifegem[[]]"
+        type="powerstone"
+        cost="0"
+        itemholderclass="SackPowerstone"
+        description=""
+        icon="assets/interface/items/powerstone_LifeGem.bmp">
+        <effect id="regeneration" amount="8"/>
+        <effect id="Hero_Heal" amount="0"/>
+
+</item>
+
+<item
+        id="lifegem1"
+        name="[[24426949]]Lifegem[[]]"
+        type="powerstone"
+        cost="0"
+        itemholderclass="SackPowerstone"
+        description=""
+        icon="assets/interface/items/powerstone_LifeGem.bmp">
+        <effect id="regeneration" amount="1"/>
+        <effect id="Hero_Heal" amount="0"/>
+
+</item>
+
+<item
+        id="lifegem2"
+        name="[[24426949]]Lifegem[[]]"
+        type="powerstone"
+        cost="0"
+        itemholderclass="SackPowerstone"
+        description=""
+        icon="assets/interface/items/powerstone_LifeGem.bmp">
+        <effect id="regeneration" amount="1"/>
+        <effect id="Hero_Shock" amount="0"/>
+
+</item>
+
+<item
+        id="lifegem3"
+        name="[[24426949]]Lifegem[[]]"
+        type="powerstone"
+        cost="0"
+        itemholderclass="SackPowerstone"
+        description=""
+        icon="assets/interface/items/powerstone_LifeGem.bmp">
+        <effect id="regeneration" amount="1"/>
+        <effect id="Hero_Illusion" amount="0"/>
+
+</item>
+
+<item
+        id="lifegem4"
+        name="[[24426949]]Lifegem[[]]"
+        type="powerstone"
+        cost="0"
+        itemholderclass="SackPowerstone"
+        description=""
+        icon="assets/interface/items/powerstone_LifeGem.bmp">
+        <effect id="regeneration" amount="1"/>
+        <effect id="Hero_Invisibility" amount="0"/>
+
+</item>
+
+<item
+        id="lifegem5"
+        name="[[24426949]]Lifegem[[]]"
+        type="powerstone"
+        cost="0"
+        itemholderclass="SackPowerstone"
+        description=""
+        icon="assets/interface/items/powerstone_LifeGem.bmp">
+        <effect id="regeneration" amount="1"/>
+        <effect id="Hero_SecondSight" amount="0"/>
+
+</item>
+
+<item
+        id="lifegem6"
+        name="[[24426949]]Lifegem[[]]"
+        type="powerstone"
+        cost="0"
+        itemholderclass="SackPowerstone"
+        description=""
+        icon="assets/interface/items/powerstone_LifeGem.bmp">
+        <effect id="regeneration" amount="1"/>
+        <effect id="Hero_Resurrect" amount="0"/>
+
+</item>
+
+<item
+        id="light_armor_basic"
+        name="[[Item_1_Light_Armour]]Light Armour[[]]"
+        type="armor"
+        cost="500"
+        itemholderclass="SackArmor"
+        description=""
+        icon="assets/interface/items/armor_lightarmour.bmp">
+        <effect id="health" amount="100"/>
+        <effect id="armor" amount="5"/>
+        <effect id="return_damage" amount="5"/>
+        <effect id="life_regeneration" amount="3"/>
+
+</item>
+
+</items>
