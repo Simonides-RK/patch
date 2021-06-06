@@ -95,7 +95,8 @@
 	<member_obj in_shelter=""/>
 
 	<member_int independent_glory=""/>
-	<member_int rat_support=""/>
+	<member_int rat_support=""/> <!-- used to set pop space for polymorph -->
+	<static_int max_speedfactor="250"/> <!-- limit for speed increasement x-100=limit (percentage) -->
 
 	<static_int summoned_unit="0"/>
 

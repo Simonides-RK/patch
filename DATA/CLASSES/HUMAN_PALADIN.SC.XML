@@ -29,7 +29,7 @@
         
         <static_int sight="500"/>
         <static_int speed="90"/>
-        <static_int maxhealth="1500" initial_damage="30" initial_armor="8"/>
+        <static_int maxhealth="1500" initial_damage="22" initial_armor="8"/>
 
         <static_str defence_type = "heavy"/>
         <static_str damage_type="blade"/>                                       
@@ -39,7 +39,8 @@
         <static_int leadership_radius="300"/>
         <static_int leadership_percent="50"/>
         <static_int leadership_timeout="10000"/>
-        <static_int nobility_bonus="3"/>
+        <static_int nobility_bonus="4"/>
+		<static_int nobility_max="80"/>
 		<static_int wrath_radius="100"/>
 		<static_int wrath_damage="10"/>
 

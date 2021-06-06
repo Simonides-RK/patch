@@ -7,6 +7,7 @@ point tmpPt, ptVector;
 
 this = This.AsUnit();
 
+
 if (!IsPassable(.pos)) if (.flying!=1){
 ptVector=.pos-pt; nLen = ptVector.Len();
         for (i=10; i<=nLen; i+=10){

@@ -185,7 +185,7 @@
         rollover_param="[[15094323]]Upgrades the Tower to Entangling Tower, capable of launching vines at nearby enemies, rendering them incapable of moving for #GetClassInt('Forester_Tower', 'entangle_time') / 1000# seconds.[[]]"
         button="entangling tower.bmp"
         icon="Assets/Interface/Icons/entangling tower.bmp"
-        position="3"
+        position="4"
         execdelay="60000"
         param="data/cmds/forester_entanglingtower.vs"
         cost_script="return '60/0/0/0';"

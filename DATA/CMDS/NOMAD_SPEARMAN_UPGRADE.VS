@@ -12,7 +12,7 @@ for (i = ol.count - 1; i >= 0; i -= 1)
 {
     u = ol[i].AsUnit();
 	u.SetSpeedFactor(u.speed_factor + u.hunter_bonus_speed);
-	u.SetMaxHealth(u.maxhealth + u.hunter_bonus_health);
+	u.SetMaxHealth(u.GetMaxHealth() + u.hunter_bonus_health);
 }
 
 bl = ClassPlayerObjs("Nomad_Townhall", player, true).GetObjList();

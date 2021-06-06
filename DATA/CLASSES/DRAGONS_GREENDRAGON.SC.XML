@@ -2,6 +2,7 @@
 
 	<method sig="take_off" vs="data/subai/dragons_takeoff.vs"/>
 	<method sig="stun" vs="data/subai/dragon_stun.vs"/>
+	<method sig="init" vs="data/subai/dragons_greendragon_init.vs"/>
 
 	<static_int flying="1"/>
 	<static_int idle_anim_percent="0"/>
@@ -32,6 +33,8 @@
 	
 	<static_int acid_vulnerabilty_increase="30"/> <!--percentage -->
 	<static_int acid_duration="3000"/>
+	<static_int weakening_bonus_health="150"/>
+	<static_int weakening_bonus_armor="2"/>
 	
 	<static_str projectile_class="Dragons_GreenDragonFire"/>
 	<static_str	projectile_class_building="Dragons_GreenDragonFire"/>

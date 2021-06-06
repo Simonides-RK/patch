@@ -114,7 +114,7 @@
     template_cmd="template_upgrade"
 	verifier_script="data/cmds/colony_upgrade1_verify.vs"
     name="[[upgHorseHunters1]]Horse Hunters[[]]"
-	rollover_param="[[upgHorseHunters2]]Increases Nomad Spearman's speed by #GetClassInt('Nomad_Spearman', 'hunter_bonus_speed')# and his health by #GetClassInt('Nomad_Spearman', 'hunter_bonus_health')#.[[]]"
+	rollover_param="[[upgHorseHunters2]]Increases Nomad Spearman's speed by #GetClassInt('Nomad_Spearman', 'hunter_bonus_speed')# and his health by #GetClassInt('Nomad_Spearman', 'hunter_bonus_health')#. In addition, Spearmen ignore mounted units' armor.[[]]"
 	button="nomads_horse_hunting.BMP"
 	icon="Assets/Interface/Icons/nomads_horse_hunting_icon.BMP"
 	position="11"

@@ -1,6 +1,7 @@
 <class id="Nomad_Spearman" cpp_class="CVXUnit" parent="Nomad_Plunderer" entity="assets/entities/units/Nomad_Spearman/Nomad_Spearman.ent.xml">
 
 	<method sig="init" vs="data/subai/nomad_spearman_init.vs"/>
+	<method sig="doattack" vs="data/subai/nomad_spearman_doattack.vs"/>
 
 	<static_int maxhealth="305"/> 
 	<static_int radius="30" selection_radius="40"/>

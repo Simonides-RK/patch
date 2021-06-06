@@ -55,7 +55,7 @@
         dispatch_type="execute method"
         dispatch_param="set_target"
         selecttarget_text="[[11296818]]Select a target to attack[[]]"
-        selecttarget_verifyscript="data/cmds/selectverify_enemiesinrange_tower.vs"
+        selecttarget_verifyscript="data/cmds/selectverify_enemiesinrange.vs"
         selecttarget_cursor_invalid="cantselect"
 >
         <cmdtext target="Unit"
@@ -72,7 +72,7 @@
         dispatch_type="execute method"
         dispatch_param="set_target"
         selecttarget_text="[[11296818]]Select a target to attack[[]]"
-        selecttarget_verifyscript="data/cmds/selectverify_enemiesinrange_tower.vs"
+        selecttarget_verifyscript="data/cmds/selectverify_enemiesinrange.vs"
         selecttarget_cursor_invalid="cantselect">
         <cmdtext target="Unit"
                 default-text="[[11253765]]Right-click to attack this unit[[]]"/>
@@ -218,6 +218,22 @@
         verifier_script="data/cmds/building_cancel_build_verify.vs"
 >
      <src obj="Building"/>
+</cmd>
+
+<cmd id="building_deconstruct"
+		template_cmd="template_upgrade_local"
+        name="[[decnsrct]]Deconstruct Building (Hotkey: @X)[[]]"
+		icon="Assets/Interface/Icons/deconstruct_icon.BMP"
+        button="deconstruct.bmp"
+		execdelay="6000"
+        position="3"
+		cost_script="return '0/0/0/0';"
+        rollover_param="[[decnsrct2]]Deconstruct this building to erase it when finished.[[]]"
+        param="data/cmds/building_deconstruct.vs"
+>
+     <src obj="Building"/>
+	 <nsrc obj="BaseTownhall"/> 
+	 <nsrc obj="Independent_Settlement"/>
 </cmd>
 
 <!-- ******************************************************************************* -->

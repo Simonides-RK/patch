@@ -131,7 +131,7 @@
     template_cmd="template_upgrade"
 	verifier_script="data/cmds/colony_upgrade1_verify.vs"
     name="[[upgWeakAcid1]]Weakening Acid[[]]"
-	rollover_param="[[upgWeakAcid2]]Enables the Wyrm to render his target more vulnerable to damage by #GetClassInt('Dragons_GreenDragon', 'acid_vulnerabilty_increase')#%.[[]]"
+	rollover_param="[[upgWeakAcid2]]Enables the Wyrm to render his target more vulnerable to damage by #GetClassInt('Dragons_GreenDragon', 'acid_vulnerabilty_increase')#%. In addition grants + #GetClassInt('Dragons_GreenDragon', 'weakening_bonus_health')# HP and + #GetClassInt('Dragons_GreenDragon', 'weakening_bonus_armor')# armor.[[]]"
 	button="dragons_weakening_acid.BMP"
 	icon="Assets/Interface/Icons/dragons_weakening_acid_icon.BMP"
 	position="11"

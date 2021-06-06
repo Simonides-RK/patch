@@ -24,7 +24,7 @@
         position="1"
         rollover_param="[[11288788]]Attack a target until it is destroyed.[[]]"
         selecttarget_text="[[12839034]]Select target to attack[[]]"
-        selecttarget_verifyscript="data/cmds/selectverify_enemiesinrange_tower.vs"
+        selecttarget_verifyscript="data/cmds/selectverify_enemiesinrange.vs"
         selecttarget_cursor_invalid="cantselect"
 >
         <cmdtext target="Unit"

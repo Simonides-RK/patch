@@ -37,6 +37,8 @@
 	<!-- ypsilon: upgrades -->		
 	<static_int unity_bonus="1"/>	
 	<static_int unity_max="13"/>
+	<static_int unity_range="10"/> <!-- range increase per elf -->
+	<static_int unity_max_range="13"/>
 
 	<sounds
 		AnimAttack="Elf_archer_attack"

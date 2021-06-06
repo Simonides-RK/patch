@@ -9,10 +9,14 @@ while(1)
 
 	while (.modal_button == 4)
 	{
-		Sleep(100);
+		if (.health < .GetMaxHealth() && IsUpgradeAvailable(.player, "upgrade_Burning_Wings"))
+			{
+			.Heal (.burning_wings_regen);
+			}
+		Sleep(1000);
 	}
 
-if (IsUpgradeAvailable(.player, "upgrade_Burning_Wings") && .modal_button == 5) // ypsilon: check for effect
+if (IsUpgradeAvailable(.player, "upgrade_Burning_Wings") && .modal_button == 5)
 	{
 		
 		if (!.ExistEffect("BurningWings"))

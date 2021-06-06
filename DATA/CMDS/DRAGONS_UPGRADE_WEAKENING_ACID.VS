@@ -1,11 +1,22 @@
 //void, int player
 
-
+ObjList ol;
 ObjList dl;
 int i;
 Building d;
 
 //Independent Upgrades Health Boosts:
+
+ol = ClassPlayerObjs("Dragons_GreenDragon", player, true).GetObjList;
+
+for (i = ol.count - 1; i >= 0; i -= 1)
+{
+	u = ol[i].AsUnit();
+	
+	u.SetMaxHealth(u.GetMaxHealth() + u.weakening_bonus_health);
+	u.armor += GetClassInt("Dragons_GreenDragon", "weakening_bonus_armor");
+	
+}
 
 
 dl = ClassPlayerObjs("Dragons_Townhall", player, true).GetObjList;
