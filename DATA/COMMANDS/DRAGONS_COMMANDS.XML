@@ -140,7 +140,7 @@
 	cost_script="return '225/5/0';"
 	param="data/cmds/dragons_upgrade_weakening_acid.vs"
 	requirements=""
-	disableifdisabled="train_PoisonDragon,upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"
+	disableifdisabled="train_PoisonDragon,upgrade_HumanLevel2,upgrade_ForesterLevel2,upgrade_DarklingLevel2"
 >
         <src obj="Dragons_Townhall"/>
 </cmd>
@@ -149,7 +149,7 @@
     template_cmd="template_upgrade"
 	verifier_script="data/cmds/colony_upgrade2_verify.vs"
     name="[[upgBurningWings1]]Burning Wings[[]]"
-	rollover_param="[[upgBurningWings2]]Gives the Red Dragon the ability to activate 'Burning Wings': His movement speed gets increased by #GetClassInt('Dragons_RedDragon', 'burning_wings_speed')#%, attack speed by #GetClassInt('Dragons_RedDragon', 'burning_wings_atkspeed')#% but he takes #GetClassInt('Dragons_RedDragon', 'burning_wings_damage')# damage per second while it is activated.[[]]"
+	rollover_param="[[upgBurningWings2]]Gives the Red Dragon the ability to activate 'Burning Wings': His movement speed gets increased by #GetClassInt('Dragons_RedDragon', 'burning_wings_speed')#%, attack speed by #GetClassInt('Dragons_RedDragon', 'burning_wings_atkspeed')#% but he takes #GetClassInt('Dragons_RedDragon', 'burning_wings_damage')# damage per second while it is activated. While back in Normal Mode grants slow health regeneration.[[]]"
 	button="dragons_burningwings.bmp"
 	icon="Assets/Interface/Icons/dragons_burningwings_icon.bmp"
 	position="12"

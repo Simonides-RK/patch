@@ -49,7 +49,7 @@
 		<static_int burning_wings_speed="65"/> <!--percentage -->
 		<static_int burning_wings_atkspeed="30"/> <!--percentage -->
 		<static_int burning_wings_damage="25"/>
-		<static_int burning_wings_regen="10"/>
+		<static_int burning_wings_regen="10"/> <!--HP per second -->
         
         <static_str race_str="Race_Dragons"/>
         

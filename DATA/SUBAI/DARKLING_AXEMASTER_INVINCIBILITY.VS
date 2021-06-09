@@ -24,7 +24,6 @@ SetFlag(.user_flags1, .cant_be_stunned, true);
 
 if(.ExistEffect("possessed"))
 {
-	.SetCantBeHealed(false);
 	ol = ObjsInRange(this, "Forester_Spirit", 3, true).GetObjList();
 	if(ol.count() == 1)
 	{

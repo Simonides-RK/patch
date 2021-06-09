@@ -130,7 +130,7 @@
 	cost_script="return '225/5/0';"
 	param="data/cmds/elves_upgrade_unity.vs"
 	requirements=""
-	disableifdisabled="train_Elf_Archer,upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"
+	disableifdisabled="train_Elf_Archer,upgrade_HumanLevel2,upgrade_ForesterLevel2,upgrade_DarklingLevel2"
 >
         <src obj="Elves_Settlement"/>
 </cmd>

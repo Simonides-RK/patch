@@ -4,6 +4,7 @@ ObjList ol;
 ObjList dl;
 int i;
 Building d;
+Unit u;
 
 //Independent Upgrades Health Boosts:
 

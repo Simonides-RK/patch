@@ -4,6 +4,7 @@ Unit this;
 
 this=This.AsUnit;
 
+
 if (IsUpgradeAvailable(.player, "upgrade_Weakening_Acid"))
 	{
 	.SetMaxHealth(.GetMaxHealth() + .weakening_bonus_health);

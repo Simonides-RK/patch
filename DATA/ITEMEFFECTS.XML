@@ -40,7 +40,7 @@
         <effect id="lightning" group="On Attack" item_name="[[23099707]]Storms[[]]" effect="[[23106373]]Deals %d1 lightning damage and could stun the enemy[[]]"
                 min="9" max="54" step="9" costmin="50" costmid="425" costmax="1000"></effect>
         <effect id="movement" group="Bonuses" item_name="[[23115288]]Speed[[]]" effect="[[23123142]]+%d1%% movement speed[[]]" min="10"
-                max="66" costmin="50" costmid="425" costmax="1000"></effect>
+                max="45" costmin="50" costmid="425" costmax="1000"></effect>
         <effect id="dodge" group="Specials" item_name="[[23134783]]Evasion[[]]" effect="[[23144391]]%d1%% chance to avoid attacks[[]]"
                 min="5" max="33" costmin="50" costmid="425" costmax="1000"></effect>
         <effect id="mind_control_chance" group="Specials" item_name="[[23157537]]Mind Control[[]]" effect="[[23161604]]%d1%% chance to gain control of enemies[[]]"

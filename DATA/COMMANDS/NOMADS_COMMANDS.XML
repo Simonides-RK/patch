@@ -123,7 +123,7 @@
 	cost_script="return '225/5/0';"
 	param="data/cmds/nomad_spearman_upgrade.vs"
 	requirements=""
-	disableifdisabled="train_Nomad_Spearman,upgrade_HumanLevel1,upgrade_ForesterLevel1,upgrade_DarklingLevel1"
+	disableifdisabled="train_Nomad_Spearman,upgrade_HumanLevel2,upgrade_ForesterLevel2,upgrade_DarklingLevel2"
 >
         <src obj="Nomad_Townhall"/>
 </cmd>
