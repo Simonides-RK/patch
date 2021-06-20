@@ -1,0 +1,95 @@
+<class id="Forester_Overlord" cpp_class="CVXUnit" parent="BasePlant" entity="assets/entities/units/Forester_Overlord/Forester_Overlord.ent.xml">
+
+	<method sig="init" vs="data/subai/forester_overlord_init.vs"/>
+	<method sig="idle" vs="data/subai/forester_overlord_idle.vs"/>
+	<method sig="plantbeast" vs="data/subai/forester_overlord_plantbeast.vs"/>
+	<method sig="thorns" vs="data/subai/forester_overlord_thorns.vs"/>
+	<method sig="cactusbomb" vs="data/subai/forester_overlord_cactusbomb.vs"/>	
+	
+	<behavior script="data/subai/forester_overlord_behavior_specials.vs"/>
+	<behavior script="data/subai/forester_overlord_behavior_entangle.vs"/>
+	
+	<static_int radius="40" selection_radius="40"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5381048]]Forest Overlord[[]]"/>
+	<static_str display_name="[[5381048]]Forest Overlord[[]]" display_name_plural="[[5391802]]Forest Overlords[[]]"/>
+	
+	<static_int range="400" min_range="0"/>
+	<static_int sight="600"/>
+
+
+	<static_int invisible_under_fog="1"/>
+	<static_str interface="unitselection"/>
+
+	<static_str damage_type="magic"/>
+	<static_str defence_type="medium"/>
+	<static_int maxhealth="1000"/>
+	<static_int attack_duration="1200"/>
+	<static_int initial_damage="45"/>
+	<static_int initial_armor="2"/>
+	<static_int can_be_selected="1"/>
+	<static_int rotation_time="1000"/>
+	<static_int idle_anim_percent="30"/>
+	
+	<static_str projectile_class = "Forester_Overlord_Projectile"/>
+	<static_str	projectile_class_building = "Forester_Overlord_Projectile"/>
+	<static_int	projectile_angle= "0"/>
+	<static_int projectile_dist = "25"/>
+
+	<static_int regenerate_promille="0"/>
+	<static_int regenerate_add="1"/>
+	<static_int summoned_unit="1"/>
+	
+	<static_str icon="Assets/Interface/Icons/overlord.BMP"/>
+	<static_str portrait="assets/interface/icons/overlord.rle"
+				skyimage="assets/interface/sky_forester.bmp"/>
+	
+	<static_int sleep_time="400"/>
+	<static_int specials_sleep_time_min="7000"/>
+	<static_int specials_sleep_time_max="13000"/>
+	<static_int max_cactus_bombs="3"/>
+
+	<member_int stalker_venom=""/>
+	<member_int stalker_burrow=""/>
+	<member_int stalker_plantbeast=""/>
+	<member_int stalker_thorns=""/>
+	<member_int stalker_cactusbomb=""/>
+	<member_int initialized=""/>
+	<member_int planted_by_stalker=""/>
+	
+	<!-- !!!!!****** ALL THESE PARAMS ARE COPY/PASTEed FROM FORESTER_STALKER CLASS ****!!!!! -->
+	<!--Plant beast-->
+	<static_int plant_beast_dist="350"/>
+	<static_int plant_beast_radius="30"/>
+	<static_int plant_beast_tries="25"/>
+
+	<!--Cactus Trap-->
+	<static_int plant_cactus_dist="350"/>
+	<static_int plant_cactus_radius="30"/>
+	<static_int plant_cactus_tries="25"/>
+	<static_int cactus_venom_effect_time="5000"/>
+	<static_int cactus_venom_damage="10"/>
+	<static_int cactus_venom_sleep="1000"/>
+
+	<!--Burrow-->
+	<static_int burrowed_sight="350"/>
+	<static_int burrowed_attack_sleep="1500"/>
+	<static_int entangle_time="3000"/>
+	<static_int behavior_burrowed_sleep="600"/>
+	<static_int idle_burrowed_checktime="100"/>
+
+	<!--Venom-->
+	<static_int venom_rain_effect_time="3000"/>
+	<static_int venom_rain_damage="3"/>
+	<static_int venom_rain_sleep="1000"/>
+
+	<!--Thorns-->
+	<static_int thorn_size="22"/>
+	<static_int time_between_thorns="65"/>
+	
+	<static_str race_str="Race_Foresters"/>
+
+	<static_int ai_cant_be_in_army="1"/>
+
+	<sounds
+		AnimSpecial3="assets/sounds/HeroSkills/Forester Stalker/Stalker_Plant_Overlord_growing_1.wav"/>
+</class>

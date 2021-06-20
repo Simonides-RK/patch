@@ -41,7 +41,7 @@ if(u.IsAlive())
 {
 	CreateFeedback("MindBlaze", u, 1000, true);
 	PlaySound(u.pos, "assets/sounds/HeroSkills/Darkling Empath/Empath_MindBlaze.wav");
-	if ( u.item_count > 0 ) {
+	if ( u.item_count > 0 && rand(100) < .mindblaze_drop_chance) {
 		ptdir = Point(50, 0);
 		ptdir.Rot(rand(360));
 		slot = rand(u.max_items);
@@ -61,7 +61,12 @@ if(u.IsAlive())
 		}
 	}
 	u.InsertCommand("stun");
-	u.Damage(this, CalculateDirectDamage(this, u, u.GetMaxHealth() * .mindblaze_damage / 100), false);
+	if (u.AsHero().IsValid())
+		{
+		u.Damage(this, u.GetMaxHealth() * .mindblaze_damage_hero / 100), false);
+		} else {
+		u.Damage(this, u.GetMaxHealth() * .mindblaze_damage / 100), false);
+		}
 }
 
 if(.GetAnim())

@@ -80,17 +80,17 @@ if (!bHuman && !bDarkling && !bForester)
 requirements = "";	
 if (bHuman && !IsUpgradeAvailable(player, "upgrade_HumanLevel2"))
 	{
-		requirements = requirements + Translate("[[10753070]]\n  - [[]]") + GetCommandDisplayName("upgrade_HumanLevel1") + "\n     " + Translatef("[[10766546]](upgrade at %s1)[[]]", GetClassDisplayName("Human_Townhall", false));
+		requirements = requirements + Translate("[[10753070]]\n  - [[]]") + GetCommandDisplayName("upgrade_HumanLevel2") + "\n     " + Translatef("[[10766546]](upgrade at %s1)[[]]", GetClassDisplayName("Human_Townhall", false));
 		req_count += 1;
 	}
 if (bForester && !IsUpgradeAvailable(player, "upgrade_ForesterLevel2"))
 	{
-		requirements = requirements + Translate("[[10753070]]\n  - [[]]") + GetCommandDisplayName("upgrade_ForesterLevel1") + "\n     " + Translatef("[[10766546]](upgrade at %s1)[[]]", GetClassDisplayName("Forester_Townhall", false));
+		requirements = requirements + Translate("[[10753070]]\n  - [[]]") + GetCommandDisplayName("upgrade_ForesterLevel2") + "\n     " + Translatef("[[10766546]](upgrade at %s1)[[]]", GetClassDisplayName("Forester_Townhall", false));
 		req_count += 1;
 	}
 if (bDarkling && !IsUpgradeAvailable(player, "upgrade_DarklingLevel2"))
 	{
-		requirements = requirements + Translate("[[10753070]]\n  - [[]]") + GetCommandDisplayName("upgrade_DarklingLevel1") + "\n     " + Translatef("[[10766546]](upgrade at %s1)[[]]", GetClassDisplayName("Darkling_Townhall", false));
+		requirements = requirements + Translate("[[10753070]]\n  - [[]]") + GetCommandDisplayName("upgrade_DarklingLevel2") + "\n     " + Translatef("[[10766546]](upgrade at %s1)[[]]", GetClassDisplayName("Darkling_Townhall", false));
 		req_count += 1;
 	}
 

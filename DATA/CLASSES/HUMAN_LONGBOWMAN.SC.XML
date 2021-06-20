@@ -1,0 +1,47 @@
+<class id="Human_Longbowman" cpp_class="CVXUnit" parent="Military" entity="assets/entities/units/Human_LongBowMan/Human_LongBowMan.ent.xml">
+
+	<method sig="init" vs="data/subai/human_longbowman_init.vs"/>
+
+	<static_int range="350" min_range="0"/>
+	<static_int radius="20" selection_radius="25"/>
+	<static_int formation_radius="42" formation_priority="550"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[6060392]]Humans[[]]/[[6341936]]Longbowman[[]]"/>
+
+	<static_str display_name="[[6341936]]Longbowman[[]]" display_name_plural="[[6351948]]Longbowmen[[]]"/>
+
+	<static_int sight="650"/>
+	<static_int speed="100"/>
+
+	<static_int maxhealth="410"/>
+	<static_int initial_damage="18"/>
+	<static_int initial_armor="4"/>
+
+	<static_str damage_type="arrow"/>
+	<static_str defence_type = "medium"/>
+
+	<static_str cost="90/1/2"/>
+
+	<static_str projectile_class="Human_Longbowman_Arrow"/>
+	<static_str	projectile_class_building="Human_Longbowman_ExplosiveArrow"/>
+	<static_int	projectile_angle="-15"/>
+	<static_int	projectile_dist="20"/>
+	<static_int reinfarrows_bonus="5"/>
+	<static_int	explosivearrow_damage_max="23"/>
+
+
+	<static_str rollover_description="[[6369803]]Longbowmen are efficient and versatile ranged units. Can be upgraded to increase their damage, to make them very effective against buildings and to double their range.[[]]"/>
+	<static_str icon="Assets/Interface/Icons/longbowman.BMP"
+				portrait="assets/interface/icons/longbowman.rle"
+				skyimage="assets/interface/sky_human.bmp"/>
+
+	<static_str race_str="Race_Humans"/>
+	<!-- AI -->
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="50"/>
+	<static_int ai_draw_back_if_disabled="1"/>
+	<static_int ai_concentrate_group="0"/>   <!-- general ranged damage -->
+	<!-- AI -->
+	<sounds
+		AnimAttack="Arrow_attack_"
+		AnimDie="Longbow_death"
+		command="Longbow0"/>
+</class>

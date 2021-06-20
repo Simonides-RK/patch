@@ -7,7 +7,7 @@
 <method sig="ambush_special" vs="data/subai/forester_sharpshooter_ambush_special.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
 <method sig="fog_strike" vs="data/subai/forester_sharpshooter_fog_strike.vs" onfinish="data/subai/hero_special_onfinish.vs"/>
 
-<static_int range="400" min_range="2"/>                 
+<static_int range="400" min_range="0"/>                 
 <static_int radius="30" selection_radius="25"/> 
 <static_str edittree_pos="[[1477212]]Units[[]]/[[5014486]]Foresters[[]]/[[5583638]]Sharpshooter[[]]"/>
 <static_str display_name="[[5583638]]Sharpshooter[[]]" display_name_plural="[[5593391]]Sharpshooters[[]]"/>

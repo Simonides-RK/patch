@@ -17,7 +17,7 @@ while ( 1 ) {
         for ( i = 0; i < ol.count; i += 1 ) {
                 u = ol[0].AsUnit();
                                 
-                if ( u.IsAlive() && !u.ExistEffect("invincibility") && u.command != "stun" && !u.GetVisible() && u.class!="Trolls_SmallTrollFlying") {
+                if ( u.IsAlive() && !u.ExistEffect("invincibility") && u.command != "stun" && .IsValidTarget(u) && u.class!="Trolls_SmallTrollFlying") {
                         targets.Add(u);
                 } 
         }

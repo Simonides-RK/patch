@@ -7,7 +7,11 @@ this = This.AsHero();
 
 if ( .IsSkillDeveloped("Mind_Blend") ) {
 	.mind_blend_just_developed = 1;
-	.has_mind_blend = 1;
+	.has_mind_blend = 1;	
+}
+
+if ( .IsSkillDeveloped("Pain_Channeling") ) {
+	.AddEffect("pain_channeling", .pain_channeling_percent, 0);
 }
 
 if(.in_shelter.IsAlive())

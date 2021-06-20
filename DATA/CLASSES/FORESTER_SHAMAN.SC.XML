@@ -33,7 +33,7 @@
 	<static_int sight="750"/>
 	<static_int speed="85"/>
 
-	<static_int maxhealth="500" initial_damage="40" initial_armor="2"/>
+	<static_int maxhealth="500" initial_damage="64" initial_armor="2"/>
 
 	<static_str cost="140/4/2"/>
 	<static_int attack_duration="1000"/>
@@ -66,6 +66,7 @@
 	<static_int close_proximity="300"/>
 	<static_int energize_time="4000"/>
 	<static_int fatigue_damage="55"/>
+	<static_int channel_bonus="30"/>
 
 	<static_int vitalize_delay="1500"/>
 	
