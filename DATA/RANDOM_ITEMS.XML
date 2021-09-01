@@ -801,6 +801,6 @@
                 type="CommonItem" icon="assets/interface/items/powerstone_lifegem.bmp" probability="5">
                 <effect effectid="regeneration" prob="100" factor="10" />
 				<effect effectid="Hero_Resurrect" prob="100" />
-				<effect effectid="chosenone" prob="100"/>
+				
 		</item>	<!-- --> 		
 </items>

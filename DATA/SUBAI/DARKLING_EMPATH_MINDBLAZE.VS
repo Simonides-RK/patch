@@ -63,9 +63,9 @@ if(u.IsAlive())
 	u.InsertCommand("stun");
 	if (u.AsHero().IsValid())
 		{
-		u.Damage(this, u.GetMaxHealth() * .mindblaze_damage_hero / 100), false);
+		u.Damage(this, u.GetMaxHealth() * .mindblaze_damage_hero / 100, false);
 		} else {
-		u.Damage(this, u.GetMaxHealth() * .mindblaze_damage / 100), false);
+		u.Damage(this, u.GetMaxHealth() * .mindblaze_damage / 100, false);
 		}
 }
 

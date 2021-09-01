@@ -12,6 +12,8 @@ if (svo.IsValid) if (svo.command == "idle")
 }
 
 .ind_fake_queuer.Erase();
+.special_visual_obj.Erase();
+.special_visual_obj2.Erase();
 
 if (.IsBuilt){
 EnvWriteInt(.player, .race_str, EnvReadInt(.player, .race_str) - 1);

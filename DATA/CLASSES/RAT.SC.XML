@@ -5,7 +5,6 @@
 
         <static_str display_name="[[7230892]]Rat[[]]" display_name_plural="[[7241568]]Rats[[]]"/>
         <static_str edittree_pos="[[1477212]]Units[[]]/[[7230892]]Rat[[]]"/>
-        <static_str portrait="assets/interface/icons/rat.rle"/>
         <static_int radius="10" selection_radius="10"/>
         
         <static_int maxhealth="50"/>
@@ -16,4 +15,8 @@
         <static_int initial_armor="0"/>
         <static_str defence_type = "small"/>
         <static_int ai_cant_be_in_army="1"/>
+		
+		<static_str icon="Assets/Interface/Icons/rat.BMP"
+				portrait="Assets/Interface/Icons/rat.rle"
+				skyimage="assets/interface/sky_human.bmp"/>
 </class>
