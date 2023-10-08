@@ -107,7 +107,7 @@ if(bdNew.IsValid())
 	.SetMinRange(.crystal_tower_min_range);
 	.AsUnit().AddEffect("absorb_damage", 100, 0);
 	.AsUnit().AddEffect("wizard_on_crystal_tower", 0, 0); //Władysław Ańtian: set stun
-	.SetCantAddEffect(true);
+	//.SetCantAddEffect(true);
 	.damage += .crystal_tower_dmg_inc;
 	.on_crystal_tower = 1;
 
