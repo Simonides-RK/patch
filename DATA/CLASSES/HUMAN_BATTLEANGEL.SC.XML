@@ -57,10 +57,10 @@
 <static_int lightningshield_duration="45000"/>
 <static_int lightningshield_range="250"/>
 <static_int lightningshield_damage="25"/>
-<static_int magicsword_duration="25000"/>
+<static_int magicsword_duration="18000"/>
 <static_int lightningstorm_range="410"/>
-<static_int lightningstorm_damage="120"/>
-<static_int lightningstorm_damage_initial="400"/>
+<static_int lightningstorm_damage="150"/>
+<static_int lightningstorm_damage_initial="300"/>
 <static_int lightningstorm_numtargets="5"/>
 
 <static_str lightningstorm_projectile="Human_LightningStormProjectile"/>

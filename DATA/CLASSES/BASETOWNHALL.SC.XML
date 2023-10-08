@@ -8,8 +8,8 @@
 	<member_obj fake_queuer  = ""/> <!-- Fake_Building_Queuer.sc.xml -->
 	<member_int gold_production = ""/>
 	<member_int glory_production = ""/>
-	<static_int first_armor_extra = "8"/>
-	<static_int second_armor_extra = "3"/>
+	<static_int first_armor_extra = "3"/>
+	<static_int second_armor_extra = "2"/>
 	<static_int third_armor_extra = "1"/>
 	<static_int armor_bonus = "2"/>
 	

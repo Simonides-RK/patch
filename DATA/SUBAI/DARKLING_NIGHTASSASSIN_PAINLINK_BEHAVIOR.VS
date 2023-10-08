@@ -21,7 +21,7 @@ while ( 1 ) {
 		.AddEffect("painlink", 0, 0);
 	}
 	if(.pos.InRect(map_rect))
-		ol = Intersect(ObjsInCircle(.pos, .sight, "Hero", false), EnemyObjs(.player, "Hero", false)).GetObjList();
+		ol = Intersect(ObjsInCircle(.pos, .painlink_radius, "Hero", false), EnemyObjs(.player, "Hero", false)).GetObjList();
 	else
 		ol.Clear;
 	

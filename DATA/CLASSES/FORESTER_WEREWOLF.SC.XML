@@ -37,7 +37,7 @@
         <static_int big_state_idle_time="2000"/>
         <static_int state_small_max_health="350"/>
         <static_int state_big_max_health="1450"/>
-        <static_int open_wounds_time="90000"/>
+        <static_int open_wounds_time="50000"/>
         <static_int energy_decrease_per_attack="4"/>
         <static_int max_energy="45"/>
 		<static_int ferocity_armor_bonus="4"/>

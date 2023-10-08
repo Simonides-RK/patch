@@ -6,18 +6,20 @@
                 <key id="F4" script="" />
                 <key id="F5" script="if (!IsMultiplayer()) {ExploreAll();ToggleFog();} else {UserNotification('common', Translate('Nice try...'), Point(-1, -1), 0);}" />
                 <key id="F6" script="if (!IsMultiplayer()) Save();" />
-                <key id="F7" script= "EnvWriteString('SoundVolume', '100'); UserNotification('rickroll', '', Point(-1, -1), 0);" />
+                <key id="F7" script= "UserNotification('common', Translate('Game Time: ' + clock() + ' '), Point(-1,-1), 0);" />
                 <key id="F8" script="_ScriptEditor;" />
                 <key id="F9" script="if (!IsMultiplayer()) Load();" />
 				<key id="F10" script="if(EnvReadString('/ShowDebugInfo') != 'on') {EnvWriteString('/ShowDebugInfo', 'on');} else{EnvWriteString('/ShowDebugInfo', '0');}" />
 				<key id="F11" script="if (!IsMultiplayer()){SetRes(CurPlayer,ResGold,10000);SetRes(CurPlayer, ResGems, 100);SetRes(CurPlayer,ResGlory,10000);}" />
 				<key id="F12" script="if (!IsMultiplayer()) {int i; for (i = _GetSelection().count() - 1; i &gt;= 0; i = i - 1) _GetSelection()[i].SetPlayer(CurPlayer);}" />
-				<key id="End" script="UserNotification('common', 'Time from game start ' + clock() + ' (game time).', Point(-1,-1), 0);" />
+				<key id="End" script="" />
                 <key id="Add" script="if (!IsMultiplayer()) {int i; for (i=1; i&lt;=5; i+=1) if (GetSpeed()&lt;GetConst('Speed'+i)) { SetSpeed(GetConst('Speed'+i)); break; }}" />
                 <key id="Sub" script="if (!IsMultiplayer()) {int i; for (i=5; i&gt;=1; i-=1) if (GetSpeed()&gt;GetConst('Speed'+i)) { SetSpeed(GetConst('Speed'+i)); break; }}" />
                 <key id="Pause" script="if (IsMultiplayer &amp;&amp;(EnvReadInt('/PauseToggle')==0)){str pause_count;int P, p_toggles;pause_count = '/PauseCountPlayer_'+CurPlayer;if((EnvReadInt(pause_count)&lt; 6)&amp;&amp;(p_toggles==0)){p_toggles = 1;P = EnvReadInt(pause_count);P+=1;EnvWriteInt(pause_count, P);EnvWriteInt('/PauseToggle', 1);if (P==1) UserNotification('common', Translate('[[Pause5]]5 pause attempts left.[[]]') , Point(-1, -1), 0);if (P==2) UserNotification('common', Translate('[[Pause4]]4 pause attempts left.[[]]') , Point(-1, -1), 0);if (P==3) UserNotification('common', Translate('[[Pause3]]3 pause attempts left.[[]]') , Point(-1, -1), 0);if (P==4) UserNotification('common', Translate('[[Pause2]]2 pause attempts left.[[]]') , Point(-1, -1), 0);if (P==5) UserNotification('common', Translate('[[Pause1]]1 pause attempts left.[[]]') , Point(-1, -1), 0);if (P==6) UserNotification('common', Translate('[[Pause0]]No pause attempts left.[[]]') , Point(-1, -1), 0);Pause;p_toggles = 0;}else {UserNotification('common', Translate('[[Pause0]]No pause attempts left.[[]]') , Point(-1, -1), 0);}}else{Pause;if(EnvReadInt('/PauseToggle')!=0) EnvWriteInt('/PauseToggle', 0);}" />
-                <key id="Mul" script="if (!IsMultiplayer()) {if (GetSpeed() != 50000) SetSpeed(50000); else SetSpeed(1000);}" />
-                <key id="Backspace" script="" />
+                <key id="Mul" script="" />
+                <key id="Backspace" script="ObjList ol; ol = ClassPlayerObjs('BaseTownhall', CurPlayer, false).GetObjList(); View(ol[0].pos , false);;" />
 				<key id="Del" script="if (!IsMultiplayer()) {int i; for (i = _GetSelection().count() - 1; i &gt;= 0; i = i - 1) _GetSelection()[i].DamageWithNoAttacker(1000000);}" />
+				<key id="NumPad 0" script="" />
+				<key id="Tab" script="if (!IsViewLocked()) ShowLastNotificationPos();" />
         </keys>
 </scdebug>    

@@ -40,7 +40,7 @@
 <static_int possession_damage_per_second="10"/>
 <static_int mindblaze_damage="50"/> <!-- percentage -->
 <static_int mindblaze_damage_hero="35"/> <!-- percentage -->
-<static_int mindblaze_drop_chance="70"/> <!-- percentage -->
+<static_int mindblaze_drop_chance="60"/> <!-- percentage -->
 <static_int divinejourney_newitem_min="350"/>
 <static_int divinejourney_newitem_range="450"/>
 <static_int divinejourney_impitem_min="350"/>

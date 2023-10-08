@@ -1,0 +1,212 @@
+<commands>
+
+<!-- Ivko: Texts edited, 20.02.2005. Please don't remove this comment! -->
+
+<cmd id="Possession"
+	name="[[12018048]]P@ossession[[]]"
+	button="possession.bmp"
+	position="7"
+	enabled="0"
+	rollover_param="[[12029221]]Doubles the health and damage of a unit. However, the unit suffers #GetClassInt('Darkling_Empath', 'possession_damage_per_second')# damage per second and can't be healed.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="possession"
+	selecttarget_text="[[12039176]]Select target unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_emapth_possession.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="Develop_Possession"
+	template_cmd="template_develop_hero_level_1"
+	name="[[12042603]]Learn P@ossession[[]]"
+	button="possession.bmp"
+	position="13"
+	toggle_tab="1"
+	rollover_param="[[12029221]]Doubles the health and damage of a unit. However, the unit suffers #GetClassInt('Darkling_Empath', 'possession_damage_per_second')# damage per second and can't be healed.[[]]"
+	param="Skill Possession, ManaCost 50, MaxMana 125"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="MindBlaze"
+	name="[[12056700]]Mind @Blaze[[]]"
+	button="mind blaze.bmp"
+	position="9"
+	enabled="0"
+	rollover_param="[[12061654]]Inflicts #GetClassInt('Darkling_Empath', 'mindblaze_damage')#% damage to an enemy unit, stuns it and causes it to drop one of its items.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="mindblaze"
+	selecttarget_text="[[12076972]]Select enemy unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_enemy_unit_revealed.vs"
+	selecttarget_cursor_invalid="cantselect"
+	enemy_target="1"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="Develop_MindBlaze"
+	template_cmd="template_develop_hero_level_1"
+	name="[[12080608]]Learn Mind @Blaze[[]]"
+	button="mind blaze.bmp"
+	position="14"
+	toggle_tab="1"
+	rollover_param="[[12061654]]Inflicts #GetClassInt('Darkling_Empath', 'mindblaze_damage')#% damage to an enemy unit, stuns it and causes it to drop one of its items.[[]]"
+	param="Skill MindBlaze, ManaCost 60, MaxMana 90"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="DivineJourney"
+	name="[[12096005]]Divine @Journey[[]]"
+	button="divine journey.bmp"
+	position="9"
+	enabled="0"
+	rollover_param="[[12103483]]Sends a friendly unit to the domain of Gods. The unit returns after #GetClassInt('Darkling_Empath', 'journey_duration')/1000# seconds, fully healed and equipped with a powerful item.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="divinejourney"
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_divine_journey.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="Develop_DivineJourney"
+	template_cmd="template_develop_hero_level_1"
+	name="[[12120451]]Learn Divine @Journey[[]]"
+	button="divine journey.bmp"
+	position="15"
+	toggle_tab="1"
+	rollover_param="[[12103483]]Sends a friendly unit to the domain of Gods. The unit returns after #GetClassInt('Darkling_Empath', 'journey_duration')/1000# seconds, fully healed and equipped with a powerful item.[[]]"
+	param="Skill DivineJourney, ManaCost 180, MaxMana 240"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="Dichotomize"
+	name="[[12133026]]Di@chotomize[[]]"
+	button="dichotomize.bmp"
+	position="9"
+	enabled="0"
+	rollover_param="[[12141418]]Splits a non-Champion unit in two identical units. The new units are at 50% health and can't be healed, but don't require additional population.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="dichotimize"
+	selecttarget_text="[[12039176]]Select target unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_dichotimize.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="Develop_Dichotomize"
+	template_cmd="template_develop_hero_level_3"
+	name="[[12156099]]Learn Di@chotomize[[]]"
+	button="dichotomize.bmp"
+	position="19"
+	toggle_tab="1"
+	rollover_param="[[12141418]]Splits a non-Champion unit in two identical units. The new units are at 50% health and can't be healed, but don't require additional population.[[]]"
+	param="Skill Dichotomize, ManaCost 10, MaxMana 20"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="RealityRipple"
+	name="[[12168371]]@Reality Ripple[[]]"
+	button="reality ripple.bmp"
+	position="9"
+	enabled="0"
+	rollover_param="[[12172300]]Inflicts damage to each enemy in the target area depending on the unit's health - the healthier the enemy the less damage it will receive. Affects all wounded enemies in a target area for #GetClassInt('Darkling_Empath', 'realityripple_duration') / 1000# seconds.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="realityripple"
+	selecttarget_text="[[12189009]]Select target area[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	select_building_place_drag_object="Area_Empath_RealityRipple"
+	select_building_place_drag_script="data/cmds/dragscript_unithighlight.vs"
+	param="RadiusStaticInt realityripple_range, Class Unit"
+	selecttarget_verifyscript="data/cmds/selectverify_realityripple.vs"
+	selecttarget_cursor_invalid="cantselect"
+	point_command="1"
+	accept_minimap_target="no"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="Develop_RealityRipple"
+	template_cmd="template_develop_hero_level_2"
+	name="[[12197235]]Learn @Reality Ripple[[]]"
+	button="reality ripple.bmp"
+	position="17"
+	toggle_tab="1"
+	rollover_param="[[12172300]]Inflicts damage to each enemy in the target area depending on the unit's health - the healthier the enemy the less damage it will receive. Affects all wounded enemies in a target area for #GetClassInt('Darkling_Empath', 'realityripple_duration') / 1000# seconds.[[]]"
+	param="Skill RealityRipple, ManaCost 90, MaxMana 135"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="FerventDisintegration"
+	name="[[12203583]]Fervent @Disintegration[[]]"
+	button="fervent desintegration.bmp"
+	position="7"
+	enabled="0"
+	rollover_param="[[12214846]]Causes the affected friendly unit to disintegrate after #GetClassInt('Darkling_Empath', 'disintegration_delay') / 1000# seconds, dealing #GetClassInt('Darkling_Empath', 'disintegration_damage')# explosion damage to everyone around.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="fervent_disintegration"
+	selecttarget_text="[[12119819]]Select friendly unit[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_friendly_nonhero_nonmessenger.vs"
+	selecttarget_cursor_invalid="cantselect"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="Develop_FerventDisintegration"
+	template_cmd="template_develop_hero_level_1"
+	name="[[12223727]]Learn Fervent @Disintegration[[]]"
+	button="fervent desintegration.bmp"
+	position="16"
+	toggle_tab="1"
+	rollover_param="[[12214846]]Causes the affected friendly unit to disintegrate after #GetClassInt('Darkling_Empath', 'disintegration_delay') / 1000# seconds, dealing #GetClassInt('Darkling_Empath', 'disintegration_damage')# explosion damage to everyone around.[[]]"
+	param="Skill FerventDisintegration, ManaCost 60, MaxMana 150"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="Resurrect_Skill"
+	name="[[12232345]]Re@surrect[[]]"
+	button="resurrect.bmp"
+	position="9"
+	enabled="0"
+	rollover_param="[[12249613]]Resurrects all friendly and enemy units in an area and places them under your control.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="resurrect_units"
+	selecttarget_text="[[12189009]]Select target area[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	select_building_place_drag_object="Area_Empath_Resurrect"
+	select_building_place_drag_script="data/cmds/dragscript_unithighlight.vs"
+	param="RadiusStaticInt resurrect_range, DeadObjects 1, FriendlyObjects 1"
+	selecttarget_verifyscript="data/cmds/selectverify_resurrect.vs"
+	selecttarget_cursor_invalid="cantselect"
+	point_command="1"
+	accept_minimap_target="no"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+<cmd id="Develop_Resurrect_Skill"
+	template_cmd="template_develop_hero_level_2"
+	name="[[12256275]]Learn Re@surrect[[]]"
+	button="resurrect.bmp"
+	position="18"
+	toggle_tab="1"
+	rollover_param="[[12249613]]Resurrects all friendly and enemy units in an area and places them under your control.[[]]"
+	param="Skill Resurrect_Skill, ManaCost 150, MaxMana 150"
+>
+	<src obj="Darkling_Empath"/>
+</cmd>
+
+</commands>

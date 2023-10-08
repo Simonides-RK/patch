@@ -65,7 +65,7 @@
 <!-- entangling shot properties !-->
 <static_int es_spread_area="130"/>
 <static_int es_max_units="4"/>
-<static_int es_time_effect="8000"/>
+<static_int es_time_effect="6000"/>
 <static_int es_time_fadeout="400"/>
 <static_int es_delay="200"/>
 <static_int es_imobilize_delay="700"/>

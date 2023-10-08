@@ -17,6 +17,11 @@ if (.IsEnemy(objTarget)) {
 	return false;
 }
 
+if(.on_crystal_tower == 1) {
+	reason = GetNotificationText("Can't target on Crystal Tower!");
+	return false;
+}
+
 if(objTarget.AsUnit().IsUncontrollable())
 {
 	reason = GetNotificationText("Cant control unit");

@@ -1,0 +1,58 @@
+<class id="Shades_SCollector" cpp_class="CVXUnit" parent="Peaceful" entity="assets/entities/units/Shades_SCollector/Shades_SCollector.ent.xml">
+
+	<method sig="idle" vs="data/subai/shades_scollector_idle.vs"/>
+	<method sig="move" vs="data/subai/shades_scollector_move.vs"/>
+	<method sig="move_cmd" vs="data/subai/shades_scollector_move_cmd.vs"/>
+	<method sig="attack" vs="data/subai/shades_scollector_move_cmd.vs"/>
+	<method sig="callbacksoul" vs="data/subai/shades_scollector_callbacksoul.vs"/>
+	<method sig="removesoul" vs="data/subai/shades_scollector_removesoul.vs"/>
+	<method sig="init" vs="data/subai/shades_scollector_init.vs"/>
+	<method sig="ondie" vs="data/subai/shades_scollector_ondie.vs"/>
+	<method sig="spawn" vs="data/subai/shades_unit_spawn.vs"/>
+	<method sig="born" vs="data/subai/shades_unit_born.vs"/>
+
+	<static_int radius="30" selection_radius="35"/>
+	<static_int formation_radius="42" formation_priority="500"/>
+	
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[7289404]]Shades[[]]/[[7392160]]Soul Collector[[]]"/>
+
+	<static_str display_name="[[7404401]]Shades Soul Collector[[]]" display_name_plural="[[7418183]]Shades Soul Collectors[[]]"/>
+
+	<static_int legendary="1"/>
+	<static_int sight="400"/>
+	<static_int speed="80"/>
+
+	<static_int maxhealth="1500" initial_damage="0" initial_armor="0"/>
+
+	<static_str cost="400/0/5"/>
+
+	<static_str damage_type="blade"/>
+	<static_str defence_type = "heavy"/>
+
+
+	<static_str rollover_description="[[7421746]]The Soul Collector is a necromancer capable of gathering unit souls and bringing them back to life for a price.[[]]"/>
+
+	<static_int	projectile_angle="0" 
+				projectile_dist = "0"/>
+
+	<static_str icon="Assets/Interface/Icons/harvester of souls.BMP"
+				portrait="assets/interface/icons/harvester of souls.rle"/>
+				
+	<static_str race_str="Race_Shades"/>
+
+	<member_int collector_id=""/>
+	<member_int souls_collected=""/>
+	
+	<static_int max_souls="6"/>
+	
+	<value id="SoulsCollected" script="int i; i = .collector_id; return EnvReadString('/_CollectedSouls_' + i);"/>
+	<static_str interface="soulcollector"/>	
+	<static_int constantly_idle_played="13"/>
+
+	<static_int ai_prefer_as_concentrate_target = "2"/>
+	<static_int ai_soul_collector = "1"/>
+	<static_int ai_hyper_protective="1" ai_hyper_protective_coef="10"/>
+	
+	<sounds
+		command="Soul0"/>
+</class>

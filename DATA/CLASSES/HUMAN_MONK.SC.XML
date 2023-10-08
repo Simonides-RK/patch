@@ -37,7 +37,7 @@
 	<static_int max_energy="160"/>
 	<static_int initial_energy="160"/>
 
-	<static_int heal_amount="9"/>
+	<static_int heal_amount="12"/>
 	<static_int heal_range="300"/>
 	<static_int return_distance="200"/>
 	<static_int lifesteal_factor="2"/>

@@ -140,7 +140,7 @@
         icon="Assets/Interface/Icons/forester_advanced_bowmaking.bmp"
         position="9"
         execdelay="20000"
-        cost_script="return '175/0/0/0';"
+        cost_script="return '150/0/0/0';"
         disableifdisabled="train_Ranger"
 >
         <src obj="Forester_Tower"/>

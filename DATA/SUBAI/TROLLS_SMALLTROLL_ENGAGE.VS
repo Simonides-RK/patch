@@ -44,12 +44,17 @@ if(u.IsAlive())
 			delay = 0; // Don't stop while rolling
 		while(!.GotoAttack(u, 1000, false, delay)) 
 		{
+			
 			//_pr("smalltroll::engage - approaching target!");
 			if(.rolling != 1)
 			{
 				u = .BestTargetInSquadSight();
 			}
 			if(!u.IsAlive())
+			{
+				break;
+			}
+			if(!.GetDir() == ptDir)
 			{
 				break;
 			}

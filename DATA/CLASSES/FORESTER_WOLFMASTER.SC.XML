@@ -19,14 +19,14 @@
 	<static_int speed="120"/>
 	<static_int sight="400"/>
 
-	<static_int maxhealth="380" initial_damage="9" initial_armor="3"/>
+	<static_int maxhealth="380" initial_damage="12" initial_armor="3"/>
 	<static_int max_energy="65"/>
 	<static_int initial_energy="20"/>	
 
 	<static_str damage_type="blade"/>
 	<static_str defence_type = "mounted"/>
 
-	<static_str cost="165/0/3"/>
+	<static_str cost="150/0/3"/>
 	<static_str rollover_description="[[5878716]]Wolf Masters lead a pack of fierce wolves and are able to summon additional wolves should their minions be killed. Can be upgraded to attack from a distance and to improve their summoning skills.[[]]"/>
 
 	<static_str icon="Assets/Interface/Icons/Wolfmaster.bmp"

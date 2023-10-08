@@ -1,0 +1,202 @@
+<commands>
+
+<!-- Ivko: Texts edited, 20.02.2005. Please don't remove this comment! -->
+
+<cmd id="ShadowsOfTheNight"
+  name="[[12265456]]@Shadows Of The Night[[]]"
+	button="shadows of the night.bmp"
+	position="7"
+	enabled="0"
+	rollover_param="[[12270166]]Makes the Night Assassin invisible for enemies until he attacks, and provides him with #GetClassInt('Darkling_NightAssassin', 'shadows_of_the_night_dmg_bonus')# bonus damage while invisible.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="Develop_ShadowsOfTheNight"
+	template_cmd="template_develop_hero_level_1"
+	name="[[12280863]]Learn @Shadows Of The Night[[]]"
+	button="shadows of the night.bmp"
+	position="16"
+	toggle_tab="1"
+	rollover_param="[[12270166]]Makes the Night Assassin invisible for enemies until he attacks, and provides him with #GetClassInt('Darkling_NightAssassin', 'shadows_of_the_night_dmg_bonus')# bonus damage while invisible.[[]]"
+	param="Skill ShadowsOfTheNight, ManaCost 0, MaxMana 0, DevScript data/subai/darkling_nightassassin_shadowsofthenight.vs, UndevScript data/subai/darkling_nightassassin_shadowsofthenight_undev.vs"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="Confuse"
+  name="[[12296910]]@Confuse[[]]"
+	button="confuse.bmp"
+	position="6"
+	enabled="0"
+	rollover_param="[[12303601]]Takes limited control over enemy units in an area until their controlling player commands them. Confused units can be moved freely but they won't attack.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="confuse"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	select_building_place_drag_object="Area_NightAssassin_Confuse"
+	select_building_place_drag_script="data/cmds/dragscript_unithighlight.vs"
+	param="RadiusStaticInt confuse_radius, Class Unit"
+	selecttarget_verifyscript="data/cmds/selectverify_nightassassin_confuse.vs"
+	selecttarget_cursor_invalid="cantselect"
+	selecttarget_text="[[12189009]]Select target area[[]]"
+	point_command="1"
+	accept_minimap_target="no"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="Develop_Confuse"
+	template_cmd="template_develop_hero_level_1"
+	name="[[12311002]]Learn @Confuse[[]]"
+	button="confuse.bmp"
+	position="15"
+	toggle_tab="1"
+	rollover_param="[[12303601]]Takes limited control over enemy units in an area until their controlling player commands them. Confused units can be moved freely but they won't attack.[[]]"
+	param="Skill Confuse, ManaCost 24, MaxMana 24"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="Shadewalk"
+  name="[[12326655]]Shade@walk[[]]"
+	button="shadewalk.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[12338902]]Provides the Night Assassin with the ability to move very swiftly and stealthily, virtually teleporting to the specified nearby position.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="shadewalk"
+	selecttarget_text="[[11801192]]Select target location[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_nightassassin_shadewalk.vs"
+	selecttarget_cursor_invalid="cantselect"
+	point_command="1"
+	accept_minimap_target="no"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="Develop_Shadewalk"
+	template_cmd="template_develop_hero_level_1"
+	name="[[12346064]]Learn Shade@walk[[]]"
+	button="shadewalk.bmp"
+	position="13"
+	toggle_tab="1"
+	rollover_param="[[12338902]]Provides the Night Assassin with the ability to move very swiftly and stealthily, virtually teleporting to the specified nearby position.[[]]"
+	param="Skill Shadewalk, ManaCost 7, MaxMana 7"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="PainLink"
+	name="[[12353100]]Pain Link[[]]"
+	button="pain link.bmp"
+	position="8"
+	enabled="0"
+	rollover_param="[[12369260]]Creates a link between the Night Assassin and the nearest enemy Champion making him suffer damage each time the Assassin is hurt.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="Develop_PainLink"
+	template_cmd="template_develop_hero_level_1"
+	name="[[12376854]]Learn Pain Lin@k[[]]"
+	button="pain link.bmp"
+	position="14"
+	toggle_tab="1"
+	rollover_param="[[12369260]]Creates a link between the Night Assassin and the nearest enemy Champion making him suffer damage each time the Assassin is hurt.[[]]"
+	param="Skill PainLink, ManaCost 0, MaxMana 0"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="AngelOfDeath"
+  name="[[12385432]]An@gel of Death[[]]"
+	button="angel of death.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[12393874]]Summons an invisible creature that inflicts a very high damage, but has only 1 health point.[[]]"
+	dispatch_type="insert method"
+	dispatch_param="angelofdeath"
+	selecttarget_text="[[12405426]]Select location for summoning[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_nightassassin_angel_passable.vs"
+	selecttarget_cursor_invalid="cantselect"
+	point_command="1"
+	accept_minimap_target="no"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="Develop_AngelOfDeath"
+	template_cmd="template_develop_hero_level_2"
+	name="[[12417145]]Learn An@gel of Death[[]]"
+	button="angel of death.bmp"
+	position="17"
+	toggle_tab="1"
+	rollover_param="[[12393874]]Summons an invisible creature that inflicts a very high damage, but has only 1 health point.[[]]"
+	param="Skill AngelOfDeath, ManaCost 60, MaxMana 90"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="Backstab"
+	name="[[12421219]]@Backstab[[]]"
+	button="backstab.bmp"
+	position="9"
+	enabled="0"
+	rollover_param="[[12432293]]Backstabs an enemy unit, inflicting #GetClassInt('Darkling_NightAssassin', 'backstab_damage')# points of damage. Only works if the Night Assassin is behind the specified unit.[[]]"
+	dispatch_type="execute method"
+	dispatch_param="backstab"
+	selecttarget_text="[[12440397]]Select enemy unit to backstab[[]]"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+	selecttarget_verifyscript="data/cmds/selectverify_nightassassin_backstab.vs"
+	selecttarget_cursor_invalid="cantselect"
+	enemy_target="1"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="Develop_Backstab"
+	template_cmd="template_develop_hero_level_2"
+	name="[[12459603]]Learn @Backstab[[]]"
+	button="backstab.bmp"
+	position="18"
+	toggle_tab="1"
+	rollover_param="[[12432293]]Backstabs an enemy unit, inflicting #GetClassInt('Darkling_NightAssassin', 'backstab_damage')# points of damage. Only works if the Night Assassin is behind the specified unit.[[]]"
+	param="Skill Backstab, ManaCost 12, MaxMana 12"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="Develop_Cloud_of_Darkness"
+	template_cmd="template_develop_hero_level_3"
+	name="[[12466423]]Learn Cloud of @Darkness[[]]"
+	button="cloud of darkness.bmp"
+	position="19"
+	toggle_tab="1"
+	rollover_param="[[12473834]]Renders all friendly units around the Night Assassin invisible.[[]]"
+	param="Skill Cloud_of_Darkness, ManaCost 0, MaxMana 0, DevScript data/subai/darkling_nightassassin_cloudofdarkness.vs, UndevScript data/subai/darkling_nightassassin_cloudofdarkness_undev.vs"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+<cmd id="Cloud_of_Darkness"
+  name="[[12481388]]Cloud of @Darkness[[]]"
+	button="cloud of darkness.bmp"
+	position="5"
+	enabled="0"
+	rollover_param="[[12473834]]Renders all friendly units around the Night Assassin invisible.[[]]"
+	dispatch_type="run script"
+	dispatch_param="data/cmds/dummy_script.vs"
+	verifier_script="data/cmds/hero_skill_verify.vs"
+>
+	<src obj="Darkling_NightAssassin"/>
+</cmd>
+
+</commands>

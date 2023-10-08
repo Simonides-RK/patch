@@ -4,7 +4,7 @@ Unit this;
 
 this = This.AsUnit();
 
-.time_borned = GetTime();
+
 if(!IsUpgradeAvailable(.player, "upgrade_LifeBond"))
 {
 	.AddEffectTimeout("spirit", -1, -1, .spirit_lifetime);

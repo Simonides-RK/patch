@@ -20,6 +20,11 @@ if (This.reserved_int9==1){
         unitforchange.ChangeScriptClass(EnvReadString(This.AsUnit(), "NewClass"), true, true);
         }
 if (unitforchange.class=="Human_HeavyCavalry") IncRes(This.player, ResSupport, GetCost(GetClassStr("Human_HeavyCavalry", "cost"), ResSupport) - GetCost(GetClassStr("Human_Cavalry", "cost"), ResSupport));
+
+if (IsUpgradeAvailable(unitforchange.player, "upgrade_GoldenShield")) {
+	unitforchange.SetGoldenFX(true);
+	}
+
 Sleep(300);
 if (unitforchange.AsUnit().IsAlive()){
 unitforchange.SetHidden(false);

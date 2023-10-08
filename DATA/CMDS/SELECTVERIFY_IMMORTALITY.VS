@@ -20,6 +20,11 @@ if ( !h.IsValid() ) {
 	return false;
 }
 
+if(.on_crystal_tower == 1) {
+	reason = GetNotificationText("Can't target on Crystal Tower!");
+	return false;
+}
+
 if ( h.ExistEffect("immortal") ) {
 	reason = Translate("[[11054976]]This Champion already has Immortality[[]]");
 	return false;

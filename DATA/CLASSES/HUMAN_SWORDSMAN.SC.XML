@@ -11,7 +11,7 @@
         <static_int sight="400"/>
         <static_int speed="100"/>
 
-        <static_int maxhealth="500" initial_damage="28" initial_armor="5"/>
+        <static_int maxhealth="550" initial_damage="28" initial_armor="5"/>
         <static_str cost="105/0/2"/>
 
         <static_str damage_type="blade"/>

@@ -30,6 +30,11 @@ if (.DistTo(objTarget) > .sight) {
         return false;
 }
 
+if(.on_crystal_tower == 1) {
+	reason = GetNotificationText("Can't target on Crystal Tower!");
+	return false;
+}
+	
 if ( u.ExistEffect("divine_journey") ) { 
 	reason = Translate("[[110549761]]This Champion now in Divine Journey[[]]");
 	return false;

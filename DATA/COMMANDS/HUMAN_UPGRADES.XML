@@ -420,7 +420,7 @@ disableifdisabled="train_Pikeman"
         icon="assets/interface/human_wrath_of_the_inquisitor_m.bmp"
         position="12"
         execdelay="90000"
-        cost_script="return '620/6/0/0';"
+        cost_script="return '450/6/0/0';"
         requirements="Human_CathedralUpgrade:local, upgrade_HumanLevel3"
         disableifdisabled="train_Paladin"
 >

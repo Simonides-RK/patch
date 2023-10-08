@@ -59,7 +59,7 @@
 
 	<static_int target_evaluation_sleep="1000"/>
 	<static_int vines_time="5000"/>
-	<static_int entangle_time="10000"/>
+	<static_int entangle_time="5000"/>
 	
 	<member_obj the_target=""/>
 </class>

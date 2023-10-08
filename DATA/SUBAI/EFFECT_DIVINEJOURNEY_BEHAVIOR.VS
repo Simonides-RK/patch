@@ -11,13 +11,15 @@ return;
 }
 pt =.pos;
 CreateFeedback("data/particles/summon.part.xml", .pos, 1000);
-Sleep(700);
+Sleep(200);
 if (!.IsAlive()) {.RemoveEffect("divine_journey",param1,param2);
 return;
 }
-.SetBlockCommand(true);
+
+.SetCantMove(true);
 .SetCommand("idle");
 .SetHidden(true);
+.SetBlockCommand(true);
 //.AsUnit.SetPos(Point(-100, -100));
 .AsUnit.SetCantAddEffect(true);
 SetFlag(.user_flags1,.cant_be_stunned,true);
@@ -75,5 +77,6 @@ SetFlag(.user_flags1, .cant_be_stunned, false);
 .AsUnit.SetCantAddEffect(false);
 .SetVisible(true);
 //.AsUnit.SetPos(pt);
+.SetCantMove(false);
 .SetHidden(false);
 .RemoveEffect("divine_journey",param1,param2);

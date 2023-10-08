@@ -44,8 +44,10 @@ if (!uToHeal.IsValid())
         }       
 
 if (uToHeal.IsValid()) {
+		
         u.Heal(100000);
         CreateFeedback("data/particles/Heal_Unit_Feedback.part.xml", u, 400, true);
         me.magic_area_charge -= 1;
         PlaySound(me.pos, "Heal_Sound_");
+		u.AddEffectTimeout("open_wounds", -1, -1, 8000);
 }

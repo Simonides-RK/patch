@@ -53,8 +53,8 @@ ondealtdamage
 <effect
         id="entangle"
         single="1"
-        onadd_script=".SetCantMove(true);.SetVisible(false);"
-        onremove_script=".SetCantMove(false); .SetVisible(true); CreateFeedback('EntangleFeedbackRemove', this, false);"
+        onadd_script=".SetCantMove(true);"
+        onremove_script=".SetCantMove(false); CreateFeedback('EntangleFeedbackRemove', this, false);"
         ondealtdamage_script="if (bDirectDamage) damage = damage * 3 / 2;"
         ondealdamage_script=""
         onattack_script=""
@@ -2262,6 +2262,20 @@ id="item_magicsword_bonus"
         ondealdamage_script=""
         onattack_script=""
         behavior_script="data/subai/effect_get_champion_item.vs"
+        add_feedback=""
+        remove_feedback=""
+        feedback=""/>
+
+<effect
+        id="plants"
+        single="1"
+        combine_param1="" combine_param2=""
+        onadd_script="" 
+        onremove_script="if(!IsFlagSet(.user_flags1, .to_be_divine_journeyd)) .DamageWithNoAttacker(1000000);"
+        ondealtdamage_script=""
+        ondealdamage_script=""
+        onattack_script=""
+        behavior_script=""
         add_feedback=""
         remove_feedback=""
         feedback=""/>

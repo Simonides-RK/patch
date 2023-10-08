@@ -79,15 +79,26 @@ if(.IsHeirOf("Independent_Settlement"))
   for (i = ol.count - 1; i >= 0; i -= 1)
   {
         u = ol[i].AsBuilding();
-        if ( u.IsAlive() ) {
+        
+        if ( u.IsAlive() && EnvReadInt(.player, "colonyCount") == 1 ) {
         if (u.race_str=="Race_Dragons" || u.race_str=="Race_Trolls" || u.race_str=="Race_Shades" || u.race_str=="Race_Nomads" || u.race_str=="Race_Elves") continue;
-        if (u.class=="Human_Townhall" || u.class=="Darkling_Townhall" || u.class=="Forester_Townhall") u.armor+=10; 
-                else if (u.class=="Darkling_Tower" || u.class=="Forester_Tower" || u.class=="Human_Tower") u.SetMaxHealth(u.GetMaxHealth()+25); else u.armor+=5;
-
-        }
-  }
+        if (u.class=="Human_Townhall" || u.class=="Darkling_Townhall" || u.class=="Forester_Townhall") u.armor+=u.first_armor_extra; }
+		
+		if ( u.IsAlive() && EnvReadInt(.player, "colonyCount") == 2 ) {
+        if (u.race_str=="Race_Dragons" || u.race_str=="Race_Trolls" || u.race_str=="Race_Shades" || u.race_str=="Race_Nomads" || u.race_str=="Race_Elves") continue;
+        if (u.class=="Human_Townhall" || u.class=="Darkling_Townhall" || u.class=="Forester_Townhall") u.armor+=u.second_armor_extra; }
+		
+		if ( u.IsAlive() && EnvReadInt(.player, "colonyCount") == 3 ) {
+        if (u.race_str=="Race_Dragons" || u.race_str=="Race_Trolls" || u.race_str=="Race_Shades" || u.race_str=="Race_Nomads" || u.race_str=="Race_Elves") continue;
+        if (u.class=="Human_Townhall" || u.class=="Darkling_Townhall" || u.class=="Forester_Townhall") u.armor+=u.third_armor_extra; }
+		
+		if ( u.IsAlive() ) {
+        if (u.race_str=="Race_Dragons" || u.race_str=="Race_Trolls" || u.race_str=="Race_Shades" || u.race_str=="Race_Nomads" || u.race_str=="Race_Elves") continue;
+        if (u.class=="Human_Townhall" || u.class=="Darkling_Townhall" || u.class=="Forester_Townhall") u.armor+=u.armor_bonus; 
+                else if (u.class=="Darkling_Tower" || u.class=="Forester_Tower" || u.class=="Human_Tower") u.SetMaxHealth(u.GetMaxHealth()+25); else u.armor+=5; }
+  
 }
-
+}
 } else {
         .DropDead;
 }

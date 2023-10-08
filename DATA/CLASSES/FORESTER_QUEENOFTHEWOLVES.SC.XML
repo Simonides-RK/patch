@@ -57,7 +57,7 @@
 
 <static_int ghost_wolves_health_bonus="30"/>
 <static_int assassin_wolves_health_bonus="30"/>
-<static_int open_wounds_time="90000"/> 
+<static_int open_wounds_time="50000"/> 
 
 <static_int werewolf_state_range="17"/>
 <static_int werewolf_state_duration="60000"/>

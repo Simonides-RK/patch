@@ -18,7 +18,7 @@
 	<static_str damage_type="axe" />
 	<static_str defence_type="medium" />
 
-	<static_str cost="75/0/2" />
+	<static_str cost="80/0/2" />
 
 	<static_str projectile_class="Darkling_DiscipleAxe" />
 	<static_str projectile_class_building="Darkling_DiscipleAxe" />

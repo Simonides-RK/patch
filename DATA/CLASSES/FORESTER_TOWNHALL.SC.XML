@@ -18,7 +18,7 @@
         <static_str display_name="[[5762289]]Forester Town Hall[[]]" display_name_plural="[[5775015]]Forester Town Halls[[]]"/>
         <static_int radius="120" selection_radius="120"/> 
 
-        <static_int maxhealth="8000"/>
+        <static_int maxhealth="7000"/>
         <static_int maxhealthafterlevel1="9000"/>
         <static_int maxhealthafterlevel2="15000"/>
         <static_int maxhealthafterlevel3="20000"/>

@@ -29,7 +29,7 @@
         
         <static_int sight="500"/>
         <static_int speed="90"/>
-        <static_int maxhealth="1500" initial_damage="22" initial_armor="8"/>
+        <static_int maxhealth="1500" initial_damage="28" initial_armor="8"/>
 
         <static_str defence_type = "heavy"/>
         <static_str damage_type="blade"/>                                       
@@ -56,7 +56,7 @@
 			
         <member_int last_damagebonus=""/>
 
-        <static_str cost="300/4/5"/>
+        <static_str cost="300/4/4"/>
         <static_str rollover_description="[[6493559]]Paladins are noble fighters, which receive a damage bonus for each infantry unit around them. Can be upgraded to instantly kill enemies low on health and to increase the damage of your army when the Paladin kills an enemy.[[]]"/>
         
         <static_str leadership_sound="Paladain_Leadership_"/>

@@ -13,7 +13,7 @@
 	<static_int speed="100"/>
 
 	<static_int maxhealth="610" initial_damage="23" initial_armor="0"/>
-	<static_str cost="140/0/2"/>
+	<static_str cost="130/0/2"/>
 
 	<static_str damage_type="arrow"/>
 	<static_str defence_type = "medium"/>

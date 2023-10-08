@@ -175,7 +175,7 @@
         <effectentry effect="primal_fury"         bar_display="0" beneficial="1" icon="menures/InfoList/Forest_Strength.bmp" text="[[PrimalFury3]]Primal Fury[[]]" rollover="[[PrimalFury2]]Increases the damage of all of the forester units by #GetClassInt('Forester_Townhall', 'primal_fury_bonus')#.[[]]"/>
 		<effectentry effect="BurningWings"             bar_display= "1" beneficial="1" icon="menures/InfoList/Open_wounds.bmp" text="[[upgBurningWings1]]Burning Wings[[]]" rollover="[[upgBurningWings3]]Burning Wings is active now.[[]]"/>
 		<effectentry effect="weakening_acid"             bar_display= "-1" beneficial="0" icon="menures/InfoList/Poisoned.bmp" text="[[upgWeakAcid1]]Weakening Acid[[]]" rollover="[[upgWeakAcid3]]Unit is more vulnerable to damage by #GetClassInt('Dragons_GreenDragon', 'acid_vulnerabilty_increase')#%.[[]]"/>
-		
+		<effectentry effect="plants"              bar_display="-1" beneficial="0" icon="menures/InfoList/Spirit.bmp" text="[[plant_lifetime]]Plant[[]]" rollover="[[plant_lifetime2]]Magic Plants are highly unstable and have a limited lifetime.[[]]"/>
 		
 		
         <unitflagentry flag="INVISIBLE" icon="menures/InfoList/invisible.bmp" text="[[27539511]]Invisible[[]]" rollover="[[27545221]]If the unit remains undetected, enemies cannot automatically attack it. If they are ordered to do so they have a 66% chance to miss.[[]]"/>

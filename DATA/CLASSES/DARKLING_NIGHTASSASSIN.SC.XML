@@ -53,6 +53,8 @@
 <static_int backstab_damage="450"/>
 <static_int confuse_radius="200"/>
 
+<static_int painlink_radius="300"/>
+
 <static_int shadows_of_the_night_dmg_bonus="50"/>
 <static_int time_to_shadows_of_the_night="10000"/>
 <static_int time_to_check_shadows_of_the_night="1000"/>

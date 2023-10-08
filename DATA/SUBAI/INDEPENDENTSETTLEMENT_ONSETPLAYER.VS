@@ -59,7 +59,7 @@ if (player==15) // Was independent
 
                 // Nomad Bazaar
                 if(EnvReadInt(.player, "Nomads_Bazar") > 0)
-                        IncRes(.player, ResGlory, EnvReadInt(.player, "Nomads_Bazar") * ResGloryFactor);
+                        IncRes(.player, ResGlory, EnvReadInt(.player, "Nomads_Bazar") * ResGloryFactor*2);
         }
 
 if ( .GetSkillNumber == 0 ) .SetDefaultTab(11); // prevent showing develop commands when skill is already developed (by DevelopSkill)
