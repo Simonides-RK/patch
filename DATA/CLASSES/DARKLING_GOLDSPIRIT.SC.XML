@@ -1,0 +1,48 @@
+<class id="Darkling_GoldSpirit" cpp_class="CVXUnit" parent="Darkling_Spirit" entity="assets/entities/units/Darkling_GoldSpirit/Darkling_GoldSpirit.ent.xml">
+
+	<method sig="ondie" vs="data/subai/darkling_goldspirit_ondie.vs"/>
+
+	<static_int range="17" min_range="2"/>
+	<static_int radius="20" selection_radius="20"/>	
+	<static_int formation_radius="35" formation_priority="1500"/>
+	<static_str edittree_pos="[[1477212]]Units[[]]/[[3902715]]Darklings[[]]/[[4395537]]Gold Spirit[[]]"/>
+
+	<static_str display_name="[[4395537]]Gold Spirit[[]]" display_name_plural="[[4409887]]Gold Spirits[[]]"/>
+
+	<static_int max_energy="0"/>
+	<static_int sight="400"/>
+	<static_int speed="90"/>
+	
+	<static_int maxhealth="135" initial_damage="10" initial_armor="0"/>
+
+	<static_str damage_type="unarmed"/>
+	<static_str defence_type = "small"/>
+	<static_int summoned_unit = "1"/>
+	
+	<static_int energy_restoration_divider="200"/>
+
+	<static_str cost="40/0/0"/>
+	<static_str rollover_description="[[4417696]]Gold Spirits are weak but inexpensive units with a limited lifetime and some protected against ranged attacks. They also yield #GetClassInt('Darkling_GoldSpirit','gold_returned')# gold when they die.[[]]"/>
+
+	<static_str icon="Assets/Interface/Icons/gold spirith.bmp"
+				portrait="assets/interface/icons/gold spirith.rle"
+				skyimage="assets/interface/sky_dragon.bmp"/>
+
+	<static_str race_str="Race_Darklings"/>
+	
+	<static_int spirit_lifetime="90000"/>
+	<static_int spirit_bond_lifetime="120000"/>
+	<static_int ethereal_miss_percent="50"/>
+	<static_int gold_returned="20"/>
+	<static_int constantly_idle_played="13"/>	
+
+	<!-- AI -->
+	<static_int override_ai_value="1"/>	
+	<static_int ai_concentrate_group="1"/>   <!-- general melee damage -->
+	<!-- AI -->
+
+	<sounds
+		AnimAttack="Unarmed_attack"
+		AnimDie="assets/sounds/Death/Spirit/Dakling_spirit_death.wav"
+		command="Gold0"/>
+</class>
